@@ -1,0 +1,5 @@
+# Local reference assets: inspect/use locally, never commit or push.
+/Roots-and-Relics-site-assets/
+
+# macOS metadata
+.DS_Store
