@@ -1,0 +1,82 @@
+{
+  "policy": "Use these public URLs in production markup. Local logos are inspection-only references.",
+  "verification": "Each public object was downloaded and matched byte-for-byte to the corresponding local reference file on 2026-08-10.",
+  "canonical": {
+    "light": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png",
+    "dark": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0ac1da37-2116-4b54-b87e-bbbeb2b928fb/v1-roots-relics-logo-dark.png"
+  },
+  "logos": [
+    {
+      "label": "12 Roots Relics Logo Light · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/12-roots-relics-logo-light.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1a754cde-a9b5-429e-b8a5-df647ff88efa/v1-12-roots-relics-logo-light.png",
+      "duplicateGroup": "roots-relics-light-png"
+    },
+    {
+      "label": "13 Roots Relics Logo Dark · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/13-roots-relics-logo-dark.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/78361289-8952-472e-87a7-8090385dc8b8/v1-13-roots-relics-logo-dark.png",
+      "duplicateGroup": "roots-relics-dark-png"
+    },
+    {
+      "label": "252 Cropped Logo · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/252-cropped-logo.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8ea42baf-92a6-4b32-88b5-caf838dd5133/v1-252-cropped-logo.png",
+      "duplicateGroup": null
+    },
+    {
+      "label": "60 Logo · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/60-logo.webp",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ae7388dd-c408-4930-a2be-3d176be9191b/v1-60-logo.webp",
+      "duplicateGroup": "logo-webp"
+    },
+    {
+      "label": "61 Logo Light · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/61-logo-light.webp",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0a2c58f2-787c-4806-a247-b9062bca1492/v1-61-logo-light.webp",
+      "duplicateGroup": "logo-light-webp"
+    },
+    {
+      "label": "62 Logo · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/62-logo.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/050b55e1-e3df-4711-aaa9-355cb9f27441/v1-62-logo.png",
+      "duplicateGroup": "logo-62-png"
+    },
+    {
+      "label": "63 Logo Light · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/63-logo-light.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8f3bd4ae-51dc-4f5b-a7a5-143d55bbe24c/v1-63-logo-light.png",
+      "duplicateGroup": null
+    },
+    {
+      "label": "Logo · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/logo.webp",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fe0867f0-5416-49d7-b7a4-4bebd79e60c2/v1-logo.webp",
+      "duplicateGroup": "logo-webp"
+    },
+    {
+      "label": "Logo 62 · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/logo-62.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/330daed3-b2ed-4c61-8cfc-d1df787ea83a/v1-logo-62.png",
+      "duplicateGroup": "logo-62-png"
+    },
+    {
+      "label": "Logo Light · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/logo-light.webp",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f89e25a3-96bd-4478-9fb3-28a1d147d5a5/v1-logo-light.webp",
+      "duplicateGroup": "logo-light-webp"
+    },
+    {
+      "label": "Roots Relics Logo Dark · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/roots-relics-logo-dark.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0ac1da37-2116-4b54-b87e-bbbeb2b928fb/v1-roots-relics-logo-dark.png",
+      "duplicateGroup": "roots-relics-dark-png"
+    },
+    {
+      "label": "Roots Relics Logo Light · v1",
+      "localReference": "Roots-and-Relics-site-assets/logos/roots-relics-logo-light.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png",
+      "duplicateGroup": "roots-relics-light-png"
+    }
+  ]
+}
