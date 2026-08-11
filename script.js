@@ -1,3 +1,45 @@
+const demoGate = document.querySelector('[data-demo-gate]');
+const demoEnter = document.querySelector('[data-demo-enter]');
+const demoSessionKey = 'rootsRelicsDemoEntered';
+let demoWasEntered = false;
+
+try {
+  demoWasEntered = sessionStorage.getItem(demoSessionKey) === 'true';
+} catch {
+  demoWasEntered = false;
+}
+
+if (demoWasEntered) {
+  demoGate?.remove();
+} else if (demoGate && demoEnter) {
+  const pageSurfaces = [...document.body.children].filter((element) => element !== demoGate);
+  document.body.classList.add('demo-gate-open');
+  pageSurfaces.forEach((element) => { element.inert = true; });
+  requestAnimationFrame(() => demoEnter.focus({ preventScroll: true }));
+
+  demoEnter.addEventListener('click', () => {
+    try {
+      sessionStorage.setItem(demoSessionKey, 'true');
+    } catch {
+      // The demo still opens when browser storage is unavailable.
+    }
+    demoGate.classList.add('is-leaving');
+    window.setTimeout(() => {
+      pageSurfaces.forEach((element) => { element.inert = false; });
+      document.body.classList.remove('demo-gate-open');
+      demoGate.remove();
+    }, 420);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!document.body.classList.contains('demo-gate-open')) return;
+    if (event.key === 'Escape' || event.key === 'Tab') {
+      event.preventDefault();
+      demoEnter.focus({ preventScroll: true });
+    }
+  });
+}
+
 const menuButton = document.querySelector('[data-menu]');
 const nav = document.querySelector('#site-nav');
 
