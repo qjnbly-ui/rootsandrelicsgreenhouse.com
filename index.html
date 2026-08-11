@@ -9,17 +9,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=DM+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260810" />
+    <link rel="stylesheet" href="styles.css?v=20260810b" />
     <script src="script.js?v=20260810" defer></script>
   </head>
   <body>
     <div class="demo-gate" data-demo-gate role="dialog" aria-modal="true" aria-labelledby="demo-gate-title" aria-describedby="demo-gate-copy">
       <div class="demo-gate-inner">
-        <p class="demo-gate-brand">roots &amp; relics</p>
+        <img class="demo-gate-logo" src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png" alt="Roots and Relics Greenhouse" />
         <p class="demo-gate-kicker">Website preview</p>
         <h2 id="demo-gate-title">Welcome to<br /><em>the demo.</em></h2>
         <p id="demo-gate-copy" class="demo-gate-copy">This is a demonstration—not the complete website. Some pages, imagery, and features are still being thoughtfully built.</p>
-        <button class="demo-gate-enter" type="button" data-demo-enter>Enter the demo <span>→</span></button>
+        <button class="demo-gate-enter" type="button" data-demo-enter aria-label="Enter the website demo">
+          <span class="demo-gate-enter-top">Click to</span>
+          <strong>Enter</strong>
+          <span class="demo-gate-enter-bottom">the demo <b aria-hidden="true">→</b></span>
+        </button>
         <p class="demo-gate-credit">A custom website preview by N3XRA</p>
       </div>
     </div>
