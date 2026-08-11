@@ -11,3 +11,9 @@ Do not add local `Roots-and-Relics-site-assets/logos/` paths to site pages.
 - Use `canonical.light` on dark or green backgrounds.
 - Use `canonical.dark` on light backgrounds.
 - Keep every supplied export in the registry, even when multiple exports are exact duplicates.
+
+## Hosted photographic assets
+
+Production HTML must use the public Supabase URLs in `assets/image-urls.json`.
+Do not add local `Roots-and-Relics-site-assets/photos-and-graphics/` paths to site pages.
+Match hosted images by the `filename` or `localReference` fields in the registry.
