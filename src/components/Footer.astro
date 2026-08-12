@@ -1,0 +1,47 @@
+---
+import { site } from '../data/site';
+---
+
+<footer class="footer">
+  <div class="footer-top">
+    <p>See you in<br /><em>the greenhouse.</em></p>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-brand-block">
+      <img src={site.logo.light} alt="Roots and Relics Greenhouse" />
+      <p>Curated antiques for timeless living. Gather, wander, reminisce, and stay awhile.</p>
+      <span>Southern Oregon<br />Approximately ten minutes from Klamath Falls</span>
+    </div>
+    <nav class="footer-nav" aria-label="Visit Roots and Relics">
+      <p>Visit</p>
+      <a href="/greenhouse-gatherings/">Greenhouse gatherings</a>
+      <a href="/private-showings/">Private showings</a>
+      <a href="/before-you-visit/">Before you visit</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <nav class="footer-nav" aria-label="Explore Roots and Relics">
+      <p>Explore</p>
+      <a href="/our-story/">Our story</a>
+      <a href="/the-collection/">The collection</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/faq/">FAQ</a>
+    </nav>
+    <div class="footer-list">
+      <p class="footer-list-label">Join our list</p>
+      <h3>Notes from the greenhouse.</h3>
+      <p>Greenhouse weekends, new arrivals, seasonal happenings, and private showing opportunities.</p>
+      <a href={`mailto:${site.contact.email}?subject=Join%20the%20Roots%20%26%20Relics%20list`}>Email us to join <span>↗</span></a>
+    </div>
+  </div>
+  <div class="footer-contact">
+    <a href={`sms:${site.contact.phoneHref}`}>Text {site.contact.phoneDisplay}</a>
+    <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+    <a class="social-contact" href={`https://instagram.com/${site.contact.instagram}`} target="_blank" rel="noopener">
+      <span class="social-icon social-instagram" aria-hidden="true"></span><span>@{site.contact.instagram}</span>
+    </a>
+  </div>
+  <div class="footer-legal">
+    <p>© 2026 Roots &amp; Relics. All rights reserved.</p>
+    <p>Designed &amp; Built by <a href="https://n3xra.com" target="_blank" rel="noopener">N3XRA</a></p>
+  </div>
+</footer>

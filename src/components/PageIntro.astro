@@ -1,0 +1,18 @@
+---
+interface Props {
+  before?: string;
+  emphasis: string;
+  after?: string;
+}
+
+const { before, emphasis, after } = Astro.props;
+---
+
+<main class="page-main" id="main">
+  <section class="page-intro">
+    <div class="page-intro-inner">
+      <span class="kicker">Roots &amp; Relics Greenhouse</span>
+      <h1>{before && <>{before} </>}<em>{emphasis}</em>{after && <> {after}</>}</h1>
+    </div>
+  </section>
+</main>

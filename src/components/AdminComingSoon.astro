@@ -1,0 +1,132 @@
+<div class="admin-preview" data-admin-modal hidden>
+  <button class="admin-preview-backdrop" type="button" data-admin-close aria-label="Close admin preview"></button>
+  <section class="admin-preview-panel" role="dialog" aria-modal="true" aria-labelledby="admin-preview-title" aria-describedby="admin-preview-copy">
+    <button class="admin-preview-close" type="button" data-admin-close aria-label="Close admin preview">
+      <span></span><span></span>
+    </button>
+
+    <div class="admin-preview-copy">
+      <p class="admin-preview-kicker">N3XRA client access · Coming soon</p>
+      <h2 id="admin-preview-title">Your greenhouse.<br /><em>One clear dashboard.</em></h2>
+      <p id="admin-preview-copy">The familiar N3XRA dashboard will live here, extended with controls made specifically for the Roots &amp; Relics website.</p>
+
+      <div class="admin-preview-features" aria-label="Planned dashboard features">
+        <div>
+          <strong>N3XRA dashboard</strong>
+          <span>The client dashboard and its existing interface, available directly from the website.</span>
+        </div>
+        <div>
+          <strong>Website controls</strong>
+          <span>Manage gathering details, site notices, featured content, and selected updates without editing code.</span>
+        </div>
+        <div>
+          <strong>One private home</strong>
+          <span>A secure place for website activity, requests, and future tools as the business grows.</span>
+        </div>
+      </div>
+
+      <p class="admin-preview-note">Client access is not available yet. The public website remains fully usable while this private area is being built.</p>
+    </div>
+
+    <div class="admin-preview-visual" aria-hidden="true">
+      <div class="admin-dashboard">
+        <aside>
+          <div class="admin-dashboard-mark">N3XRA</div>
+          <i></i><i></i><i></i><i></i>
+        </aside>
+        <div class="admin-dashboard-main">
+          <div class="admin-dashboard-top">
+            <span>Roots &amp; Relics</span>
+            <b>Dashboard</b>
+          </div>
+          <div class="admin-dashboard-greeting">
+            <small>Welcome back</small>
+            <strong>Here is what is happening.</strong>
+          </div>
+          <div class="admin-dashboard-cards">
+            <div><small>Next gathering</small><b>Publish details</b></div>
+            <div><small>Private requests</small><b>View inquiries</b></div>
+          </div>
+          <div class="admin-dashboard-site">
+            <span></span>
+            <div><small>Website controls</small><b>Homepage · Gallery · Gatherings</b></div>
+            <em>Manage</em>
+          </div>
+        </div>
+      </div>
+      <p>Designed for the way Roots &amp; Relics works.</p>
+    </div>
+  </section>
+</div>
+
+<style>
+  :global(body.admin-preview-open) { overflow: hidden; }
+
+  .admin-preview[hidden] { display: none; }
+  .admin-preview { position: fixed; inset: 0; z-index: 9000; display: grid; place-items: center; padding: 30px; }
+  .admin-preview-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: rgba(12,17,9,.78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); cursor: default; }
+  .admin-preview-panel { position: relative; width: min(1160px,100%); max-height: min(820px,calc(100dvh - 60px)); display: grid; grid-template-columns: minmax(430px,.9fr) minmax(480px,1.1fr); overflow: auto; background: var(--paper); color: var(--forest); box-shadow: 0 32px 100px rgba(0,0,0,.34); }
+  .admin-preview-close { position: absolute; z-index: 3; top: 20px; right: 20px; width: 44px; height: 44px; padding: 0; border: 1px solid rgba(38,50,30,.35); border-radius: 50%; background: var(--paper); cursor: pointer; }
+  .admin-preview-close span { position: absolute; top: 21px; left: 12px; width: 20px; height: 1px; background: var(--forest); transform: rotate(45deg); }
+  .admin-preview-close span:last-child { transform: rotate(-45deg); }
+  .admin-preview-copy { padding: clamp(62px,6vw,92px) clamp(38px,5vw,76px) 58px; }
+  .admin-preview-kicker { margin: 0 0 22px; color: var(--rust); font: 400 9px var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+  .admin-preview h2 { margin: 0; font: 300 clamp(54px,5vw,76px)/.86 var(--serif); letter-spacing: -.055em; }
+  .admin-preview h2 em { color: var(--rust); font-weight: 300; }
+  #admin-preview-copy { max-width: 520px; margin: 30px 0 0; font-size: 15px; line-height: 1.67; }
+  .admin-preview-features { margin-top: 38px; border-top: 1px solid var(--line); }
+  .admin-preview-features > div { display: grid; grid-template-columns: 145px 1fr; gap: 24px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+  .admin-preview-features strong { font: italic 300 20px/1.05 var(--serif); }
+  .admin-preview-features span { color: rgba(38,50,30,.7); font-size: 12px; line-height: 1.55; }
+  .admin-preview-note { margin: 27px 0 0; color: rgba(38,50,30,.58); font: 400 9px/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+  .admin-preview-visual { min-height: 690px; display: flex; flex-direction: column; justify-content: center; padding: 72px 54px 42px; overflow: hidden; background: var(--forest); color: white; }
+  .admin-dashboard { width: 670px; height: 430px; display: grid; grid-template-columns: 112px 1fr; overflow: hidden; border-radius: 7px; background: #f4f1e8; color: #182012; box-shadow: 0 28px 70px rgba(7,11,5,.38); transform: rotate(-2.2deg) translateX(8px); }
+  .admin-dashboard aside { padding: 29px 19px; background: #12180f; }
+  .admin-dashboard-mark { margin-bottom: 48px; color: white; font: 500 13px var(--mono); letter-spacing: .14em; }
+  .admin-dashboard aside i { display: block; width: 68px; height: 7px; margin: 19px 0; border-radius: 9px; background: rgba(255,255,255,.14); }
+  .admin-dashboard aside i:nth-child(2) { width: 50px; background: #d8b95f; }
+  .admin-dashboard-main { padding: 28px 32px; }
+  .admin-dashboard-top { display: flex; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid #d7d4ca; font: 8px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+  .admin-dashboard-top b { color: #a54a30; font-weight: 400; }
+  .admin-dashboard-greeting { padding: 34px 0 27px; }
+  .admin-dashboard-greeting small, .admin-dashboard-cards small, .admin-dashboard-site small { display: block; margin-bottom: 8px; color: #83877f; font: 7px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+  .admin-dashboard-greeting strong { font: italic 300 28px var(--serif); }
+  .admin-dashboard-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .admin-dashboard-cards > div { min-height: 95px; padding: 18px; background: white; border: 1px solid #dedbd1; }
+  .admin-dashboard-cards b, .admin-dashboard-site b { font: 300 15px var(--serif); }
+  .admin-dashboard-site { display: grid; grid-template-columns: 38px 1fr auto; gap: 13px; align-items: center; margin-top: 15px; padding: 15px; background: #d8cdaa; }
+  .admin-dashboard-site > span { width: 38px; height: 38px; border-radius: 50%; background: #26321e; }
+  .admin-dashboard-site small { margin-bottom: 4px; color: #6f735f; }
+  .admin-dashboard-site em { padding: 7px 10px; border: 1px solid rgba(38,50,30,.35); font: normal 7px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+  .admin-preview-visual > p { margin: 45px 0 0; color: rgba(255,255,255,.65); font: 400 9px var(--mono); letter-spacing: .13em; text-align: center; text-transform: uppercase; }
+
+  @media (max-width: 900px) {
+    .admin-preview { padding: 16px; }
+    .admin-preview-panel { max-height: calc(100dvh - 32px); grid-template-columns: 1fr; }
+    .admin-preview-copy { padding: 68px 30px 48px; }
+    .admin-preview-visual { min-height: 420px; padding: 60px 30px 38px; }
+    .admin-dashboard { width: 610px; height: 390px; transform: rotate(-2deg) translateX(25px); }
+  }
+
+  @media (max-width: 560px) {
+    .admin-preview { padding: 0; place-items: stretch; }
+    .admin-preview-panel { width: 100%; max-height: 100dvh; }
+    .admin-preview-close { position: fixed; top: 15px; right: 15px; }
+    .admin-preview-copy { padding: 75px 22px 45px; }
+    .admin-preview h2 { font-size: 51px; }
+    #admin-preview-copy { margin-top: 25px; }
+    .admin-preview-features > div { grid-template-columns: 1fr; gap: 7px; padding: 17px 0; }
+    .admin-preview-features strong { font-size: 22px; }
+    .admin-preview-visual { min-height: 345px; padding: 52px 22px 32px; }
+    .admin-dashboard { width: 520px; height: 335px; grid-template-columns: 86px 1fr; transform: rotate(-2deg) translateX(70px); }
+    .admin-dashboard aside { padding: 22px 14px; }
+    .admin-dashboard-mark { font-size: 10px; }
+    .admin-dashboard-main { padding: 22px; }
+    .admin-preview-visual > p { margin-top: 35px; line-height: 1.5; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .admin-dashboard { transform: translateX(8px); }
+  }
+</style>

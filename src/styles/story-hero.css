@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+  .story-hero {
+    height: calc(100svh - 76px);
+    min-height: calc(100svh - 76px);
+  }
+}

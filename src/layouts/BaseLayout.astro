@@ -1,0 +1,47 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import DemoGate from '../components/DemoGate.astro';
+import AdminComingSoon from '../components/AdminComingSoon.astro';
+import type { SitePath } from '../data/site';
+import '../../styles.css';
+
+interface Props {
+  title: string;
+  description: string;
+  currentPath?: SitePath;
+  bodyClass?: string;
+  showDemoGate?: boolean;
+}
+
+const {
+  title,
+  description,
+  currentPath = '/',
+  bodyClass,
+  showDemoGate = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#26321e" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=DM+Sans:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;display=swap" rel="stylesheet" />
+  </head>
+  <body class={bodyClass}>
+    {showDemoGate && <DemoGate />}
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header currentPath={currentPath} />
+    <AdminComingSoon />
+    <slot />
+    <Footer />
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

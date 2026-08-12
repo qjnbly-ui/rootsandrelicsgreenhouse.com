@@ -1,57 +1,14 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Roots & Relics Greenhouse — storied antiques, seasonal gatherings, and an unforgettable day in Southern Oregon." />
-    <meta name="theme-color" content="#26321e" />
-    <title>Roots & Relics Greenhouse | Come Wander</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=DM+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260810b" />
-    <script src="script.js?v=20260810" defer></script>
-  </head>
-  <body>
-    <div class="demo-gate" data-demo-gate role="dialog" aria-modal="true" aria-labelledby="demo-gate-title" aria-describedby="demo-gate-copy">
-      <div class="demo-gate-inner">
-        <img class="demo-gate-logo" src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png" alt="Roots and Relics Greenhouse" />
-        <p class="demo-gate-kicker">Website preview</p>
-        <h2 id="demo-gate-title">Welcome to<br /><em>the demo.</em></h2>
-        <p id="demo-gate-copy" class="demo-gate-copy">This is a demonstration—not the complete website. Some pages, imagery, and features are still being thoughtfully built.</p>
-        <button class="demo-gate-enter" type="button" data-demo-enter aria-label="Enter the website demo">
-          <span class="demo-gate-enter-top">Click to</span>
-          <strong>Enter</strong>
-          <span class="demo-gate-enter-bottom">the demo <b aria-hidden="true">→</b></span>
-        </button>
-        <p class="demo-gate-credit">A custom website preview by N3XRA</p>
-      </div>
-    </div>
-    <a class="skip-link" href="#main">Skip to content</a>
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
 
-    <header class="header" data-header>
-      <a class="brand" href="/" aria-label="Roots and Relics home">
-        <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png" alt="Roots and Relics Greenhouse" />
-      </a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu>
-        <span>Menu</span><i></i><i></i>
-      </button>
-      <nav id="site-nav" class="nav" aria-label="Main navigation">
-        <a href="/our-story/">Our story</a>
-        <a href="/the-collection/">The collection</a>
-        <a href="/greenhouse-gatherings/">Gatherings</a>
-        <a href="/private-showings/">Private showings</a>
-        <a href="/gallery/">Gallery</a>
-        <a class="nav-mobile-only" href="/before-you-visit/">Before you visit</a>
-        <a class="nav-mobile-only" href="/faq/">FAQ</a>
-        <a class="nav-mobile-only" href="/contact/">Contact</a>
-        <button class="account-button account-button-mobile" type="button">Admin login</button>
-      </nav>
-      <button class="account-button account-button-desktop" type="button">Admin login</button>
-      <a class="header-cta" href="/before-you-visit/">Plan your visit <span>↗</span></a>
-    </header>
-
-    <main id="main">
+<BaseLayout
+  title="Roots & Relics Greenhouse | Come Wander"
+  description="Roots & Relics Greenhouse — storied antiques, seasonal gatherings, and an unforgettable day in Southern Oregon."
+  currentPath="/"
+  showDemoGate={true}
+>
+<main id="main">
       <section class="hero" id="top">
         <div class="hero-media" aria-hidden="true">
           <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e5463eb4-9470-45de-8184-c88c8c74b064/v1-83-candles-display.jpg" alt="" data-parallax />
@@ -92,7 +49,7 @@
           <span>There is always<br />something new to notice.</span>
         </div>
         <div class="manifesto-aside reveal">
-          <p>Collected slowly.<br />Chosen instinctively.<br />Loved for a lifetime.</p>
+          <p>A little out of the way.<br />Easy to settle into.<br />Hard to forget.</p>
           <span>SOUTHERN OREGON · APPROX. 10 MINUTES FROM KLAMATH FALLS</span>
         </div>
       </section>
@@ -123,8 +80,8 @@
 
       <section class="collection section" id="collection">
         <div class="collection-intro reveal">
-          <h2>Things that make a room<br /><em>feel lived in.</em></h2>
-          <p>No two visits are ever quite the same. We source one-of-a-kind pieces with patina, utility, and a little bit of magic.</p>
+          <h2>The pieces you remember<br /><em>long after you leave.</em></h2>
+          <p>Good bones, honest wear, and the occasional surprise. The mix changes constantly, so every visit begins somewhere new.</p>
         </div>
         <div class="collection-grid">
           <a class="collection-card collection-wide reveal" href="/the-collection/">
@@ -189,47 +146,4 @@
         </div>
       </section>
     </main>
-
-    <footer class="footer" id="contact">
-      <div class="footer-top">
-        <p>See you in<br /><em>the greenhouse.</em></p>
-      </div>
-      <div class="footer-grid">
-        <div class="footer-brand-block">
-          <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png" alt="Roots and Relics Greenhouse" />
-          <p>Curated antiques for timeless living. Gather, wander, reminisce, and stay awhile.</p>
-          <span>Southern Oregon<br />Approximately ten minutes from Klamath Falls</span>
-        </div>
-        <nav class="footer-nav" aria-label="Visit Roots and Relics">
-          <p>Visit</p>
-          <a href="/greenhouse-gatherings/">Greenhouse gatherings</a>
-          <a href="/private-showings/">Private showings</a>
-          <a href="/before-you-visit/">Before you visit</a>
-          <a href="/contact/">Contact</a>
-        </nav>
-        <nav class="footer-nav" aria-label="Explore Roots and Relics">
-          <p>Explore</p>
-          <a href="/our-story/">Our story</a>
-          <a href="/the-collection/">The collection</a>
-          <a href="/gallery/">Gallery</a>
-          <a href="/faq/">FAQ</a>
-        </nav>
-        <div class="footer-list">
-          <p class="footer-list-label">Join our list</p>
-          <h3>Notes from the greenhouse.</h3>
-          <p>Greenhouse weekends, new arrivals, seasonal happenings, and private showing opportunities.</p>
-          <a href="mailto:rootsandrelics.greenhouse@gmail.com?subject=Join%20the%20Roots%20%26%20Relics%20list">Email us to join <span>↗</span></a>
-        </div>
-      </div>
-      <div class="footer-contact">
-        <a href="sms:5416788687">Text 541.678.8687</a>
-        <a href="mailto:rootsandrelics.greenhouse@gmail.com">rootsandrelics.greenhouse@gmail.com</a>
-        <a class="social-contact" href="https://instagram.com/rootsandrelicsgreenhouse" target="_blank" rel="noopener"><span class="social-icon social-instagram" aria-hidden="true"></span><span>@rootsandrelicsgreenhouse</span></a>
-      </div>
-      <div class="footer-legal">
-        <p>© 2026 Roots &amp; Relics. All rights reserved.</p>
-        <p>Designed &amp; Built by <a href="https://n3xra.com" target="_blank" rel="noopener">N3XRA</a></p>
-      </div>
-    </footer>
-  </body>
-</html>
+</BaseLayout>

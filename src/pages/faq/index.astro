@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/faq.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+  if (!url) throw new Error(`Missing hosted image URL for ${filename}`);
+  return url;
+};
+
+const questions = [
+  {
+    question: 'How can I pay?',
+    answer: 'Cash and Venmo are always appreciated. Credit cards are accepted as well.',
+  },
+  {
+    question: 'Are the pieces one of a kind?',
+    answer: 'Many are. The collection changes constantly, and a piece that leaves may not be available again.',
+  },
+  {
+    question: 'Can I come early?',
+    answer: 'There are no early sales. Everyone enters at the announced opening time. A private showing is the quieter, by-appointment option.',
+  },
+  {
+    question: 'Is shipping available?',
+    answer: 'Shipping is not currently available. Plan to take purchases with you or arrange a local pickup.',
+  },
+  {
+    question: 'Can I bring children or dogs?',
+    answer: 'Children are welcome with supervision. There is glass, iron, and old furniture in a close space. Please leave dogs at home because farm animals are nearby.',
+  },
+  {
+    question: 'What should I bring?',
+    answer: 'Wear comfortable shoes for gravel and farm ground. Measurements and photographs of your space are helpful, and bring a larger vehicle if furniture is on your list.',
+  },
+  {
+    question: 'When and where are gatherings?',
+    answer: 'Roots & Relics opens on select market weekends and by private appointment. The farm is about ten minutes outside Klamath Falls; the exact address is shared shortly before each gathering.',
+  },
+  {
+    question: 'What are the sales rules?',
+    answer: 'All sales are final. Large items are first come, first claimed, and sold pieces may be moved to a holding area while you continue browsing.',
+  },
+  {
+    question: 'Can I take photographs?',
+    answer: `Absolutely. Tag @${site.contact.instagram} when you share. Please get in touch first about commercial shoots or collaborations.`,
+  },
+  {
+    question: 'Can you look for something specific?',
+    answer: 'Yes. Pat and Jenn are constantly picking across the Midwest and East Coast. Send a note with what you are hunting for, along with useful measurements or reference photographs.',
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ | Roots & Relics Greenhouse"
+  description="Answers about visiting Roots & Relics Greenhouse, including payment, market weekends, children, photographs, shipping, and one-of-a-kind pieces."
+  currentPath="/faq/"
+  bodyClass="faq-page"
+>
+  <main id="main" class="faq-main">
+    <section class="faq-hero" aria-labelledby="faq-title">
+      <figure class="faq-hero-image" aria-hidden="true">
+        <img src={imageUrl('117-sign-perfectly-imperfect.jpg')} alt="" />
+      </figure>
+      <div class="faq-hero-shade" aria-hidden="true"></div>
+      <div class="faq-hero-content">
+        <p class="kicker reveal">Answers from the greenhouse</p>
+        <h1 id="faq-title" class="reveal">A few things<br /><em>worth knowing.</em></h1>
+      </div>
+    </section>
+
+    <section class="faq-questions" aria-labelledby="faq-questions-title">
+      <header class="faq-questions-heading reveal">
+        <p class="kicker">Questions, answered</p>
+        <h2 id="faq-questions-title">The practical<br /><em>details.</em></h2>
+        <p>Tap any question to open it. If yours is not here, send us a note—we answer everything.</p>
+      </header>
+      <div class="faq-list">
+        {questions.map((item) => (
+          <details class="faq-item reveal">
+            <summary>
+              <span>{item.question}</span>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="faq-answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="faq-note" aria-labelledby="faq-note-title">
+      <figure class="faq-note-image reveal">
+        <img src={imageUrl('125-farm-owls.jpg')} alt="Barn owls perched in the rafters on the Roots and Relics farm" loading="lazy" />
+      </figure>
+      <div class="faq-note-copy reveal">
+        <p class="kicker">One last note</p>
+        <h2 id="faq-note-title">This is a working farm.<br /><em>Expect a little life around you.</em></h2>
+        <p>The ground is not perfectly level, the greenhouse changes with the weather, and an owl, goat, chicken, or passing goose may make an appearance. It is all part of being here.</p>
+      </div>
+    </section>
+
+    <section class="faq-contact" aria-labelledby="faq-contact-title">
+      <p class="kicker reveal">Still wondering?</p>
+      <h2 id="faq-contact-title" class="reveal">Ask us <em>anything.</em></h2>
+      <div class="faq-contact-actions reveal">
+        <a href={`sms:${site.contact.phoneHref}`}>Text {site.contact.phoneDisplay} <span>↗</span></a>
+        <a href={`mailto:${site.contact.email}`}>Send an email <span>→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

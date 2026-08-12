@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/private-showings.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+
+  if (!url) {
+    throw new Error(`Missing hosted image URL for ${filename}`);
+  }
+
+  return url;
+};
+---
+
+<BaseLayout
+  title="Private Showings | Roots & Relics Greenhouse"
+  description="Arrange a slower, more personal visit to Roots & Relics Greenhouse in Southern Oregon and browse the collection by appointment."
+  currentPath="/private-showings/"
+  bodyClass="private-page"
+>
+  <main id="main" class="private-main">
+    <section class="private-hero" aria-labelledby="private-title">
+      <figure class="private-hero-image" aria-hidden="true">
+        <img src={imageUrl('228-hanging-basket-candle-shelf.webp')} alt="" />
+      </figure>
+      <div class="private-hero-shade" aria-hidden="true"></div>
+      <div class="private-hero-content">
+        <p class="kicker reveal">Private showings · By appointment</p>
+        <h1 id="private-title" class="reveal">A quieter way to<br />experience the <em>greenhouse.</em></h1>
+      </div>
+    </section>
+
+    <section class="private-welcome" aria-labelledby="private-welcome-title">
+      <div class="private-welcome-heading reveal">
+        <p class="kicker">Just for you</p>
+        <h2 id="private-welcome-title">The whole greenhouse.<br /><em>At your own pace.</em></h2>
+      </div>
+      <div class="private-welcome-copy reveal">
+        <p>Less like a shopping appointment. More like being welcomed into something special.</p>
+        <p>Private appointments offer a slower, more personal experience. Browse newly gathered pieces, gather inspiration, and spend unhurried time in the greenhouse.</p>
+      </div>
+      <figure class="private-welcome-image reveal">
+        <img src={imageUrl('130-greenhouse-vignette-corner.jpg')} alt="A quiet greenhouse corner arranged with antique furniture, mirrors, and folded quilts" loading="lazy" />
+      </figure>
+      <p class="private-welcome-aside reveal">Come with a piece in mind.<br /><em>Or simply come curious.</em></p>
+    </section>
+
+    <section class="private-experience" aria-labelledby="private-experience-title">
+      <figure class="private-experience-image reveal">
+        <img src={imageUrl('135-greenhouse-workbench.jpg')} alt="A wide view through the greenhouse filled with worktables, cupboards, and one-of-a-kind finds" loading="lazy" />
+      </figure>
+      <div class="private-experience-copy">
+        <p class="kicker reveal">A private visit</p>
+        <h2 id="private-experience-title" class="reveal">Time to notice what a busy weekend might <em>hide.</em></h2>
+        <div class="private-experience-notes">
+          <article class="reveal">
+            <h3>Take the long way around</h3>
+            <p>Wander, circle back, and look again without a crowd setting the pace.</p>
+          </article>
+          <article class="reveal">
+            <h3>Ask about the pieces</h3>
+            <p>Hear what we know about a find, talk through scale, and consider where it might belong.</p>
+          </article>
+          <article class="reveal">
+            <h3>See what has just arrived</h3>
+            <p>The greenhouse changes constantly, and a quieter visit makes room for the newest discoveries.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="private-request" aria-labelledby="private-request-title">
+      <div class="private-request-copy reveal">
+        <p class="kicker">Request an appointment</p>
+        <h2 id="private-request-title">Let’s find a day<br />that <em>works.</em></h2>
+        <p>Send us a note and we will reply with a few possible dates. Confirmed appointments receive the exact address and directions to the farm.</p>
+        <div class="private-request-actions">
+          <a class="solid-link" href={`sms:${site.contact.phoneHref}`}>Text {site.contact.phoneDisplay} <span>↗</span></a>
+          <a class="action-link action-link-dark" href={`mailto:${site.contact.email}?subject=Private%20showing%20request`}>Send an email <span>→</span></a>
+        </div>
+      </div>
+      <aside class="private-request-note reveal">
+        <p>Many pieces are one of a kind and may not be available again.</p>
+        <span>Southern Oregon · Approximately ten minutes from Klamath Falls</span>
+      </aside>
+    </section>
+
+    <section class="private-gathering" aria-labelledby="private-gathering-title">
+      <figure class="private-gathering-image">
+        <img src={imageUrl('127-farm-entrance.jpg')} alt="The entrance to the Roots and Relics farm in Southern Oregon" loading="lazy" />
+      </figure>
+      <div class="private-gathering-shade" aria-hidden="true"></div>
+      <div class="private-gathering-copy reveal">
+        <p class="kicker">Prefer a gathering?</p>
+        <h2 id="private-gathering-title">The doors open a handful of weekends <em>each year.</em></h2>
+        <a class="private-gathering-link" href="/greenhouse-gatherings/">See greenhouse gatherings <span>→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

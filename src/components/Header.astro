@@ -1,0 +1,30 @@
+---
+import { site, type SitePath } from '../data/site';
+
+interface Props {
+  currentPath?: SitePath;
+}
+
+const { currentPath = '/' } = Astro.props;
+const isCurrent = (href: SitePath) => currentPath === href;
+---
+
+<header class="header" data-header>
+  <a class="brand" href="/" aria-label="Roots and Relics home">
+    <img src={site.logo.light} alt="Roots and Relics Greenhouse" />
+  </a>
+  <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu>
+    <span>Menu</span><i></i><i></i>
+  </button>
+  <nav id="site-nav" class="nav" aria-label="Main navigation">
+    {site.primaryNavigation.map((item) => (
+      <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+    ))}
+    {site.secondaryNavigation.map((item) => (
+      <a class="nav-mobile-only" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+    ))}
+    <button class="account-button account-button-mobile" type="button" data-admin-open aria-haspopup="dialog">Admin login</button>
+  </nav>
+  <button class="account-button account-button-desktop" type="button" data-admin-open aria-haspopup="dialog">Admin login</button>
+  <a class="header-cta" href="/before-you-visit/" aria-current={isCurrent('/before-you-visit/') ? 'page' : undefined}>Plan your visit <span>↗</span></a>
+</header>

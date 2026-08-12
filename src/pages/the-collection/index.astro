@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/collection.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+
+  if (!url) {
+    throw new Error(`Missing hosted image URL for ${filename}`);
+  }
+
+  return url;
+};
+
+const categories = [
+  {
+    title: 'Primitive furniture',
+    description: 'Cupboards, dry sinks, work tables, and painted pieces that carry the marks of a working life.',
+    image: '101-cat-primitive-furniture.jpg',
+    alt: 'A timeworn green primitive cupboard displayed in the greenhouse',
+    position: '50% 48%',
+  },
+  {
+    title: 'European antiques',
+    description: 'Farmhouse furnishings carried over from another country and another century.',
+    image: '103-cat-european-antiques.jpg',
+    alt: 'Woven demijohns and an old metal vessel arranged inside a green cupboard',
+    position: '50% 52%',
+  },
+  {
+    title: 'Ironstone & kitchenwares',
+    description: 'Bowls, pitchers, crocks, rolling pins, and the everyday tools of a working kitchen.',
+    image: '102-cat-ironstone-kitchenwares.jpg',
+    alt: 'Ironstone and antique kitchenwares displayed in a farmhouse cupboard',
+    position: '50% 50%',
+  },
+  {
+    title: 'Textiles & handmade pieces',
+    description: 'Quilts, grain sacks, linens, and embroidery—the quiet work of hands long gone.',
+    image: '98-cat-textiles.jpg',
+    alt: 'A tall pine cupboard filled with folded vintage quilts',
+    position: '50% 50%',
+  },
+  {
+    title: 'Architectural salvage',
+    description: 'Doors, windows, corbels, hardware, and shutters rescued before the wrecking ball.',
+    image: '100-cat-architectural-salvage.jpg',
+    alt: 'Ornate antique hardware mounted on warm wooden doors',
+    position: '50% 58%',
+  },
+  {
+    title: 'Garden antiques',
+    description: 'Carts, urns, ironwork, watering cans, and the good bones of an old garden.',
+    image: '122-garden-cart-flowers.jpg',
+    alt: 'An antique wooden garden cart planted with bright flowers',
+    position: '48% 50%',
+  },
+  {
+    title: 'Seasonal goods & botanicals',
+    description: 'Whatever the season is giving: cut branches, dried stems, greenery, and locally gathered goods.',
+    image: '99-cat-seasonal-botanicals.jpg',
+    alt: 'Buckets and baskets filled with gathered and dried botanicals',
+    position: '50% 52%',
+  },
+  {
+    title: 'Small things worth keeping',
+    description: 'Handwritten recipe cards, worn baskets, brass, books, and the odd object you did not know you needed.',
+    image: '91-vignette-tube-flowers.jpg',
+    alt: 'A small vintage metal flower holder filled with dried flowers',
+    position: '50% 50%',
+  },
+];
+---
+
+<BaseLayout
+  title="The Collection | Roots & Relics Greenhouse"
+  description="Explore the one-of-a-kind antique furniture, ironstone, textiles, architectural salvage, garden pieces, and gathered goods found at Roots & Relics Greenhouse."
+  currentPath="/the-collection/"
+  bodyClass="collection-page"
+>
+  <main id="main" class="collection-main">
+    <section class="collection-hero" aria-labelledby="collection-title">
+      <div class="collection-hero-copy">
+        <p class="kicker reveal">The collection · Roots &amp; Relics</p>
+        <h1 id="collection-title" class="reveal">Collected with <em>intention.</em><br />Chosen by feeling.</h1>
+      </div>
+      <figure class="collection-hero-image">
+        <img src={imageUrl('72-vignette-layered-corner.jpg')} alt="A layered greenhouse aisle filled with old cupboards, work tables, and collected objects" />
+      </figure>
+    </section>
+
+    <section class="collection-provenance" aria-labelledby="provenance-title">
+      <p class="collection-provenance-label reveal">Sourced with care</p>
+      <h2 id="provenance-title" class="reveal">Useful things.<br />Beautiful things.<br /><em>Things with a past.</em></h2>
+      <div class="collection-provenance-copy reveal">
+        <p>We look for patina, proportion, usefulness, and the sort of presence that gives a room its point of view.</p>
+        <p>Sourced from farms, estates, and private collections across the Midwest and East Coast. During market weekends, you will also find seasonal botanicals, garden elements, and local goods for your table, home, and gatherings.</p>
+      </div>
+    </section>
+
+    <section class="collection-categories" id="collection-categories" aria-labelledby="categories-title">
+      <header class="collection-categories-heading reveal">
+        <p class="kicker">What we collect</p>
+        <h2 id="categories-title">No formula.<br /><em>Just a very good eye.</em></h2>
+        <p>Pieces move through the greenhouse quickly. These photographs show the range, not a promise of what is still here.</p>
+      </header>
+
+      <div class="collection-category-grid">
+        {categories.map((category) => (
+          <article class="collection-category reveal">
+            <figure>
+              <img
+                src={imageUrl(category.image)}
+                alt={category.alt}
+                loading="lazy"
+                style={`object-position:${category.position}`}
+              />
+            </figure>
+            <div class="collection-category-copy">
+              <h3>{category.title}</h3>
+              <p>{category.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="collection-stewardship" aria-label="Our collection philosophy">
+      <figure class="collection-stewardship-image reveal">
+        <img src={imageUrl('93-vignette-ironstone-pitcher.jpg')} alt="An antique ironstone pitcher holding gathered flowers" loading="lazy" />
+      </figure>
+      <div class="collection-stewardship-copy reveal">
+        <span class="collection-quote-open" aria-hidden="true">“</span>
+        <blockquote>The right piece doesn’t need to shout. You simply know when it <em>belongs.</em></blockquote>
+        <span class="collection-quote-close" aria-hidden="true">”</span>
+        <p>Roots &amp; Relics · Southern Oregon</p>
+      </div>
+    </section>
+
+    <section class="collection-request" aria-labelledby="request-title">
+      <div class="collection-request-copy reveal">
+        <p class="kicker">Looking for something particular?</p>
+        <h2 id="request-title">Tell us what you have been <em>hunting for.</em></h2>
+        <p>We are picking constantly. If there is a specific piece on your mind, let us know and we will keep an eye out—or arrange a quieter visit to browse what is here.</p>
+        <div class="collection-request-actions">
+          <a class="solid-link" href="/contact/">Get in touch <span>→</span></a>
+          <a class="action-link action-link-dark" href="/private-showings/">Request a private showing <span>→</span></a>
+        </div>
+      </div>
+      <figure class="collection-request-image reveal">
+        <img src={imageUrl('73-stacked-cupboards.jpg')} alt="A colorful wall of stacked primitive cupboards and collected furniture" loading="lazy" />
+        <figcaption>Here today. Headed somewhere new tomorrow.</figcaption>
+      </figure>
+    </section>
+  </main>
+</BaseLayout>

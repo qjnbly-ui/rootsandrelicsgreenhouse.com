@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/contact.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+  if (!url) throw new Error(`Missing hosted image URL for ${filename}`);
+  return url;
+};
+---
+
+<BaseLayout
+  title="Contact | Roots & Relics Greenhouse"
+  description="Contact Roots & Relics Greenhouse about visits, private showings, the collection, collaborations, and upcoming gatherings in Southern Oregon."
+  currentPath="/contact/"
+  bodyClass="contact-page"
+>
+  <main id="main" class="contact-main">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <figure class="contact-hero-image" aria-hidden="true">
+        <img src={imageUrl('112-gathering-guests.jpg')} alt="" />
+      </figure>
+      <div class="contact-hero-shade" aria-hidden="true"></div>
+      <div class="contact-hero-content">
+        <p class="kicker reveal">We would love to hear from you</p>
+        <h1 id="contact-title" class="reveal">Say <em>hello.</em></h1>
+      </div>
+    </section>
+
+    <section class="contact-intro" aria-labelledby="contact-intro-title">
+      <div class="contact-intro-heading reveal">
+        <p class="kicker">Get in touch</p>
+        <h2 id="contact-intro-title">There is always room<br />for one more <em>conversation.</em></h2>
+      </div>
+      <div class="contact-intro-copy reveal">
+        <p>Planning a visit, wondering about a piece, or interested in a private showing? Send us a note.</p>
+        <p>Roots &amp; Relics has always been about more than antiques. It is about gathering, discovering beautiful things, and creating traditions worth returning to.</p>
+      </div>
+    </section>
+
+    <section class="contact-channels" aria-label="Ways to contact Roots and Relics">
+      <a class="contact-channel reveal" href={`sms:${site.contact.phoneHref}`}>
+        <span>Text</span>
+        <strong>{site.contact.phoneDisplay}</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
+      <a class="contact-channel reveal" href={`mailto:${site.contact.email}`}>
+        <span>Email</span>
+        <strong>{site.contact.email}</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
+      <a class="contact-channel reveal" href={`https://instagram.com/${site.contact.instagram}`} target="_blank" rel="noopener">
+        <span>Instagram</span>
+        <strong>@{site.contact.instagram}</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
+    </section>
+
+    <section class="contact-memories" aria-labelledby="contact-memories-title">
+      <figure class="contact-memories-image reveal">
+        <img src={imageUrl('115-sign-welcome.jpg')} alt="A welcome sign inside the Roots and Relics greenhouse" loading="lazy" />
+      </figure>
+      <div class="contact-memories-copy reveal">
+        <p class="kicker">Share it with us</p>
+        <h2 id="contact-memories-title">We love seeing where<br />the story goes <em>next.</em></h2>
+        <p>Have a photograph from a gathering, a favorite find that settled perfectly into your home, or a memory from your visit? We would genuinely love to see it.</p>
+        <a href={`mailto:${site.contact.email}?subject=A%20Roots%20%26%20Relics%20memory`}>Send us your story <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="contact-location" aria-labelledby="contact-location-title">
+      <figure class="contact-location-image" aria-hidden="true">
+        <img src={imageUrl('215-farm-goats-pond.webp')} alt="" loading="lazy" />
+      </figure>
+      <div class="contact-location-shade" aria-hidden="true"></div>
+      <div class="contact-location-copy reveal">
+        <p class="kicker">Southern Oregon</p>
+        <h2 id="contact-location-title">Close to Klamath Falls.<br /><em>Tucked into the farm.</em></h2>
+        <p>The exact address is shared shortly before greenhouse gatherings or with confirmed private appointments.</p>
+        <a href="/before-you-visit/">Before you visit <span>→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

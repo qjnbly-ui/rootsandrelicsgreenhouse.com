@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/before-you-visit.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+
+  if (!url) {
+    throw new Error(`Missing hosted image URL for ${filename}`);
+  }
+
+  return url;
+};
+---
+
+<BaseLayout
+  title="Before You Visit | Roots & Relics Greenhouse"
+  description="Everything to know before visiting Roots & Relics Greenhouse near Klamath Falls, Oregon, including directions, payment, and what to bring."
+  currentPath="/before-you-visit/"
+  bodyClass="visit-page"
+>
+  <main id="main" class="visit-main">
+    <section class="visit-hero" aria-labelledby="visit-title">
+      <figure class="visit-hero-image" aria-hidden="true">
+        <img src={imageUrl('110-sign-welcome-outdoor.jpg')} alt="" />
+      </figure>
+      <div class="visit-hero-shade" aria-hidden="true"></div>
+      <div class="visit-hero-content">
+        <p class="kicker reveal">A few things to know</p>
+        <h1 id="visit-title" class="reveal">Before you<br /><em>come.</em></h1>
+      </div>
+    </section>
+
+    <section class="visit-arrival" aria-labelledby="arrival-title">
+      <div class="visit-arrival-heading reveal">
+        <p class="kicker">Finding the farm</p>
+        <h2 id="arrival-title">Ten minutes from town.<br /><em>A world away.</em></h2>
+      </div>
+      <div class="visit-arrival-copy reveal">
+        <p>Roots &amp; Relics is tucked onto a working farm just outside Klamath Falls in Southern Oregon.</p>
+        <p>To protect the privacy of the farm, we share the exact address and directions shortly before each greenhouse gathering—or when a private appointment is confirmed.</p>
+        <a class="visit-text-link" href={`sms:${site.contact.phoneHref}`}>Text for directions <span>→</span></a>
+      </div>
+      <figure class="visit-arrival-image reveal">
+        <img src={imageUrl('127-farm-entrance.jpg')} alt="The flower-filled entrance to the Roots and Relics greenhouse" loading="lazy" />
+      </figure>
+      <p class="visit-arrival-note reveal">Look for the red door.<br /><em>Then come on in.</em></p>
+    </section>
+
+    <section class="visit-essentials" aria-labelledby="essentials-title">
+      <header class="visit-essentials-heading reveal">
+        <p class="kicker">Good to know</p>
+        <h2 id="essentials-title">Come ready to<br /><em>take your time.</em></h2>
+      </header>
+      <div class="visit-essentials-list">
+        <article class="reveal">
+          <h3>At checkout</h3>
+          <p>Cash and Venmo are appreciated, and credit cards are accepted. All sales are final.</p>
+        </article>
+        <article class="reveal">
+          <h3>One-of-a-kind finds</h3>
+          <p>Many pieces are one of a kind and may not be available again. There are no early sales.</p>
+        </article>
+        <article class="reveal">
+          <h3>Farm-ground shoes</h3>
+          <p>Comfortable shoes are encouraged. The ground is gravel and farm ground, and the greenhouse can be warm.</p>
+        </article>
+        <article class="reveal">
+          <h3>Little visitors</h3>
+          <p>Children are welcome with supervision. Please leave dogs at home—there are farm animals nearby.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="visit-large" aria-labelledby="large-title">
+      <figure class="visit-large-image reveal">
+        <img src={imageUrl('111-sign-large-items.jpg')} alt="A handwritten sign explaining how to claim large antique pieces" loading="lazy" />
+      </figure>
+      <div class="visit-large-copy reveal">
+        <p class="kicker">Found something big?</p>
+        <h2 id="large-title">Measure first.<br /><em>Bring the larger car.</em></h2>
+        <p>Photographs and measurements of your space are always useful. Large pieces are first come, first claimed, and we are happy to help coordinate loading.</p>
+        <p>Shipping is not currently available, so plan to take purchases with you or arrange a local pickup.</p>
+      </div>
+    </section>
+
+    <section class="visit-next" aria-labelledby="visit-next-title">
+      <figure class="visit-next-image" aria-hidden="true">
+        <img src={imageUrl('141-greenhouse-flowers-hanging.jpg')} alt="" loading="lazy" />
+      </figure>
+      <div class="visit-next-shade" aria-hidden="true"></div>
+      <div class="visit-next-content reveal">
+        <p class="kicker">Choose your visit</p>
+        <h2 id="visit-next-title">See you in the<br /><em>greenhouse.</em></h2>
+        <div class="visit-next-actions">
+          <a class="visit-solid-link" href="/greenhouse-gatherings/">Greenhouse gatherings <span>→</span></a>
+          <a class="visit-outline-link" href="/private-showings/">Private showings <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/gallery.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+
+  if (!url) {
+    throw new Error(`Missing hosted image URL for ${filename}`);
+  }
+
+  return url;
+};
+
+const galleryImages = [
+  {
+    filename: '109-gathering-hydrangea-cart.jpg',
+    alt: 'White hydrangeas arranged on a flower cart during a greenhouse gathering',
+  },
+  {
+    filename: '231-typewriter-books-sideboard.webp',
+    alt: 'An antique typewriter, old books, and gathered objects on a wooden sideboard',
+  },
+  {
+    filename: '125-farm-owls.jpg',
+    alt: 'Four barn owls perched together in the farm rafters',
+  },
+  {
+    filename: '72-vignette-layered-corner.jpg',
+    alt: 'A layered greenhouse corner filled with cupboards, tables, and collected objects',
+  },
+  {
+    filename: '224-charcuterie-spread.webp',
+    alt: 'A generous charcuterie spread prepared for greenhouse guests',
+  },
+  {
+    filename: '216-stacked-ladderback-chairs.webp',
+    alt: 'A sculptural stack of antique ladderback chairs',
+  },
+  {
+    filename: '130-greenhouse-vignette-corner.jpg',
+    alt: 'A sunlit greenhouse vignette with antique furniture, mirrors, and quilts',
+  },
+  {
+    filename: '82-detail-painted-hinge.jpg',
+    alt: 'The worn hinge and faded paint of an old wooden cupboard',
+  },
+  {
+    filename: '112-gathering-guests.jpg',
+    alt: 'Friends visiting together inside the greenhouse during a gathering',
+  },
+  {
+    filename: '93-vignette-ironstone-pitcher.jpg',
+    alt: 'An antique ironstone pitcher holding gathered flowers',
+  },
+  {
+    filename: '219-farm-fresh-eggs-sign.webp',
+    alt: 'A hand-lettered farm fresh eggs sign displayed with collected pieces',
+  },
+  {
+    filename: '135-greenhouse-workbench.jpg',
+    alt: 'A wide greenhouse view filled with worktables and antique furniture',
+  },
+  {
+    filename: '229-dress-form-mannequin.webp',
+    alt: 'A vintage dress form arranged among greenhouse finds',
+  },
+  {
+    filename: '101-cat-primitive-furniture.jpg',
+    alt: 'A worn green primitive cupboard displayed in the greenhouse',
+  },
+  {
+    filename: '123-garden-arch-flowers.jpg',
+    alt: 'An old garden arch surrounded by abundant flowers',
+  },
+  {
+    filename: '214-farm-goats-pair.webp',
+    alt: 'Two goats standing together on the Roots and Relics farm',
+  },
+  {
+    filename: '106-refreshments-pastries.jpg',
+    alt: 'Pastries and treats arranged on antique serving pieces',
+  },
+  {
+    filename: '74-portraits-sideboard.jpg',
+    alt: 'Old family portraits and collected objects displayed on a sideboard',
+  },
+  {
+    filename: '232-quilts-drying-rack.webp',
+    alt: 'Vintage quilts folded over an antique drying rack',
+  },
+  {
+    filename: '119-sign-bloom-bar.jpg',
+    alt: 'A hand-lettered bloom bar sign beside white flowers',
+  },
+  {
+    filename: '138-greenhouse-aisle.jpg',
+    alt: 'A narrow greenhouse aisle layered with antique cupboards and displays',
+  },
+  {
+    filename: '87-vignette-rolling-pins.jpg',
+    alt: 'A collection of worn wooden rolling pins',
+  },
+  {
+    filename: '220-greenhouse-counter-flowers.webp',
+    alt: 'Fresh flowers arranged across a greenhouse counter',
+  },
+  {
+    filename: '129-pat-and-jenn.jpg',
+    alt: 'Pat and Jenn seated together inside the greenhouse',
+  },
+];
+---
+
+<BaseLayout
+  title="Gallery | Roots & Relics Greenhouse"
+  description="Photographs from Roots & Relics Greenhouse: previous gatherings, favorite antique pieces, seasonal installations, and life on the Southern Oregon farm."
+  currentPath="/gallery/"
+  bodyClass="gallery-page"
+>
+  <main id="main" class="gallery-main">
+    <section class="gallery-hero" aria-labelledby="gallery-title">
+      <figure class="gallery-hero-image" aria-hidden="true">
+        <img src={imageUrl('227-candle-counter-display.webp')} alt="" />
+      </figure>
+      <div class="gallery-hero-shade" aria-hidden="true"></div>
+      <div class="gallery-hero-content">
+        <p class="kicker reveal">The gallery · Roots &amp; Relics</p>
+        <h1 id="gallery-title" class="reveal">Imagine yourself <em>here.</em></h1>
+      </div>
+    </section>
+
+    <section class="gallery-collection" aria-labelledby="gallery-collection-title">
+      <header class="gallery-collection-heading reveal">
+        <p class="kicker">Scenes from the greenhouse</p>
+        <h2 id="gallery-collection-title">Previous gatherings, favorite pieces, seasonal installations, and <em>farm life.</em></h2>
+      </header>
+
+      <div class="gallery-grid">
+        {galleryImages.map((image, index) => (
+          <figure class="gallery-image reveal">
+            <button type="button" data-gallery-item data-gallery-index={index} aria-label={`Open photo ${index + 1} of ${galleryImages.length}`}>
+              <img src={imageUrl(image.filename)} alt={image.alt} loading="lazy" />
+            </button>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <div class="gallery-lightbox" data-gallery-lightbox hidden role="dialog" aria-modal="true" aria-label="Expanded gallery photo">
+      <div class="gallery-lightbox-backdrop" aria-hidden="true"></div>
+      <div class="gallery-lightbox-frame">
+        <img data-gallery-expanded src="" alt="" />
+      </div>
+      <button class="gallery-lightbox-close" type="button" data-gallery-close aria-label="Close expanded photo">
+        <span></span><span></span>
+      </button>
+      <button class="gallery-lightbox-control gallery-lightbox-previous" type="button" data-gallery-previous aria-label="Previous photo">
+        <span aria-hidden="true">←</span>
+      </button>
+      <button class="gallery-lightbox-control gallery-lightbox-next" type="button" data-gallery-next aria-label="Next photo">
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+
+    <section class="gallery-invitation" aria-labelledby="gallery-invitation-title">
+      <figure class="gallery-invitation-image">
+        <img src={imageUrl('140-greenhouse-interior-wide.jpg')} alt="A welcoming aisle inside the Roots and Relics greenhouse" loading="lazy" />
+      </figure>
+      <div class="gallery-invitation-shade" aria-hidden="true"></div>
+      <div class="gallery-invitation-copy reveal">
+        <p class="kicker">Come see for yourself</p>
+        <h2 id="gallery-invitation-title">The photographs never quite <em>do it.</em></h2>
+        <a class="gallery-invitation-link" href="/before-you-visit/">Plan your visit <span>→</span></a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

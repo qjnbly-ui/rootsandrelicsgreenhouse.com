@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import imageRegistry from '../../../assets/image-urls.json';
+import '../../styles/gatherings.css';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+
+  if (!url) {
+    throw new Error(`Missing hosted image URL for ${filename}`);
+  }
+
+  return url;
+};
+
+const gatheringHighlights = [
+  {
+    title: 'A newly arranged greenhouse',
+    description: 'Freshly sourced pieces are brought in, displays are rebuilt, and the whole space is readied for another weekend.',
+    image: '114-gathering-browsing.jpg',
+    alt: 'Guests browsing a newly arranged greenhouse filled with antiques and flowers',
+    position: '50% 48%',
+  },
+  {
+    title: 'Something good on the table',
+    description: 'Refreshments are part of the welcome—an invitation to pause, catch up, and make the visit last a little longer.',
+    image: '106-refreshments-pastries.jpg',
+    alt: 'Pastries and small treats arranged on antique serving pieces',
+    position: '50% 50%',
+  },
+  {
+    title: 'Flowers & seasonal touches',
+    description: 'The details follow the season, from overflowing summer blooms to gathered branches and quieter winter greens.',
+    image: '109-gathering-hydrangea-cart.jpg',
+    alt: 'White hydrangeas and seasonal flowers displayed for a greenhouse gathering',
+    position: '50% 55%',
+  },
+];
+---
+
+<BaseLayout
+  title="Greenhouse Gatherings | Roots & Relics Greenhouse"
+  description="Spend the day at a select Roots & Relics Greenhouse market weekend in Southern Oregon, with newly arranged antiques, refreshments, flowers, and seasonal details."
+  currentPath="/greenhouse-gatherings/"
+  bodyClass="gatherings-page"
+>
+  <main id="main" class="gatherings-main">
+    <section class="gatherings-hero" aria-labelledby="gatherings-title">
+      <figure class="gatherings-hero-image reveal">
+        <img src={imageUrl('141-greenhouse-flowers-hanging.jpg')} alt="Sunlight, hanging flowers, and collected furniture inside the greenhouse" />
+      </figure>
+      <div class="gatherings-hero-card">
+        <p class="kicker reveal">Select market weekends · Southern Oregon</p>
+        <h1 id="gatherings-title" class="reveal">Come spend<br />the day <em>with us.</em></h1>
+      </div>
+    </section>
+
+    <section class="gatherings-story" id="gathering-story" aria-labelledby="gathering-story-title">
+      <div class="gatherings-story-heading reveal">
+        <p class="kicker">Worth waiting for</p>
+        <h2 id="gathering-story-title">We do not open<br />every weekend.<br /><em>That is intentional.</em></h2>
+      </div>
+      <div class="gatherings-story-copy reveal">
+        <p>Each gathering takes time to prepare. New finds arrive, displays shift, flowers are brought in, and thoughtful details begin to appear throughout the greenhouse.</p>
+        <p>Opening less often gives every weekend its own energy—and gives guests something genuinely new to walk into.</p>
+      </div>
+      <div class="gatherings-story-images">
+        <figure class="gatherings-story-large reveal">
+          <img src={imageUrl('113-gathering-counter.jpg')} alt="The greenhouse counter prepared for guests during a market weekend" loading="lazy" />
+        </figure>
+        <figure class="gatherings-story-small reveal">
+          <img src={imageUrl('104-refreshments-table.jpg')} alt="A welcoming table of refreshments inside the greenhouse" loading="lazy" />
+          <figcaption>Prepared for company.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="gatherings-includes" aria-labelledby="gatherings-includes-title">
+      <header class="gatherings-includes-heading reveal">
+        <p class="kicker">A gathering includes</p>
+        <h2 id="gatherings-includes-title">The doors open.<br /><em>The day unfolds.</em></h2>
+        <p>There is no prescribed route and no need to hurry. Browse, visit, circle back, and stay as long as the day allows.</p>
+      </header>
+
+      <div class="gatherings-highlight-grid">
+        {gatheringHighlights.map((highlight) => (
+          <article class="gatherings-highlight reveal">
+            <figure>
+              <img
+                src={imageUrl(highlight.image)}
+                alt={highlight.alt}
+                loading="lazy"
+                style={`object-position:${highlight.position}`}
+              />
+            </figure>
+            <div class="gatherings-highlight-copy">
+              <h3>{highlight.title}</h3>
+              <p>{highlight.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="gatherings-tradition" aria-labelledby="tradition-title">
+      <figure class="gatherings-tradition-image reveal">
+        <img src={imageUrl('112-gathering-guests.jpg')} alt="Friends and neighbors visiting together during a greenhouse gathering" loading="lazy" />
+      </figure>
+      <div class="gatherings-tradition-copy reveal">
+        <p class="kicker">More than a market</p>
+        <h2 id="tradition-title">Some arrive with a list.<br /><em>Others come for the tradition.</em></h2>
+        <p>Both are welcome. The best gathering days leave room for a lucky find, a long conversation, and the pleasure of seeing who else walked through the door.</p>
+      </div>
+    </section>
+
+    <section class="gatherings-visit" aria-labelledby="gatherings-visit-title">
+      <figure class="gatherings-visit-image reveal">
+        <img src={imageUrl('110-sign-welcome-outdoor.jpg')} alt="A welcome sign outside the open Roots and Relics greenhouse" loading="lazy" />
+        <figcaption>Come on in. Take your time.</figcaption>
+      </figure>
+      <div class="gatherings-visit-copy reveal">
+        <p class="kicker">Before you come</p>
+        <h2 id="gatherings-visit-title">Southern Oregon,<br /><em>ten minutes from town.</em></h2>
+        <p>To preserve the experience and privacy of the farm, the exact address is shared shortly before gatherings or with confirmed private appointments.</p>
+        <ul>
+          <li>Comfortable shoes are encouraged.</li>
+          <li>Children are welcome with supervision.</li>
+          <li>Bring a larger vehicle if you hope to purchase furniture.</li>
+        </ul>
+        <div class="gatherings-visit-actions">
+          <a class="solid-link" href={`sms:${site.contact.phoneHref}`}>Text {site.contact.phoneDisplay} <span>→</span></a>
+          <a class="action-link action-link-dark" href="/before-you-visit/">Before you visit <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gatherings-list" aria-labelledby="gatherings-list-title">
+      <div class="gatherings-list-copy reveal">
+        <p class="kicker">Be the first to know</p>
+        <h2 id="gatherings-list-title">The next greenhouse weekend starts with <em>a note.</em></h2>
+        <p>Hear about upcoming gathering dates, newly arrived pieces, seasonal happenings on the farm, and private showing opportunities.</p>
+        <div class="gatherings-list-actions">
+          <a class="solid-link gatherings-list-primary" href={`mailto:${site.contact.email}?subject=Join%20the%20Roots%20%26%20Relics%20list`}>Email us to join <span>↗</span></a>
+          <a class="action-link gatherings-list-secondary" href="/contact/">Contact us <span>→</span></a>
+        </div>
+      </div>
+      <figure class="gatherings-list-image reveal">
+        <img src={imageUrl('119-sign-bloom-bar.jpg')} alt="A hand-lettered bloom bar sign for a greenhouse gathering" loading="lazy" />
+      </figure>
+    </section>
+  </main>
+</BaseLayout>
