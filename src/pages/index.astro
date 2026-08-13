@@ -1,5 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import imageRegistry from '../../assets/image-urls.json';
+
+const imageByFilename = new Map(
+  imageRegistry.images.map(({ filename, url }) => [filename, url]),
+);
+
+const imageUrl = (filename: string) => {
+  const url = imageByFilename.get(filename);
+
+  if (!url) {
+    throw new Error(`Missing hosted image URL for ${filename}`);
+  }
+
+  return url;
+};
 ---
 
 <BaseLayout
@@ -11,7 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <main id="main">
       <section class="hero" id="top">
         <div class="hero-media" aria-hidden="true">
-          <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e5463eb4-9470-45de-8184-c88c8c74b064/v1-83-candles-display.jpg" alt="" data-parallax />
+          <img src={imageUrl('homephoto.png')} alt="" data-parallax />
         </div>
         <div class="hero-shade"></div>
         <div class="hero-content">

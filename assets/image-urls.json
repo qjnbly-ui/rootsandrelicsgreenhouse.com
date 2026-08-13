@@ -1,6 +1,6 @@
 {
   "policy": "Use these public URLs in production markup. Local photos are inspection-only references.",
-  "verification": "All 97 supplied URLs have a one-to-one filename match in the local reference archive. Homepage assets are additionally verified byte-for-byte before use.",
+  "verification": "All 109 supplied URLs have a one-to-one filename match in the local reference archive. Homepage assets are additionally verified byte-for-byte before use.",
   "images": [
     {
       "label": "100 Cat Architectural Salvage · v1",
@@ -583,7 +583,78 @@
       "filename": "99-cat-seasonal-botanicals.jpg",
       "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/99-cat-seasonal-botanicals.jpg",
       "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/a59a4e1d-ef23-4f87-97a2-69efe35041d5/v1-99-cat-seasonal-botanicals.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 5 26 (175) · v1",
+      "filename": "ejenn-s-greenhouse-5-5-26-175.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-5-26-175.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2cd2811a-27d5-4f93-9864-557ba9a0e29a/v1-ejenn-s-greenhouse-5-5-26-175.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 8 26 (185) · v1",
+      "filename": "ejenn-s-greenhouse-5-8-26-185.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-8-26-185.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/751c8a11-fbca-4ec7-8733-92122cf3e896/v1-ejenn-s-greenhouse-5-8-26-185.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 8 26 (199) · v1",
+      "filename": "ejenn-s-greenhouse-5-8-26-199.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-8-26-199.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/6bb8e1de-cdb2-40ad-addf-a977356b57f8/v1-ejenn-s-greenhouse-5-8-26-199.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 8 26 (21) · v1",
+      "filename": "ejenn-s-greenhouse-5-8-26-21.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-8-26-21.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5ba5431c-2c94-484f-94ae-5f4b9bb004e0/v1-ejenn-s-greenhouse-5-8-26-21.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 8 26 (40) · v1",
+      "filename": "ejenn-s-greenhouse-5-8-26-40.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-8-26-40.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/18db2fd6-ef97-43a0-bbf7-7ee73f00ab90/v1-ejenn-s-greenhouse-5-8-26-40.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 8 26 (56) · v1",
+      "filename": "ejenn-s-greenhouse-5-8-26-56.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-8-26-56.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/723d2d07-a3cf-4660-953a-67fef7c63b17/v1-ejenn-s-greenhouse-5-8-26-56.jpg"
+    },
+    {
+      "label": "EJenn'S Greenhouse 5 8 26 (62) · v1",
+      "filename": "ejenn-s-greenhouse-5-8-26-62.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/ejenn-s-greenhouse-5-8-26-62.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/4b004fb3-b277-4037-9cce-47b5d50e549f/v1-ejenn-s-greenhouse-5-8-26-62.jpg"
+    },
+    {
+      "label": "ELarge Items (153) · v1",
+      "filename": "elarge-items-153.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/elarge-items-153.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/79b9ac75-e496-4f28-878d-ce48d4be9ad1/v1-elarge-items-153.jpg"
+    },
+    {
+      "label": "Photo Jul 25 2026, 1 46 53 PM · v1",
+      "filename": "photo-jul-25-2026-1-46-53-pm.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/photo-jul-25-2026-1-46-53-pm.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/a56a5734-b93a-4901-a569-0896c8099305/v1-photo-jul-25-2026-1-46-53-pm.jpg"
+    },
+    {
+      "label": "Photo Jul 25 2026, 1 48 02 PM · v1",
+      "filename": "photo-jul-25-2026-1-48-02-pm.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/photo-jul-25-2026-1-48-02-pm.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/09925f07-038f-4276-a80d-bcc1194a7bc6/v1-photo-jul-25-2026-1-48-02-pm.jpg"
+    },
+    {
+      "label": "Photo Jul 25 2026, 1 50 38 PM · v1",
+      "filename": "photo-jul-25-2026-1-50-38-pm.jpg",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/photo-jul-25-2026-1-50-38-pm.jpg",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3692c657-3796-4978-af54-55a9df3ccb3d/v1-photo-jul-25-2026-1-50-38-pm.jpg"
+    },
+    {
+      "label": "Home Photo · v1",
+      "filename": "homephoto.png",
+      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/homephoto.png",
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66970f6e-c944-4613-8b07-c67b96c63cc3/v1-homephoto.png"
     }
   ]
 }
-

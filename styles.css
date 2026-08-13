@@ -126,3 +126,8 @@ body.demo-gate-open{overflow:hidden}.demo-gate{position:fixed;inset:0;z-index:10
 
 /* Balance the founder quote with a separate gold closing mark. */
 .story-founders-note>.story-quote-close{position:static;display:block;width:max-content;margin:14px 0 -4px auto}
+
+/* Give the homepage hero the same muted, earthy color language as the site. */
+.hero-media img{
+  filter:saturate(.82) sepia(.02) hue-rotate(2deg) brightness(.95) contrast(1.03);
+}
