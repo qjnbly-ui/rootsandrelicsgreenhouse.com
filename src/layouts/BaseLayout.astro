@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import DemoGate from '../components/DemoGate.astro';
 import type { SitePath } from '../data/site';
 import '../../styles.css';
 
@@ -10,7 +9,6 @@ interface Props {
   description: string;
   currentPath?: SitePath;
   bodyClass?: string;
-  showDemoGate?: boolean;
 }
 
 const {
@@ -18,7 +16,6 @@ const {
   description,
   currentPath = '/',
   bodyClass,
-  showDemoGate = false,
 } = Astro.props;
 ---
 
@@ -35,7 +32,6 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=DM+Sans:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;display=swap" rel="stylesheet" />
   </head>
   <body class={bodyClass}>
-    {showDemoGate && <DemoGate />}
     <a class="skip-link" href="#main">Skip to content</a>
     <Header currentPath={currentPath} />
     <slot />
