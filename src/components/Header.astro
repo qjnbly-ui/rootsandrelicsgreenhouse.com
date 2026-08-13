@@ -23,8 +23,8 @@ const isCurrent = (href: SitePath) => currentPath === href;
     {site.secondaryNavigation.map((item) => (
       <a class="nav-mobile-only" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
     ))}
-    <button class="account-button account-button-mobile" type="button" data-admin-open aria-haspopup="dialog">Admin login</button>
+    <a class="account-button account-button-mobile" href="https://roots-and-relics-be7315.portal.n3xra.com">Admin login</a>
   </nav>
-  <button class="account-button account-button-desktop" type="button" data-admin-open aria-haspopup="dialog">Admin login</button>
+  <a class="account-button account-button-desktop" href="https://roots-and-relics-be7315.portal.n3xra.com">Admin login</a>
   <a class="header-cta" href="/before-you-visit/" aria-current={isCurrent('/before-you-visit/') ? 'page' : undefined}>Plan your visit <span>↗</span></a>
 </header>

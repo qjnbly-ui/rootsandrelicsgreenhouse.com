@@ -68,30 +68,6 @@ nav?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', closeMenu);
 });
 
-const adminModal = document.querySelector<HTMLElement>('[data-admin-modal]');
-const adminOpenButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-admin-open]')];
-const adminCloseButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-admin-close]')];
-let adminTrigger: HTMLButtonElement | null = null;
-
-const closeAdminPreview = () => {
-  if (!adminModal || adminModal.hidden) return;
-  adminModal.hidden = true;
-  document.body.classList.remove('admin-preview-open');
-  adminTrigger?.focus({ preventScroll: true });
-};
-
-const openAdminPreview = (trigger: HTMLButtonElement) => {
-  if (!adminModal) return;
-  adminTrigger = trigger;
-  closeMenu();
-  adminModal.hidden = false;
-  document.body.classList.add('admin-preview-open');
-  requestAnimationFrame(() => adminModal.querySelector<HTMLButtonElement>('.admin-preview-close')?.focus({ preventScroll: true }));
-};
-
-adminOpenButtons.forEach((button) => button.addEventListener('click', () => openAdminPreview(button)));
-adminCloseButtons.forEach((button) => button.addEventListener('click', closeAdminPreview));
-
 const galleryLightbox = document.querySelector<HTMLElement>('[data-gallery-lightbox]');
 const galleryExpandedImage = galleryLightbox?.querySelector<HTMLImageElement>('[data-gallery-expanded]');
 const galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
@@ -145,10 +121,6 @@ document.addEventListener('keydown', (event) => {
       showGalleryImage(galleryIndex + 1);
       return;
     }
-  }
-  if (event.key === 'Escape' && adminModal && !adminModal.hidden) {
-    closeAdminPreview();
-    return;
   }
   if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
     closeMenu();

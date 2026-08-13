@@ -2,7 +2,6 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import DemoGate from '../components/DemoGate.astro';
-import AdminComingSoon from '../components/AdminComingSoon.astro';
 import type { SitePath } from '../data/site';
 import '../../styles.css';
 
@@ -39,7 +38,6 @@ const {
     {showDemoGate && <DemoGate />}
     <a class="skip-link" href="#main">Skip to content</a>
     <Header currentPath={currentPath} />
-    <AdminComingSoon />
     <slot />
     <Footer />
     <script src="../scripts/site.ts"></script>
