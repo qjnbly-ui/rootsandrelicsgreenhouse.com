@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '@vercel/analytics/astro';
 import type { SitePath } from '../data/site';
 import '../../styles.css';
 
@@ -45,6 +46,34 @@ const socialImage = 'https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=DM+Sans:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;display=swap" rel="stylesheet" />
+    <script is:inline>
+      function webAnalyticsBeforeSend(event) {
+        const isInternalDevice = document.cookie
+          .split('; ')
+          .some((cookie) => cookie === 'rr_analytics_opt_out=1');
+
+        return isInternalDevice ? null : event;
+      }
+
+      const analyticsControlUrl = new URL(window.location.href);
+      const analyticsSetting = analyticsControlUrl.searchParams.get('analytics');
+
+      if (analyticsSetting === 'off') {
+        document.cookie = 'rr_analytics_opt_out=1; Max-Age=31536000; Path=/; SameSite=Lax; Secure';
+      } else if (analyticsSetting === 'on') {
+        document.cookie = 'rr_analytics_opt_out=; Max-Age=0; Path=/; SameSite=Lax; Secure';
+      }
+
+      if (analyticsSetting === 'off' || analyticsSetting === 'on') {
+        analyticsControlUrl.searchParams.delete('analytics');
+        window.history.replaceState(
+          {},
+          '',
+          `${analyticsControlUrl.pathname}${analyticsControlUrl.search}${analyticsControlUrl.hash}`,
+        );
+      }
+    </script>
+    <Analytics />
   </head>
   <body class={bodyClass}>
     <a class="skip-link" href="#main">Skip to content</a>
