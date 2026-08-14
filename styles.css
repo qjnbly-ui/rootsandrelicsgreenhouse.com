@@ -124,3 +124,23 @@ section[id]{scroll-margin-top:88px}
 .hero-media img{
   filter:saturate(.82) sepia(.02) hue-rotate(2deg) brightness(.95) contrast(1.03);
 }
+
+/* Favor the collected details and people over empty greenhouse architecture. */
+.portrait-window img {
+  object-position: center 76%;
+  transform: scale(1.22);
+  transform-origin: center 74%;
+}
+
+.collage-main img {
+  object-position: center 72%;
+  transform: scale(1.2);
+  transform-origin: center 72%;
+}
+
+@media (max-width: 600px) {
+  .portrait-window img,
+  .collage-main img {
+    transform: scale(1.14);
+  }
+}

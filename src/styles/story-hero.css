@@ -4,3 +4,18 @@
     min-height: calc(100svh - 76px);
   }
 }
+
+/* Pull the hero down into the layered displays instead of emphasizing the roof. */
+.story-hero-media img {
+  position: absolute;
+  inset: auto 0 0;
+  height: 138%;
+  object-position: 52% bottom;
+}
+
+@media (max-width: 600px) {
+  .story-hero-media img {
+    height: 148%;
+    object-position: 58% bottom;
+  }
+}

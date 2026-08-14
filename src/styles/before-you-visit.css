@@ -281,7 +281,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 56% 76%;
+  transform: scale(1.2);
+  transform-origin: 56% 78%;
 }
 
 .visit-next-shade {
@@ -463,7 +465,8 @@
   }
 
   .visit-next-image img {
-    object-position: 58% center;
+    object-position: 58% 70%;
+    transform: scale(1.32);
   }
 
   .visit-next-content {

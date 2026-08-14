@@ -175,7 +175,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 53% center;
+  object-position: 53% 88%;
+  transform: scale(1.68);
+  transform-origin: 53% 94%;
 }
 
 .private-experience .kicker {
@@ -414,6 +416,10 @@
     height: 570px;
   }
 
+  .private-experience-image img {
+    transform: scale(1.4);
+  }
+
   .private-experience-copy {
     max-width: 760px;
   }
@@ -506,6 +512,11 @@
 
   .private-experience-image {
     height: 430px;
+  }
+
+  .private-experience-image img {
+    object-position: 53% 82%;
+    transform: scale(1.28);
   }
 
   .private-experience-notes {

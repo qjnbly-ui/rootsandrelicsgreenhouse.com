@@ -284,7 +284,9 @@ body.gallery-lightbox-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 55%;
+  object-position: 60% 75%;
+  transform: scale(1.16);
+  transform-origin: 60% 78%;
 }
 
 .gallery-invitation-shade {
@@ -476,7 +478,8 @@ body.gallery-lightbox-open {
   }
 
   .gallery-invitation-image img {
-    object-position: 58% center;
+    object-position: 60% 70%;
+    transform: scale(1.3);
   }
 
   .gallery-invitation-copy {

@@ -4,7 +4,7 @@
 .contact-hero { position: relative; height: calc(100svh - 88px); min-height: 620px; overflow: hidden; background: var(--forest); color: white; }
 .contact-hero-image, .contact-hero-shade { position: absolute; inset: 0; }
 .contact-hero-image { margin: 0; }
-.contact-hero-image img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 50%; }
+.contact-hero-image img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 68%; transform: scale(1.17); transform-origin: center 70%; }
 .contact-hero-shade { background: linear-gradient(90deg,rgba(18,25,13,.82),rgba(18,25,13,.24) 62%,rgba(18,25,13,.08)), linear-gradient(0deg,rgba(18,25,13,.62),transparent 60%); }
 .contact-hero-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 90px 7vw 58px; }
 .contact-hero .kicker, .contact-location .kicker { margin: 0 0 25px; color: var(--gold); }
@@ -57,7 +57,7 @@
 @media (max-width: 760px) {
   .contact-main { padding-top: 76px; }
   .contact-hero { height: calc(100svh - 76px); min-height: calc(100svh - 76px); }
-  .contact-hero-image img { object-position: 61% center; }
+  .contact-hero-image img { object-position: 61% 70%; transform: scale(1.28); }
   .contact-hero-shade { background: linear-gradient(0deg,rgba(18,25,13,.84),rgba(18,25,13,.12) 72%); }
   .contact-hero-content { padding: 70px 22px 35px; }
   .contact-hero .kicker { margin-bottom: 18px; }
