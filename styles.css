@@ -136,3 +136,34 @@ section[id]{scroll-margin-top:88px}
     transform: scale(1.14);
   }
 }
+
+/* A quiet site-wide visit count in the footer's legal row. */
+.footer-traffic-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.55em;
+  color: rgba(255, 255, 255, 0.5);
+  font: 8px var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-traffic-counter [data-n3xra-counter-value] {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.footer-traffic-counter-service-label {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .footer-legal > * + * {
+    margin-top: 14px;
+  }
+
+  .footer-traffic-counter {
+    justify-content: center;
+  }
+}
