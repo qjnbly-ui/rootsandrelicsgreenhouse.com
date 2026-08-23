@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import '../../styles/privacy.css';
+---
+
+<BaseLayout
+  title="Messaging Program Terms | Roots & Relics Greenhouse"
+  description="Terms for Roots & Relics email and text message updates."
+  bodyClass="privacy-page"
+>
+  <main id="main" class="privacy-main">
+    <header class="privacy-header">
+      <p class="kicker">Roots &amp; Relics</p>
+      <h1>Messaging <em>terms.</em></h1>
+      <p>Effective August 23, 2026</p>
+    </header>
+    <article class="privacy-copy">
+      <section>
+        <h2>About this program</h2>
+        <p>Roots &amp; Relics sends permission-based updates about greenhouse weekends, new arrivals, seasonal happenings, private showing opportunities, and other topics a subscriber chooses.</p>
+      </section>
+      <section>
+        <h2>Message frequency and charges</h2>
+        <p>Message frequency varies. Message and data rates may apply to text messages. A mobile carrier may split long messages or messages containing certain characters into multiple SMS segments.</p>
+      </section>
+      <section>
+        <h2>Your choices</h2>
+        <p>Reply <strong>STOP</strong> to stop text messages, <strong>START</strong> to subscribe again, or <strong>HELP</strong> for help. Email consent is managed separately from text consent. Consent to receive text messages is not a condition of purchase.</p>
+      </section>
+      <section>
+        <h2>Consent records and privacy</h2>
+        <p>The program records when consent was given or withdrawn, the signup source, selected topics, and the disclosure shown at the time. Subscriber information is used to operate this program and honor subscriber preferences. Read the <a href="/privacy/">Roots &amp; Relics Privacy Notice</a>.</p>
+      </section>
+      <section>
+        <h2>Technology provider</h2>
+        <p>Nexra Communications, a service of N3XRA LLC, provides the preference, consent, and messaging technology for this program. Roots &amp; Relics is the organization sending the updates and deciding their content.</p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>Text messaging will be available after the program number is activated. For help in the meantime, email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> or call <a href={`tel:${site.contact.phoneHref}`}>{site.contact.phoneDisplay}</a>.</p>
+      </section>
+      <a class="privacy-return" href="/join/">Return to the signup form <span>→</span></a>
+    </article>
+  </main>
+</BaseLayout>

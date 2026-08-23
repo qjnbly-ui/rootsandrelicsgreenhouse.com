@@ -38,7 +38,7 @@ import '../../styles/join.css';
             <span data-consent-label>Email me Roots &amp; Relics updates</span>
           </label>
           <p class="join-disclosure" data-consent-disclosure></p>
-          <p class="join-legal">Read the <a href="/privacy/">Privacy Notice</a> and <a href="https://www.n3xra.com/nexra-communications/terms/?workspace=roots-and-relics">Messaging Program Terms</a>.</p>
+          <p class="join-legal">Read the <a href="/privacy/">Privacy Notice</a> and <a href="/messaging-program-terms/">Messaging Program Terms</a>.</p>
 
           <label class="join-honeypot" aria-hidden="true">
             <span>Company</span>
@@ -76,6 +76,8 @@ import '../../styles/join.css';
 
     const apiUrl = 'https://www.n3xra.com/api/communications-public';
     const workspace = 'roots-and-relics';
+    const requestedSourceToken = new URLSearchParams(window.location.search).get('source') || '';
+    const attributedSourceToken = /^[a-f0-9]{48}$/.test(requestedSourceToken) ? requestedSourceToken : '';
     const form = document.querySelector<HTMLFormElement>('[data-signup-form]');
     const loading = document.querySelector<HTMLElement>('[data-signup-loading]');
     const status = document.querySelector<HTMLElement>('[data-signup-status]');
@@ -106,7 +108,7 @@ import '../../styles/join.css';
         throw new Error('Email signup is not available yet.');
       }
 
-      signup = payload;
+      signup = { ...payload, sourceToken: attributedSourceToken || payload.sourceToken };
       if (consentLabel) consentLabel.textContent = payload.channels.email.disclosure.checkbox_label;
       if (consentDisclosure) consentDisclosure.textContent = payload.channels.email.disclosure.disclosure;
       if (topicOptions) {
