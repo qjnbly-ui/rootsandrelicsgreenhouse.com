@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/join.css';
+---
+
+<BaseLayout
+  title="Join the List | Roots & Relics Greenhouse"
+  description="Subscribe to Roots & Relics email updates about greenhouse weekends, new arrivals, seasonal happenings, and private showing opportunities."
+  bodyClass="join-page"
+>
+  <main id="main" class="join-main">
+    <section class="join-intro" aria-labelledby="join-title">
+      <div class="join-intro-copy reveal">
+        <p class="kicker">Notes from the greenhouse</p>
+        <h1 id="join-title">A little something<br />worth <em>waiting for.</em></h1>
+        <p>Join the Roots &amp; Relics list for greenhouse weekends, new arrivals, seasonal happenings, and private showing opportunities.</p>
+      </div>
+
+      <div class="join-card reveal">
+        <div class="join-loading" data-signup-loading role="status">Preparing the signup form…</div>
+        <form class="join-form" data-signup-form hidden novalidate>
+          <label>
+            <span>Your name</span>
+            <input name="fullName" type="text" autocomplete="name" maxlength="160" required />
+          </label>
+          <label>
+            <span>Email address</span>
+            <input name="email" type="email" autocomplete="email" maxlength="320" required />
+          </label>
+
+          <fieldset class="join-topics" data-signup-topics hidden>
+            <legend>What would you like to hear about?</legend>
+            <div data-topic-options></div>
+          </fieldset>
+
+          <label class="join-consent">
+            <input name="emailConsent" type="checkbox" required />
+            <span data-consent-label>Email me Roots &amp; Relics updates</span>
+          </label>
+          <p class="join-disclosure" data-consent-disclosure></p>
+          <p class="join-legal">Read the <a href="/privacy/">Privacy Notice</a> and <a href="https://www.n3xra.com/nexra-communications/terms/?workspace=roots-and-relics">Messaging Program Terms</a>.</p>
+
+          <label class="join-honeypot" aria-hidden="true">
+            <span>Company</span>
+            <input name="company" type="text" tabindex="-1" autocomplete="off" />
+          </label>
+
+          <div class="join-submit-row">
+            <button type="submit">Join the list <span aria-hidden="true">→</span></button>
+            <p data-signup-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    interface Topic {
+      id: string;
+      name: string;
+      description?: string | null;
+    }
+
+    interface SignupPayload {
+      sourceToken: string;
+      form: { successMessage: string };
+      topics: Topic[];
+      channels: {
+        email: {
+          available: boolean;
+          disclosure: { version: string; disclosure: string; checkbox_label: string } | null;
+        };
+      };
+      error?: string;
+    }
+
+    const apiUrl = 'https://www.n3xra.com/api/communications-public';
+    const workspace = 'roots-and-relics';
+    const form = document.querySelector<HTMLFormElement>('[data-signup-form]');
+    const loading = document.querySelector<HTMLElement>('[data-signup-loading]');
+    const status = document.querySelector<HTMLElement>('[data-signup-status]');
+    const topicsField = document.querySelector<HTMLElement>('[data-signup-topics]');
+    const topicOptions = document.querySelector<HTMLElement>('[data-topic-options]');
+    const consentLabel = document.querySelector<HTMLElement>('[data-consent-label]');
+    const consentDisclosure = document.querySelector<HTMLElement>('[data-consent-disclosure]');
+    let signup: SignupPayload | null = null;
+    let idempotencyKey = crypto.randomUUID().replaceAll('-', '');
+
+    function showStatus(message: string, isError = false) {
+      if (!status) return;
+      status.textContent = message;
+      status.classList.toggle('is-error', isError);
+    }
+
+    function escapeHtml(value: string) {
+      return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+    }
+
+    async function initializeSignup() {
+      const response = await fetch(`${apiUrl}?workspace=${encodeURIComponent(workspace)}&sourceType=website_embed`, {
+        headers: { Accept: 'application/json' },
+      });
+      const payload = await response.json() as SignupPayload;
+      if (!response.ok) throw new Error(payload.error || 'The signup form is temporarily unavailable.');
+      if (!payload.channels.email.available || !payload.channels.email.disclosure || !payload.sourceToken) {
+        throw new Error('Email signup is not available yet.');
+      }
+
+      signup = payload;
+      if (consentLabel) consentLabel.textContent = payload.channels.email.disclosure.checkbox_label;
+      if (consentDisclosure) consentDisclosure.textContent = payload.channels.email.disclosure.disclosure;
+      if (topicOptions) {
+        topicOptions.innerHTML = payload.topics.map((topic, index) => `
+          <label>
+            <input type="checkbox" name="topics" value="${escapeHtml(topic.id)}"${index === 0 ? ' checked' : ''}>
+            <span><strong>${escapeHtml(topic.name)}</strong>${topic.description ? `<small>${escapeHtml(topic.description)}</small>` : ''}</span>
+          </label>
+        `).join('');
+      }
+      if (topicsField) topicsField.hidden = payload.topics.length === 0;
+      if (loading) loading.hidden = true;
+      if (form) form.hidden = false;
+    }
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!signup || !form.reportValidity()) return;
+      const data = new FormData(form);
+      const topicIds = data.getAll('topics').map(String);
+      if (signup.topics.length && topicIds.length === 0) {
+        showStatus('Choose at least one update topic.', true);
+        return;
+      }
+
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (button) button.disabled = true;
+      showStatus('Saving your preferences…');
+
+      try {
+        const response = await fetch(`${apiUrl}?workspace=${encodeURIComponent(workspace)}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            workspace,
+            fullName: String(data.get('fullName') || ''),
+            email: String(data.get('email') || ''),
+            emailConsent: data.get('emailConsent') === 'on',
+            smsConsent: false,
+            topicIds,
+            sourceToken: signup.sourceToken,
+            sourcePage: window.location.href,
+            idempotencyKey,
+            consentVersions: { email: signup.channels.email.disclosure?.version },
+            company: String(data.get('company') || ''),
+          }),
+        });
+        const payload = await response.json() as { message?: string; error?: string };
+        if (!response.ok) throw new Error(payload.error || 'Your preferences could not be saved.');
+        showStatus(payload.message || signup.form.successMessage);
+        form.reset();
+        const firstTopic = form.querySelector<HTMLInputElement>('input[name="topics"]');
+        if (firstTopic) firstTopic.checked = true;
+        idempotencyKey = crypto.randomUUID().replaceAll('-', '');
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Your preferences could not be saved.', true);
+      } finally {
+        if (button) button.disabled = false;
+      }
+    });
+
+    void initializeSignup().catch((error: unknown) => {
+      if (!loading) return;
+      loading.textContent = error instanceof Error ? error.message : 'The signup form is temporarily unavailable.';
+      loading.classList.add('is-error');
+    });
+  </script>
+</BaseLayout>

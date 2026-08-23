@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import '../../styles/privacy.css';
+---
+
+<BaseLayout
+  title="Privacy Notice | Roots & Relics Greenhouse"
+  description="How Roots & Relics handles information submitted through its website and communications signup form."
+  bodyClass="privacy-page"
+>
+  <main id="main" class="privacy-main">
+    <header class="privacy-header">
+      <p class="kicker">Roots &amp; Relics</p>
+      <h1>Privacy <em>notice.</em></h1>
+      <p>Effective August 23, 2026</p>
+    </header>
+    <article class="privacy-copy">
+      <section>
+        <h2>Information we collect</h2>
+        <p>When you join the Roots &amp; Relics list, we collect the information you submit, such as your name, email address, selected update topics, and your recorded consent. We also retain limited technical information needed to protect the form from abuse and document how consent was provided.</p>
+      </section>
+      <section>
+        <h2>How we use it</h2>
+        <p>We use this information to manage your subscription preferences and send the Roots &amp; Relics updates you requested. We do not sell subscriber information.</p>
+      </section>
+      <section>
+        <h2>Services that support the list</h2>
+        <p>N3XRA provides the communications system used to store subscription records. Supabase supports secure data storage, and Resend supports email delivery when sending is active. These providers process information only as needed to operate the service.</p>
+      </section>
+      <section>
+        <h2>Your choices</h2>
+        <p>You may unsubscribe from email updates at any time using the unsubscribe option included in an email or by contacting Roots &amp; Relics. Unsubscribing stops future promotional email while allowing us to retain records required to honor your preference.</p>
+      </section>
+      <section>
+        <h2>Questions</h2>
+        <p>For questions about this notice or your information, email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>
+      </section>
+      <a class="privacy-return" href="/join/">Return to the signup form <span>→</span></a>
+    </article>
+  </main>
+</BaseLayout>
