@@ -41,6 +41,58 @@ const gatheringHighlights = [
     position: '50% 50%',
   },
 ];
+
+const upcomingGatherings = [
+  {
+    title: 'Fall Gathering',
+    month: 'October',
+    days: '8–11',
+    datetime: '2026-10-08',
+    calendar: '/calendar/fall-gathering-2026.ics',
+    image: '95-vignette-crock-lavender.jpg',
+    alt: 'A gathered lavender bundle, ironstone pitcher, and primitive pig in a rustic cupboard',
+    position: '52% 58%',
+    stamp: 'Gathered',
+    stampDetail: 'for autumn',
+  },
+  {
+    title: 'Holiday Greenhouse',
+    month: 'November',
+    days: '27–29',
+    datetime: '2026-11-27',
+    calendar: '/calendar/holiday-greenhouse-2026.ics',
+    image: '85-vignette-wooden-tools.jpg',
+    alt: 'Antique wooden kitchen tools gathered in an old wooden firkin',
+    position: '51% 58%',
+    stamp: 'Warmly',
+    stampDetail: 'for the holidays',
+  },
+  {
+    title: 'Christmas Market',
+    month: 'December',
+    days: '10–13',
+    datetime: '2026-12-10',
+    calendar: '/calendar/christmas-market-2026.ics',
+    image: '86-vignette-thread.jpg',
+    alt: 'A red and gold striped vintage umbrella resting on an antique wooden surface',
+    position: '54% 58%',
+    stamp: 'Merry',
+    stampDetail: '& bright',
+  },
+  {
+    title: 'The Eleventh Hour Market',
+    month: 'December',
+    days: '23',
+    datetime: '2026-12-23',
+    calendar: '/calendar/eleventh-hour-market-2026.ics',
+    note: "Come by, we'll help you pull it off.",
+    image: '92-vignette-still-life.jpg',
+    alt: 'An antique clock, dried botanicals, and a brass swan arranged in a greenhouse vignette',
+    position: '46% 48%',
+    stamp: 'Last call',
+    stampDetail: "we'll help",
+  },
+];
 ---
 
 <BaseLayout
@@ -58,6 +110,45 @@ const gatheringHighlights = [
         <p class="kicker reveal">Select market weekends · Southern Oregon</p>
         <h1 id="gatherings-title" class="reveal">Come spend<br />the day <em>with us.</em></h1>
       </div>
+    </section>
+
+    <section class="gatherings-dates" aria-labelledby="gatherings-dates-title">
+      <header class="gatherings-dates-heading reveal">
+        <div>
+          <p class="kicker">The dates are set</p>
+          <h2 id="gatherings-dates-title">Keep these<br /><em>weekends open.</em></h2>
+        </div>
+        <div class="gatherings-dates-intro">
+          <p>Hours and all the thoughtful details will be shared here and on Instagram as each market gets closer.</p>
+          <a class="action-link action-link-dark" href="/calendar/roots-relics-markets-2026.ics" download>Save all four dates <span>↓</span></a>
+        </div>
+      </header>
+
+      <div class="gatherings-date-list">
+        {upcomingGatherings.map((gathering) => (
+          <article class="gatherings-date-row reveal">
+            <figure class="gatherings-date-image">
+              <img src={imageUrl(gathering.image)} alt={gathering.alt} loading="lazy" style={`object-position:${gathering.position}`} />
+              <span class="gatherings-date-stamp" aria-hidden="true">
+                <small>Roots &amp; Relics</small>
+                <b>{gathering.stamp}</b>
+                <strong>{gathering.stampDetail}</strong>
+                <i>Southern Oregon</i>
+              </span>
+            </figure>
+            <div class="gatherings-date-name">
+              <h3>{gathering.title}</h3>
+              <time datetime={gathering.datetime}><span>{gathering.month}</span> <em>{gathering.days}</em></time>
+              {gathering.note && <p>{gathering.note}</p>}
+            </div>
+            <a href={gathering.calendar} download aria-label={`Save ${gathering.title} to your calendar`}>
+              Save the date <span>↓</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <p class="gatherings-dates-note reveal">Market hours and visit details are coming soon. For now, keep the dates open.</p>
     </section>
 
     <section class="gatherings-story" id="gathering-story" aria-labelledby="gathering-story-title">

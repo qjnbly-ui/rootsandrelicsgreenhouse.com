@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Roots and Relics Greenhouse//Market Dates 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:holiday-greenhouse-2026@rootsandrelicsgreenhouse.com
+DTSTAMP:20260822T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261130
+SUMMARY:Holiday Greenhouse — Roots & Relics Greenhouse
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Save the date. Market hours and visit details will be shared closer to the gathering.
+END:VEVENT
+END:VCALENDAR

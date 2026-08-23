@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Roots and Relics Greenhouse//Market Dates 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Roots & Relics 2026 Markets
+BEGIN:VEVENT
+UID:fall-gathering-2026@rootsandrelicsgreenhouse.com
+DTSTAMP:20260822T000000Z
+DTSTART;VALUE=DATE:20261008
+DTEND;VALUE=DATE:20261012
+SUMMARY:Fall Gathering — Roots & Relics Greenhouse
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Save the date. Market hours and visit details will be shared closer to the gathering.
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-greenhouse-2026@rootsandrelicsgreenhouse.com
+DTSTAMP:20260822T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261130
+SUMMARY:Holiday Greenhouse — Roots & Relics Greenhouse
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Save the date. Market hours and visit details will be shared closer to the gathering.
+END:VEVENT
+BEGIN:VEVENT
+UID:christmas-market-2026@rootsandrelicsgreenhouse.com
+DTSTAMP:20260822T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261214
+SUMMARY:Christmas Market — Roots & Relics Greenhouse
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Save the date. Market hours and visit details will be shared closer to the gathering.
+END:VEVENT
+BEGIN:VEVENT
+UID:eleventh-hour-market-2026@rootsandrelicsgreenhouse.com
+DTSTAMP:20260822T000000Z
+DTSTART;VALUE=DATE:20261223
+DTEND;VALUE=DATE:20261224
+SUMMARY:The Eleventh Hour Market — Roots & Relics Greenhouse
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Come by\, we'll help you pull it off. Market hours and visit details will be shared closer to the gathering.
+END:VEVENT
+END:VCALENDAR
