@@ -909,12 +909,10 @@
 }
 
 .gatherings-date-stamp {
-  position: absolute;
-  z-index: 2;
-  right: 14px;
-  bottom: 15px;
-  width: 76px;
-  height: 92px;
+  position: relative;
+  flex: 0 0 auto;
+  width: 80px;
+  height: 94px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -922,7 +920,7 @@
   gap: 2px;
   background: rgba(243, 238, 226, 0.94);
   color: var(--event-accent);
-  box-shadow: 0 7px 16px rgba(18, 25, 13, 0.25);
+  box-shadow: 0 5px 14px rgba(18, 25, 13, 0.16);
   text-align: center;
   transform: rotate(-5deg);
   backdrop-filter: blur(2px);
@@ -941,29 +939,28 @@
 }
 
 .gatherings-date-stamp small {
-  font: 400 5px var(--mono);
+  font: 400 6px var(--mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .gatherings-date-stamp b {
-  max-width: 58px;
-  font: 400 15px / 0.92 var(--serif);
+  max-width: 66px;
+  font: 400 17px / 0.92 var(--serif);
   letter-spacing: -0.01em;
 }
 
 .gatherings-date-stamp strong {
-  min-width: 47px;
-  max-width: 58px;
+  min-width: 54px;
+  max-width: 66px;
   padding: 4px 2px 3px;
-  border-block: 1px solid currentColor;
-  font: italic 300 9px / 1.05 var(--serif);
+  font: italic 300 10px / 1.05 var(--serif);
   letter-spacing: 0;
 }
 
 .gatherings-date-stamp i {
-  max-width: 58px;
-  font: 400 5px / 1.1 var(--mono);
+  max-width: 66px;
+  font: 400 6px / 1.1 var(--mono);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -1008,7 +1005,14 @@
   font-weight: 300;
 }
 
-.gatherings-date-row > a {
+.gatherings-date-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gatherings-date-footer > a {
   width: max-content;
   align-self: end;
   margin-bottom: 3px;
@@ -1021,15 +1025,15 @@
   text-transform: uppercase;
 }
 
-.gatherings-date-row > a span {
+.gatherings-date-footer > a span {
   display: inline-block;
   margin-left: 5px;
   color: var(--event-accent);
   transition: transform 0.2s ease;
 }
 
-.gatherings-date-row > a:hover span,
-.gatherings-date-row > a:focus-visible span {
+.gatherings-date-footer > a:hover span,
+.gatherings-date-footer > a:focus-visible span {
   transform: translateY(3px);
 }
 
@@ -1103,31 +1107,29 @@
   }
 
   .gatherings-date-stamp {
-    right: 9px;
-    bottom: 10px;
-    width: 60px;
+    width: 62px;
     height: 74px;
   }
 
   .gatherings-date-stamp small {
-    font-size: 4px;
+    font-size: 4.5px;
   }
 
   .gatherings-date-stamp b {
-    max-width: 45px;
-    font-size: 11px;
+    max-width: 50px;
+    font-size: 13px;
   }
 
   .gatherings-date-stamp strong {
-    min-width: 38px;
-    max-width: 45px;
+    min-width: 42px;
+    max-width: 50px;
     padding-block: 3px 2px;
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .gatherings-date-stamp i {
-    max-width: 45px;
-    font-size: 4px;
+    max-width: 50px;
+    font-size: 4.5px;
   }
 
   .gatherings-date-name {
@@ -1160,9 +1162,15 @@
     margin-top: 3px;
   }
 
-  .gatherings-date-row > a {
+  .gatherings-date-footer {
+    gap: 8px;
+  }
+
+  .gatherings-date-footer > a {
+    max-width: 72px;
     margin-bottom: 1px;
     font-size: 8px;
+    line-height: 1.35;
   }
 
   .gatherings-date-row:hover {

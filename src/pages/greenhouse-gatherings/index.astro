@@ -129,21 +129,23 @@ const upcomingGatherings = [
           <article class="gatherings-date-row reveal">
             <figure class="gatherings-date-image">
               <img src={imageUrl(gathering.image)} alt={gathering.alt} loading="lazy" style={`object-position:${gathering.position}`} />
-              <span class="gatherings-date-stamp" aria-hidden="true">
-                <small>Roots &amp; Relics</small>
-                <b>{gathering.stamp}</b>
-                <strong>{gathering.stampDetail}</strong>
-                <i>Southern Oregon</i>
-              </span>
             </figure>
             <div class="gatherings-date-name">
               <h3>{gathering.title}</h3>
               <time datetime={gathering.datetime}><span>{gathering.month}</span> <em>{gathering.days}</em></time>
               {gathering.note && <p>{gathering.note}</p>}
             </div>
-            <a href={gathering.calendar} download aria-label={`Save ${gathering.title} to your calendar`}>
-              Save the date <span>↓</span>
-            </a>
+            <div class="gatherings-date-footer">
+              <a href={gathering.calendar} download aria-label={`Save ${gathering.title} to your calendar`}>
+                Save the date <span>↓</span>
+              </a>
+              <span class="gatherings-date-stamp" aria-hidden="true">
+                <small>Roots &amp; Relics</small>
+                <b>{gathering.stamp}</b>
+                <strong>{gathering.stampDetail}</strong>
+                <i>Southern Oregon</i>
+              </span>
+            </div>
           </article>
         ))}
       </div>
