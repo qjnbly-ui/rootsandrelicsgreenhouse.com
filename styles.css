@@ -138,9 +138,26 @@ section[id]{scroll-margin-top:88px}
 }
 
 /* A quiet site-wide visit count in the footer's legal row. */
+.footer-legal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  column-gap: 32px;
+}
+
+.footer-legal > p:first-child {
+  justify-self: start;
+}
+
+.footer-legal > p:last-child {
+  justify-self: end;
+  text-align: right;
+}
+
 .footer-traffic-counter {
   display: flex;
   align-items: center;
+  justify-self: center;
   gap: 0.55em;
   color: rgba(255, 255, 255, 0.5);
   font: 8px var(--mono);
@@ -159,8 +176,19 @@ section[id]{scroll-margin-top:88px}
 }
 
 @media (max-width: 600px) {
-  .footer-legal > * + * {
-    margin-top: 14px;
+  .footer-legal {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 15px;
+    text-align: center;
+  }
+
+  .footer-legal > p:first-child,
+  .footer-legal > p:last-child,
+  .footer-traffic-counter {
+    justify-self: center;
+    margin: 0;
+    text-align: center;
   }
 
   .footer-traffic-counter {
