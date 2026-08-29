@@ -1,6 +1,6 @@
 {
   "policy": "Use these public URLs in production markup. Local photos are inspection-only references.",
-  "verification": "All 109 supplied URLs have a one-to-one filename match in the local reference archive. Homepage assets are additionally verified byte-for-byte before use.",
+  "verification": "Archived assets retain a one-to-one filename match in the local reference archive. Newly supplied hosted-only assets are identified by filename.",
   "images": [
     {
       "label": "100 Cat Architectural Salvage · v1",
@@ -519,10 +519,22 @@
       "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/a59a4e1d-ef23-4f87-97a2-69efe35041d5/v1-99-cat-seasonal-botanicals.jpg"
     },
     {
+      "label": "HAW 01969 · v1",
+      "filename": "haw01969.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3fed8443-a815-4bf7-bd13-314acf4cdfb1/v1-haw01969.jpg"
+    },
+    {
       "label": "Home Photo · v1",
       "filename": "homephoto.png",
       "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/homephoto.png",
       "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66970f6e-c944-4613-8b07-c67b96c63cc3/v1-homephoto.png"
+    },
+    {
+      "label": "Textiles · v1",
+      "filename": "textiles.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2b6435c2-de8d-4cc7-a5b3-e2f4a81ed34b/v1-textiles.jpg"
     }
   ]
 }
