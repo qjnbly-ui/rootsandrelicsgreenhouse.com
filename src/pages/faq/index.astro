@@ -1,18 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../data/site';
-import imageRegistry from '../../../assets/image-urls.json';
+import { imageUrl } from '../../lib/image-assets';
 import '../../styles/faq.css';
-
-const imageByFilename = new Map(
-  imageRegistry.images.map(({ filename, url }) => [filename, url]),
-);
-
-const imageUrl = (filename: string) => {
-  const url = imageByFilename.get(filename);
-  if (!url) throw new Error(`Missing hosted image URL for ${filename}`);
-  return url;
-};
 
 const questions = [
   {

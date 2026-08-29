@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { imageUrl } from '../../lib/image-assets';
 import "../../styles/story-hero.css";
 ---
 
@@ -12,7 +13,7 @@ import "../../styles/story-hero.css";
 <main class="page-main story-main" id="main">
       <section class="story-hero" aria-labelledby="story-title">
         <div class="story-hero-media" aria-hidden="true">
-          <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ee289ebc-f16b-42ef-b784-9ac6782d6476/v1-139-hero-greenhouse.jpg" alt="" data-parallax />
+          <img src={imageUrl('139-hero-greenhouse.jpg')} alt="" data-parallax />
         </div>
         <div class="story-hero-shade" aria-hidden="true"></div>
         <div class="story-hero-content">
@@ -38,7 +39,7 @@ import "../../styles/story-hero.css";
         </div>
         <figure class="story-founders reveal">
           <div class="story-founders-frame">
-            <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/729daeef-cc71-4635-8b92-462c23753efe/v1-129-pat-and-jenn.jpg" alt="Pat and Jenn, founders of Roots and Relics, seated together in the greenhouse" loading="lazy" />
+            <img src={imageUrl('129-pat-and-jenn.jpg')} alt="Pat and Jenn, founders of Roots and Relics, seated together in the greenhouse" loading="lazy" />
           </div>
           <figcaption><strong>Pat &amp; Jenn</strong><span>Collectors, caretakers, and the people behind the greenhouse.</span></figcaption>
         </figure>
@@ -51,7 +52,7 @@ import "../../styles/story-hero.css";
 
       <section class="story-stewards" aria-labelledby="stewards-title">
         <div class="story-stewards-image reveal">
-          <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/29fa94b0-a459-4d85-9b86-7add301368df/v1-74-portraits-sideboard.jpg" alt="Old family portraits and collected objects displayed on an antique sideboard" loading="lazy" />
+          <img src={imageUrl('74-portraits-sideboard.jpg')} alt="Old family portraits and collected objects displayed on an antique sideboard" loading="lazy" />
           <span>The marks of another life are worth preserving.</span>
         </div>
         <div class="story-stewards-copy reveal">
@@ -74,7 +75,7 @@ import "../../styles/story-hero.css";
           <p>Here, the farm itself sets the pace: quiet paths, passing birds, and more sky than schedule.</p>
         </div>
         <figure class="story-owls reveal">
-          <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/40cacf86-8ff5-416b-8458-449cc7666539/v1-125-farm-owls.jpg" alt="Four barn owls perched in the rafters on the Roots and Relics farm" loading="lazy" />
+          <img src={imageUrl('125-farm-owls.jpg')} alt="Four barn owls perched in the rafters on the Roots and Relics farm" loading="lazy" />
           <figcaption>Spring visitors in the rafters.</figcaption>
         </figure>
         <div class="story-farm-notes" aria-label="Life on the farm">
@@ -94,7 +95,7 @@ import "../../styles/story-hero.css";
       </section>
 
       <section class="story-pause" aria-label="Roots and Relics philosophy">
-        <img src="https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9702e339-f006-472b-9a4d-a1636ebb7593/v1-124-greenhouse-exterior.jpg" alt="The Roots and Relics greenhouse on the farm in Southern Oregon" loading="lazy" data-parallax />
+        <img src={imageUrl('124-greenhouse-exterior.jpg')} alt="The Roots and Relics greenhouse on the farm in Southern Oregon" loading="lazy" data-parallax />
         <div class="story-pause-shade" aria-hidden="true"></div>
         <blockquote class="reveal">“Beautiful places have a way of slowing us down in the <em>very best way.</em>”</blockquote>
       </section>

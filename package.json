@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "npm run sync:assets && astro dev",
+    "dev:offline": "N3XRA_ASSET_SYNC_OFFLINE=1 npm run dev",
+    "sync:assets": "node scripts/sync-n3xra-assets.mjs",
+    "build": "npm run sync:assets && astro build",
+    "build:offline": "N3XRA_ASSET_SYNC_OFFLINE=1 npm run build",
     "preview": "astro preview",
     "check": "astro check"
   },

@@ -1,21 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import imageRegistry from '../../../assets/image-urls.json';
+import { imageUrl } from '../../lib/image-assets';
 import '../../styles/collection.css';
-
-const imageByFilename = new Map(
-  imageRegistry.images.map(({ filename, url }) => [filename, url]),
-);
-
-const imageUrl = (filename: string) => {
-  const url = imageByFilename.get(filename);
-
-  if (!url) {
-    throw new Error(`Missing hosted image URL for ${filename}`);
-  }
-
-  return url;
-};
 
 const categories = [
   {

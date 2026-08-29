@@ -1,540 +1,1026 @@
 {
-  "policy": "Use these public URLs in production markup. Local photos are inspection-only references.",
-  "verification": "Archived assets retain a one-to-one filename match in the local reference archive. Newly supplied hosted-only assets are identified by filename.",
+  "policy": "Generated from the N3XRA website asset library. Do not paste CDN URLs into site pages.",
+  "verification": "The Roots and Relics build refreshes this published-only registry before generating the site.",
   "images": [
     {
-      "label": "100 Cat Architectural Salvage · v1",
-      "filename": "100-cat-architectural-salvage.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/100-cat-architectural-salvage.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c2e174e7-f9e9-4dd4-8932-62e37a244a3d/v1-100-cat-architectural-salvage.jpg"
+      "assetKey": "asset12rootsrelicslogolight",
+      "label": "12 Roots Relics Logo Light · v1",
+      "filename": "12-roots-relics-logo-light.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1a754cde-a9b5-429e-b8a5-df647ff88efa/v1-12-roots-relics-logo-light.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "101 Cat Primitive Furniture · v1",
-      "filename": "101-cat-primitive-furniture.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/101-cat-primitive-furniture.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5af4b4a1-f13f-4e42-9b88-ead25515e52e/v1-101-cat-primitive-furniture.jpg"
+      "assetKey": "asset13rootsrelicslogodark",
+      "label": "13 Roots Relics Logo Dark · v1",
+      "filename": "13-roots-relics-logo-dark.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/78361289-8952-472e-87a7-8090385dc8b8/v1-13-roots-relics-logo-dark.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "102 Cat Ironstone Kitchenwares · v1",
-      "filename": "102-cat-ironstone-kitchenwares.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/102-cat-ironstone-kitchenwares.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b2c7fce7-b93d-40cc-a0ef-5f4bcd335ac0/v1-102-cat-ironstone-kitchenwares.jpg"
+      "assetKey": "asset60logo",
+      "label": "60 Logo · v1",
+      "filename": "60-logo.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ae7388dd-c408-4930-a2be-3d176be9191b/v1-60-logo.webp",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "103 Cat European Antiques · v1",
-      "filename": "103-cat-european-antiques.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/103-cat-european-antiques.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d651869d-310d-499f-8c5a-b7bcc8af614d/v1-103-cat-european-antiques.jpg"
+      "assetKey": "asset61logolight",
+      "label": "61 Logo Light · v1",
+      "filename": "61-logo-light.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0a2c58f2-787c-4806-a247-b9062bca1492/v1-61-logo-light.webp",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "104 Refreshments Table · v1",
-      "filename": "104-refreshments-table.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/104-refreshments-table.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/4cdd7873-47ae-4fda-a7f6-7a2e168bc901/v1-104-refreshments-table.jpg"
+      "assetKey": "asset62logo",
+      "label": "62 Logo · v1",
+      "filename": "62-logo.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/050b55e1-e3df-4711-aaa9-355cb9f27441/v1-62-logo.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "105 Refreshments Serving · v1",
-      "filename": "105-refreshments-serving.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/105-refreshments-serving.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/bf56104a-9b10-42b3-86c7-1ba9ce10d785/v1-105-refreshments-serving.jpg"
+      "assetKey": "asset63logolight",
+      "label": "63 Logo Light · v1",
+      "filename": "63-logo-light.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8f3bd4ae-51dc-4f5b-a7a5-143d55bbe24c/v1-63-logo-light.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "106 Refreshments Pastries · v1",
-      "filename": "106-refreshments-pastries.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/106-refreshments-pastries.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/848a17c0-b7f0-4ebc-b1e5-2a5808f698ee/v1-106-refreshments-pastries.jpg"
+      "assetKey": "asset252croppedlogo",
+      "label": "252 Cropped Logo · v1",
+      "filename": "252-cropped-logo.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8ea42baf-92a6-4b32-88b5-caf838dd5133/v1-252-cropped-logo.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "107 Refreshments Drinks · v1",
-      "filename": "107-refreshments-drinks.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/107-refreshments-drinks.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/808fa715-0a44-4c48-ab68-16a042fb1f4e/v1-107-refreshments-drinks.jpg"
+      "assetKey": "logo62",
+      "label": "Logo 62 · v1",
+      "filename": "logo-62.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/330daed3-b2ed-4c61-8cfc-d1df787ea83a/v1-logo-62.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "108 Gathering Loading · v1",
-      "filename": "108-gathering-loading.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/108-gathering-loading.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/add2cffa-a7da-468b-aa29-477bcced994c/v1-108-gathering-loading.jpg"
+      "assetKey": "logolight",
+      "label": "Logo Light · v1",
+      "filename": "logo-light.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f89e25a3-96bd-4478-9fb3-28a1d147d5a5/v1-logo-light.webp",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "110 Sign Welcome Outdoor · v1",
-      "filename": "110-sign-welcome-outdoor.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/110-sign-welcome-outdoor.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d5f65eee-9634-4d20-99ae-109214424be0/v1-110-sign-welcome-outdoor.jpg"
+      "assetKey": "logo",
+      "label": "Logo · v1",
+      "filename": "logo.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fe0867f0-5416-49d7-b7a4-4bebd79e60c2/v1-logo.webp",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "111 Sign Large Items · v1",
-      "filename": "111-sign-large-items.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/111-sign-large-items.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5d379f5e-cb52-4ee7-960e-c4863a101b44/v1-111-sign-large-items.jpg"
+      "assetKey": "rootsrelicslogodark",
+      "label": "Roots Relics Logo Dark · v1",
+      "filename": "roots-relics-logo-dark.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0ac1da37-2116-4b54-b87e-bbbeb2b928fb/v1-roots-relics-logo-dark.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "112 Gathering Guests · v1",
-      "filename": "112-gathering-guests.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/112-gathering-guests.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9a80d700-aa8c-4b04-b8c9-6c5727e1106f/v1-112-gathering-guests.jpg"
+      "assetKey": "rootsrelicslogolight",
+      "label": "Roots Relics Logo Light · v1",
+      "filename": "roots-relics-logo-light.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66d974bc-8c88-41fd-9bb3-cf74315325ac/v1-roots-relics-logo-light.png",
+      "category": "logo",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "113 Gathering Counter · v1",
-      "filename": "113-gathering-counter.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/113-gathering-counter.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2d98a2f8-f471-4595-8cd2-e145fd8b7d76/v1-113-gathering-counter.jpg"
-    },
-    {
-      "label": "115 Sign Welcome · v1",
-      "filename": "115-sign-welcome.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/115-sign-welcome.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ac911da1-e799-451b-8dcd-2a352d237b7c/v1-115-sign-welcome.jpg"
-    },
-    {
-      "label": "116 Sign Visit Notes · v1",
-      "filename": "116-sign-visit-notes.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/116-sign-visit-notes.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c4845986-d6af-42d3-95c7-9335f920b0a7/v1-116-sign-visit-notes.jpg"
-    },
-    {
-      "label": "117 Sign Perfectly Imperfect · v1",
-      "filename": "117-sign-perfectly-imperfect.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/117-sign-perfectly-imperfect.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/145adadc-e3e4-4c8e-920c-3c90101168d0/v1-117-sign-perfectly-imperfect.jpg"
-    },
-    {
-      "label": "119 Sign Bloom Bar · v1",
-      "filename": "119-sign-bloom-bar.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/119-sign-bloom-bar.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/af875d6c-c3a1-4351-816c-6786ba81ccc9/v1-119-sign-bloom-bar.jpg"
-    },
-    {
-      "label": "120 Garden Cart Planted · v1",
-      "filename": "120-garden-cart-planted.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/120-garden-cart-planted.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1223e984-947d-435e-bbb6-da3a6158de4c/v1-120-garden-cart-planted.jpg"
-    },
-    {
-      "label": "122 Garden Cart Flowers · v1",
-      "filename": "122-garden-cart-flowers.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/122-garden-cart-flowers.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b77be640-ba69-4bba-8219-41587cef7a3b/v1-122-garden-cart-flowers.jpg"
-    },
-    {
-      "label": "123 Garden Arch Flowers · v1",
-      "filename": "123-garden-arch-flowers.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/123-garden-arch-flowers.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/4ff10666-e1f8-46b6-9283-0569ac3daadd/v1-123-garden-arch-flowers.jpg"
-    },
-    {
-      "label": "124 Greenhouse Exterior · v1",
-      "filename": "124-greenhouse-exterior.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/124-greenhouse-exterior.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9702e339-f006-472b-9a4d-a1636ebb7593/v1-124-greenhouse-exterior.jpg"
-    },
-    {
-      "label": "125 Farm Owls · v1",
-      "filename": "125-farm-owls.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/125-farm-owls.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/40cacf86-8ff5-416b-8458-449cc7666539/v1-125-farm-owls.jpg"
-    },
-    {
-      "label": "126 Farm Grindstone · v1",
-      "filename": "126-farm-grindstone.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/126-farm-grindstone.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c6b22132-7670-4add-86e5-c16629a278f4/v1-126-farm-grindstone.jpg"
-    },
-    {
-      "label": "127 Farm Entrance · v1",
-      "filename": "127-farm-entrance.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/127-farm-entrance.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/becabff2-9880-4e78-ba8a-b18c1143103c/v1-127-farm-entrance.jpg"
-    },
-    {
-      "label": "129 Pat And Jenn · v1",
-      "filename": "129-pat-and-jenn.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/129-pat-and-jenn.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/729daeef-cc71-4635-8b92-462c23753efe/v1-129-pat-and-jenn.jpg"
-    },
-    {
-      "label": "130 Greenhouse Vignette Corner · v1",
-      "filename": "130-greenhouse-vignette-corner.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/130-greenhouse-vignette-corner.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/df9d6830-3fd6-41e5-af33-38d68324a2ec/v1-130-greenhouse-vignette-corner.jpg"
-    },
-    {
-      "label": "131 Greenhouse Tables · v1",
-      "filename": "131-greenhouse-tables.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/131-greenhouse-tables.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/02cc8fcb-7af7-4d20-bdd4-d2481e6b52f5/v1-131-greenhouse-tables.jpg"
-    },
-    {
-      "label": "132 Greenhouse Shelving · v1",
-      "filename": "132-greenhouse-shelving.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/132-greenhouse-shelving.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/6e13af91-c502-45ad-9543-729e12ff9c38/v1-132-greenhouse-shelving.jpg"
-    },
-    {
-      "label": "133 Greenhouse Counter · v1",
-      "filename": "133-greenhouse-counter.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/133-greenhouse-counter.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1caece91-d79b-4736-94af-8dfd96ec9c95/v1-133-greenhouse-counter.jpg"
-    },
-    {
-      "label": "134 Farm Truck · v1",
-      "filename": "134-farm-truck.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/134-farm-truck.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/afac8c55-09bd-45e4-8195-f6b5b2b60b42/v1-134-farm-truck.jpg"
-    },
-    {
-      "label": "136 Greenhouse Rafters · v1",
-      "filename": "136-greenhouse-rafters.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/136-greenhouse-rafters.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fc13ba0c-26b6-4bd0-9ac5-ed3980981e83/v1-136-greenhouse-rafters.jpg"
-    },
-    {
-      "label": "137 Greenhouse Interior Cupboards · v1",
-      "filename": "137-greenhouse-interior-cupboards.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/137-greenhouse-interior-cupboards.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f365ccb1-a36d-4cae-aed9-ecff9111203a/v1-137-greenhouse-interior-cupboards.jpg"
-    },
-    {
-      "label": "139 Hero Greenhouse · v1",
-      "filename": "139-hero-greenhouse.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/139-hero-greenhouse.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ee289ebc-f16b-42ef-b784-9ac6782d6476/v1-139-hero-greenhouse.jpg"
-    },
-    {
-      "label": "141 Greenhouse Flowers Hanging · v1",
-      "filename": "141-greenhouse-flowers-hanging.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/141-greenhouse-flowers-hanging.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/6c83eb53-b4b0-44da-ad83-0ad87eab77e8/v1-141-greenhouse-flowers-hanging.jpg"
-    },
-    {
-      "label": "212 Farm Cows Gate · v1",
-      "filename": "212-farm-cows-gate.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/212-farm-cows-gate.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/aebf306e-6e26-43d0-a569-818ffd552748/v1-212-farm-cows-gate.webp"
-    },
-    {
-      "label": "213 Farm Chickens Coop · v1",
-      "filename": "213-farm-chickens-coop.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/213-farm-chickens-coop.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ecb066b1-d82a-4a3c-a74d-bfd53fa95828/v1-213-farm-chickens-coop.webp"
-    },
-    {
-      "label": "214 Farm Goats Pair · v1",
-      "filename": "214-farm-goats-pair.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/214-farm-goats-pair.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/be7f7cdb-5ad5-4881-b367-2825cc849303/v1-214-farm-goats-pair.webp"
-    },
-    {
-      "label": "215 Farm Goats Pond · v1",
-      "filename": "215-farm-goats-pond.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/215-farm-goats-pond.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/75b45f3c-08c7-4bfa-b9d8-cad4ba318834/v1-215-farm-goats-pond.webp"
-    },
-    {
-      "label": "216 Stacked Ladderback Chairs · v1",
-      "filename": "216-stacked-ladderback-chairs.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/216-stacked-ladderback-chairs.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/eef18c88-fabd-4f57-926c-470bf492ecfa/v1-216-stacked-ladderback-chairs.webp"
-    },
-    {
-      "label": "217 Green Hutch Books · v1",
-      "filename": "217-green-hutch-books.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/217-green-hutch-books.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8d955fad-de12-4930-a9eb-8992e08fabc6/v1-217-green-hutch-books.webp"
-    },
-    {
-      "label": "218 Glass Cabinet Red Cupboard · v1",
-      "filename": "218-glass-cabinet-red-cupboard.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/218-glass-cabinet-red-cupboard.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f3335e05-22b1-49b9-bb0b-1d1d721bf96f/v1-218-glass-cabinet-red-cupboard.webp"
-    },
-    {
-      "label": "219 Farm Fresh Eggs Sign · v1",
-      "filename": "219-farm-fresh-eggs-sign.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/219-farm-fresh-eggs-sign.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e107c492-37de-4011-81a6-abf36a9b8a9b/v1-219-farm-fresh-eggs-sign.webp"
-    },
-    {
-      "label": "220 Greenhouse Counter Flowers · v1",
-      "filename": "220-greenhouse-counter-flowers.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/220-greenhouse-counter-flowers.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8fd2253d-a128-4d33-80ea-50feec506b4c/v1-220-greenhouse-counter-flowers.webp"
-    },
-    {
-      "label": "221 Gathering Food Baskets · v1",
-      "filename": "221-gathering-food-baskets.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/221-gathering-food-baskets.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2a21ee8d-10ef-4d1c-ab25-67a3d6e1508e/v1-221-gathering-food-baskets.webp"
-    },
-    {
-      "label": "222 Greenhouse Interior Gathering · v1",
-      "filename": "222-greenhouse-interior-gathering.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/222-greenhouse-interior-gathering.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3230b29b-a5c9-4116-9530-cf1ec03d847f/v1-222-greenhouse-interior-gathering.webp"
-    },
-    {
-      "label": "223 Tiered Appetizers Blue Cabinet · v1",
-      "filename": "223-tiered-appetizers-blue-cabinet.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/223-tiered-appetizers-blue-cabinet.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/266d8f0f-7029-4b37-aed9-fb49aaedc181/v1-223-tiered-appetizers-blue-cabinet.webp"
-    },
-    {
-      "label": "224 Charcuterie Spread · v1",
-      "filename": "224-charcuterie-spread.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/224-charcuterie-spread.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e9ee684c-6dfa-4a2f-be72-93d0adcb13a5/v1-224-charcuterie-spread.webp"
-    },
-    {
-      "label": "225 Gathering Appetizer Table · v1",
-      "filename": "225-gathering-appetizer-table.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/225-gathering-appetizer-table.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/93efb834-548e-45eb-94a1-28f174d565db/v1-225-gathering-appetizer-table.webp"
-    },
-    {
-      "label": "226 Browsing Green Cabinet · v1",
-      "filename": "226-browsing-green-cabinet.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/226-browsing-green-cabinet.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fa3dadf8-82ac-4364-9eaf-0a12328002a0/v1-226-browsing-green-cabinet.webp"
-    },
-    {
-      "label": "227 Candle Counter Display · v1",
-      "filename": "227-candle-counter-display.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/227-candle-counter-display.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1e963697-919e-4432-9b0b-0c581d0807e7/v1-227-candle-counter-display.webp"
-    },
-    {
-      "label": "228 Hanging Basket Candle Shelf · v1",
-      "filename": "228-hanging-basket-candle-shelf.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/228-hanging-basket-candle-shelf.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ada01e49-1d5f-45db-8e85-e3fdcd12c985/v1-228-hanging-basket-candle-shelf.webp"
-    },
-    {
-      "label": "229 Dress Form Mannequin · v1",
-      "filename": "229-dress-form-mannequin.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/229-dress-form-mannequin.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9383d0c9-fdaf-4f49-be63-2c6ae8062ab3/v1-229-dress-form-mannequin.webp"
-    },
-    {
-      "label": "230 Wooden Tool Tote · v1",
-      "filename": "230-wooden-tool-tote.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/230-wooden-tool-tote.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8c290577-c1ac-431d-8d4f-d80abbb9f351/v1-230-wooden-tool-tote.webp"
-    },
-    {
-      "label": "231 Typewriter Books Sideboard · v1",
-      "filename": "231-typewriter-books-sideboard.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/231-typewriter-books-sideboard.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d5427b8d-3b90-4cf4-97f0-833190651aa9/v1-231-typewriter-books-sideboard.webp"
-    },
-    {
-      "label": "232 Quilts Drying Rack · v1",
-      "filename": "232-quilts-drying-rack.webp",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/232-quilts-drying-rack.webp",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/49710f50-51db-4346-be00-35c38d57b219/v1-232-quilts-drying-rack.webp"
-    },
-    {
+      "assetKey": "file-64-wooden-trunk",
       "label": "64 Wooden Trunk · v1",
       "filename": "64-wooden-trunk.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/64-wooden-trunk.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5043d29e-c949-4846-8e4d-763d123d4d79/v1-64-wooden-trunk.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5043d29e-c949-4846-8e4d-763d123d4d79/v1-64-wooden-trunk.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-65-tool-chest",
       "label": "65 Tool Chest · v1",
       "filename": "65-tool-chest.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/65-tool-chest.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/080f23c3-1d25-4fee-8a2d-d62fa9c6f5af/v1-65-tool-chest.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/080f23c3-1d25-4fee-8a2d-d62fa9c6f5af/v1-65-tool-chest.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-66-rustic-cabinet",
       "label": "66 Rustic Cabinet · v1",
       "filename": "66-rustic-cabinet.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/66-rustic-cabinet.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/7280cd83-2e7d-4f3a-96b9-63c65d65c7b1/v1-66-rustic-cabinet.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/7280cd83-2e7d-4f3a-96b9-63c65d65c7b1/v1-66-rustic-cabinet.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-67-greenhouse-lights",
       "label": "67 Greenhouse Lights · v1",
       "filename": "67-greenhouse-lights.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/67-greenhouse-lights.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/69e7a295-9f21-45bb-bd17-32380a0b3769/v1-67-greenhouse-lights.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/69e7a295-9f21-45bb-bd17-32380a0b3769/v1-67-greenhouse-lights.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-68-wooden-sideboard",
       "label": "68 Wooden Sideboard · v1",
       "filename": "68-wooden-sideboard.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/68-wooden-sideboard.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/50d1836a-6e64-4d77-ad8b-a2571ab5f389/v1-68-wooden-sideboard.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/50d1836a-6e64-4d77-ad8b-a2571ab5f389/v1-68-wooden-sideboard.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-69-framed-notes",
       "label": "69 Framed Notes · v1",
       "filename": "69-framed-notes.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/69-framed-notes.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/aa2d8464-5b49-41d3-a468-89f381d02a86/v1-69-framed-notes.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/aa2d8464-5b49-41d3-a468-89f381d02a86/v1-69-framed-notes.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-70-corner-cupboard",
       "label": "70 Corner Cupboard · v1",
       "filename": "70-corner-cupboard.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/70-corner-cupboard.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/241e6f79-e884-4a98-9eb9-54fbbc282d2f/v1-70-corner-cupboard.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/241e6f79-e884-4a98-9eb9-54fbbc282d2f/v1-70-corner-cupboard.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-71-apothecary-chest",
       "label": "71 Apothecary Chest · v1",
       "filename": "71-apothecary-chest.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/71-apothecary-chest.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/06866ce5-82cb-4062-bb8b-dda56e785403/v1-71-apothecary-chest.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/06866ce5-82cb-4062-bb8b-dda56e785403/v1-71-apothecary-chest.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-74-portraits-sideboard",
       "label": "74 Portraits Sideboard · v1",
       "filename": "74-portraits-sideboard.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/74-portraits-sideboard.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/29fa94b0-a459-4d85-9b86-7add301368df/v1-74-portraits-sideboard.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/29fa94b0-a459-4d85-9b86-7add301368df/v1-74-portraits-sideboard.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-75-dresser-mirror-vignette",
       "label": "75 Dresser Mirror Vignette · v1",
       "filename": "75-dresser-mirror-vignette.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/75-dresser-mirror-vignette.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/686eb764-9ba9-47f5-bb2c-bf8c56b1f6b7/v1-75-dresser-mirror-vignette.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/686eb764-9ba9-47f5-bb2c-bf8c56b1f6b7/v1-75-dresser-mirror-vignette.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-76-pine-dresser",
       "label": "76 Pine Dresser · v1",
       "filename": "76-pine-dresser.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/76-pine-dresser.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8a8495f6-6da1-42da-88e0-a7a9007e52e4/v1-76-pine-dresser.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8a8495f6-6da1-42da-88e0-a7a9007e52e4/v1-76-pine-dresser.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-77-painted-cupboard-scale",
       "label": "77 Painted Cupboard Scale · v1",
       "filename": "77-painted-cupboard-scale.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/77-painted-cupboard-scale.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/905ef0a9-55d1-496e-9e91-ea115980cd37/v1-77-painted-cupboard-scale.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/905ef0a9-55d1-496e-9e91-ea115980cd37/v1-77-painted-cupboard-scale.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-78-green-console",
       "label": "78 Green Console · v1",
       "filename": "78-green-console.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/78-green-console.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/020024ea-e120-4589-be23-8c91cbbc3431/v1-78-green-console.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/020024ea-e120-4589-be23-8c91cbbc3431/v1-78-green-console.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-79-glass-front-cabinet",
       "label": "79 Glass Front Cabinet · v1",
       "filename": "79-glass-front-cabinet.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/79-glass-front-cabinet.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fc965f73-e05e-4091-8514-2ffbfc003160/v1-79-glass-front-cabinet.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fc965f73-e05e-4091-8514-2ffbfc003160/v1-79-glass-front-cabinet.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-80-textiles-quilts-rack",
       "label": "80 Textiles Quilts Rack · v1",
       "filename": "80-textiles-quilts-rack.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/80-textiles-quilts-rack.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c84388bb-b036-48b7-b7f8-2599cbf9f9b4/v1-80-textiles-quilts-rack.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c84388bb-b036-48b7-b7f8-2599cbf9f9b4/v1-80-textiles-quilts-rack.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-82-detail-painted-hinge",
       "label": "82 Detail Painted Hinge · v1",
       "filename": "82-detail-painted-hinge.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/82-detail-painted-hinge.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b1121cf6-ce5d-4ece-b6cb-ce4d00409daa/v1-82-detail-painted-hinge.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b1121cf6-ce5d-4ece-b6cb-ce4d00409daa/v1-82-detail-painted-hinge.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-83-candles-display",
       "label": "83 Candles Display · v1",
       "filename": "83-candles-display.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/83-candles-display.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e5463eb4-9470-45de-8184-c88c8c74b064/v1-83-candles-display.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e5463eb4-9470-45de-8184-c88c8c74b064/v1-83-candles-display.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-84-antique-scale-cabinet",
       "label": "84 Antique Scale Cabinet · v1",
       "filename": "84-antique-scale-cabinet.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/84-antique-scale-cabinet.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e9443ff2-316f-4d94-a77d-8fc0e767dc79/v1-84-antique-scale-cabinet.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e9443ff2-316f-4d94-a77d-8fc0e767dc79/v1-84-antique-scale-cabinet.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-85-vignette-wooden-tools",
       "label": "85 Vignette Wooden Tools · v1",
       "filename": "85-vignette-wooden-tools.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/85-vignette-wooden-tools.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9227c3a3-8d46-412e-87a5-c5332f347636/v1-85-vignette-wooden-tools.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9227c3a3-8d46-412e-87a5-c5332f347636/v1-85-vignette-wooden-tools.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-86-vignette-thread",
       "label": "86 Vignette Thread · v1",
       "filename": "86-vignette-thread.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/86-vignette-thread.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f92b3211-33eb-4c70-ac50-26d06babb144/v1-86-vignette-thread.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f92b3211-33eb-4c70-ac50-26d06babb144/v1-86-vignette-thread.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-87-vignette-rolling-pins",
       "label": "87 Vignette Rolling Pins · v1",
       "filename": "87-vignette-rolling-pins.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/87-vignette-rolling-pins.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/23e50c9f-79a0-46cb-b203-3136fbc5d9c3/v1-87-vignette-rolling-pins.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/23e50c9f-79a0-46cb-b203-3136fbc5d9c3/v1-87-vignette-rolling-pins.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-88-vignette-pitcher-flowers",
       "label": "88 Vignette Pitcher Flowers · v1",
       "filename": "88-vignette-pitcher-flowers.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/88-vignette-pitcher-flowers.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ca084bf8-2a81-4a55-bb40-8eb83e663557/v1-88-vignette-pitcher-flowers.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ca084bf8-2a81-4a55-bb40-8eb83e663557/v1-88-vignette-pitcher-flowers.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-89-vignette-ironstone-bowl",
       "label": "89 Vignette Ironstone Bowl · v1",
       "filename": "89-vignette-ironstone-bowl.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/89-vignette-ironstone-bowl.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f34b7779-f251-4f8b-b80a-bc2ae509815d/v1-89-vignette-ironstone-bowl.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f34b7779-f251-4f8b-b80a-bc2ae509815d/v1-89-vignette-ironstone-bowl.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-90-vignette-flour-sifter",
       "label": "90 Vignette Flour Sifter · v1",
       "filename": "90-vignette-flour-sifter.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/90-vignette-flour-sifter.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/67ca3194-2749-481c-a33a-03e833b3d4c7/v1-90-vignette-flour-sifter.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/67ca3194-2749-481c-a33a-03e833b3d4c7/v1-90-vignette-flour-sifter.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-91-vignette-tube-flowers",
       "label": "91 Vignette Tube Flowers · v1",
       "filename": "91-vignette-tube-flowers.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/91-vignette-tube-flowers.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/06d23ca8-3c90-4b70-8635-7e4cd01acdbd/v1-91-vignette-tube-flowers.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/06d23ca8-3c90-4b70-8635-7e4cd01acdbd/v1-91-vignette-tube-flowers.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-92-vignette-still-life",
       "label": "92 Vignette Still Life · v1",
       "filename": "92-vignette-still-life.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/92-vignette-still-life.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b322f0c0-75d8-44b3-a572-6d25b2e7586f/v1-92-vignette-still-life.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b322f0c0-75d8-44b3-a572-6d25b2e7586f/v1-92-vignette-still-life.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-93-vignette-ironstone-pitcher",
       "label": "93 Vignette Ironstone Pitcher · v1",
       "filename": "93-vignette-ironstone-pitcher.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/93-vignette-ironstone-pitcher.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/79fc803b-c755-4b9e-b142-79dfa826e64f/v1-93-vignette-ironstone-pitcher.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/79fc803b-c755-4b9e-b142-79dfa826e64f/v1-93-vignette-ironstone-pitcher.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-95-vignette-crock-lavender",
       "label": "95 Vignette Crock Lavender · v1",
       "filename": "95-vignette-crock-lavender.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/95-vignette-crock-lavender.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d2feec26-e788-49b5-a815-5715d53b1e05/v1-95-vignette-crock-lavender.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d2feec26-e788-49b5-a815-5715d53b1e05/v1-95-vignette-crock-lavender.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-97-vignette-blossom-urn",
       "label": "97 Vignette Blossom Urn · v1",
       "filename": "97-vignette-blossom-urn.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/97-vignette-blossom-urn.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/959fb9d4-3c4e-4224-a833-a03a7eff444e/v1-97-vignette-blossom-urn.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/959fb9d4-3c4e-4224-a833-a03a7eff444e/v1-97-vignette-blossom-urn.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-98-cat-textiles",
       "label": "98 Cat Textiles · v1",
       "filename": "98-cat-textiles.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/98-cat-textiles.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0e951c24-917f-4215-bff8-2e3b362877c4/v1-98-cat-textiles.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0e951c24-917f-4215-bff8-2e3b362877c4/v1-98-cat-textiles.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-99-cat-seasonal-botanicals",
       "label": "99 Cat Seasonal Botanicals · v1",
       "filename": "99-cat-seasonal-botanicals.jpg",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/99-cat-seasonal-botanicals.jpg",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/a59a4e1d-ef23-4f87-97a2-69efe35041d5/v1-99-cat-seasonal-botanicals.jpg"
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/a59a4e1d-ef23-4f87-97a2-69efe35041d5/v1-99-cat-seasonal-botanicals.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
+      "assetKey": "file-100-cat-architectural-salvage",
+      "label": "100 Cat Architectural Salvage · v1",
+      "filename": "100-cat-architectural-salvage.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c2e174e7-f9e9-4dd4-8932-62e37a244a3d/v1-100-cat-architectural-salvage.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-101-cat-primitive-furniture",
+      "label": "101 Cat Primitive Furniture · v1",
+      "filename": "101-cat-primitive-furniture.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5af4b4a1-f13f-4e42-9b88-ead25515e52e/v1-101-cat-primitive-furniture.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-102-cat-ironstone-kitchenwares",
+      "label": "102 Cat Ironstone Kitchenwares · v1",
+      "filename": "102-cat-ironstone-kitchenwares.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b2c7fce7-b93d-40cc-a0ef-5f4bcd335ac0/v1-102-cat-ironstone-kitchenwares.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-103-cat-european-antiques",
+      "label": "103 Cat European Antiques · v1",
+      "filename": "103-cat-european-antiques.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d651869d-310d-499f-8c5a-b7bcc8af614d/v1-103-cat-european-antiques.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-104-refreshments-table",
+      "label": "104 Refreshments Table · v1",
+      "filename": "104-refreshments-table.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/4cdd7873-47ae-4fda-a7f6-7a2e168bc901/v1-104-refreshments-table.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-105-refreshments-serving",
+      "label": "105 Refreshments Serving · v1",
+      "filename": "105-refreshments-serving.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/bf56104a-9b10-42b3-86c7-1ba9ce10d785/v1-105-refreshments-serving.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-106-refreshments-pastries",
+      "label": "106 Refreshments Pastries · v1",
+      "filename": "106-refreshments-pastries.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/848a17c0-b7f0-4ebc-b1e5-2a5808f698ee/v1-106-refreshments-pastries.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-107-refreshments-drinks",
+      "label": "107 Refreshments Drinks · v1",
+      "filename": "107-refreshments-drinks.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/808fa715-0a44-4c48-ab68-16a042fb1f4e/v1-107-refreshments-drinks.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-108-gathering-loading",
+      "label": "108 Gathering Loading · v1",
+      "filename": "108-gathering-loading.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/add2cffa-a7da-468b-aa29-477bcced994c/v1-108-gathering-loading.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-110-sign-welcome-outdoor",
+      "label": "110 Sign Welcome Outdoor · v1",
+      "filename": "110-sign-welcome-outdoor.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d5f65eee-9634-4d20-99ae-109214424be0/v1-110-sign-welcome-outdoor.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-111-sign-large-items",
+      "label": "111 Sign Large Items · v1",
+      "filename": "111-sign-large-items.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5d379f5e-cb52-4ee7-960e-c4863a101b44/v1-111-sign-large-items.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-112-gathering-guests",
+      "label": "112 Gathering Guests · v1",
+      "filename": "112-gathering-guests.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9a80d700-aa8c-4b04-b8c9-6c5727e1106f/v1-112-gathering-guests.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-113-gathering-counter",
+      "label": "113 Gathering Counter · v1",
+      "filename": "113-gathering-counter.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2d98a2f8-f471-4595-8cd2-e145fd8b7d76/v1-113-gathering-counter.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-115-sign-welcome",
+      "label": "115 Sign Welcome · v1",
+      "filename": "115-sign-welcome.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ac911da1-e799-451b-8dcd-2a352d237b7c/v1-115-sign-welcome.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-116-sign-visit-notes",
+      "label": "116 Sign Visit Notes · v1",
+      "filename": "116-sign-visit-notes.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c4845986-d6af-42d3-95c7-9335f920b0a7/v1-116-sign-visit-notes.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-117-sign-perfectly-imperfect",
+      "label": "117 Sign Perfectly Imperfect · v1",
+      "filename": "117-sign-perfectly-imperfect.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/145adadc-e3e4-4c8e-920c-3c90101168d0/v1-117-sign-perfectly-imperfect.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-119-sign-bloom-bar",
+      "label": "119 Sign Bloom Bar · v1",
+      "filename": "119-sign-bloom-bar.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/af875d6c-c3a1-4351-816c-6786ba81ccc9/v1-119-sign-bloom-bar.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-120-garden-cart-planted",
+      "label": "120 Garden Cart Planted · v1",
+      "filename": "120-garden-cart-planted.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1223e984-947d-435e-bbb6-da3a6158de4c/v1-120-garden-cart-planted.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-122-garden-cart-flowers",
+      "label": "122 Garden Cart Flowers · v1",
+      "filename": "122-garden-cart-flowers.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b77be640-ba69-4bba-8219-41587cef7a3b/v1-122-garden-cart-flowers.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-123-garden-arch-flowers",
+      "label": "123 Garden Arch Flowers · v1",
+      "filename": "123-garden-arch-flowers.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/4ff10666-e1f8-46b6-9283-0569ac3daadd/v1-123-garden-arch-flowers.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-124-greenhouse-exterior",
+      "label": "124 Greenhouse Exterior · v1",
+      "filename": "124-greenhouse-exterior.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9702e339-f006-472b-9a4d-a1636ebb7593/v1-124-greenhouse-exterior.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-125-farm-owls",
+      "label": "125 Farm Owls · v1",
+      "filename": "125-farm-owls.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/40cacf86-8ff5-416b-8458-449cc7666539/v1-125-farm-owls.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-126-farm-grindstone",
+      "label": "126 Farm Grindstone · v1",
+      "filename": "126-farm-grindstone.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/c6b22132-7670-4add-86e5-c16629a278f4/v1-126-farm-grindstone.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-127-farm-entrance",
+      "label": "127 Farm Entrance · v1",
+      "filename": "127-farm-entrance.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/becabff2-9880-4e78-ba8a-b18c1143103c/v1-127-farm-entrance.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-129-pat-and-jenn",
+      "label": "129 Pat And Jenn · v1",
+      "filename": "129-pat-and-jenn.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/729daeef-cc71-4635-8b92-462c23753efe/v1-129-pat-and-jenn.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-130-greenhouse-vignette-corner",
+      "label": "130 Greenhouse Vignette Corner · v1",
+      "filename": "130-greenhouse-vignette-corner.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/df9d6830-3fd6-41e5-af33-38d68324a2ec/v1-130-greenhouse-vignette-corner.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-131-greenhouse-tables",
+      "label": "131 Greenhouse Tables · v1",
+      "filename": "131-greenhouse-tables.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/02cc8fcb-7af7-4d20-bdd4-d2481e6b52f5/v1-131-greenhouse-tables.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-132-greenhouse-shelving",
+      "label": "132 Greenhouse Shelving · v1",
+      "filename": "132-greenhouse-shelving.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/6e13af91-c502-45ad-9543-729e12ff9c38/v1-132-greenhouse-shelving.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-133-greenhouse-counter",
+      "label": "133 Greenhouse Counter · v1",
+      "filename": "133-greenhouse-counter.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1caece91-d79b-4736-94af-8dfd96ec9c95/v1-133-greenhouse-counter.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-134-farm-truck",
+      "label": "134 Farm Truck · v1",
+      "filename": "134-farm-truck.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/afac8c55-09bd-45e4-8195-f6b5b2b60b42/v1-134-farm-truck.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-136-greenhouse-rafters",
+      "label": "136 Greenhouse Rafters · v1",
+      "filename": "136-greenhouse-rafters.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fc13ba0c-26b6-4bd0-9ac5-ed3980981e83/v1-136-greenhouse-rafters.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-137-greenhouse-interior-cupboards",
+      "label": "137 Greenhouse Interior Cupboards · v1",
+      "filename": "137-greenhouse-interior-cupboards.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f365ccb1-a36d-4cae-aed9-ecff9111203a/v1-137-greenhouse-interior-cupboards.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-139-hero-greenhouse",
+      "label": "139 Hero Greenhouse · v1",
+      "filename": "139-hero-greenhouse.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ee289ebc-f16b-42ef-b784-9ac6782d6476/v1-139-hero-greenhouse.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-141-greenhouse-flowers-hanging",
+      "label": "141 Greenhouse Flowers Hanging · v1",
+      "filename": "141-greenhouse-flowers-hanging.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/6c83eb53-b4b0-44da-ad83-0ad87eab77e8/v1-141-greenhouse-flowers-hanging.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-212-farm-cows-gate",
+      "label": "212 Farm Cows Gate · v1",
+      "filename": "212-farm-cows-gate.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/aebf306e-6e26-43d0-a569-818ffd552748/v1-212-farm-cows-gate.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-213-farm-chickens-coop",
+      "label": "213 Farm Chickens Coop · v1",
+      "filename": "213-farm-chickens-coop.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ecb066b1-d82a-4a3c-a74d-bfd53fa95828/v1-213-farm-chickens-coop.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-214-farm-goats-pair",
+      "label": "214 Farm Goats Pair · v1",
+      "filename": "214-farm-goats-pair.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/be7f7cdb-5ad5-4881-b367-2825cc849303/v1-214-farm-goats-pair.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-215-farm-goats-pond",
+      "label": "215 Farm Goats Pond · v1",
+      "filename": "215-farm-goats-pond.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/75b45f3c-08c7-4bfa-b9d8-cad4ba318834/v1-215-farm-goats-pond.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-216-stacked-ladderback-chairs",
+      "label": "216 Stacked Ladderback Chairs · v1",
+      "filename": "216-stacked-ladderback-chairs.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/eef18c88-fabd-4f57-926c-470bf492ecfa/v1-216-stacked-ladderback-chairs.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-217-green-hutch-books",
+      "label": "217 Green Hutch Books · v1",
+      "filename": "217-green-hutch-books.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8d955fad-de12-4930-a9eb-8992e08fabc6/v1-217-green-hutch-books.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-218-glass-cabinet-red-cupboard",
+      "label": "218 Glass Cabinet Red Cupboard · v1",
+      "filename": "218-glass-cabinet-red-cupboard.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f3335e05-22b1-49b9-bb0b-1d1d721bf96f/v1-218-glass-cabinet-red-cupboard.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-219-farm-fresh-eggs-sign",
+      "label": "219 Farm Fresh Eggs Sign · v1",
+      "filename": "219-farm-fresh-eggs-sign.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e107c492-37de-4011-81a6-abf36a9b8a9b/v1-219-farm-fresh-eggs-sign.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-220-greenhouse-counter-flowers",
+      "label": "220 Greenhouse Counter Flowers · v1",
+      "filename": "220-greenhouse-counter-flowers.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8fd2253d-a128-4d33-80ea-50feec506b4c/v1-220-greenhouse-counter-flowers.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-221-gathering-food-baskets",
+      "label": "221 Gathering Food Baskets · v1",
+      "filename": "221-gathering-food-baskets.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2a21ee8d-10ef-4d1c-ab25-67a3d6e1508e/v1-221-gathering-food-baskets.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-222-greenhouse-interior-gathering",
+      "label": "222 Greenhouse Interior Gathering · v1",
+      "filename": "222-greenhouse-interior-gathering.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3230b29b-a5c9-4116-9530-cf1ec03d847f/v1-222-greenhouse-interior-gathering.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-223-tiered-appetizers-blue-cabinet",
+      "label": "223 Tiered Appetizers Blue Cabinet · v1",
+      "filename": "223-tiered-appetizers-blue-cabinet.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/266d8f0f-7029-4b37-aed9-fb49aaedc181/v1-223-tiered-appetizers-blue-cabinet.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-224-charcuterie-spread",
+      "label": "224 Charcuterie Spread · v1",
+      "filename": "224-charcuterie-spread.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e9ee684c-6dfa-4a2f-be72-93d0adcb13a5/v1-224-charcuterie-spread.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-225-gathering-appetizer-table",
+      "label": "225 Gathering Appetizer Table · v1",
+      "filename": "225-gathering-appetizer-table.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/93efb834-548e-45eb-94a1-28f174d565db/v1-225-gathering-appetizer-table.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-226-browsing-green-cabinet",
+      "label": "226 Browsing Green Cabinet · v1",
+      "filename": "226-browsing-green-cabinet.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/fa3dadf8-82ac-4364-9eaf-0a12328002a0/v1-226-browsing-green-cabinet.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-227-candle-counter-display",
+      "label": "227 Candle Counter Display · v1",
+      "filename": "227-candle-counter-display.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1e963697-919e-4432-9b0b-0c581d0807e7/v1-227-candle-counter-display.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-228-hanging-basket-candle-shelf",
+      "label": "228 Hanging Basket Candle Shelf · v1",
+      "filename": "228-hanging-basket-candle-shelf.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ada01e49-1d5f-45db-8e85-e3fdcd12c985/v1-228-hanging-basket-candle-shelf.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-229-dress-form-mannequin",
+      "label": "229 Dress Form Mannequin · v1",
+      "filename": "229-dress-form-mannequin.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9383d0c9-fdaf-4f49-be63-2c6ae8062ab3/v1-229-dress-form-mannequin.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-230-wooden-tool-tote",
+      "label": "230 Wooden Tool Tote · v1",
+      "filename": "230-wooden-tool-tote.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8c290577-c1ac-431d-8d4f-d80abbb9f351/v1-230-wooden-tool-tote.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-231-typewriter-books-sideboard",
+      "label": "231 Typewriter Books Sideboard · v1",
+      "filename": "231-typewriter-books-sideboard.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d5427b8d-3b90-4cf4-97f0-833190651aa9/v1-231-typewriter-books-sideboard.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "file-232-quilts-drying-rack",
+      "label": "232 Quilts Drying Rack · v1",
+      "filename": "232-quilts-drying-rack.webp",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/49710f50-51db-4346-be00-35c38d57b219/v1-232-quilts-drying-rack.webp",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "homephoto",
+      "label": "Home Photo · v1",
+      "filename": "homephoto.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66970f6e-c944-4613-8b07-c67b96c63cc3/v1-homephoto.png",
+      "category": "image",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "roots-relics-social-share-v-2",
+      "label": "Roots Relics Social Share V 2 · v1",
+      "filename": "roots-relics-social-share-v2.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/957d6887-53df-4853-ac22-b1baf2f87ef5/v1-roots-relics-social-share-v2.png",
+      "category": "social",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "haw01969",
       "label": "HAW 01969 · v1",
       "filename": "haw01969.jpg",
       "localReference": null,
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3fed8443-a815-4bf7-bd13-314acf4cdfb1/v1-haw01969.jpg"
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3fed8443-a815-4bf7-bd13-314acf4cdfb1/v1-haw01969.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     },
     {
-      "label": "Home Photo · v1",
-      "filename": "homephoto.png",
-      "localReference": "Roots-and-Relics-site-assets/photos-and-graphics/homephoto.png",
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/66970f6e-c944-4613-8b07-c67b96c63cc3/v1-homephoto.png"
-    },
-    {
+      "assetKey": "textiles",
       "label": "Textiles · v1",
       "filename": "textiles.jpg",
       "localReference": null,
-      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2b6435c2-de8d-4cc7-a5b3-e2f4a81ed34b/v1-textiles.jpg"
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2b6435c2-de8d-4cc7-a5b3-e2f4a81ed34b/v1-textiles.jpg",
+      "category": "image",
+      "altText": "",
+      "version": 1
     }
   ]
 }
