@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { imagePreviewUrl, imageUrl } from '../../lib/image-assets';
+import { hasImage, imagePreviewUrl, imageUrl } from '../../lib/image-assets';
 import '../../styles/gallery.css';
 
 const galleryImages = [
@@ -50,6 +50,7 @@ const galleryImages = [
   'r-r-greenhousse-44.jpg',
   'r-r-greenhousse-45.jpg',
   'r-r-greenhousse-46.jpg',
+  'r-r-greenhousse-47.jpg',
   'r-r-greenhousse-48.jpg',
   'r-r-greenhousse-49.jpg',
   'r-r-greenhousse-50.jpg',
@@ -57,7 +58,7 @@ const galleryImages = [
   'r-r-greenhousse-52.jpg',
   'r-r-greenhousse-53.jpg',
   'r-r-greenhousse-54.jpg',
-].map((filename) => {
+].filter(hasImage).map((filename) => {
   const photoNumber = filename.match(/-(\d+)\.jpg$/)?.[1];
   return {
     filename,

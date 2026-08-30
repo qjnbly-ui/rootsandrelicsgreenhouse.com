@@ -10,6 +10,10 @@ export function imageUrl(filename: string): string {
   return url;
 }
 
+export function hasImage(filename: string): boolean {
+  return imageByFilename.has(filename);
+}
+
 export function imagePreviewUrl(
   filename: string,
   { width = 960, height = 720, quality = 72 } = {},
