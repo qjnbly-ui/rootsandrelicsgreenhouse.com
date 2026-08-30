@@ -196,6 +196,102 @@ section[id]{scroll-margin-top:88px}
   }
 }
 
+/* Homepage invitation to the client-reviewed community journal. */
+.home-share-find {
+  position: relative;
+  min-height: 650px;
+  padding: 125px 7vw;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
+  gap: 8vw;
+  align-items: end;
+  overflow: hidden;
+  background: #d9cdae;
+}
+
+.home-share-find-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.home-share-find .kicker {
+  margin: 0 0 28px;
+  color: var(--rust);
+}
+
+.home-share-find h2 {
+  margin: 0;
+  font: 300 clamp(66px, 8vw, 124px)/.83 var(--serif);
+  letter-spacing: -.06em;
+}
+
+.home-share-find h2 em {
+  color: var(--rust);
+  font-weight: 300;
+}
+
+.home-share-find-copy > p:not(.kicker) {
+  max-width: 590px;
+  margin: 36px 0 32px;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.home-share-find-note {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 12px;
+  padding: 30px 0 0 32px;
+  border-top: 1px solid rgba(38, 50, 30, .3);
+  font: italic 300 27px/1.25 var(--serif);
+}
+
+.home-share-find-mark {
+  position: absolute;
+  right: -.06em;
+  bottom: -.19em;
+  color: rgba(82, 99, 63, .07);
+  font: 300 clamp(220px, 34vw, 520px)/.7 var(--serif);
+  letter-spacing: -.12em;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .home-share-find {
+    min-height: 0;
+    padding: 100px 7vw 110px;
+    grid-template-columns: 1fr;
+    gap: 58px;
+  }
+
+  .home-share-find-note {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-share-find {
+    padding: 82px 6vw 92px;
+    gap: 48px;
+  }
+
+  .home-share-find h2 {
+    font-size: 55px;
+    line-height: .88;
+  }
+
+  .home-share-find-copy > p:not(.kicker) {
+    margin-top: 28px;
+    font-size: 15px;
+  }
+
+  .home-share-find-note {
+    padding: 25px 0 0;
+    font-size: 24px;
+  }
+}
+
 /* Shared hero treatment: protect the type without muting the full photograph. */
 :root {
   --hero-text-overlay: radial-gradient(

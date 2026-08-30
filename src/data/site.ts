@@ -16,6 +16,7 @@ export const site = {
     { label: 'Gatherings', href: '/greenhouse-gatherings/' },
     { label: 'Private showings', href: '/private-showings/' },
     { label: 'Gallery', href: '/gallery/' },
+    { label: 'Journal', href: '/from-the-greenhouse/' },
   ],
   secondaryNavigation: [
     { label: 'Before you visit', href: '/before-you-visit/' },

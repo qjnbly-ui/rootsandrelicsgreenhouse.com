@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { imageUrl } from '../../lib/image-assets';
+import '../../styles/from-the-greenhouse.css';
+
+const fallbackHero = imageUrl('r-r-greenhousse-13.jpg');
+---
+
+<BaseLayout
+  title="From the Greenhouse | Roots & Relics"
+  description="New pieces, farm stories, gathered moments, and notes from Roots & Relics Greenhouse."
+  currentPath="/from-the-greenhouse/"
+  bodyClass="greenhouse-journal-page inner-page"
+>
+  <main id="main" class="greenhouse-journal">
+    <section class="greenhouse-journal-hero">
+      <img id="journal-hero-image" src={fallbackHero} alt="A view inside Roots and Relics Greenhouse" fetchpriority="high" />
+      <div class="greenhouse-journal-hero-shade" aria-hidden="true"></div>
+      <div class="greenhouse-journal-hero-copy">
+        <p class="kicker" id="journal-kicker">New pieces · farm stories · gathered moments</p>
+        <h1 id="journal-title">From the <em>greenhouse.</em></h1>
+        <p id="journal-intro">A living journal from Roots &amp; Relics—new finds, greenhouse days, and the stories that follow pieces home.</p>
+      </div>
+    </section>
+
+    <section class="greenhouse-journal-feed" aria-labelledby="journal-feed-title">
+      <header class="greenhouse-journal-heading">
+        <p class="kicker">The latest from Roots &amp; Relics</p>
+        <h2 id="journal-feed-title">Stories worth <em>keeping.</em></h2>
+      </header>
+      <div class="greenhouse-journal-status" id="journal-status" role="status">Gathering the latest notes…</div>
+      <div class="greenhouse-journal-grid" id="journal-grid" hidden></div>
+    </section>
+
+    <section class="greenhouse-journal-invitation" id="share-your-find">
+      <div class="greenhouse-share-intro"><p class="kicker">A piece found its place?</p><h2>We would love to see it <em>at home.</em></h2><p>Share a photograph and the story of what caught your eye. Jennifer and Pat will review it before anything appears publicly.</p></div>
+      <form class="greenhouse-share-form" id="share-find-form">
+        <label><span>Your name</span><input name="name" maxlength="160" required autocomplete="name" /></label>
+        <label><span>Your email</span><input name="email" type="email" maxlength="320" required autocomplete="email" /></label>
+        <label class="greenhouse-share-wide"><span>Story title <small>optional</small></span><input name="title" maxlength="180" placeholder="The piece that found its place" /></label>
+        <label class="greenhouse-share-wide"><span>Your story</span><textarea name="story" maxlength="5000" rows="6" required placeholder="Tell us what you found and where it lives now."></textarea></label>
+        <label class="greenhouse-share-wide greenhouse-share-photo"><span>Photograph</span><input name="photo" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required /><small>JPG, PNG, WebP, or GIF up to 10 MB. Your photo stays private until reviewed.</small></label>
+        <label class="greenhouse-share-wide greenhouse-share-check"><input name="permission" type="checkbox" required /><span>I took this photo or have permission to share it, and I give Roots &amp; Relics permission to publish this story and photograph.</span></label>
+        <label class="greenhouse-share-honey" aria-hidden="true"><span>Company</span><input name="company" tabindex="-1" autocomplete="off" /></label>
+        <div class="greenhouse-share-wide greenhouse-share-action"><button type="submit">Share your find <span>→</span></button><p id="share-find-status" role="status" aria-live="polite"></p></div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    interface JournalMedia { url: string; altText?: string; }
+    interface JournalPost { post_type: keyof typeof typeLabels; title: string; excerpt?: string; body: string; featured: boolean; published_at: string; media?: JournalMedia[]; }
+    interface JournalFeed { page: { kicker: string; intro: string; heroUrl?: string }; posts: JournalPost[]; error?: string; }
+    const feedUrl = 'https://n3xra.com/api/website-content-feed?slug=roots-and-relics-be7315';
+    const typeLabels = { update: 'Greenhouse update', new_piece: 'New piece', farm_story: 'Farm story', customer_story: 'Found a home', event: 'Gathering' };
+    const grid = document.querySelector<HTMLElement>('#journal-grid')!;
+    const status = document.querySelector<HTMLElement>('#journal-status')!;
+
+    function formatDate(value: string) {
+      return new Intl.DateTimeFormat(undefined, { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(value));
+    }
+
+    function renderPost(post: JournalPost, index: number) {
+      const article = document.createElement('article');
+      article.className = `greenhouse-journal-card${post.featured || index === 0 ? ' is-featured' : ''}`;
+      const image = post.media?.[0];
+      if (image?.url) {
+        const figure = document.createElement('figure');
+        const img = document.createElement('img');
+        img.src = image.url;
+        img.alt = image.altText || post.title;
+        img.loading = index < 2 ? 'eager' : 'lazy';
+        img.decoding = 'async';
+        figure.append(img);
+        article.append(figure);
+      }
+      const copy = document.createElement('div');
+      copy.className = 'greenhouse-journal-card-copy';
+      const meta = document.createElement('p');
+      meta.className = 'kicker';
+      meta.textContent = `${typeLabels[post.post_type] || 'Greenhouse note'} · ${formatDate(post.published_at)}`;
+      const title = document.createElement('h3');
+      title.textContent = post.title;
+      const body = document.createElement('p');
+      body.textContent = post.excerpt || post.body;
+      copy.append(meta, title, body);
+      article.append(copy);
+      return article;
+    }
+
+    fetch(feedUrl, { headers: { Accept: 'application/json' } })
+      .then(async (response) => {
+        const data = await response.json() as JournalFeed;
+        if (!response.ok) throw new Error(data.error || 'The journal could not be loaded.');
+        document.querySelector<HTMLElement>('#journal-kicker')!.textContent = data.page.kicker;
+        document.querySelector<HTMLElement>('#journal-intro')!.textContent = data.page.intro;
+        if (data.page.heroUrl) document.querySelector<HTMLImageElement>('#journal-hero-image')!.src = data.page.heroUrl;
+        if (!data.posts.length) {
+          status.textContent = 'The first greenhouse story is being gathered now. Please check back soon.';
+          return;
+        }
+        grid.replaceChildren(...data.posts.map(renderPost));
+        grid.hidden = false;
+        status.hidden = true;
+      })
+      .catch(() => {
+        status.textContent = 'The latest notes are resting for a moment. Please visit again shortly.';
+      });
+
+    const shareForm = document.querySelector<HTMLFormElement>('#share-find-form')!;
+    const shareStatus = document.querySelector<HTMLElement>('#share-find-status')!;
+    shareForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submit = shareForm.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+      const values = new FormData(shareForm);
+      const photo = values.get('photo');
+      if (!(photo instanceof File) || !photo.size) return;
+      submit.disabled = true;
+      shareStatus.textContent = 'Preparing your private photo upload…';
+      try {
+        const preparedResponse = await fetch('https://n3xra.com/api/website-story-submission', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: 'roots-and-relics-be7315', name: values.get('name'), email: values.get('email'), title: values.get('title'), story: values.get('story'), filename: photo.name, mimeType: photo.type, sizeBytes: photo.size, permissionToPublish: values.get('permission') === 'on', displayNamePreference: 'first_name', company: values.get('company') }) });
+        const prepared = await preparedResponse.json();
+        if (!preparedResponse.ok) throw new Error(prepared.error || 'Your story could not be prepared.');
+        shareStatus.textContent = 'Uploading your photograph privately…';
+        const uploadResponse = await fetch(prepared.uploadUrl, { method: 'PUT', headers: { 'Content-Type': photo.type, 'Cache-Control': 'max-age=3600', 'x-upsert': 'false' }, body: photo });
+        if (!uploadResponse.ok) throw new Error('The photograph could not be uploaded.');
+        const finalResponse = await fetch('https://n3xra.com/api/website-story-submission', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'finalize', submissionId: prepared.submissionId, uploadSecret: prepared.uploadSecret }) });
+        const final = await finalResponse.json();
+        if (!finalResponse.ok) throw new Error(final.error || 'Your story could not be completed.');
+        shareForm.reset();
+        shareStatus.textContent = 'Thank you—your story and photo are safely with Jennifer and Pat for review.';
+      } catch (error) {
+        shareStatus.textContent = error instanceof Error ? error.message : 'Your story could not be sent. Please try again.';
+      } finally { submit.disabled = false; }
+    });
+  </script>
+</BaseLayout>
