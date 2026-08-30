@@ -36,11 +36,9 @@
 
 .gatherings-hero-image img {
   width: 100%;
-  height: 116%;
+  height: 100%;
   object-fit: cover;
-  object-position: 56% bottom;
-  transform: scale(1.2);
-  transform-origin: 56% 76%;
+  object-position: 50% 52%;
 }
 
 .gatherings-hero-card {
@@ -629,8 +627,8 @@
   }
 
   .gatherings-hero-image img {
-    object-position: 58% bottom;
-    transform: scale(1.5);
+    object-position: 50% 52%;
+    transform: none;
   }
 
   .gatherings-hero-card {

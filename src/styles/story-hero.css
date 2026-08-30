@@ -5,17 +5,17 @@
   }
 }
 
-/* Pull the hero down into the layered displays instead of emphasizing the roof. */
+/* Keep the full display visible while leaving enough image for parallax movement. */
 .story-hero-media img {
   position: absolute;
   inset: auto 0 0;
-  height: 138%;
-  object-position: 52% bottom;
+  height: 116%;
+  object-position: 50% 54%;
 }
 
 @media (max-width: 600px) {
   .story-hero-media img {
-    height: 148%;
-    object-position: 58% bottom;
+    height: 120%;
+    object-position: 52% 55%;
   }
 }

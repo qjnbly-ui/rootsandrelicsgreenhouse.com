@@ -195,3 +195,109 @@ section[id]{scroll-margin-top:88px}
     justify-content: center;
   }
 }
+
+/* Shared hero treatment: protect the type without muting the full photograph. */
+:root {
+  --hero-text-overlay: radial-gradient(
+    ellipse 82% 72% at 18% 88%,
+    rgba(8, 8, 8, 0.58) 0%,
+    rgba(8, 8, 8, 0.34) 42%,
+    rgba(8, 8, 8, 0) 78%
+  );
+  --centered-text-overlay: radial-gradient(
+    ellipse 70% 62% at 50% 52%,
+    rgba(8, 8, 8, 0.5) 0%,
+    rgba(8, 8, 8, 0.28) 44%,
+    rgba(8, 8, 8, 0) 78%
+  );
+}
+
+.hero-shade,
+.story-hero-shade,
+.collection-hero-image::before,
+.gatherings-hero-image::before,
+.private-hero-shade,
+.gallery-hero-shade,
+.visit-hero-shade,
+.faq-hero-shade,
+.contact-hero-shade {
+  background: var(--hero-text-overlay) !important;
+}
+
+.story-pause-shade {
+  background: var(--centered-text-overlay) !important;
+}
+
+.story-hero-stamp {
+  top: auto;
+  bottom: 54px;
+}
+
+.hero h1,
+.hero .kicker,
+.story-hero h1,
+.story-hero .kicker,
+.collection-hero h1,
+.collection-hero .kicker,
+.gatherings-hero h1,
+.gatherings-hero .kicker,
+.private-hero h1,
+.private-hero .kicker,
+.gallery-hero h1,
+.gallery-hero .kicker,
+.visit-hero h1,
+.visit-hero .kicker,
+.faq-hero h1,
+.faq-hero .kicker,
+.contact-hero h1,
+.contact-hero .kicker,
+.story-pause blockquote {
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.34);
+}
+
+/* Focal positions for the current N3XRA-hosted hero photography. */
+.hero-media img {
+  filter: none !important;
+  object-position: 50% 52% !important;
+}
+
+.story-hero-media img {
+  height: 116% !important;
+  object-position: 50% 54% !important;
+}
+
+.story-pause > img {
+  object-position: 50% 48% !important;
+}
+
+.collection-hero-image img {
+  object-position: 50% 50% !important;
+}
+
+.gatherings-hero-image img,
+.private-hero-image img {
+  height: 100% !important;
+  object-position: 50% 52% !important;
+  transform: none !important;
+}
+
+@media (max-width: 600px) {
+  .hero-media img {
+    object-position: 50% 52% !important;
+  }
+
+  .story-hero-media img {
+    height: 120% !important;
+    object-position: 52% 55% !important;
+  }
+
+  .story-pause > img {
+    object-position: 50% 50% !important;
+  }
+
+  .collection-hero-image img,
+  .gatherings-hero-image img,
+  .private-hero-image img {
+    object-position: 50% 52% !important;
+  }
+}
