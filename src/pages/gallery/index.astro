@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { hasImage, imagePreviewUrl, imageUrl } from '../../lib/image-assets';
+import { hasImage, imageUrl } from '../../lib/image-assets';
 import '../../styles/gallery.css';
 
 const galleryImages = [
@@ -76,7 +76,7 @@ const galleryImages = [
   <main id="main" class="gallery-main">
     <section class="gallery-hero" aria-labelledby="gallery-title">
       <figure class="gallery-hero-image" aria-hidden="true">
-        <img src={imagePreviewUrl('r-r-greenhousse-1.jpg', { width: 1920, height: 1280, quality: 82 })} alt="" fetchpriority="high" />
+        <img src={imageUrl('r-r-greenhousse-1.jpg')} alt="" fetchpriority="high" />
       </figure>
       <div class="gallery-hero-shade" aria-hidden="true"></div>
       <div class="gallery-hero-content">
@@ -96,7 +96,7 @@ const galleryImages = [
           <figure class="gallery-image reveal">
             <button type="button" data-gallery-item data-gallery-index={index} aria-label={`Open photo ${index + 1} of ${galleryImages.length}`}>
               <img
-                src={imagePreviewUrl(image.filename)}
+                src={imageUrl(image.filename)}
                 data-full-src={imageUrl(image.filename)}
                 alt={image.alt}
                 loading="lazy"
@@ -127,7 +127,7 @@ const galleryImages = [
     <section class="gallery-invitation" aria-labelledby="gallery-invitation-title">
       <figure class="gallery-invitation-image">
         <img
-          src={imagePreviewUrl('r-r-greenhousse-54.jpg', { width: 1600, height: 1200, quality: 80 })}
+          src={imageUrl('r-r-greenhousse-54.jpg')}
           alt="A recent scene from Roots and Relics Greenhouse"
           loading="lazy"
           decoding="async"
