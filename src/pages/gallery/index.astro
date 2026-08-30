@@ -1,150 +1,69 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { imageUrl } from '../../lib/image-assets';
+import { imagePreviewUrl, imageUrl } from '../../lib/image-assets';
 import '../../styles/gallery.css';
 
 const galleryImages = [
-  {
-    filename: '97-vignette-blossom-urn.jpg',
-    alt: 'Pale berry branches gathered in a weathered metal urn among old books',
-  },
-  {
-    filename: '231-typewriter-books-sideboard.webp',
-    alt: 'An antique typewriter, old books, and gathered objects on a wooden sideboard',
-  },
-  {
-    filename: '125-farm-owls.jpg',
-    alt: 'Four barn owls perched together in the farm rafters',
-  },
-  {
-    filename: '230-wooden-tool-tote.webp',
-    alt: 'A primitive wooden tool tote displayed with an antique seed cabinet and worn work pieces',
-  },
-  {
-    filename: '224-charcuterie-spread.webp',
-    alt: 'A generous charcuterie spread prepared for greenhouse guests',
-  },
-  {
-    filename: '216-stacked-ladderback-chairs.webp',
-    alt: 'A sculptural stack of antique ladderback chairs',
-  },
-  {
-    filename: '130-greenhouse-vignette-corner.jpg',
-    alt: 'A sunlit greenhouse vignette with antique furniture, mirrors, and quilts',
-  },
-  {
-    filename: '82-detail-painted-hinge.jpg',
-    alt: 'The worn hinge and faded paint of an old wooden cupboard',
-  },
-  {
-    filename: '112-gathering-guests.jpg',
-    alt: 'Friends visiting together inside the greenhouse during a gathering',
-  },
-  {
-    filename: '93-vignette-ironstone-pitcher.jpg',
-    alt: 'An antique ironstone pitcher holding gathered flowers',
-  },
-  {
-    filename: '219-farm-fresh-eggs-sign.webp',
-    alt: 'A hand-lettered farm fresh eggs sign displayed with collected pieces',
-  },
-  {
-    filename: '105-refreshments-serving.jpg',
-    alt: 'A greenhouse gathering table filled with charcuterie and refreshments',
-  },
-  {
-    filename: '229-dress-form-mannequin.webp',
-    alt: 'A vintage dress form arranged among greenhouse finds',
-  },
-  {
-    filename: '101-cat-primitive-furniture.jpg',
-    alt: 'A worn green primitive cupboard displayed in the greenhouse',
-  },
-  {
-    filename: '123-garden-arch-flowers.jpg',
-    alt: 'An old garden arch surrounded by abundant flowers',
-  },
-  {
-    filename: '214-farm-goats-pair.webp',
-    alt: 'Two goats standing together on the Roots and Relics farm',
-  },
-  {
-    filename: '106-refreshments-pastries.jpg',
-    alt: 'Pastries and treats arranged on antique serving pieces',
-  },
-  {
-    filename: '74-portraits-sideboard.jpg',
-    alt: 'Old family portraits and collected objects displayed on a sideboard',
-  },
-  {
-    filename: '232-quilts-drying-rack.webp',
-    alt: 'Vintage quilts folded over an antique drying rack',
-  },
-  {
-    filename: '119-sign-bloom-bar.jpg',
-    alt: 'A hand-lettered bloom bar sign beside white flowers',
-  },
-  {
-    filename: '217-green-hutch-books.webp',
-    alt: 'A timeworn hutch arranged with vintage tins, a garden book, and collected objects',
-  },
-  {
-    filename: '87-vignette-rolling-pins.jpg',
-    alt: 'A collection of worn wooden rolling pins',
-  },
-  {
-    filename: '220-greenhouse-counter-flowers.webp',
-    alt: 'Fresh flowers arranged across a greenhouse counter',
-  },
-  {
-    filename: '129-pat-and-jenn.jpg',
-    alt: 'Pat and Jenn seated together inside the greenhouse',
-  },
-  {
-    filename: '228-hanging-basket-candle-shelf.webp',
-    alt: 'A flower-filled hanging basket above shelves of greenhouse goods',
-  },
-  {
-    filename: '226-browsing-green-cabinet.webp',
-    alt: 'A visitor browsing antique cupboards and collected pieces in the greenhouse',
-  },
-  {
-    filename: '225-gathering-appetizer-table.webp',
-    alt: 'A greenhouse gathering table covered with charcuterie and refreshments',
-  },
-  {
-    filename: '223-tiered-appetizers-blue-cabinet.webp',
-    alt: 'Individual appetizers arranged on tiered wooden serving trays',
-  },
-  {
-    filename: '222-greenhouse-interior-gathering.webp',
-    alt: 'A long charcuterie spread prepared for guests inside the greenhouse',
-  },
-  {
-    filename: '221-gathering-food-baskets.webp',
-    alt: 'Guests visiting beneath hanging flowers inside the greenhouse',
-  },
-  {
-    filename: '218-glass-cabinet-red-cupboard.webp',
-    alt: 'A layered display of antique cupboards, cabinets, and collected furniture',
-  },
-  {
-    filename: '215-farm-goats-pond.webp',
-    alt: 'White goats grazing beside a pond on the Roots and Relics farm',
-  },
-  {
-    filename: '213-farm-chickens-coop.webp',
-    alt: 'Colorful chickens perched together outside their coop',
-  },
-  {
-    filename: '212-farm-cows-gate.webp',
-    alt: 'Black cattle gathered along a wooden fence on the farm',
-  },
-  {
-    filename: 'homephoto.png',
-    alt: 'A richly layered greenhouse interior filled with antique furniture, glass bottles, baskets, and collected objects',
-  },
-];
+  'r-r-greenhousse-1.jpg',
+  'r-r-greenhousse-2.jpg',
+  'r-r-greenhousse-3.jpg',
+  'r-r-greenhousse-4.jpg',
+  'r-r-greenhousse-5.jpg',
+  'r-r-greenhousse-6.jpg',
+  'r-r-greenhousse-7.jpg',
+  'r-r-greenhousse-8.jpg',
+  'r-r-greenhousse-9.jpg',
+  'r-r-greenhousse-10.jpg',
+  'r-r-greenhousse-11.jpg',
+  'r-r-greenhousse-12.jpg',
+  'r-r-greenhousse-13.jpg',
+  'r-r-greenhousse-14.jpg',
+  'r-r-greenhousse-15.jpg',
+  'r-r-greenhousse-16.jpg',
+  'r-r-greenhousse-17.jpg',
+  'r-r-greenhousse-18.jpg',
+  'r-r-greenhousse-19.jpg',
+  'r-r-greenhousse-20.jpg',
+  'r-r-greenhousse-21.jpg',
+  'r-r-greenhousse-22.jpg',
+  'r-r-greenhousse-23.jpg',
+  'r-r-greenhousse-24.jpg',
+  'r-r-greenhousse-25.jpg',
+  'r-r-greenhousse-26.jpg',
+  'r-r-greenhousse-27.jpg',
+  'r-r-greenhousse-28.jpg',
+  'r-r-greenhousse-29.jpg',
+  'r-r-greenhousse-30.jpg',
+  'r-r-greenhousse-31.jpg',
+  'r-r-greenhousse-32.jpg',
+  'r-r-greenhousse-33.jpg',
+  'r-r-greenhousse-34.jpg',
+  'r-r-greenhousse-35.jpg',
+  'r-r-greenhousse-36.jpg',
+  'r-r-greenhousse-37.jpg',
+  'r-r-greenhousse-38.jpg',
+  'r-r-greenhousse-39.jpg',
+  'r-r-greenhousse-40.jpg',
+  'r-r-greenhousse-41.jpg',
+  'r-r-greenhousse-42.jpg',
+  'r-r-greenhousse-43.jpg',
+  'r-r-greenhousse-44.jpg',
+  'r-r-greenhousse-45.jpg',
+  'r-r-greenhousse-46.jpg',
+  'r-r-greenhousse-48.jpg',
+  'r-r-greenhousse-49.jpg',
+  'r-r-greenhousse-50.jpg',
+  'r-r-greenhousse-51.jpg',
+  'r-r-greenhousse-52.jpg',
+  'r-r-greenhousse-53.jpg',
+  'r-r-greenhousse-54.jpg',
+].map((filename) => {
+  const photoNumber = filename.match(/-(\d+)\.jpg$/)?.[1];
+  return {
+    filename,
+    alt: `Roots and Relics greenhouse, photo ${photoNumber}`,
+  };
+});
 ---
 
 <BaseLayout
@@ -156,7 +75,7 @@ const galleryImages = [
   <main id="main" class="gallery-main">
     <section class="gallery-hero" aria-labelledby="gallery-title">
       <figure class="gallery-hero-image" aria-hidden="true">
-        <img src={imageUrl('227-candle-counter-display.webp')} alt="" />
+        <img src={imagePreviewUrl('r-r-greenhousse-1.jpg', { width: 1920, height: 1280, quality: 82 })} alt="" fetchpriority="high" />
       </figure>
       <div class="gallery-hero-shade" aria-hidden="true"></div>
       <div class="gallery-hero-content">
@@ -175,7 +94,13 @@ const galleryImages = [
         {galleryImages.map((image, index) => (
           <figure class="gallery-image reveal">
             <button type="button" data-gallery-item data-gallery-index={index} aria-label={`Open photo ${index + 1} of ${galleryImages.length}`}>
-              <img src={imageUrl(image.filename)} alt={image.alt} loading="lazy" />
+              <img
+                src={imagePreviewUrl(image.filename)}
+                data-full-src={imageUrl(image.filename)}
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+              />
             </button>
           </figure>
         ))}
@@ -200,7 +125,12 @@ const galleryImages = [
 
     <section class="gallery-invitation" aria-labelledby="gallery-invitation-title">
       <figure class="gallery-invitation-image">
-        <img src={imageUrl('64-wooden-trunk.jpg')} alt="A primitive wooden carrier displayed on a hand-painted antique trunk" loading="lazy" />
+        <img
+          src={imagePreviewUrl('r-r-greenhousse-54.jpg', { width: 1600, height: 1200, quality: 80 })}
+          alt="A recent scene from Roots and Relics Greenhouse"
+          loading="lazy"
+          decoding="async"
+        />
       </figure>
       <div class="gallery-invitation-shade" aria-hidden="true"></div>
       <div class="gallery-invitation-copy reveal">

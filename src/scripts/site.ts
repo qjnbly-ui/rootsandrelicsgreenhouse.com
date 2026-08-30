@@ -34,13 +34,25 @@ const galleryPrevious = document.querySelector<HTMLButtonElement>('[data-gallery
 const galleryNext = document.querySelector<HTMLButtonElement>('[data-gallery-next]');
 let galleryIndex = -1;
 
+const galleryFullSource = (index: number) => {
+  const source = galleryItems[index]?.querySelector<HTMLImageElement>('img');
+  return source?.dataset.fullSrc || source?.currentSrc || source?.src || '';
+};
+
+const preloadGalleryNeighbor = (index: number) => {
+  const source = galleryFullSource((index + galleryItems.length) % galleryItems.length);
+  if (source) new Image().src = source;
+};
+
 const showGalleryImage = (index: number) => {
   if (!galleryExpandedImage || !galleryItems.length) return;
   galleryIndex = (index + galleryItems.length) % galleryItems.length;
   const source = galleryItems[galleryIndex]?.querySelector<HTMLImageElement>('img');
   if (!source) return;
-  galleryExpandedImage.src = source.currentSrc || source.src;
+  galleryExpandedImage.src = galleryFullSource(galleryIndex);
   galleryExpandedImage.alt = source.alt;
+  preloadGalleryNeighbor(galleryIndex - 1);
+  preloadGalleryNeighbor(galleryIndex + 1);
 };
 
 const openGalleryLightbox = (index: number) => {
