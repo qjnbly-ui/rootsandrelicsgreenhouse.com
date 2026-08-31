@@ -5,13 +5,40 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Roots & Relics 2026 Markets
 BEGIN:VEVENT
-UID:fall-gathering-2026@rootsandrelicsgreenhouse.com
-DTSTAMP:20260822T000000Z
-DTSTART;VALUE=DATE:20261008
-DTEND;VALUE=DATE:20261012
-SUMMARY:Fall Gathering — Roots & Relics Greenhouse
+UID:fall-gathering-2026-early-bird@rootsandrelicsgreenhouse.com
+DTSTAMP:20260830T230000Z
+DTSTART;TZID=America/Los_Angeles:20261008T150000
+DTEND;TZID=America/Los_Angeles:20261008T190000
+SUMMARY:Fall Gathering — Early Bird Opening
 LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:Save the date. Market hours and visit details will be shared closer to the gathering.
+DESCRIPTION:First selection\, adult beverages\, elevated seasonal bites\, and the greenhouse glowing after dusk. The event address will be shared shortly before opening.
+END:VEVENT
+BEGIN:VEVENT
+UID:fall-gathering-2026-friday@rootsandrelicsgreenhouse.com
+DTSTAMP:20260830T230000Z
+DTSTART;TZID=America/Los_Angeles:20261009T100000
+DTEND;TZID=America/Los_Angeles:20261009T180000
+SUMMARY:Fall Gathering — Friday
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Thoughtfully gathered antiques\, European and primitive finds\, seasonal goods\, and one-of-a-kind pieces. The event address will be shared shortly before opening.
+END:VEVENT
+BEGIN:VEVENT
+UID:fall-gathering-2026-saturday@rootsandrelicsgreenhouse.com
+DTSTAMP:20260830T230000Z
+DTSTART;TZID=America/Los_Angeles:20261010T090000
+DTEND;TZID=America/Los_Angeles:20261010T170000
+SUMMARY:Fall Gathering — Saturday
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:Thoughtfully gathered antiques\, European and primitive finds\, seasonal goods\, and one-of-a-kind pieces. The event address will be shared shortly before opening.
+END:VEVENT
+BEGIN:VEVENT
+UID:fall-gathering-2026-sunday@rootsandrelicsgreenhouse.com
+DTSTAMP:20260830T230000Z
+DTSTART;TZID=America/Los_Angeles:20261011T100000
+DTEND;TZID=America/Los_Angeles:20261011T150000
+SUMMARY:Fall Gathering — Last Chance Sunday
+LOCATION:Roots & Relics Greenhouse\, Southern Oregon
+DESCRIPTION:One final opportunity to shop\, with a few special Sunday discounts offered throughout the day. The event address will be shared shortly before opening.
 END:VEVENT
 BEGIN:VEVENT
 UID:holiday-greenhouse-2026@rootsandrelicsgreenhouse.com
