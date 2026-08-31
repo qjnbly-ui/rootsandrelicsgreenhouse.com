@@ -1,0 +1,51 @@
+export const fallGathering = {
+  id: 'fall-gathering-2026',
+  title: 'Fall Gathering',
+  dateLabel: 'October 8–11, 2026',
+  shortDateLabel: 'October 8–11',
+  eyebrow: 'Four beautiful fall days',
+  href: '/greenhouse-gatherings/#fall-gathering-2026',
+  calendar: '/calendar/fall-gathering-2026.ics',
+  image: '95-vignette-crock-lavender.jpg',
+  imageAlt: 'A gathered lavender bundle, ironstone pitcher, and primitive pig in a rustic cupboard',
+  description:
+    'Join us inside the Roots & Relics Greenhouse for thoughtfully gathered antiques, European and primitive finds, seasonal goods, and one-of-a-kind pieces for your home.',
+  schedule: [
+    {
+      label: 'Early Bird Opening',
+      day: 'Thursday, October 8',
+      hours: '3–7 PM',
+      start: '2026-10-08T15:00:00-07:00',
+      note: 'First selection, adult beverages, elevated seasonal bites, and the greenhouse glowing after dusk.',
+      emphasis: true,
+    },
+    {
+      label: 'Fall Gathering',
+      day: 'Friday, October 9',
+      hours: '10 AM–6 PM',
+      start: '2026-10-09T10:00:00-07:00',
+      emphasis: false,
+    },
+    {
+      label: 'Fall Gathering',
+      day: 'Saturday, October 10',
+      hours: '9 AM–5 PM',
+      start: '2026-10-10T09:00:00-07:00',
+      emphasis: false,
+    },
+    {
+      label: 'Last Chance Sunday',
+      day: 'Sunday, October 11',
+      hours: '10 AM–3 PM',
+      start: '2026-10-11T10:00:00-07:00',
+      note: 'One final opportunity to shop, with a few special Sunday discounts offered throughout the day.',
+      emphasis: true,
+    },
+  ],
+  visitNotes: [
+    'The event address will be posted and shared shortly before opening. We are approximately ten miles south of Klamath Falls, Oregon.',
+    'Cash and Venmo are preferred. Credit cards are accepted with a small processing fee.',
+    'No early sales, holds, or shipping.',
+    'Please bring an appropriately sized vehicle for larger purchases—you will be glad you did.',
+  ],
+} as const;
