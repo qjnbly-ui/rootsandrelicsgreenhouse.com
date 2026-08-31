@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { fallGathering } from '../data/events';
 import { imageUrl } from '../lib/image-assets';
+import '../styles/home-event.css';
 ---
 
 <BaseLayout
@@ -26,6 +28,28 @@ import { imageUrl } from '../lib/image-assets';
           <b>R&amp;R</b>
           <span>SOUTHERN OREGON</span>
         </div>
+      </section>
+
+      <section class="home-fall-event" aria-labelledby="home-fall-event-title">
+        <figure class="home-fall-event-image reveal">
+          <img src={imageUrl(fallGathering.image)} alt={fallGathering.imageAlt} loading="lazy" decoding="async" />
+          <figcaption>Gathered for autumn.</figcaption>
+        </figure>
+        <div class="home-fall-event-copy reveal">
+          <p class="kicker">Save the date · Southern Oregon</p>
+          <p class="home-fall-event-date">{fallGathering.dateLabel}</p>
+          <h2 id="home-fall-event-title">Fall<br /><em>Gathering.</em></h2>
+          <p>{fallGathering.description}</p>
+          <div class="home-fall-event-early-bird">
+            <span>Early Bird Opening</span>
+            <strong>Thursday, October 8 · 3–7 PM</strong>
+          </div>
+          <div class="home-fall-event-actions">
+            <a class="solid-link" href={fallGathering.href}>See the full schedule <span>→</span></a>
+            <a class="action-link home-fall-event-calendar" href={fallGathering.calendar} download>Save the dates <span>↓</span></a>
+          </div>
+        </div>
+        <div class="home-fall-event-mark" aria-hidden="true">10</div>
       </section>
 
       <div class="ticker" aria-hidden="true">
