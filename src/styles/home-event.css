@@ -1,0 +1,180 @@
+.home-fall-event {
+  position: relative;
+  min-height: 720px;
+  padding: 105px 7vw;
+  display: grid;
+  grid-template-columns: minmax(420px, 0.9fr) minmax(460px, 1.1fr);
+  gap: 7vw;
+  align-items: center;
+  overflow: hidden;
+  background: var(--forest);
+  color: white;
+}
+
+.home-fall-event-image {
+  position: relative;
+  z-index: 1;
+  height: 570px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow: 0 34px 76px rgba(0, 0, 0, 0.25);
+  transform: rotate(-1deg);
+}
+
+.home-fall-event-image::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+}
+
+.home-fall-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 58%;
+}
+
+.home-fall-event-image figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  bottom: 23px;
+  padding: 11px 15px;
+  background: rgba(251, 247, 237, 0.94);
+  color: var(--rust);
+  font: italic 300 18px var(--serif);
+}
+
+.home-fall-event-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.home-fall-event .kicker {
+  margin: 0 0 20px;
+  color: var(--gold);
+}
+
+.home-fall-event-date {
+  margin: 0 0 24px;
+  font: italic 300 clamp(27px, 2.5vw, 39px) / 1 var(--serif);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.home-fall-event h2 {
+  margin: 0;
+  font: 300 clamp(76px, 8.7vw, 138px) / 0.75 var(--serif);
+  letter-spacing: -0.065em;
+}
+
+.home-fall-event h2 em {
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.home-fall-event-copy > p:not(.kicker, .home-fall-event-date) {
+  max-width: 600px;
+  margin: 34px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.home-fall-event-early-bird {
+  max-width: 600px;
+  margin-top: 34px;
+  padding: 23px 25px;
+  display: grid;
+  gap: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-left: 3px solid var(--gold);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.home-fall-event-early-bird span {
+  color: var(--gold);
+  font: 400 9px var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-fall-event-early-bird strong {
+  font: italic 300 25px / 1.1 var(--serif);
+}
+
+.home-fall-event-actions {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.home-fall-event-calendar {
+  color: white;
+}
+
+.home-fall-event-mark {
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.28em;
+  color: rgba(255, 255, 255, 0.035);
+  font: 300 clamp(280px, 34vw, 560px) / 0.7 var(--serif);
+  letter-spacing: -0.1em;
+  pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+  .home-fall-event {
+    grid-template-columns: minmax(330px, 0.8fr) minmax(390px, 1.2fr);
+    gap: 5vw;
+  }
+
+  .home-fall-event-image {
+    height: 530px;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-fall-event {
+    min-height: 0;
+    padding: 82px 6vw 92px;
+    display: flex;
+    flex-direction: column;
+    gap: 58px;
+    align-items: stretch;
+  }
+
+  .home-fall-event-image {
+    width: 94%;
+    height: 470px;
+    align-self: center;
+  }
+
+  .home-fall-event-date {
+    font-size: 29px;
+  }
+
+  .home-fall-event h2 {
+    font-size: clamp(72px, 23vw, 96px);
+  }
+
+  .home-fall-event-copy > p:not(.kicker, .home-fall-event-date) {
+    font-size: 15px;
+  }
+
+  .home-fall-event-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .home-fall-event-actions .solid-link,
+  .home-fall-event-actions .action-link {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+

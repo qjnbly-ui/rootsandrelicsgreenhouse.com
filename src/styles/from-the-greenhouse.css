@@ -2,6 +2,39 @@
 @media(max-width:900px){.greenhouse-journal{padding-top:76px}.greenhouse-journal-hero{height:720px;min-height:720px}.greenhouse-journal-hero-copy{padding:110px 7vw 55px}.greenhouse-journal-feed{padding:100px 7vw 120px}.greenhouse-journal-heading{grid-template-columns:1fr;gap:20px}.greenhouse-journal-grid{grid-template-columns:1fr}.greenhouse-journal-card.is-featured{grid-template-columns:1fr}.greenhouse-journal-card.is-featured figure{height:540px}.greenhouse-journal-card figure{height:540px}}
 @media(max-width:600px){.greenhouse-journal-hero{height:680px;min-height:680px}.greenhouse-journal-hero>img{object-position:58% center}.greenhouse-journal-hero-copy{padding:90px 6vw 40px}.greenhouse-journal-hero h1{font-size:59px}.greenhouse-journal-hero-copy>p:last-child{font-size:15px}.greenhouse-journal-feed{padding:80px 6vw 95px}.greenhouse-journal-heading{margin-bottom:55px}.greenhouse-journal-heading h2{font-size:52px}.greenhouse-journal-card figure,.greenhouse-journal-card.is-featured figure{height:430px}.greenhouse-journal-card.is-featured{padding-bottom:48px}.greenhouse-journal-card-copy{padding-top:22px}.greenhouse-journal-card h3,.greenhouse-journal-card.is-featured h3{font-size:43px}.greenhouse-journal-invitation{padding:90px 6vw 100px}.greenhouse-journal-invitation h2{font-size:55px}}
 
+.greenhouse-journal-card-copy > p:not(.kicker) {
+  max-width: 650px;
+  margin: 0;
+  color: #535b4c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.greenhouse-journal-card-link {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 25px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid currentColor;
+  color: var(--ink);
+  text-decoration: none;
+  font: 400 9px var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.greenhouse-journal-card-link span {
+  color: var(--rust);
+  transition: transform 0.2s ease;
+}
+
+.greenhouse-journal-card-link:hover span,
+.greenhouse-journal-card-link:focus-visible span {
+  transform: translateX(4px);
+}
+
 .greenhouse-journal-invitation{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start;text-align:left}.greenhouse-journal-invitation h2{max-width:none;margin:28px 0}.greenhouse-share-intro>p:last-child{max-width:580px;margin:0;line-height:1.7;color:rgba(255,255,255,.76)}.greenhouse-share-form{display:grid;grid-template-columns:1fr 1fr;gap:22px}.greenhouse-share-form label{display:grid;gap:8px}.greenhouse-share-form label>span{font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.greenhouse-share-form input,.greenhouse-share-form textarea{width:100%;border:1px solid rgba(255,255,255,.38);border-radius:0;background:rgba(255,255,255,.06);color:white;padding:15px;font:15px var(--sans)}.greenhouse-share-form textarea{resize:vertical}.greenhouse-share-form input[type=file]{font-size:12px}.greenhouse-share-wide{grid-column:1/-1}.greenhouse-share-photo small{color:rgba(255,255,255,.58);font-size:11px}.greenhouse-share-check{display:grid!important;grid-template-columns:auto 1fr!important;align-items:start}.greenhouse-share-check input{width:18px;height:18px;margin:2px 0}.greenhouse-share-check span{font:13px/1.55 var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:rgba(255,255,255,.78)}.greenhouse-share-honey{position:absolute;left:-10000px}.greenhouse-share-action{display:flex;align-items:center;gap:22px}.greenhouse-share-action button{display:inline-flex;gap:32px;align-items:center;border:1px solid rgba(255,255,255,.6);padding:18px 22px;background:transparent;color:white;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.greenhouse-share-action button span{color:var(--gold)}.greenhouse-share-action button:disabled{opacity:.5}.greenhouse-share-action p{margin:0;font-size:13px;line-height:1.5;color:var(--gold)}
 
 @media(max-width:900px){.greenhouse-journal-invitation{grid-template-columns:1fr;gap:55px}}
