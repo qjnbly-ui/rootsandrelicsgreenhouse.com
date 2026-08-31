@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../data/site';
+import { fallGathering } from '../../data/events';
 import { imageUrl } from '../../lib/image-assets';
 import '../../styles/gatherings.css';
 
@@ -30,13 +31,13 @@ const gatheringHighlights = [
 
 const upcomingGatherings = [
   {
-    title: 'Fall Gathering',
+    title: fallGathering.title,
     month: 'October',
     days: '8–11',
     datetime: '2026-10-08',
-    calendar: '/calendar/fall-gathering-2026.ics',
-    image: '95-vignette-crock-lavender.jpg',
-    alt: 'A gathered lavender bundle, ironstone pitcher, and primitive pig in a rustic cupboard',
+    calendar: fallGathering.calendar,
+    image: fallGathering.image,
+    alt: fallGathering.imageAlt,
     position: '52% 58%',
     stamp: 'Gathered',
     stampDetail: 'for autumn',
@@ -79,6 +80,33 @@ const upcomingGatherings = [
     stampDetail: "we'll help",
   },
 ];
+
+const fallGatheringSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: `${fallGathering.title} at Roots & Relics Greenhouse`,
+  description: fallGathering.description,
+  startDate: '2026-10-08T15:00:00-07:00',
+  endDate: '2026-10-11T15:00:00-07:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  image: [imageUrl(fallGathering.image)],
+  url: `https://www.rootsandrelicsgreenhouse.com${fallGathering.href}`,
+  location: {
+    '@type': 'Place',
+    name: 'Roots & Relics Greenhouse',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'OR',
+      addressCountry: 'US',
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'Roots & Relics Greenhouse',
+    url: 'https://www.rootsandrelicsgreenhouse.com/',
+  },
+};
 ---
 
 <BaseLayout
@@ -98,6 +126,51 @@ const upcomingGatherings = [
       </div>
     </section>
 
+    <section class="fall-gathering-feature" id={fallGathering.id} aria-labelledby="fall-gathering-title">
+      <div class="fall-gathering-feature-heading reveal">
+        <div>
+          <p class="kicker">{fallGathering.eyebrow}</p>
+          <p class="fall-gathering-date">{fallGathering.dateLabel}</p>
+        </div>
+        <h2 id="fall-gathering-title">Fall<br /><em>Gathering.</em></h2>
+        <p class="fall-gathering-lead">{fallGathering.description}</p>
+      </div>
+
+      <div class="fall-gathering-feature-body">
+        <figure class="fall-gathering-feature-image reveal">
+          <img src={imageUrl(fallGathering.image)} alt={fallGathering.imageAlt} loading="lazy" decoding="async" />
+          <figcaption>Gathered for autumn.</figcaption>
+        </figure>
+
+        <div class="fall-gathering-schedule reveal" aria-label="Fall Gathering schedule">
+          {fallGathering.schedule.map((opening) => (
+            <article class:list={['fall-gathering-opening', { 'is-special': opening.emphasis }]}>
+              <p>{opening.label}</p>
+              <div>
+                <h3>{opening.day}</h3>
+                <time datetime={opening.start}>{opening.hours}</time>
+              </div>
+              {'note' in opening && opening.note && <p class="fall-gathering-opening-note">{opening.note}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="fall-gathering-visit reveal">
+        <div class="fall-gathering-visit-heading">
+          <p class="kicker">Before you make the drive</p>
+          <h3>A few things<br /><em>to know.</em></h3>
+        </div>
+        <ul>
+          {fallGathering.visitNotes.map((note) => <li>{note}</li>)}
+        </ul>
+        <div class="fall-gathering-actions">
+          <a class="solid-link" href={fallGathering.calendar} download>Save all four days <span>↓</span></a>
+          <a class="action-link fall-gathering-secondary" href="/join/">Get gathering updates <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="gatherings-dates" aria-labelledby="gatherings-dates-title">
       <header class="gatherings-dates-heading reveal">
         <div>
@@ -105,7 +178,7 @@ const upcomingGatherings = [
           <h2 id="gatherings-dates-title">Keep these<br /><em>weekends open.</em></h2>
         </div>
         <div class="gatherings-dates-intro">
-          <p>Hours and all the thoughtful details will be shared here and on Instagram as each market gets closer.</p>
+          <p>Fall Gathering details are here now. Hours and thoughtful details for the remaining markets will be shared as each weekend gets closer.</p>
           <a class="action-link action-link-dark" href="/calendar/roots-relics-markets-2026.ics" download>Save all four dates <span>↓</span></a>
         </div>
       </header>
@@ -136,7 +209,7 @@ const upcomingGatherings = [
         ))}
       </div>
 
-      <p class="gatherings-dates-note reveal">Market hours and visit details are coming soon. For now, keep the dates open.</p>
+      <p class="gatherings-dates-note reveal">Fall Gathering is ready for your calendar. Keep the remaining weekends open, too.</p>
     </section>
 
     <section class="gatherings-story" id="gathering-story" aria-labelledby="gathering-story-title">
@@ -233,4 +306,5 @@ const upcomingGatherings = [
       </figure>
     </section>
   </main>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(fallGatheringSchema)} />
 </BaseLayout>
