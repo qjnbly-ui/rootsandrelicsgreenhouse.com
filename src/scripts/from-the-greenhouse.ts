@@ -38,6 +38,13 @@ function renderPost(post: JournalPost, index: number) {
   const body = document.createElement('p');
   body.textContent = post.excerpt || post.body;
   copy.append(meta, title, body);
+  if (post.post_type === 'event') {
+    const details = document.createElement('a');
+    details.className = 'greenhouse-journal-card-link';
+    details.href = '/greenhouse-gatherings/';
+    details.innerHTML = 'View gathering details <span aria-hidden="true">→</span>';
+    copy.append(details);
+  }
   article.append(copy);
   return article;
 }
