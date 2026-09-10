@@ -31,6 +31,7 @@ export const fallGathering = {
       day: 'Saturday, October 10',
       hours: '9 AM–5 PM',
       start: '2026-10-10T09:00:00-07:00',
+      note: 'Saturday only: Barney’s Family Market will be serving breakfast burritos, fry bread breakfast sandwiches, and Indian tacos for lunch. Soda, water, and coffee will also be available, so come hungry!',
       emphasis: false,
     },
     {
