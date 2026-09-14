@@ -1,0 +1,106 @@
+.birthday-banner {
+  position: relative;
+  padding: 116px 7vw 28px;
+  display: grid;
+  grid-template-columns: auto minmax(170px, 0.7fr) auto minmax(260px, 1fr) auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 52px);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(38, 50, 30, 0.28);
+  background: var(--gold);
+  color: var(--forest);
+}
+
+.birthday-banner[hidden] {
+  display: none;
+}
+
+.birthday-banner::before {
+  content: '';
+  position: absolute;
+  inset: 98px 1.2vw 10px;
+  border: 1px solid rgba(38, 50, 30, 0.24);
+  pointer-events: none;
+}
+
+.birthday-banner p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.birthday-banner p:first-of-type {
+  font: 400 9px / 1.55 var(--mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.birthday-banner h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  white-space: nowrap;
+  font: 300 clamp(34px, 4vw, 61px) / 0.9 var(--serif);
+  letter-spacing: -0.045em;
+}
+
+.birthday-banner h2 em {
+  color: var(--rust);
+  font-weight: 300;
+}
+
+.birthday-banner p:last-of-type {
+  max-width: 570px;
+  font: italic 300 clamp(17px, 1.5vw, 22px) / 1.25 var(--serif);
+}
+
+.birthday-banner-star {
+  position: relative;
+  z-index: 1;
+  color: var(--rust);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .birthday-banner {
+    padding-top: 101px;
+    grid-template-columns: auto auto 1fr auto;
+  }
+
+  .birthday-banner::before {
+    inset-block-start: 86px;
+  }
+
+  .birthday-banner p:first-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .birthday-banner {
+    padding: 94px 8vw 25px;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .birthday-banner::before {
+    inset: 84px 10px 10px;
+  }
+
+  .birthday-banner h2 {
+    white-space: normal;
+    font-size: 42px;
+  }
+
+  .birthday-banner p:last-of-type {
+    grid-column: 1 / -1;
+    padding-inline: 8px;
+    font-size: 17px;
+  }
+
+  .birthday-banner-star:last-child {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}

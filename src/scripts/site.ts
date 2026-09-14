@@ -1,6 +1,30 @@
 const menuButton = document.querySelector<HTMLButtonElement>('[data-menu]');
 const nav = document.querySelector<HTMLElement>('#site-nav');
 
+const annualDateBanners = [...document.querySelectorAll<HTMLElement>('[data-annual-date][data-time-zone]')];
+
+const updateAnnualDateBanners = () => {
+  annualDateBanners.forEach((banner) => {
+    const annualDate = banner.dataset.annualDate;
+    const timeZone = banner.dataset.timeZone;
+    if (!annualDate || !timeZone) return;
+
+    const dateParts = new Intl.DateTimeFormat('en-US', {
+      timeZone,
+      month: '2-digit',
+      day: '2-digit',
+    }).formatToParts(new Date());
+    const month = dateParts.find((part) => part.type === 'month')?.value;
+    const day = dateParts.find((part) => part.type === 'day')?.value;
+    banner.hidden = `${month}-${day}` !== annualDate;
+  });
+};
+
+if (annualDateBanners.length) {
+  updateAnnualDateBanners();
+  window.setInterval(updateAnnualDateBanners, 60_000);
+}
+
 const closeMenu = () => {
   menuButton?.setAttribute('aria-expanded', 'false');
   const label = menuButton?.querySelector('span');

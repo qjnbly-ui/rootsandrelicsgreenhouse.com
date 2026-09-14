@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { fallGathering } from '../data/events';
 import { imageUrl } from '../lib/image-assets';
 import '../styles/home-event.css';
+import '../styles/birthday-banner.css';
 ---
 
 <BaseLayout
@@ -11,6 +12,32 @@ import '../styles/home-event.css';
   currentPath="/"
 >
 <main id="main">
+      <aside
+        class="birthday-banner"
+        data-annual-date="09-14"
+        data-time-zone="America/Los_Angeles"
+        aria-labelledby="birthday-banner-title"
+        hidden
+      >
+        <span class="birthday-banner-star" aria-hidden="true">✦</span>
+        <p><span>September fourteenth · a greenhouse celebration</span></p>
+        <h2 id="birthday-banner-title">Happy birthday, <em>Pat.</em></h2>
+        <p>Here’s to another year of storied finds, good company, and making beautiful things feel at home.</p>
+        <span class="birthday-banner-star" aria-hidden="true">✦</span>
+      </aside>
+      <aside
+        class="birthday-banner"
+        data-annual-date="05-06"
+        data-time-zone="America/Los_Angeles"
+        aria-labelledby="jennifer-birthday-banner-title"
+        hidden
+      >
+        <span class="birthday-banner-star" aria-hidden="true">✦</span>
+        <p><span>May sixth · a greenhouse celebration</span></p>
+        <h2 id="jennifer-birthday-banner-title">Happy birthday, <em>Jennifer.</em></h2>
+        <p>Here’s to another year of storied finds, good company, and making beautiful things feel at home.</p>
+        <span class="birthday-banner-star" aria-hidden="true">✦</span>
+      </aside>
       <section class="hero" id="top">
         <div class="hero-media" aria-hidden="true">
           <img src={imageUrl('r-r-greenhousse-9.jpg')} alt="" data-parallax />
