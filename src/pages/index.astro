@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SignupForm from '../components/SignupForm.astro';
 import { fallGathering } from '../data/events';
 import { imageUrl } from '../lib/image-assets';
 import '../styles/home-event.css';
 import '../styles/birthday-banner.css';
+import '../styles/signup-form.css';
+import '../styles/home-signup.css';
 ---
 
 <BaseLayout
@@ -85,6 +88,18 @@ import '../styles/birthday-banner.css';
           <span>Primitive furniture</span><i>✦</i><span>European antiques</span><i>✦</i><span>Ironstone</span><i>✦</i><span>Textiles</span><i>✦</i><span>Architectural salvage</span><i>✦</i><span>Seasonal botanicals</span><i>✦</i>
         </div>
       </div>
+
+      <section class="home-signup" aria-labelledby="home-signup-title">
+        <div class="home-signup-copy reveal">
+          <p class="kicker">A note worth opening</p>
+          <h2 id="home-signup-title">The good finds<br />don’t wait <em>around.</em></h2>
+          <p>Be first to hear about greenhouse weekends, fresh arrivals, and the seasonal gatherings we’re dreaming up.</p>
+        </div>
+        <div class="home-signup-form reveal">
+          <div class="home-signup-tag" aria-hidden="true"><span>Fresh from</span><strong>R&amp;R</strong><span>the greenhouse</span></div>
+          <SignupForm />
+        </div>
+      </section>
 
       <section class="manifesto section" id="story">
         <div class="manifesto-mark reveal">R&amp;R</div>

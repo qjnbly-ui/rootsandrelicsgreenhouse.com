@@ -1,0 +1,132 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<div class:list={['signup-card', className]} data-signup-root>
+  <div class="signup-loading" data-signup-loading role="status">Preparing the signup form…</div>
+  <form class="signup-form" data-signup-form hidden novalidate>
+    <div class="signup-fields">
+      <label>
+        <span>Your name</span>
+        <input name="fullName" type="text" autocomplete="name" maxlength="160" required />
+      </label>
+      <label>
+        <span>Email address</span>
+        <input name="email" type="email" autocomplete="email" inputmode="email" maxlength="320" placeholder="you@example.com" required />
+      </label>
+    </div>
+
+    <fieldset class="signup-topics" data-signup-topics hidden>
+      <legend>What would you like to hear about?</legend>
+      <div data-topic-options></div>
+    </fieldset>
+
+    <label class="signup-consent">
+      <input name="emailConsent" type="checkbox" required />
+      <span data-consent-label>Email me Roots &amp; Relics updates</span>
+    </label>
+    <p class="signup-disclosure" data-consent-disclosure></p>
+    <p class="signup-legal">Read the <a href="/privacy/">Privacy Notice</a> and <a href="/messaging-program-terms/">Messaging Program Terms</a>.</p>
+
+    <label class="signup-honeypot" aria-hidden="true">
+      <span>Company</span>
+      <input name="company" type="text" tabindex="-1" autocomplete="off" />
+    </label>
+
+    <div class="signup-submit-row">
+      <button type="submit">Send me updates <span aria-hidden="true">→</span></button>
+      <p data-signup-status role="status" aria-live="polite"></p>
+    </div>
+  </form>
+</div>
+
+<script>
+  interface Topic { id: string; name: string; description?: string | null; }
+  interface SignupPayload {
+    sourceToken: string;
+    form: { successMessage: string };
+    topics: Topic[];
+    channels: { email: { available: boolean; disclosure: { version: string; disclosure: string; checkbox_label: string } | null; }; };
+    error?: string;
+  }
+
+  const apiUrl = 'https://www.n3xra.com/api/communications-public';
+  const workspace = 'roots-and-relics';
+
+  document.querySelectorAll<HTMLElement>('[data-signup-root]').forEach((root) => {
+    if (root.dataset.signupReady === 'true') return;
+    root.dataset.signupReady = 'true';
+
+    const requestedSourceToken = new URLSearchParams(window.location.search).get('source') || '';
+    const attributedSourceToken = /^[a-f0-9]{48}$/.test(requestedSourceToken) ? requestedSourceToken : '';
+    const form = root.querySelector<HTMLFormElement>('[data-signup-form]');
+    const loading = root.querySelector<HTMLElement>('[data-signup-loading]');
+    const status = root.querySelector<HTMLElement>('[data-signup-status]');
+    const topicsField = root.querySelector<HTMLElement>('[data-signup-topics]');
+    const topicOptions = root.querySelector<HTMLElement>('[data-topic-options]');
+    const consentLabel = root.querySelector<HTMLElement>('[data-consent-label]');
+    const consentDisclosure = root.querySelector<HTMLElement>('[data-consent-disclosure]');
+    let signup: SignupPayload | null = null;
+    let idempotencyKey = crypto.randomUUID().replaceAll('-', '');
+
+    const showStatus = (message: string, isError = false) => {
+      if (!status) return;
+      status.textContent = message;
+      status.classList.toggle('is-error', isError);
+    };
+    const escapeHtml = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+
+    const initializeSignup = async () => {
+      const response = await fetch(`${apiUrl}?workspace=${encodeURIComponent(workspace)}&sourceType=website_embed`, { headers: { Accept: 'application/json' } });
+      const payload = await response.json() as SignupPayload;
+      if (!response.ok) throw new Error(payload.error || 'The signup form is temporarily unavailable.');
+      if (!payload.channels.email.available || !payload.channels.email.disclosure || !payload.sourceToken) throw new Error('Email signup is not available yet.');
+
+      signup = { ...payload, sourceToken: attributedSourceToken || payload.sourceToken };
+      if (consentLabel) consentLabel.textContent = payload.channels.email.disclosure.checkbox_label;
+      if (consentDisclosure) consentDisclosure.textContent = payload.channels.email.disclosure.disclosure;
+      if (topicOptions) topicOptions.innerHTML = payload.topics.map((topic, index) => `
+        <label><input type="checkbox" name="topics" value="${escapeHtml(topic.id)}"${index === 0 ? ' checked' : ''}><span><strong>${escapeHtml(topic.name)}</strong>${topic.description ? `<small>${escapeHtml(topic.description)}</small>` : ''}</span></label>
+      `).join('');
+      if (topicsField) topicsField.hidden = payload.topics.length === 0;
+      if (loading) loading.hidden = true;
+      if (form) form.hidden = false;
+    };
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!signup || !form.reportValidity()) return;
+      const data = new FormData(form);
+      const topicIds = data.getAll('topics').map(String);
+      if (signup.topics.length && topicIds.length === 0) return showStatus('Choose at least one update topic.', true);
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (button) button.disabled = true;
+      showStatus('Saving your preferences…');
+      try {
+        const response = await fetch(`${apiUrl}?workspace=${encodeURIComponent(workspace)}`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ workspace, fullName: String(data.get('fullName') || ''), email: String(data.get('email') || ''), emailConsent: data.get('emailConsent') === 'on', smsConsent: false, topicIds, sourceToken: signup.sourceToken, sourcePage: window.location.href, idempotencyKey, consentVersions: { email: signup.channels.email.disclosure?.version }, company: String(data.get('company') || '') }),
+        });
+        const payload = await response.json() as { message?: string; error?: string };
+        if (!response.ok) throw new Error(payload.error || 'Your preferences could not be saved.');
+        showStatus(payload.message || signup.form.successMessage);
+        form.reset();
+        const firstTopic = form.querySelector<HTMLInputElement>('input[name="topics"]');
+        if (firstTopic) firstTopic.checked = true;
+        idempotencyKey = crypto.randomUUID().replaceAll('-', '');
+      } catch (error) {
+        showStatus(error instanceof Error ? error.message : 'Your preferences could not be saved.', true);
+      } finally { if (button) button.disabled = false; }
+    });
+
+    void initializeSignup().catch((error: unknown) => {
+      if (!loading) return;
+      loading.textContent = error instanceof Error ? error.message : 'The signup form is temporarily unavailable.';
+      loading.classList.add('is-error');
+    });
+  });
+</script>
