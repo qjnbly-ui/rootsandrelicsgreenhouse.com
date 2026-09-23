@@ -1,10 +1,11 @@
 interface JournalMedia { url: string; altText?: string; }
-interface JournalPost { post_type: keyof typeof typeLabels; title: string; excerpt?: string; body: string; featured: boolean; published_at: string; media?: JournalMedia[]; }
+interface JournalPost { id: string; post_type: keyof typeof typeLabels; title: string; excerpt?: string; body: string; featured: boolean; published_at: string; media?: JournalMedia[]; }
 interface JournalFeed { page: { kicker: string; intro: string; heroUrl?: string }; posts: JournalPost[]; error?: string; }
 
 const apiBaseUrl = 'https://www.n3xra.com';
 const websiteSlug = 'roots-and-relics-be7315';
-const feedUrl = `${apiBaseUrl}/api/website-content-feed?slug=${websiteSlug}`;
+const requestedPost = new URLSearchParams(window.location.search).get("post");
+const feedUrl = `${apiBaseUrl}/api/website-content-feed?slug=${websiteSlug}${requestedPost ? `&post=${encodeURIComponent(requestedPost)}` : ""}`;
 const submissionUrl = `${apiBaseUrl}/api/website-story-submission`;
 const typeLabels = { update: 'Greenhouse update', new_piece: 'New piece', farm_story: 'Farm story', customer_story: 'Found a home', event: 'Gathering' };
 const grid = document.querySelector<HTMLElement>('#journal-grid')!;
@@ -16,6 +17,8 @@ function formatDate(value: string) {
 
 function renderPost(post: JournalPost, index: number) {
   const article = document.createElement('article');
+  article.id = `post-${post.id}`;
+  article.style.scrollMarginTop = '120px';
   article.className = `greenhouse-journal-card${post.featured || index === 0 ? ' is-featured' : ''}`;
   const image = post.media?.[0];
   if (image?.url) {
@@ -36,7 +39,8 @@ function renderPost(post: JournalPost, index: number) {
   const title = document.createElement('h3');
   title.textContent = post.title;
   const body = document.createElement('p');
-  body.textContent = post.excerpt || post.body;
+  body.textContent = requestedPost === post.id ? post.body : post.excerpt || post.body;
+  body.style.whiteSpace = 'pre-line';
   copy.append(meta, title, body);
   if (post.post_type === 'event') {
     const details = document.createElement('a');
@@ -57,12 +61,18 @@ fetch(feedUrl, { headers: { Accept: 'application/json' } })
     document.querySelector<HTMLElement>('#journal-intro')!.textContent = data.page.intro;
     if (data.page.heroUrl) document.querySelector<HTMLImageElement>('#journal-hero-image')!.src = data.page.heroUrl;
     if (!data.posts.length) {
-      journalStatus.textContent = 'The first greenhouse story is being gathered now. Please check back soon.';
+      journalStatus.textContent = requestedPost ? 'This post is no longer available. Visit From the Greenhouse for the latest stories.' : 'The first greenhouse story is being gathered now. Please check back soon.';
+      if (requestedPost) { const link = document.createElement('a'); link.href = '/from-the-greenhouse/'; link.textContent = ' Browse all stories'; journalStatus.append(link); }
       return;
     }
     grid.replaceChildren(...data.posts.map(renderPost));
     grid.hidden = false;
     journalStatus.hidden = true;
+    if (requestedPost) {
+      const selected = document.getElementById(`post-${requestedPost}`);
+      if (selected) { selected.tabIndex = -1; selected.focus({ preventScroll: true }); selected.scrollIntoView({ block: "start" }); }
+      else { journalStatus.hidden = false; journalStatus.textContent = "This post is no longer available. Browse our latest stories below."; }
+    }
   })
   .catch(() => {
     journalStatus.textContent = 'The latest notes are resting for a moment. Please visit again shortly.';
