@@ -7,7 +7,7 @@ const websiteSlug = 'roots-and-relics-be7315';
 const requestedPost = new URLSearchParams(window.location.search).get("post");
 const feedUrl = `${apiBaseUrl}/api/website-content-feed?slug=${websiteSlug}${requestedPost ? `&post=${encodeURIComponent(requestedPost)}` : ""}`;
 const submissionUrl = `${apiBaseUrl}/api/website-story-submission`;
-const typeLabels = { update: 'Greenhouse update', new_piece: 'New piece', farm_story: 'Farm story', customer_story: 'Found a home', event: 'Gathering' };
+const typeLabels = { update: 'Greenhouse update', new_piece: 'New piece', farm_story: 'Farm story', customer_story: 'Customer story', event: 'Gathering' };
 const grid = document.querySelector<HTMLElement>('#journal-grid')!;
 const journalStatus = document.querySelector<HTMLElement>('#journal-status')!;
 
@@ -19,7 +19,9 @@ function renderPost(post: JournalPost, index: number) {
   const article = document.createElement('article');
   article.id = `post-${post.id}`;
   article.style.scrollMarginTop = '120px';
-  article.className = `greenhouse-journal-card${post.featured || index === 0 ? ' is-featured' : ''}`;
+  article.className = `greenhouse-journal-card${post.post_type === 'customer_story' ? ' is-customer-story' : ''}${!post.media?.length ? ' is-text-only' : ''}`;
+  article.dataset.postType = post.post_type;
+  if (!requestedPost) article.classList.add(['layout-intro', 'layout-reverse', 'layout-wide', 'layout-community'][index % 4]!);
   const images = (post.media || []).filter((image) => image.url);
   if (images.length) {
     const gallery = document.createElement('div');
@@ -73,6 +75,20 @@ function renderPost(post: JournalPost, index: number) {
   body.textContent = requestedPost === post.id ? post.body : post.excerpt || post.body;
   body.style.whiteSpace = 'pre-line';
   copy.append(meta, title, body);
+  if (post.post_type === 'customer_story') {
+    const attribution = document.createElement('p');
+    attribution.className = 'greenhouse-journal-customer-note';
+    attribution.textContent = 'Shared by a Roots & Relics customer';
+    copy.insertBefore(attribution, body);
+  }
+  if (!requestedPost && post.post_type !== 'event') {
+    const storyLink = document.createElement('a');
+    storyLink.className = 'greenhouse-journal-card-link';
+    storyLink.href = `/from-the-greenhouse/?post=${encodeURIComponent(post.id)}`;
+    storyLink.textContent = 'Read the story →';
+    storyLink.setAttribute('aria-label', `Read ${post.title}`);
+    copy.append(storyLink);
+  }
   if (post.post_type === 'event') {
     const details = document.createElement('a');
     details.className = 'greenhouse-journal-card-link';
@@ -99,6 +115,34 @@ fetch(feedUrl, { headers: { Accept: 'application/json' } })
     grid.replaceChildren(...data.posts.map(renderPost));
     grid.hidden = false;
     journalStatus.hidden = true;
+    const filters = document.querySelector<HTMLElement>('#journal-filters')!;
+    const filterStatus = document.querySelector<HTMLElement>('#journal-filter-status')!;
+    if (!requestedPost) {
+      const availableCategories = new Set(data.posts.map((post) => post.post_type));
+      filters.querySelectorAll<HTMLButtonElement>('[data-journal-filter]').forEach((button) => {
+        button.hidden = button.dataset.journalFilter !== 'all' && !availableCategories.has(button.dataset.journalFilter as JournalPost['post_type']);
+      });
+      filters.hidden = false;
+      filters.addEventListener('click', (event) => {
+        const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-journal-filter]');
+        if (!button) return;
+        const filter = button.dataset.journalFilter!;
+        filters.querySelectorAll<HTMLButtonElement>('button').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+        let visible = 0;
+        grid.querySelectorAll<HTMLElement>('article').forEach((article) => {
+          article.hidden = filter !== 'all' && article.dataset.postType !== filter;
+          if (!article.hidden) visible++;
+        });
+        filterStatus.hidden = false;
+        filterStatus.textContent = visible ? `${visible} ${visible === 1 ? 'story' : 'stories'} · ${button.textContent}` : `No ${button.textContent?.toLowerCase()} yet. More stories are on their way.`;
+      });
+    } else {
+      const back = document.createElement('a');
+      back.className = 'greenhouse-journal-card-link';
+      back.href = '/from-the-greenhouse/';
+      back.textContent = '← All journal stories';
+      document.querySelector('.greenhouse-journal-heading')!.append(back);
+    }
     if (requestedPost) {
       const selected = document.getElementById(`post-${requestedPost}`);
       if (selected) { selected.tabIndex = -1; selected.focus({ preventScroll: true }); selected.scrollIntoView({ block: "start" }); }

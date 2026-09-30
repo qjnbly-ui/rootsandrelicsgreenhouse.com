@@ -28,6 +28,15 @@ const fallbackHero = imageUrl('r-r-greenhousse-13.jpg');
         <p class="kicker">The latest from Roots &amp; Relics</p>
         <h2 id="journal-feed-title">Stories worth <em>keeping.</em></h2>
       </header>
+      <nav class="greenhouse-journal-filters" id="journal-filters" aria-label="Filter journal stories" hidden>
+        <button type="button" data-journal-filter="all" aria-pressed="true">All stories</button>
+        <button type="button" data-journal-filter="update" aria-pressed="false">Greenhouse updates</button>
+        <button type="button" data-journal-filter="new_piece" aria-pressed="false">New pieces</button>
+        <button type="button" data-journal-filter="farm_story" aria-pressed="false">Farm stories</button>
+        <button type="button" data-journal-filter="customer_story" aria-pressed="false">Customer stories</button>
+        <button type="button" data-journal-filter="event" aria-pressed="false">Gatherings</button>
+      </nav>
+      <p id="journal-filter-status" class="greenhouse-journal-filter-status" role="status" aria-live="polite" hidden></p>
       <div class="greenhouse-journal-status" id="journal-status" role="status">Gathering the latest notes…</div>
       <div class="greenhouse-journal-grid" id="journal-grid" hidden></div>
     </section>
