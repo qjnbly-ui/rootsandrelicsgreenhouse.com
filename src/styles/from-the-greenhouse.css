@@ -39,3 +39,15 @@
 
 @media(max-width:900px){.greenhouse-journal-invitation{grid-template-columns:1fr;gap:55px}}
 @media(max-width:600px){.greenhouse-share-form{grid-template-columns:1fr}.greenhouse-share-form label{grid-column:1}.greenhouse-share-action{align-items:stretch;flex-direction:column}.greenhouse-share-action button{justify-content:space-between}}
+
+.greenhouse-journal-gallery{min-width:0}.greenhouse-journal-photo-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--fern) transparent}
+.greenhouse-journal-photo-track figure{flex:0 0 100%;scroll-snap-align:start;display:flex;flex-direction:column;height:auto!important;min-width:0;background:transparent}
+.greenhouse-journal-photo-track figure img{height:460px;object-fit:contain;background:var(--cream);flex-shrink:0}
+.greenhouse-journal-card.is-featured .greenhouse-journal-photo-track figure img{height:650px}
+.greenhouse-journal-photo-track figcaption{padding:14px 0;font-size:14px;line-height:1.65;color:var(--fern);white-space:pre-line}
+.greenhouse-journal-photo-controls{display:flex;justify-content:space-between;gap:20px;padding:15px 0}
+.greenhouse-journal-photo-controls button{border:0;background:none;color:var(--forest);font:11px var(--mono);cursor:pointer;padding:8px 0}
+.greenhouse-journal-photo-controls button:disabled{opacity:.35;cursor:default}.greenhouse-journal-photo-track:focus-visible{outline:2px solid var(--rust);outline-offset:5px}
+@media(max-width:900px){.greenhouse-journal-photo-track figure img,.greenhouse-journal-card.is-featured .greenhouse-journal-photo-track figure img{height:480px}}
+@media(max-width:600px){.greenhouse-journal-photo-track figure img,.greenhouse-journal-card.is-featured .greenhouse-journal-photo-track figure img{height:390px}}
+@media(prefers-reduced-motion:reduce){.greenhouse-journal-photo-track{scroll-behavior:auto}}

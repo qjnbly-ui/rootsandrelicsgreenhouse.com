@@ -1,4 +1,4 @@
-interface JournalMedia { url: string; altText?: string; }
+interface JournalMedia { url: string; altText?: string; caption?: string; }
 interface JournalPost { id: string; post_type: keyof typeof typeLabels; title: string; excerpt?: string; body: string; featured: boolean; published_at: string; media?: JournalMedia[]; }
 interface JournalFeed { page: { kicker: string; intro: string; heroUrl?: string }; posts: JournalPost[]; error?: string; }
 
@@ -20,16 +20,47 @@ function renderPost(post: JournalPost, index: number) {
   article.id = `post-${post.id}`;
   article.style.scrollMarginTop = '120px';
   article.className = `greenhouse-journal-card${post.featured || index === 0 ? ' is-featured' : ''}`;
-  const image = post.media?.[0];
-  if (image?.url) {
-    const figure = document.createElement('figure');
-    const img = document.createElement('img');
-    img.src = image.url;
-    img.alt = image.altText || post.title;
-    img.loading = index < 2 ? 'eager' : 'lazy';
-    img.decoding = 'async';
-    figure.append(img);
-    article.append(figure);
+  const images = (post.media || []).filter((image) => image.url);
+  if (images.length) {
+    const gallery = document.createElement('div');
+    gallery.className = 'greenhouse-journal-gallery';
+    const track = document.createElement('div');
+    track.className = 'greenhouse-journal-photo-track';
+    track.setAttribute('aria-label', `Photos for ${post.title}`);
+    track.tabIndex = 0;
+    for (const image of images) {
+      const figure = document.createElement('figure');
+      const img = document.createElement('img');
+      img.src = image.url;
+      img.alt = image.altText || post.title;
+      img.loading = index < 2 ? 'eager' : 'lazy';
+      img.decoding = 'async';
+      figure.append(img);
+      if (image.caption) {
+        const caption = document.createElement('figcaption');
+        caption.textContent = image.caption;
+        figure.append(caption);
+      }
+      track.append(figure);
+    }
+    gallery.append(track);
+    if (images.length > 1) {
+      const controls = document.createElement('div');
+      controls.className = 'greenhouse-journal-photo-controls';
+      const previous = document.createElement('button');
+      previous.type = 'button'; previous.textContent = '← Previous photo';
+      const next = document.createElement('button');
+      next.type = 'button'; next.textContent = 'Next photo →';
+      previous.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+      next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+      const update = () => { previous.disabled = track.scrollLeft < 2; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2; };
+      track.addEventListener('scroll', update, { passive: true });
+      new ResizeObserver(update).observe(track);
+      previous.disabled = true;
+      controls.append(previous, next);
+      gallery.append(controls);
+    }
+    article.append(gallery);
   }
   const copy = document.createElement('div');
   copy.className = 'greenhouse-journal-card-copy';
