@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/email/logo.png",
+      "destination": "https://n3xra.com/api/communications-email-logo?workspaceId=01a53069-7dc6-4119-b6f7-1da718bccd0e"
+    },
+    {
+      "source": "/email/unsubscribe",
+      "destination": "https://n3xra.com/api/communications-unsubscribe"
+    }
+  ]
+}
