@@ -47,3 +47,22 @@
   .join-intro-copy > p:last-child { margin-top: 31px; font-size: 15px; }
   .join-card { padding: 32px 24px; }
 }
+
+.join-form > [hidden], .join-submit-row button[hidden]{display:none!important}
+.join-submit-row p.is-success{padding:28px 24px;border:1px solid var(--forest);background:rgba(38,50,30,.06);color:var(--ink);font-size:16px;line-height:1.6;outline:none}
+.join-submit-row p.is-success strong{display:block;margin-bottom:12px;font:400 36px/1.1 var(--serif);letter-spacing:-.025em}
+.join-submit-row p.is-success span{display:block}
+
+.join-topics label>span,.join-consent>span{min-width:0;overflow-wrap:anywhere}
+.join-submit-row p.is-success{overflow-wrap:anywhere}
+@media(max-width:600px){
+ .join-topics label{min-height:48px}
+ .join-consent{min-height:44px}
+ .join-legal a{display:inline-block;padding:6px 0}
+ .join-submit-row p.is-success{padding:24px 18px}
+ .join-submit-row p.is-success strong{font-size:32px}
+}
+
+@media(max-width:600px){.join-intro{gap:36px;padding:54px 20px 70px}.join-intro-copy h1{font-size:clamp(48px,15vw,72px);line-height:.95}.join-card{min-width:0;padding:28px 20px}.join-form input[type=text],.join-form input[type=email]{min-width:0}.join-disclosure,.join-legal{font-size:12px}}
+
+.join-submit-row p.is-success{scroll-margin-top:120px}

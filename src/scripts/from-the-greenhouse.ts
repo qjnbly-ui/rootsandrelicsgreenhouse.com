@@ -145,7 +145,7 @@ fetch(feedUrl, { headers: { Accept: 'application/json' } })
     }
     if (requestedPost) {
       const selected = document.getElementById(`post-${requestedPost}`);
-      if (selected) { selected.tabIndex = -1; selected.focus({ preventScroll: true }); selected.scrollIntoView({ block: "start" }); }
+      if (selected) selected.scrollIntoView({ block: "start" });
       else { journalStatus.hidden = false; journalStatus.textContent = "This post is no longer available. Browse our latest stories below."; }
     }
   })

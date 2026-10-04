@@ -3,3 +3,20 @@
 .signup-topics{margin:5px 0 0;padding:0;border:0}.signup-topics legend{margin-bottom:12px}.signup-topics>div{display:grid;gap:8px}.signup-topics label{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid var(--line)}.signup-topics input,.signup-consent input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--rust);flex:0 0 18px}.signup-topics strong{display:block;font:400 14px var(--sans)}.signup-topics small{display:block;margin-top:3px;color:rgba(38,50,30,.65);font:12px/1.4 var(--sans)}
 .signup-consent{display:flex;gap:12px;align-items:flex-start;margin-top:2px}.signup-consent>span{font:500 14px/1.45 var(--sans)}.signup-disclosure,.signup-legal{margin:-9px 0 0 30px;color:rgba(38,50,30,.66);font-size:11px;line-height:1.5}.signup-legal a{color:inherit;text-underline-offset:3px}.signup-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.signup-submit-row{display:grid;gap:11px;margin-top:5px}.signup-submit-row button{min-height:56px;display:flex;justify-content:space-between;align-items:center;padding:0 20px;border:1px solid var(--forest);background:var(--forest);color:white;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}.signup-submit-row button:hover{background:var(--rust);border-color:var(--rust);transform:translateY(-2px)}.signup-submit-row button:disabled{cursor:wait;opacity:.62;transform:none}.signup-submit-row p{min-height:18px;margin:0;color:var(--fern);font-size:12px;line-height:1.5}.signup-submit-row p.is-error{color:var(--rust)}
 @media(max-width:600px){.signup-fields{grid-template-columns:1fr;gap:17px}.signup-form{gap:18px}.signup-submit-row button{min-height:58px;font-size:11px}}
+
+.signup-form > [hidden], .signup-submit-row button[hidden]{display:none!important}
+.signup-submit-row p.is-success{padding:28px 24px;border:1px solid var(--forest);background:rgba(38,50,30,.06);color:var(--ink);font-size:16px;line-height:1.6;outline:none}
+.signup-submit-row p.is-success strong{display:block;margin-bottom:12px;font:400 36px/1.1 var(--serif);letter-spacing:-.025em}
+.signup-submit-row p.is-success span{display:block}
+
+.signup-topics label>span,.signup-consent>span{min-width:0;overflow-wrap:anywhere}
+.signup-submit-row p.is-success{overflow-wrap:anywhere}
+@media(max-width:600px){
+ .signup-topics label{min-height:48px}
+ .signup-consent{min-height:44px}
+ .signup-legal a{display:inline-block;padding:6px 0}
+ .signup-submit-row p.is-success{padding:24px 18px}
+ .signup-submit-row p.is-success strong{font-size:32px}
+}
+
+.signup-submit-row p.is-success{scroll-margin-top:120px}

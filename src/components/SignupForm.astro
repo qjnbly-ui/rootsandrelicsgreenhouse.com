@@ -113,11 +113,22 @@ const { className = '' } = Astro.props;
         });
         const payload = await response.json() as { message?: string; error?: string };
         if (!response.ok) throw new Error(payload.error || 'Your preferences could not be saved.');
-        showStatus(payload.message || signup.form.successMessage);
-        form.reset();
-        const firstTopic = form.querySelector<HTMLInputElement>('input[name="topics"]');
-        if (firstTopic) firstTopic.checked = true;
-        idempotencyKey = crypto.randomUUID().replaceAll('-', '');
+        showStatus('');
+        if (status) {
+          const heading = document.createElement('strong');
+          heading.textContent = 'You’re signed up!';
+          const detail = document.createElement('span');
+          detail.textContent = payload.message || signup.form.successMessage || 'Your signup was submitted successfully. Thank you for joining Roots & Relics updates.';
+          status.replaceChildren(heading, detail);
+          status.classList.add('is-success');
+          Array.from(form.children).forEach((child) => {
+            if (child instanceof HTMLElement && !child.classList.contains('signup-submit-row')) child.hidden = true;
+          });
+          if (button) button.hidden = true;
+          status.tabIndex = -1;
+          status.focus({ preventScroll: true });
+          status.scrollIntoView({ block: 'start', behavior: 'instant' });
+        }
       } catch (error) {
         showStatus(error instanceof Error ? error.message : 'Your preferences could not be saved.', true);
       } finally { if (button) button.disabled = false; }

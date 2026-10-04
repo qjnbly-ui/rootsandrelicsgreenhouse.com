@@ -93,3 +93,23 @@
 .greenhouse-journal-card.layout-community{grid-template-columns:.7fr 1fr;max-width:1000px;width:85%;align-self:center;padding-top:50px;border-top:1px solid var(--line)}
 .greenhouse-journal-card.layout-community .greenhouse-journal-gallery{max-width:350px;justify-self:start}
 @media(max-width:700px){.greenhouse-journal-grid{gap:20px}.greenhouse-journal-card.layout-intro,.greenhouse-journal-card.layout-reverse,.greenhouse-journal-card.layout-wide,.greenhouse-journal-card.layout-community{grid-template-columns:1fr;width:100%;padding:30px 0;gap:25px}.greenhouse-journal-card.layout-reverse .greenhouse-journal-gallery,.greenhouse-journal-card.layout-reverse .greenhouse-journal-card-copy{grid-column:auto;grid-row:auto}.greenhouse-journal-card .greenhouse-journal-gallery,.greenhouse-journal-card.layout-intro .greenhouse-journal-gallery,.greenhouse-journal-card.layout-reverse .greenhouse-journal-gallery,.greenhouse-journal-card.layout-community .greenhouse-journal-gallery{max-width:100%;justify-self:start}.greenhouse-journal-card.layout-wide .greenhouse-journal-card-copy{padding-bottom:0}.greenhouse-journal-photo-track figure img{height:auto;max-height:none}}
+
+/* Comfortable phone reading and touch controls. */
+.greenhouse-journal-card-copy,.greenhouse-journal-photo-track figcaption{overflow-wrap:anywhere}
+.greenhouse-journal-photo-controls button{min-height:44px;padding:10px 8px}
+.greenhouse-journal-card-link{min-height:44px;max-width:100%;width:fit-content}
+.greenhouse-share-form>label{min-width:0}
+@media(max-width:700px){
+ .greenhouse-journal-hero-shade{background:linear-gradient(180deg,rgba(12,18,9,.08) 20%,rgba(12,18,9,.78) 100%)}
+ .greenhouse-journal-hero-copy .kicker{line-height:1.7;letter-spacing:.08em}
+ .greenhouse-journal-hero{height:auto;min-height:620px}
+ .greenhouse-journal-hero-copy{min-height:620px}
+ .greenhouse-journal-hero h1{font-size:clamp(48px,15.5vw,68px)}
+ .greenhouse-journal-photo-controls{gap:12px}
+ .greenhouse-journal-filters button{min-height:44px}
+ .greenhouse-journal-status{padding:24px 0;font-size:24px}
+ .greenhouse-share-form input:not([type=file]),.greenhouse-share-form textarea{font-size:16px}
+ .greenhouse-share-form input[type=file]{max-width:100%;min-height:48px;font-size:14px;padding:12px 8px}
+ .greenhouse-share-form input[type=checkbox]{min-height:18px}
+ .greenhouse-journal-invitation h2{font-size:clamp(44px,13vw,55px)}
+}
