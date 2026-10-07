@@ -14,6 +14,7 @@ export const site = {
     { label: 'Our story', href: '/our-story/' },
     { label: 'The collection', href: '/the-collection/' },
     { label: 'Gatherings', href: '/greenhouse-gatherings/' },
+    { label: 'Calendar', href: '/calendar/' },
     { label: 'Private showings', href: '/private-showings/' },
     { label: 'Gallery', href: '/gallery/' },
     { label: 'Journal', href: '/from-the-greenhouse/' },

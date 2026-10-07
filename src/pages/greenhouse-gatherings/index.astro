@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicCalendar from '../../components/PublicCalendar.astro';
 import { site } from '../../data/site';
 import { fallGathering } from '../../data/events';
 import { imageUrl } from '../../lib/image-assets';
@@ -170,6 +171,8 @@ const fallGatheringSchema = {
         </div>
       </div>
     </section>
+
+    <PublicCalendar compact />
 
     <section class="gatherings-dates" aria-labelledby="gatherings-dates-title">
       <header class="gatherings-dates-heading reveal">
