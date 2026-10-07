@@ -81,7 +81,7 @@ function renderPost(post: JournalPost, index: number) {
     attribution.textContent = 'Shared by a Roots & Relics customer';
     copy.insertBefore(attribution, body);
   }
-  if (!requestedPost && post.post_type !== 'event') {
+  if (!requestedPost) {
     const storyLink = document.createElement('a');
     storyLink.className = 'greenhouse-journal-card-link';
     storyLink.href = `/from-the-greenhouse/?post=${encodeURIComponent(post.id)}`;
@@ -89,7 +89,7 @@ function renderPost(post: JournalPost, index: number) {
     storyLink.setAttribute('aria-label', `Read ${post.title}`);
     copy.append(storyLink);
   }
-  if (post.post_type === 'event') {
+  if (requestedPost && post.post_type === 'event') {
     const details = document.createElement('a');
     details.className = 'greenhouse-journal-card-link';
     details.href = '/greenhouse-gatherings/';
