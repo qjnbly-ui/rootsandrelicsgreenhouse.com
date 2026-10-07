@@ -1,0 +1,26 @@
+.home-arrival {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 38px 7vw;
+  background: var(--paper);
+  color: var(--forest);
+  border-top: 3px solid var(--gold);
+  border-bottom: 1px solid var(--line);
+}
+.home-arrival .kicker { margin: 0 0 10px; color: var(--rust); }
+.home-arrival-address { margin: 0; font: 300 clamp(30px, 3vw, 46px) / 1.08 var(--serif); letter-spacing: -.035em; }
+.home-arrival-address span { display: inline-block; margin-left: 14px; font: 400 14px / 1.5 var(--sans); letter-spacing: 0; }
+.home-arrival-note { margin: 10px 0 0; max-width: 670px; font-size: 13px; line-height: 1.6; color: var(--fern); }
+.home-arrival-directions { display: inline-flex; flex-shrink: 0; align-items: center; gap: 28px; min-height: 48px; padding: 15px 22px; background: var(--forest); color: var(--paper); font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+.home-arrival-directions:hover { background: var(--fern); }
+.home-arrival-directions:focus-visible { outline: 2px solid var(--rust); outline-offset: 4px; }
+@media (max-width: 760px) {
+  .home-arrival { padding: 30px 6vw; flex-direction: column; align-items: stretch; gap: 16px; }
+  .home-arrival .kicker { font-size: 9px; line-height: 1.6; }
+  .home-arrival-address span { display: block; margin: 6px 0 0; }
+  .home-arrival-note { font-size: 12px; }
+  .home-arrival-directions { justify-content: space-between; }
+}

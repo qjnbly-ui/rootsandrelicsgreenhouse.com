@@ -4,6 +4,7 @@ import SignupForm from '../components/SignupForm.astro';
 import { fallGathering } from '../data/events';
 import { imageUrl } from '../lib/image-assets';
 import '../styles/home-event.css';
+import '../styles/home-arrival.css';
 import '../styles/birthday-banner.css';
 import '../styles/signup-form.css';
 import '../styles/home-signup.css';
@@ -60,16 +61,33 @@ import '../styles/home-signup.css';
         </div>
       </section>
 
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Primitive furniture</span><i>✦</i><span>European antiques</span><i>✦</i><span>Ironstone</span><i>✦</i><span>Textiles</span><i>✦</i><span>Architectural salvage</span><i>✦</i><span>Seasonal botanicals</span><i>✦</i>
+          <span>Primitive furniture</span><i>✦</i><span>European antiques</span><i>✦</i><span>Ironstone</span><i>✦</i><span>Textiles</span><i>✦</i><span>Architectural salvage</span><i>✦</i><span>Seasonal botanicals</span><i>✦</i>
+        </div>
+      </div>
+
+        <aside class="home-arrival" aria-label="Visit Roots and Relics">
+          <div class="home-arrival-copy">
+            <p class="kicker">Come join us · Fall Gathering · October 8–11</p>
+            <p class="home-arrival-address">13221 Mann Road <span>Klamath Falls, Oregon</span></p>
+            <p class="home-arrival-note">Look for the marked entrance on the left, about 100 yards before the home driveway.</p>
+          </div>
+          <a class="home-arrival-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=13221+Mann+Road+Klamath+Falls+OR" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+        </aside>
+
       <section class="home-fall-event" aria-labelledby="home-fall-event-title">
         <figure class="home-fall-event-image reveal">
           <img src={imageUrl(fallGathering.image)} alt={fallGathering.imageAlt} loading="lazy" decoding="async" />
           <figcaption>Gathered for autumn.</figcaption>
         </figure>
         <div class="home-fall-event-copy reveal">
-          <p class="kicker">Save the date · Southern Oregon</p>
+          <p class="kicker">It’s finally here · October 8–11</p>
           <p class="home-fall-event-date">{fallGathering.dateLabel}</p>
           <h2 id="home-fall-event-title">Fall<br /><em>Gathering.</em></h2>
           <p>{fallGathering.description}</p>
+          <p><strong>13221 Mann Road, Klamath Falls</strong><br />Look for the marked entrance on the left, about 100 yards before the home driveway.</p>
           <div class="home-fall-event-early-bird">
             <span>Early Bird Opening</span>
             <strong>Thursday, October 8 · 3–7 PM</strong>
@@ -81,13 +99,6 @@ import '../styles/home-signup.css';
         </div>
         <div class="home-fall-event-mark" aria-hidden="true">10</div>
       </section>
-
-      <div class="ticker" aria-hidden="true">
-        <div class="ticker-track">
-          <span>Primitive furniture</span><i>✦</i><span>European antiques</span><i>✦</i><span>Ironstone</span><i>✦</i><span>Textiles</span><i>✦</i><span>Architectural salvage</span><i>✦</i><span>Seasonal botanicals</span><i>✦</i>
-          <span>Primitive furniture</span><i>✦</i><span>European antiques</span><i>✦</i><span>Ironstone</span><i>✦</i><span>Textiles</span><i>✦</i><span>Architectural salvage</span><i>✦</i><span>Seasonal botanicals</span><i>✦</i>
-        </div>
-      </div>
 
       <section class="home-signup" aria-labelledby="home-signup-title">
         <div class="home-signup-copy reveal">
