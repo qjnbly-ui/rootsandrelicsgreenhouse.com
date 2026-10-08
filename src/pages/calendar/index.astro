@@ -3,5 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PublicCalendar from '../../components/PublicCalendar.astro';
 ---
 <BaseLayout title="Gathering Calendar | Roots & Relics Greenhouse" description="Browse Roots & Relics Greenhouse gathering dates and opening hours in our public calendar." currentPath="/calendar/" bodyClass="gatherings-page">
-  <main id="main"><PublicCalendar /></main>
+  <main id="main" class="calendar-main"><PublicCalendar /></main>
 </BaseLayout>
+
+<style>.calendar-main{padding-top:88px}@media(max-width:700px){.calendar-main{padding-top:76px}}</style>

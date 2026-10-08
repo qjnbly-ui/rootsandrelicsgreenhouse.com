@@ -6,14 +6,14 @@ const calendarUrl = 'https://n3xra.com/calendar/app/?public=769ae412-4e58-5178-b
 ---
 <section class:list={['gatherings-calendar', { 'gatherings-calendar-compact': compact }]} aria-labelledby="public-calendar-title">
   <header class="gatherings-calendar-heading">
-    <p class="kicker">Dates from the greenhouse</p>
-    <Heading id="public-calendar-title">A little room<br />for <em>gathering.</em></Heading>
-    <p>Browse our market dates and opening hours. November and December gatherings are save-the-date entries; opening hours will follow.</p>
+    <p class="kicker">Roots & Relics</p>
+    <Heading id="public-calendar-title">Gathering <em>calendar.</em></Heading>
+    <p>Good things happen in the greenhouse. Find a day to stop by.</p>
+    <svg class="autumn-sprig" viewBox="0 0 180 120" aria-hidden="true"><path d="M18 107Q89 79 158 13" fill="none" stroke="#796343" stroke-width="2"/><path d="M60 91C24 89 29 55 23 39C57 44 74 62 60 91Z" fill="#b5693b"/><path d="M91 68C67 44 94 24 100 9C117 34 115 53 91 68Z" fill="#ba963f"/><path d="M115 52C149 67 162 43 175 36C154 22 132 26 115 52Z" fill="#8d4930"/><path d="M39 52L60 90M100 26L91 68M161 38L116 52" fill="none" stroke="#f4e4bb" stroke-width="1"/></svg>
   </header>
   <iframe src={`${calendarUrl}&embed=1`} title="Roots & Relics public events calendar" data-calendar-frame scrolling="no" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   <div class="gatherings-calendar-links">
-    <a class="action-link action-link-dark" href={calendarUrl} target="_blank" rel="noopener">Open calendar <span aria-hidden="true">↗</span></a>
-    <a class="action-link action-link-dark" href="/calendar/roots-relics-markets-2026.ics" download>Save published dates <span aria-hidden="true">↓</span></a>
+    <a class="action-link action-link-dark" href="/calendar/roots-relics-markets-2026.ics" download>Save published dates <span aria-hidden="true">↓</span><svg class="button-leaf" viewBox="0 0 55 65" aria-hidden="true"><path d="M27 53L9 43L14 34L4 26L20 24L22 6L31 19L42 13L39 29L53 33L37 42L37 53Z" fill="#b5693b"/><path d="M28 26L31 62M16 35L30 43M42 34L30 43" fill="none" stroke="#765036" stroke-width="1.5"/></svg></a>
   </div>
   <section class="gatherings-calendar-fallback" aria-labelledby="published-dates-title">
     <h3 id="published-dates-title">Published gathering dates</h3>
@@ -46,3 +46,8 @@ const calendarUrl = 'https://n3xra.com/calendar/app/?public=769ae412-4e58-5178-b
     measure();
   });
 </script>
+
+<style>
+.gatherings-calendar{padding-top:42px;padding-bottom:60px}.gatherings-calendar-heading{position:relative;max-width:none;padding-right:180px;margin-bottom:26px}.gatherings-calendar-heading .kicker{margin:0;color:#80603e;line-height:1.6;white-space:normal}.gatherings-calendar-heading h1,.gatherings-calendar-heading h2{font-size:clamp(34px,4vw,52px);margin:12px 0}.gatherings-calendar-heading>p:last-of-type{margin:0;line-height:1.6}.autumn-sprig{position:absolute;right:8px;top:0;width:150px;height:110px;pointer-events:none}.gatherings-calendar-links a{position:relative}.button-leaf{position:absolute;width:36px;height:44px;right:-13px;top:-18px;transform:rotate(20deg);pointer-events:none}.gatherings-calendar iframe{border-color:#cbc8b7}.gatherings-calendar-fallback{border-color:#d6cbb8}
+@media(max-width:700px){.gatherings-calendar{padding:28px 20px 45px}.gatherings-calendar-heading{padding-right:0}.gatherings-calendar-heading h1,.gatherings-calendar-heading h2{font-size:36px;max-width:260px}.gatherings-calendar-heading .kicker{padding-right:80px}.autumn-sprig{width:76px;height:65px;right:0;top:-8px}.gatherings-calendar-heading>p:last-of-type{max-width:310px}.gatherings-calendar-links{gap:20px}.gatherings-calendar-links a{width:100%}}
+</style>
