@@ -1,6 +1,7 @@
 .home-arrival {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
@@ -23,4 +24,16 @@
   .home-arrival-address span { display: block; margin: 6px 0 0; }
   .home-arrival-note { font-size: 12px; }
   .home-arrival-directions { justify-content: space-between; }
+}
+
+.home-arrival-copy { flex: 1 1 480px; }
+.home-arrival-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.home-arrival-signup { background: var(--gold); color: var(--forest); }
+.home-arrival-signup:hover { background: var(--forest); color: var(--paper); }
+#signup { scroll-margin-top: 130px; }
+@media (max-width: 760px) {
+  .home-arrival-copy { flex: none; }
+  .home-arrival-actions { width: 100%; }
+  .home-arrival-actions .home-arrival-directions { flex: 1 1 200px; }
+  #signup { scroll-margin-top: 120px; }
 }

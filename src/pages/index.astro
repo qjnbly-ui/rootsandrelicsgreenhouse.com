@@ -74,7 +74,10 @@ import '../styles/home-signup.css';
             <p class="home-arrival-address">13221 Mann Road <span>Klamath Falls, Oregon</span></p>
             <p class="home-arrival-note">Look for the marked entrance on the left, about 100 yards before the home driveway.</p>
           </div>
-          <a class="home-arrival-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=13221+Mann+Road+Klamath+Falls+OR" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+          <div class="home-arrival-actions">
+            <a class="home-arrival-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=13221+Mann+Road+Klamath+Falls+OR" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+            <a class="home-arrival-directions home-arrival-signup" href="#signup">Sign up for updates <span aria-hidden="true">↓</span></a>
+          </div>
         </aside>
 
       <section class="home-fall-event" aria-labelledby="home-fall-event-title">
@@ -106,7 +109,7 @@ import '../styles/home-signup.css';
           <h2 id="home-signup-title">The good finds<br />don’t wait <em>around.</em></h2>
           <p>Be first to hear about greenhouse weekends, fresh arrivals, and the seasonal gatherings we’re dreaming up.</p>
         </div>
-        <div class="home-signup-form reveal">
+        <div class="home-signup-form reveal" id="signup" tabindex="-1">
           <div class="home-signup-tag" aria-hidden="true"><span>Fresh from</span><strong>R&amp;R</strong><span>the greenhouse</span></div>
           <SignupForm />
         </div>
