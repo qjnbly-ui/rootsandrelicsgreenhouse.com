@@ -9,6 +9,7 @@ export const site = {
     phoneHref: '5416788687',
     email: 'rootsandrelics.greenhouse@gmail.com',
     instagram: 'rootsandrelicsgreenhouse',
+    facebook: 'https://www.facebook.com/profile.php?id=61589718954668',
   },
   primaryNavigation: [
     { label: 'Our story', href: '/our-story/' },

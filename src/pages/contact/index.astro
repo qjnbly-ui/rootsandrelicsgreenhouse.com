@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../data/site';
+import SocialIcon from '../../components/SocialIcon.astro';
 import { imageUrl } from '../../lib/image-assets';
 import '../../styles/contact.css';
 ---
@@ -46,8 +47,13 @@ import '../../styles/contact.css';
         <i aria-hidden="true">↗</i>
       </a>
       <a class="contact-channel reveal" href={`https://instagram.com/${site.contact.instagram}`} target="_blank" rel="noopener">
-        <span>Instagram</span>
+        <span class="contact-social-label"><SocialIcon platform="instagram" /> Instagram</span>
         <strong>@{site.contact.instagram}</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
+      <a class="contact-channel reveal" href={site.contact.facebook} target="_blank" rel="noopener noreferrer">
+        <span class="contact-social-label"><SocialIcon platform="facebook" /> Facebook</span>
+        <strong>Roots &amp; Relics</strong>
         <i aria-hidden="true">↗</i>
       </a>
     </section>

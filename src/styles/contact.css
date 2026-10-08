@@ -84,3 +84,5 @@
   .contact-hero-content, .contact-intro, .contact-channels, .contact-memories, .contact-location-copy { padding-left: 18px; padding-right: 18px; }
   .contact-memories-image { width: calc(100% + 36px); margin-left: -18px; }
 }
+
+.contact-social-label { display: inline-flex; align-items: center; gap: 10px; }

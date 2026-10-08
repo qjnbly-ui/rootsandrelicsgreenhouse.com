@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import SocialIcon from './SocialIcon.astro';
 ---
 
 <footer class="footer">
@@ -38,7 +39,10 @@ import { site } from '../data/site';
     <a href={`sms:${site.contact.phoneHref}`}>Text {site.contact.phoneDisplay}</a>
     <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
     <a class="social-contact" href={`https://instagram.com/${site.contact.instagram}`} target="_blank" rel="noopener">
-      <span class="social-icon social-instagram" aria-hidden="true"></span><span>@{site.contact.instagram}</span>
+      <SocialIcon platform="instagram" /><span>Instagram</span>
+    </a>
+    <a class="social-contact" href={site.contact.facebook} target="_blank" rel="noopener noreferrer">
+      <SocialIcon platform="facebook" /><span>Facebook</span>
     </a>
   </div>
   <div class="footer-legal">
