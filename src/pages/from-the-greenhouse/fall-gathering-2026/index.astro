@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { imageUrl } from '../../../lib/image-assets';
+import { fallGathering } from '../../../data/events';
+import '../../../styles/from-the-greenhouse.css';
+---
+<BaseLayout title="Fall Gathering · October 8–11, 2026 | Roots & Relics" description="October 8–11, 2026 at 13221 Mann Road, Klamath Falls. Find the Fall Gathering hours and entrance directions." currentPath="/from-the-greenhouse/" bodyClass="greenhouse-journal-page inner-page">
+  <main id="main" class="greenhouse-journal">
+    <section class="greenhouse-journal-hero">
+      <img src={imageUrl('124-greenhouse-exterior.jpg')} alt="Roots &amp; Relics Greenhouse" fetchpriority="high" />
+      <div class="greenhouse-journal-hero-shade" aria-hidden="true"></div>
+      <div class="greenhouse-journal-hero-copy"><p class="kicker">October 8–11, 2026 · Fall Gathering</p><h1>Fall <em>Gathering.</em></h1><p data-event-archive="A look back at our October 8–11, 2026 Fall Gathering. Thank you to everyone who joined us!">Find the remaining opening hours for our Fall Gathering below.</p></div>
+    </section>
+    <section class="greenhouse-journal-feed">
+      <div class="greenhouse-journal-grid"><article class="greenhouse-journal-card is-text-only"><div class="greenhouse-journal-card-copy">
+        <p class="kicker">A note from the greenhouse · October 6, 2026</p>
+        <h2 data-event-archive="Thank you for gathering with us!">See you in the <em>greenhouse!</em></h2>
+        <p><strong>13221 Mann Road, Klamath Falls, Oregon</strong></p>
+        <h3>Fall Gathering hours</h3>
+        <ul>{fallGathering.schedule.map(day => <li data-archive-opening data-opening-end={day.end}><strong>{day.day}</strong> · {day.hours}{day.label === 'Early Bird Opening' ? ' · Early Bird' : day.label === 'Last Chance Sunday' ? ' · Last Chance' : ''}</li>)}</ul>
+        <p data-after-event={fallGathering.end}>This gathering has ended. <a href="/greenhouse-gatherings/">See the market calendar for future visits →</a></p>
+        <h3>Finding the entrance</h3>
+        <p>GPS will take you to our home driveway. The Roots &amp; Relics entrance is on the <strong>left, about 100 yards before you reach our driveway</strong>. Look for the clearly marked entrance.</p>
+        <p>We have plenty of parking for larger vehicles and trailers!</p>
+        <p><em>Gates will open just a few minutes before opening time each day.</em></p>
+        <a data-event-end={fallGathering.end} class="greenhouse-journal-card-link" href={fallGathering.calendar} download>Save the dates ↓</a>
+        <a class="greenhouse-journal-card-link" href={fallGathering.href}>All gathering details →</a>
+        <a class="greenhouse-journal-card-link" href="/from-the-greenhouse/">← Back to the journal</a>
+      </div></article></div>
+    </section>
+  </main>
+</BaseLayout>

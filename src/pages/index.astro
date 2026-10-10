@@ -68,7 +68,7 @@ import '../styles/home-signup.css';
         </div>
       </div>
 
-        <aside class="home-arrival" aria-label="Visit Roots and Relics">
+        <aside data-event-end={fallGathering.end} class="home-arrival" aria-label="Visit Roots and Relics">
           <div class="home-arrival-copy">
             <p class="kicker">Come join us · Fall Gathering · October 8–11</p>
             <p class="home-arrival-address">13221 Mann Road <span>Klamath Falls, Oregon</span></p>
@@ -80,20 +80,20 @@ import '../styles/home-signup.css';
           </div>
         </aside>
 
-      <section class="home-fall-event" aria-labelledby="home-fall-event-title">
+      <section data-event-end={fallGathering.end} class="home-fall-event" aria-labelledby="home-fall-event-title">
         <figure class="home-fall-event-image reveal">
           <img src={imageUrl(fallGathering.image)} alt={fallGathering.imageAlt} loading="lazy" decoding="async" />
           <figcaption>Gathered for autumn.</figcaption>
         </figure>
         <div class="home-fall-event-copy reveal">
-          <p class="kicker">It’s finally here · October 8–11</p>
-          <p class="home-fall-event-date">{fallGathering.dateLabel}</p>
+          <p class="kicker">Fall Gathering · Remaining opening days</p>
+          <p class="home-fall-event-date" data-remaining-date={JSON.stringify(fallGathering.schedule)}>{fallGathering.dateLabel}</p>
           <h2 id="home-fall-event-title">Fall<br /><em>Gathering.</em></h2>
           <p>{fallGathering.description}</p>
           <p><strong>13221 Mann Road, Klamath Falls</strong><br />Look for the marked entrance on the left, about 100 yards before the home driveway.</p>
           <div class="home-fall-event-early-bird">
-            <span>Early Bird Opening</span>
-            <strong>Thursday, October 8 · 3–7 PM</strong>
+            <span>Next opening</span>
+            <strong data-next-opening={JSON.stringify(fallGathering.schedule)}></strong>
           </div>
           <div class="home-fall-event-actions">
             <a class="solid-link" href={fallGathering.href}>See the full schedule <span>→</span></a>
@@ -103,6 +103,10 @@ import '../styles/home-signup.css';
         <div class="home-fall-event-mark" aria-hidden="true">10</div>
       </section>
 
+      <aside class="home-arrival" data-after-event={fallGathering.end} aria-label="Upcoming gatherings">
+        <div class="home-arrival-copy"><p class="kicker">Plan your next greenhouse visit</p><p class="home-arrival-address">Greenhouse gatherings</p><p class="home-arrival-note">See the market calendar for upcoming dates, or join our list for the next opening’s details.</p></div>
+        <a class="home-arrival-directions" href="/greenhouse-gatherings/">See the calendar <span>→</span></a>
+      </aside>
       <section class="home-signup" aria-labelledby="home-signup-title">
         <div class="home-signup-copy reveal">
           <p class="kicker">A note worth opening</p>

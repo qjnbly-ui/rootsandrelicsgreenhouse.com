@@ -1551,6 +1551,106 @@
       "category": "image",
       "altText": "",
       "version": 1
+    },
+    {
+      "assetKey": "customer_story_a7cc73b4f6564b418009afcb66d56128",
+      "label": "Book rack · v1",
+      "filename": "6e92d92f-546c-4936-b7aa-70fe6eb322d9-img_6282.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/076f5807-73c3-4d2d-b1d4-70475fa1ffd4/v1-6e92d92f-546c-4936-b7aa-70fe6eb322d9-img_6282.jpg",
+      "category": "visitor_submission",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_9744_b9035100",
+      "label": "IMG 9744 · v1",
+      "filename": "42712bf7-d783-4ab1-a284-2c2e7815fde3-img_9744.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/081f9f27-06e0-4ddf-bde7-00b1a715edef/v1-42712bf7-d783-4ab1-a284-2c2e7815fde3-img_9744.jpg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_9930_a821e165",
+      "label": "IMG 9930 · v1",
+      "filename": "2f0dcf8c-f7b9-4d92-8979-372a7d130b63-img_9930.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9f8dbf46-1abd-4a07-a04a-3f4213ae2737/v1-2f0dcf8c-f7b9-4d92-8979-372a7d130b63-img_9930.jpg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_0311_1c0cd7e0",
+      "label": "IMG 0311 · v1",
+      "filename": "789bc48c-f923-498e-b472-bc75508d51e6-img_0311.jpeg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/6a8be32c-2920-4bb0-905e-e949939cdbc4/v1-789bc48c-f923-498e-b472-bc75508d51e6-img_0311.jpeg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_0313_086c6e97",
+      "label": "IMG 0313 · v1",
+      "filename": "40031891-3890-4ede-85df-dd423d1a21fe-img_0313.jpeg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9d453930-3b74-44da-a1d5-9ee3f12f3f6a/v1-40031891-3890-4ede-85df-dd423d1a21fe-img_0313.jpeg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_0314_f71abe11",
+      "label": "IMG 0314 · v1",
+      "filename": "cde1fa8e-9ce1-461c-80db-f0c5896600bb-img_0314.jpeg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/71d56ce8-835a-49b4-8696-2aa84adfe5d5/v1-cde1fa8e-9ce1-461c-80db-f0c5896600bb-img_0314.jpeg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_0315_1e5d7373",
+      "label": "IMG 0315 · v1",
+      "filename": "f17a718b-3617-49cc-81e8-47870cc43ded-img_0315.jpeg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d7620737-b581-45f0-a7b4-ef605b6120bc/v1-f17a718b-3617-49cc-81e8-47870cc43ded-img_0315.jpeg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_0316_df970faa",
+      "label": "IMG 0316 · v1",
+      "filename": "3435b03a-2595-40f8-9596-0199e5d269ff-img_0316.jpeg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3522df3c-2636-4cfd-8b4c-20d4c36283dc/v1-3435b03a-2595-40f8-9596-0199e5d269ff-img_0316.jpeg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "img_0321_8a4462b0",
+      "label": "IMG 0321 · v1",
+      "filename": "fd15da01-184a-4f57-9bc3-243ada05649a-img_0321.jpeg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1a5032f1-a532-477b-89d8-8226124eae83/v1-fd15da01-184a-4f57-9bc3-243ada05649a-img_0321.jpeg",
+      "category": "journal",
+      "altText": "",
+      "version": 1
+    },
+    {
+      "assetKey": "roots_and_relics_fall_gathering_announcement_b54b77d0",
+      "label": "Roots and Relics Fall Gathering Announcement · v1",
+      "filename": "36729c1d-290a-4c09-8a30-a1f49dac7ce9-roots_and_relics_fall_gathering_announcement.png",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/97a34445-88d9-481c-9228-32415166839d/v1-36729c1d-290a-4c09-8a30-a1f49dac7ce9-roots_and_relics_fall_gathering_announcement.png",
+      "category": "journal",
+      "altText": "",
+      "version": 1
     }
   ]
 }

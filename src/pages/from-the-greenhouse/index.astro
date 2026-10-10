@@ -1,4 +1,5 @@
 ---
+import { fallGathering } from '../../data/events';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { imageUrl } from '../../lib/image-assets';
 import '../../styles/from-the-greenhouse.css';
@@ -28,6 +29,17 @@ const fallbackHero = imageUrl('r-r-greenhousse-13.jpg');
         <p class="kicker">The latest from Roots &amp; Relics</p>
         <h2 id="journal-feed-title">Stories worth <em>keeping.</em></h2>
       </header>
+      <div class="greenhouse-journal-grid" data-event-end={fallGathering.end}>
+        <article class="greenhouse-journal-card layout-intro">
+          <div class="greenhouse-journal-gallery"><div class="greenhouse-journal-photo-track"><figure><img src={imageUrl('124-greenhouse-exterior.jpg')} alt="Roots &amp; Relics Greenhouse" loading="eager" /></figure></div></div>
+          <div class="greenhouse-journal-card-copy">
+            <p class="kicker">Gathering · October 6, 2026</p>
+            <h3>Fall Gathering · October 8–11, 2026</h3>
+            <p>Our crew has been working tirelessly to create a beautiful experience for all of you. Find the remaining opening hours and directions for 13221 Mann Road, Klamath Falls.</p>
+            <a class="greenhouse-journal-card-link" href="/from-the-greenhouse/fall-gathering-2026/">Hours &amp; entrance directions →</a>
+          </div>
+        </article>
+      </div>
       <nav class="greenhouse-journal-filters" id="journal-filters" aria-label="Filter journal stories" hidden>
         <button type="button" data-journal-filter="all" aria-pressed="true">All stories</button>
         <button type="button" data-journal-filter="update" aria-pressed="false">Greenhouse updates</button>

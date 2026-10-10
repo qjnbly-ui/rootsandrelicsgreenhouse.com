@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Analytics from '@vercel/analytics/astro';
 import type { SitePath } from '../data/site';
 import '../../styles.css';
+import { fallGathering } from '../data/events';
 
 interface Props {
   title: string;
@@ -72,6 +73,47 @@ const socialImage = 'https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/
           `${analyticsControlUrl.pathname}${analyticsControlUrl.search}${analyticsControlUrl.hash}`,
         );
       }
+    </script>
+    <style is:global>
+      [data-event-end][data-expired], [data-opening-end][data-expired],
+      [data-after-event]:not([data-expired]) { display: none !important; }
+    </style>
+    <script is:inline define:vars={{ eventEnd: fallGathering.end }}>
+      // Update static pages at visit time, without needing another deployment.
+      function refreshGatheringDates() {
+        const now = Date.now();
+        const ended = now >= Date.parse(eventEnd);
+        document.querySelectorAll('[data-event-end], [data-opening-end], [data-after-event]').forEach((element) => {
+          const end = element.getAttribute('data-event-end') || element.getAttribute('data-opening-end') || element.getAttribute('data-after-event');
+          element.toggleAttribute('data-expired', now >= Date.parse(end) && !(ended && element.hasAttribute('data-archive-opening')));
+        });
+        document.querySelectorAll('[data-remaining-date]').forEach((element) => {
+          const days = JSON.parse(element.getAttribute('data-remaining-date')).filter((day) => now < Date.parse(day.end));
+          const text = days.map((day) => `${day.day} · ${day.hours}`).join(' / ');
+          if (element.textContent !== text) element.textContent = text;
+        });
+        document.querySelectorAll('[data-next-opening]').forEach((element) => {
+          const day = JSON.parse(element.getAttribute('data-next-opening')).find((day) => now < Date.parse(day.end));
+          const text = day ? `${day.day} · ${day.hours}` : '';
+          if (element.textContent !== text) element.textContent = text;
+        });
+        document.querySelectorAll('[data-calendar-end]').forEach((element) => {
+          const text = now >= Date.parse(element.getAttribute('data-calendar-end')) ? 'Past gathering' : 'Upcoming gathering';
+          if (element.textContent !== text) element.textContent = text;
+        });
+        document.querySelectorAll('[data-event-archive]').forEach((element) => {
+          if (ended && element.textContent !== element.getAttribute('data-event-archive')) element.textContent = element.getAttribute('data-event-archive');
+        });
+      }
+      const gatheringObserver = new MutationObserver(refreshGatheringDates);
+      gatheringObserver.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => {
+        gatheringObserver.disconnect();
+        refreshGatheringDates();
+      });
+      window.addEventListener('pageshow', refreshGatheringDates);
+      document.addEventListener('visibilitychange', refreshGatheringDates);
+      setInterval(refreshGatheringDates, 30000);
     </script>
     <Analytics />
   </head>

@@ -36,6 +36,7 @@ const upcomingGatherings = [
     month: 'October',
     days: '8–11',
     datetime: '2026-10-08',
+    end: fallGathering.end,
     calendar: fallGathering.calendar,
     image: fallGathering.image,
     alt: fallGathering.imageAlt,
@@ -48,6 +49,7 @@ const upcomingGatherings = [
     month: 'November',
     days: '27–29',
     datetime: '2026-11-27',
+    end: '2026-11-30T00:00:00-08:00',
     calendar: '/calendar/holiday-greenhouse-2026.ics',
     image: '85-vignette-wooden-tools.jpg',
     alt: 'Antique wooden kitchen tools gathered in an old wooden firkin',
@@ -60,6 +62,7 @@ const upcomingGatherings = [
     month: 'December',
     days: '10–13',
     datetime: '2026-12-10',
+    end: '2026-12-14T00:00:00-08:00',
     calendar: '/calendar/christmas-market-2026.ics',
     image: '86-vignette-thread.jpg',
     alt: 'A red and gold striped vintage umbrella resting on an antique wooden surface',
@@ -72,6 +75,7 @@ const upcomingGatherings = [
     month: 'December',
     days: '23',
     datetime: '2026-12-23',
+    end: '2026-12-24T00:00:00-08:00',
     calendar: '/calendar/eleventh-hour-market-2026.ics',
     note: "Come by, we'll help you pull it off.",
     image: '92-vignette-still-life.jpg',
@@ -98,6 +102,8 @@ const fallGatheringSchema = {
     name: 'Roots & Relics Greenhouse',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '13221 Mann Road',
+      addressLocality: 'Klamath Falls',
       addressRegion: 'OR',
       addressCountry: 'US',
     },
@@ -127,11 +133,11 @@ const fallGatheringSchema = {
       </div>
     </section>
 
-    <section class="fall-gathering-feature" id={fallGathering.id} aria-labelledby="fall-gathering-title">
+    <section data-event-end={fallGathering.end} class="fall-gathering-feature" id={fallGathering.id} aria-labelledby="fall-gathering-title">
       <div class="fall-gathering-feature-heading reveal">
         <div>
           <p class="kicker">{fallGathering.eyebrow}</p>
-          <p class="fall-gathering-date">{fallGathering.dateLabel}</p>
+          <p class="fall-gathering-date" data-remaining-date={JSON.stringify(fallGathering.schedule)}>{fallGathering.dateLabel}</p>
         </div>
         <h2 id="fall-gathering-title">Fall<br /><em>Gathering.</em></h2>
         <p class="fall-gathering-lead">{fallGathering.description}</p>
@@ -145,7 +151,7 @@ const fallGatheringSchema = {
 
         <div class="fall-gathering-schedule reveal" aria-label="Fall Gathering schedule">
           {fallGathering.schedule.map((opening) => (
-            <article class:list={['fall-gathering-opening', { 'is-special': opening.emphasis }]}>
+            <article data-opening-end={opening.end} class:list={['fall-gathering-opening', { 'is-special': opening.emphasis }]}>
               <p>{opening.label}</p>
               <div>
                 <h3>{opening.day}</h3>
@@ -166,7 +172,7 @@ const fallGatheringSchema = {
           {fallGathering.visitNotes.map((note) => <li>{note}</li>)}
         </ul>
         <div class="fall-gathering-actions">
-          <a class="solid-link" href={fallGathering.calendar} download>Save all four days <span>↓</span></a>
+          <a class="solid-link" href={fallGathering.calendar} download>Save the gathering <span>↓</span></a>
           <a class="action-link fall-gathering-secondary" href="/join/">Get gathering updates <span>→</span></a>
         </div>
       </div>
@@ -178,11 +184,11 @@ const fallGatheringSchema = {
       <header class="gatherings-dates-heading reveal">
         <div>
           <p class="kicker">The dates are set</p>
-          <h2 id="gatherings-dates-title">Keep these<br /><em>weekends open.</em></h2>
+          <h2 id="gatherings-dates-title">The market<br /><em>calendar.</em></h2>
         </div>
         <div class="gatherings-dates-intro">
-          <p>Fall Gathering details are here now. Hours and thoughtful details for the remaining markets will be shared as each weekend gets closer.</p>
-          <a class="action-link action-link-dark" href="/calendar/roots-relics-markets-2026.ics" download>Save all four dates <span>↓</span></a>
+          <p>Hours and thoughtful details are shared as each market gets closer. Past dates stay here as part of our gathering calendar.</p>
+          <a class="action-link action-link-dark" href="/calendar/roots-relics-markets-2026.ics" download>Save the market calendar <span>↓</span></a>
         </div>
       </header>
 
@@ -193,6 +199,7 @@ const fallGatheringSchema = {
               <img src={imageUrl(gathering.image)} alt={gathering.alt} loading="lazy" style={`object-position:${gathering.position}`} />
             </figure>
             <div class="gatherings-date-name">
+              <p class="kicker" data-calendar-end={gathering.end}>Upcoming gathering</p>
               <h3>{gathering.title}</h3>
               <time datetime={gathering.datetime}><span>{gathering.month}</span> <em>{gathering.days}</em></time>
               {gathering.note && <p>{gathering.note}</p>}
@@ -212,7 +219,7 @@ const fallGatheringSchema = {
         ))}
       </div>
 
-      <p class="gatherings-dates-note reveal">Fall Gathering is ready for your calendar. Keep the remaining weekends open, too.</p>
+      <p class="gatherings-dates-note reveal">Join our list for opening hours and details ahead of each gathering.</p>
     </section>
 
     <section class="gatherings-story" id="gathering-story" aria-labelledby="gathering-story-title">
@@ -281,7 +288,7 @@ const fallGatheringSchema = {
       <div class="gatherings-visit-copy reveal">
         <p class="kicker">Before you come</p>
         <h2 id="gatherings-visit-title">Southern Oregon,<br /><em>ten minutes from town.</em></h2>
-        <p>To preserve the experience and privacy of the farm, the exact address is shared shortly before gatherings or with confirmed private appointments.</p>
+        <p>On gathering days, visit us at <strong>13221 Mann Road, Klamath Falls</strong>. GPS will take you to our home driveway. The Roots &amp; Relics entrance is on the <strong>left, about 100 yards before the driveway</strong>. Look for the clearly marked entrance. There is plenty of parking for larger vehicles and trailers. Gates open just a few minutes before opening time each day.</p>
         <ul>
           <li>Comfortable shoes are encouraged.</li>
           <li>Children are welcome with supervision.</li>

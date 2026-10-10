@@ -6,38 +6,54 @@ METHOD:PUBLISH
 X-WR-CALNAME:Roots & Relics Fall Gathering 2026
 BEGIN:VEVENT
 UID:fall-gathering-2026-early-bird@rootsandrelicsgreenhouse.com
-DTSTAMP:20260830T230000Z
+DTSTAMP:20261006T190000Z
 DTSTART;TZID=America/Los_Angeles:20261008T150000
 DTEND;TZID=America/Los_Angeles:20261008T190000
 SUMMARY:Fall Gathering — Early Bird Opening
-LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:First selection\, adult beverages\, elevated seasonal bites\, and the greenhouse glowing after dusk. The event address will be shared shortly before opening.
+LOCATION:Roots & Relics Greenhouse\, 13221 Mann Road\, Klamath Falls\, Ore
+ gon
+DESCRIPTION:First selection\, adult beverages\, elevated seasonal bites\, 
+ and the greenhouse glowing after dusk. Entrance on the left about 100 yar
+ ds before the home driveway. Look for the marked entrance. Gates open a f
+ ew minutes before opening time.
 END:VEVENT
 BEGIN:VEVENT
 UID:fall-gathering-2026-friday@rootsandrelicsgreenhouse.com
-DTSTAMP:20260830T230000Z
+DTSTAMP:20261006T190000Z
 DTSTART;TZID=America/Los_Angeles:20261009T100000
 DTEND;TZID=America/Los_Angeles:20261009T180000
 SUMMARY:Fall Gathering — Friday
-LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:Thoughtfully gathered antiques\, European and primitive finds\, seasonal goods\, and one-of-a-kind pieces. The event address will be shared shortly before opening.
+LOCATION:Roots & Relics Greenhouse\, 13221 Mann Road\, Klamath Falls\, Ore
+ gon
+DESCRIPTION:Thoughtfully gathered antiques\, European and primitive finds\
+ , seasonal goods\, and one-of-a-kind pieces. Entrance on the left about 1
+ 00 yards before the home driveway. Look for the marked entrance. Gates op
+ en a few minutes before opening time.
 END:VEVENT
 BEGIN:VEVENT
 UID:fall-gathering-2026-saturday@rootsandrelicsgreenhouse.com
-DTSTAMP:20260830T230000Z
+DTSTAMP:20261006T190000Z
 DTSTART;TZID=America/Los_Angeles:20261010T090000
 DTEND;TZID=America/Los_Angeles:20261010T170000
 SUMMARY:Fall Gathering — Saturday
-LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:Thoughtfully gathered antiques\, European and primitive finds\, seasonal goods\, and one-of-a-kind pieces. The event address will be shared shortly before opening.
+LOCATION:Roots & Relics Greenhouse\, 13221 Mann Road\, Klamath Falls\, Ore
+ gon
+DESCRIPTION:Thoughtfully gathered antiques\, European and primitive finds\
+ , seasonal goods\, and one-of-a-kind pieces. Entrance on the left about 1
+ 00 yards before the home driveway. Look for the marked entrance. Gates op
+ en a few minutes before opening time.
 END:VEVENT
 BEGIN:VEVENT
 UID:fall-gathering-2026-sunday@rootsandrelicsgreenhouse.com
-DTSTAMP:20260830T230000Z
+DTSTAMP:20261006T190000Z
 DTSTART;TZID=America/Los_Angeles:20261011T100000
 DTEND;TZID=America/Los_Angeles:20261011T150000
 SUMMARY:Fall Gathering — Last Chance Sunday
-LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:One final opportunity to shop\, with a few special Sunday discounts offered throughout the day. The event address will be shared shortly before opening.
+LOCATION:Roots & Relics Greenhouse\, 13221 Mann Road\, Klamath Falls\, Ore
+ gon
+DESCRIPTION:One final opportunity to shop\, with a few special Sunday disc
+ ounts offered throughout the day. Entrance on the left about 100 yards be
+ fore the home driveway. Look for the marked entrance. Gates open a few mi
+ nutes before opening time.
 END:VEVENT
 END:VCALENDAR
