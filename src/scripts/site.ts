@@ -189,11 +189,13 @@ if (document.querySelector('[data-gallery-grid], [data-gallery-album-prefix]')) 
     if (!Array.isArray(manifest.images)) return;
     const images = manifest.images.filter((image: { filename?: unknown; url?: unknown }) => typeof image.filename === 'string' && typeof image.url === 'string');
     const published = new Set(images.map((image: { filename: string }) => image.filename));
+    const expandedItem = galleryItems[galleryIndex];
     document.querySelectorAll<HTMLElement>('[data-gallery-filename]').forEach((photo) => {
       if (!published.has(photo.dataset.galleryFilename)) photo.remove();
     });
-    if (galleryLightbox && !galleryLightbox.hidden) closeGalleryLightbox();
+    if (galleryLightbox && !galleryLightbox.hidden && expandedItem && !expandedItem.isConnected) closeGalleryLightbox();
     galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
+    if (expandedItem?.isConnected) galleryIndex = galleryItems.indexOf(expandedItem);
     document.querySelectorAll<HTMLElement>('[data-gallery-grid]').forEach((grid) => {
       const count = grid.querySelectorAll('[data-gallery-item]').length;
       const label = grid.parentElement?.querySelector('[data-gallery-count]');
