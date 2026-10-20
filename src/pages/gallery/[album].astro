@@ -23,8 +23,6 @@ const { album } = Astro.props;
     <section class="gallery-collection" aria-label={`${album.title} photographs`}>
       <nav class="gallery-album-tools" aria-label="Album controls">
         <a href="/gallery/">← All albums</a>
-        <span data-gallery-count>{album.images.length} photos</span>
-        <button type="button" data-gallery-shuffle hidden>Mix up photos</button>
         <button type="button" data-gallery-edit>Sign in to edit album</button>
         <button type="button" data-gallery-finish hidden>Finish editing</button>
       </nav>
