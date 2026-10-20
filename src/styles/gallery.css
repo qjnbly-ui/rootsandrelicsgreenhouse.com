@@ -492,3 +492,26 @@ body.gallery-lightbox-open {
     transition: none;
   }
 }
+
+/* Album covers use the same paper, type, and photography as the main gallery. */
+.gallery-album-list { display: flex; flex-direction: column; gap: 64px; }
+.gallery-album-card { display: flex; align-items: center; gap: 5vw; color: var(--forest); text-decoration: none; }
+.gallery-album-card > img { width: 52%; aspect-ratio: 3 / 2; object-fit: cover; }
+.gallery-album-copy { flex: 1; }
+.gallery-album-copy .kicker { color: var(--rust); }
+.gallery-album-copy h3 { margin: 24px 0; font: 300 clamp(42px, 4.2vw, 72px) / 0.95 var(--serif); letter-spacing: -0.04em; }
+.gallery-album-open { display: inline-block; padding-bottom: 8px; border-bottom: 1px solid currentColor; }
+.gallery-album-card:focus-visible { outline: 2px solid var(--rust); outline-offset: 8px; }
+.gallery-album-hero { height: 65svh; min-height: 440px; }
+.gallery-album-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; color: var(--rust); }
+.gallery-album-tools a { color: inherit; }
+.gallery-album-tools button { padding: 12px 18px; border: 1px solid currentColor; color: inherit; background: transparent; font: inherit; cursor: pointer; }
+.gallery-album-tools button[hidden] { display: none; }
+@media (max-width: 700px) {
+  .gallery-album-card { flex-direction: column; align-items: stretch; gap: 20px; }
+  .gallery-album-card > img { width: 100%; }
+  .gallery-album-copy h3 { margin: 16px 0; }
+  .gallery-album-hero h1 { font-size: clamp(54px, 12vw, 84px); }
+}
+
+.gallery-album-card[hidden], [data-gallery-empty][hidden] { display: none; }

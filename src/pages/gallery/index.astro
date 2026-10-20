@@ -1,130 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { hasImage, imageUrl } from '../../lib/image-assets';
+import { imageUrl } from '../../lib/image-assets';
+import { albums } from '../../data/gallery';
 import '../../styles/gallery.css';
-
-const galleryImages = [
-  'r-r-greenhousse-1.jpg',
-  'r-r-greenhousse-2.jpg',
-  'r-r-greenhousse-3.jpg',
-  'r-r-greenhousse-4.jpg',
-  'r-r-greenhousse-5.jpg',
-  'r-r-greenhousse-6.jpg',
-  'r-r-greenhousse-7.jpg',
-  'r-r-greenhousse-8.jpg',
-  'r-r-greenhousse-9.jpg',
-  'r-r-greenhousse-10.jpg',
-  'r-r-greenhousse-11.jpg',
-  'r-r-greenhousse-12.jpg',
-  'r-r-greenhousse-13.jpg',
-  'r-r-greenhousse-14.jpg',
-  'r-r-greenhousse-15.jpg',
-  'r-r-greenhousse-16.jpg',
-  'r-r-greenhousse-17.jpg',
-  'r-r-greenhousse-18.jpg',
-  'r-r-greenhousse-19.jpg',
-  'r-r-greenhousse-20.jpg',
-  'r-r-greenhousse-21.jpg',
-  'r-r-greenhousse-22.jpg',
-  'r-r-greenhousse-23.jpg',
-  'r-r-greenhousse-24.jpg',
-  'r-r-greenhousse-25.jpg',
-  'r-r-greenhousse-26.jpg',
-  'r-r-greenhousse-27.jpg',
-  'r-r-greenhousse-28.jpg',
-  'r-r-greenhousse-29.jpg',
-  'r-r-greenhousse-30.jpg',
-  'r-r-greenhousse-31.jpg',
-  'r-r-greenhousse-32.jpg',
-  'r-r-greenhousse-33.jpg',
-  'r-r-greenhousse-34.jpg',
-  'r-r-greenhousse-35.jpg',
-  'r-r-greenhousse-36.jpg',
-  'r-r-greenhousse-37.jpg',
-  'r-r-greenhousse-38.jpg',
-  'r-r-greenhousse-39.jpg',
-  'r-r-greenhousse-40.jpg',
-  'r-r-greenhousse-41.jpg',
-  'r-r-greenhousse-42.jpg',
-  'r-r-greenhousse-43.jpg',
-  'r-r-greenhousse-44.jpg',
-  'r-r-greenhousse-45.jpg',
-  'r-r-greenhousse-46.jpg',
-  'r-r-greenhousse-47.jpg',
-  'r-r-greenhousse-48.jpg',
-  'r-r-greenhousse-49.jpg',
-  'r-r-greenhousse-50.jpg',
-  'r-r-greenhousse-51.jpg',
-  'r-r-greenhousse-52.jpg',
-  'r-r-greenhousse-53.jpg',
-  'r-r-greenhousse-54.jpg',
-].filter(hasImage).map((filename) => {
-  const photoNumber = filename.match(/-(\d+)\.jpg$/)?.[1];
-  return {
-    filename,
-    alt: `Roots and Relics greenhouse, photo ${photoNumber}`,
-  };
-});
-
-// The registry contains only published N3XRA assets. Keep the event together
-// without showing unpublished photos or mixing it with the earlier collection.
-const octoberImages = [
-  { filename: 'r-r10-10-26-1.jpg', alt: 'Vintage pickup decorated with pumpkins outside the greenhouse' },
-  { filename: 'r-r10-10-26-2.jpg', alt: 'Roots & Relics entrance decorated for autumn' },
-  { filename: 'r-r10-10-26-3.jpg', alt: 'Chalkboard gathering sign beside the outdoor displays' },
-  { filename: 'r-r10-10-26-4.jpg', alt: 'Welcome sign and pumpkins at the greenhouse doorway' },
-  { filename: 'r-r10-10-26-5.jpg', alt: 'Visitor browsing antiques beneath the greenhouse rafters' },
-  { filename: 'r-r10-10-26-6.jpg', alt: 'Smiling host wearing a Roots & Relics apron' },
-  { filename: 'r-r10-10-26-7.jpg', alt: 'Young visitor standing outside the greenhouse' },
-  { filename: 'r-r10-10-26-8.jpg', alt: 'Two people behind the gathering counter' },
-  { filename: 'r-r10-10-26-9.jpg', alt: 'Smiling people at the counter among autumn decorations' },
-  { filename: 'r-r10-10-26-10.jpg', alt: 'Decorative black cat among vintage display pieces' },
-  { filename: 'r-r10-10-26-11.jpg', alt: 'Dried flowers and antique furnishings in the greenhouse' },
-  { filename: 'r-r10-10-26-12.jpg', alt: 'Visitor beside a flower-wrapped greenhouse post' },
-  { filename: 'r-r10-10-26-13.jpg', alt: 'Dress form and dried botanicals beneath the rafters' },
-  { filename: 'r-r10-10-26-14.jpg', alt: 'Vintage suitcases and glassware around a dress form' },
-  { filename: 'r-r10-10-26-15.jpg', alt: 'Apple cider station in a vintage green cabinet' },
-  { filename: 'r-r10-10-26-16.jpg', alt: 'Green painted table with a wooden firkin and flowers' },
-  { filename: 'r-r10-10-26-17.jpg', alt: 'Visitors with a stroller browsing the greenhouse' },
-  { filename: 'r-r10-10-26-18.jpg', alt: 'Visitors gathered around a greenhouse display table' },
-  { filename: 'r-r10-10-26-19.jpg', alt: 'Dried botanicals, glassware, and stacked vintage suitcases' },
-  { filename: 'r-r10-10-26-20.jpg', alt: 'Visitors walking through an aisle of antiques' },
-  { filename: 'r-r10-10-26-21.jpg', alt: 'Antique wooden dresser beneath vintage wall decorations' },
-  { filename: 'r-r10-10-26-22.jpg', alt: 'Antique cabinets and shelves filled with colorful finds' },
-  { filename: 'r-r10-10-26-23.jpg', alt: 'Wooden cupboards beneath the sunlit greenhouse roof' },
-  { filename: 'r-r10-10-26-24.jpg', alt: 'Framed landscape and autumn decorations on a sideboard' },
-  { filename: 'r-r10-10-26-25.jpg', alt: 'Two children posing beside pumpkins and straw bales' },
-  { filename: 'r-r10-10-26-26.jpg', alt: 'Children smiling in front of the outdoor autumn display' },
-  { filename: 'r-r10-10-26-27.jpg', alt: 'Wooden desk and shelves filled with vintage kitchenware' },
-  { filename: 'r-r10-10-26-28.jpg', alt: 'Green painted table and chairs inside the greenhouse' },
-  { filename: 'r-r10-10-26-29.jpg', alt: 'Vintage green stove with pots and enamelware' },
-  { filename: 'r-r10-10-26-30.jpg', alt: 'Open green cupboard filled with pottery and small antiques' },
-  { filename: 'r-r10-10-26-31.jpg', alt: 'Antique stove and kitchen display beneath a window' },
-  { filename: 'r-r10-10-26-32.jpg', alt: 'Antique furniture lining the greenhouse aisle' },
-  { filename: 'r-r10-10-26-33.jpg', alt: 'Wooden dresser displaying folded linens and a yellow chair' },
-  { filename: 'r-r10-10-26-34.jpg', alt: 'Dried flowers and baskets beneath the greenhouse roof' },
-  { filename: 'r-r10-10-26-35.jpg', alt: 'Autumn botanicals in a white crock on a wooden stand' },
-  { filename: 'r-r10-10-26-36.jpg', alt: 'Visitors browsing furniture and vintage wall displays' },
-  { filename: 'r-r10-10-26-37.jpg', alt: 'Floral decorations above a dress form under the rafters' },
-  { filename: 'r-r10-10-26-38.jpg', alt: 'Vanity mirror and vintage bottles on a wooden table' },
-  { filename: 'r-r10-10-26-39.jpg', alt: 'Antique mirrors and wooden furniture along the greenhouse wall' },
-  { filename: 'r-r10-10-26-40.jpg', alt: 'Wooden hutch displaying glassware and vintage kitchen pieces' },
-  { filename: 'r-r10-10-26-41.jpg', alt: 'Framed painting, patterned plates, and autumn botanicals' },
-  { filename: 'r-r10-10-26-42.jpg', alt: 'Visitor browsing colorful vintage displays in the greenhouse' },
-  { filename: 'r-r10-10-26-43.jpg', alt: 'Wooden shelves filled with pottery, books, and antique finds' },
-  { filename: 'r-r10-10-26-44.jpg', alt: 'Open green cabinet displaying tins and vintage household pieces' },
-  { filename: 'r-r10-10-26-45.jpg', alt: 'Visitor examining a display near the greenhouse doorway' },
-  { filename: 'r-r10-10-26-46.jpg', alt: 'Antique trunk and furniture along a greenhouse aisle' },
-  { filename: 'r-r10-10-26-47.jpg', alt: 'Dress form, vintage luggage, and glassware in an autumn display' },
-  { filename: 'r-r10-10-26-48.jpg', alt: 'Flower-wrapped post framing the greenhouse interior' },
-  { filename: 'r-r10-10-26-49.jpg', alt: 'Framed portraits and vintage furnishings against red shutters' },
-  { filename: 'r-r10-10-26-50.jpg', alt: 'Dried flowers and red shutters in a greenhouse display' },
-  { filename: 'r-r10-10-26-51.jpg', alt: 'Woven basket and framed artwork on an antique dresser' },
-  { filename: 'r-r10-10-26-52.jpg', alt: 'Easel and vintage decor against red shutters' },
-  { filename: 'r-r10-10-26-53.jpg', alt: 'Painted cabinets and shelves filled with vintage treasures' },
-  { filename: 'r-r10-10-26-54.jpg', alt: 'Two people behind a table of cakes, flowers, and vintage serving pieces' },
-].filter(({ filename }) => hasImage(filename));
-
 ---
 
 <BaseLayout
@@ -145,62 +23,24 @@ const octoberImages = [
       </div>
     </section>
 
-    {octoberImages.length > 0 && (
-      <section id="october-gathering-2026" class="gallery-collection" aria-labelledby="october-gathering-title">
-        <header class="gallery-collection-heading reveal">
-          <p class="kicker"><time datetime="2026-10-10">October 10, 2026</time></p>
-          <h2 id="october-gathering-title">Our October <em>gathering.</em></h2>
-        </header>
-        <div class="gallery-grid">
-          {octoberImages.map((image) => (
-            <figure class="gallery-image reveal">
-              <button type="button" data-gallery-item aria-label={`Open photo: ${image.alt}`}>
-                <img src={imageUrl(image.filename)} data-full-src={imageUrl(image.filename)} alt={image.alt} loading="lazy" decoding="async" />
-              </button>
-            </figure>
-          ))}
-        </div>
-      </section>
-    )}
-
-    <section id="greenhouse-scenes" class="gallery-collection" aria-labelledby="gallery-collection-title">
+    <section class="gallery-collection gallery-albums" aria-labelledby="gallery-albums-title">
       <header class="gallery-collection-heading reveal">
-        <p class="kicker">Scenes from the greenhouse</p>
-        <h2 id="gallery-collection-title">Previous gatherings, favorite pieces, seasonal installations, and <em>farm life.</em></h2>
+        <p class="kicker">Choose an album</p>
+        <h2 id="gallery-albums-title">A gathering of <em>memories.</em></h2>
       </header>
-
-      <div class="gallery-grid">
-        {galleryImages.map((image, index) => (
-          <figure class="gallery-image reveal">
-            <button type="button" data-gallery-item data-gallery-index={index} aria-label={`Open photo ${index + 1} of ${galleryImages.length}`}>
-              <img
-                src={imageUrl(image.filename)}
-                data-full-src={imageUrl(image.filename)}
-                alt={image.alt}
-                loading="lazy"
-                decoding="async"
-              />
-            </button>
-          </figure>
+      <div class="gallery-album-list">
+        {albums.map((album) => (
+          <a class="gallery-album-card reveal" data-gallery-album-prefix={album.slug === 'greenhouse' ? 'r-r-greenhousse-' : 'r-r10-10-26-'} href={`/gallery/${album.slug}/`}>
+            <img src={imageUrl(album.cover)} alt={album.coverAlt} loading="lazy" decoding="async" />
+            <div class="gallery-album-copy">
+              <p class="kicker">{album.subtitle} · <span data-gallery-count>{album.images.length} photos</span></p>
+              <h3>{album.title}</h3>
+              <span class="gallery-album-open">Explore album <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
         ))}
       </div>
     </section>
-
-    <div class="gallery-lightbox" data-gallery-lightbox hidden role="dialog" aria-modal="true" aria-label="Expanded gallery photo">
-      <div class="gallery-lightbox-backdrop" aria-hidden="true"></div>
-      <div class="gallery-lightbox-frame">
-        <img data-gallery-expanded src="" alt="" />
-      </div>
-      <button class="gallery-lightbox-close" type="button" data-gallery-close aria-label="Close expanded photo">
-        <span></span><span></span>
-      </button>
-      <button class="gallery-lightbox-control gallery-lightbox-previous" type="button" data-gallery-previous aria-label="Previous photo">
-        <span aria-hidden="true">←</span>
-      </button>
-      <button class="gallery-lightbox-control gallery-lightbox-next" type="button" data-gallery-next aria-label="Next photo">
-        <span aria-hidden="true">→</span>
-      </button>
-    </div>
 
     <section class="gallery-invitation" aria-labelledby="gallery-invitation-title">
       <figure class="gallery-invitation-image">
@@ -220,3 +60,12 @@ const octoberImages = [
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  const legacyAlbums: Record<string, string> = {
+    '#october-gathering-2026': '/gallery/october-gathering-2026/',
+    '#greenhouse-scenes': '/gallery/greenhouse/',
+  };
+  const album = legacyAlbums[window.location.hash];
+  if (album) window.location.replace(album);
+</script>

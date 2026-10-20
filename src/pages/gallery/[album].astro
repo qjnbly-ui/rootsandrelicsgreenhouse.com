@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { imageUrl } from '../../lib/image-assets';
+import { albums } from '../../data/gallery';
+import '../../styles/gallery.css';
+
+export function getStaticPaths() {
+  return albums.map((album) => ({ params: { album: album.slug }, props: { album } }));
+}
+const { album } = Astro.props;
+---
+<BaseLayout title={`${album.title} | Roots & Relics Gallery`} description={`${album.subtitle}. Browse photographs from Roots & Relics Greenhouse.`} currentPath="/gallery/" bodyClass="gallery-page">
+  <main id="main" class="gallery-main">
+    <section class="gallery-hero gallery-album-hero" aria-labelledby="gallery-title">
+      <figure class="gallery-hero-image" aria-hidden="true"><img src={imageUrl(album.cover)} alt="" fetchpriority="high" /></figure>
+      <div class="gallery-hero-shade" aria-hidden="true"></div>
+      <div class="gallery-hero-content">
+        <p class="kicker">{album.subtitle}</p>
+        <h1 id="gallery-title">{album.title}</h1>
+      </div>
+      <p data-gallery-empty hidden>This album has no photos to show just yet. <a href="/gallery/">Explore the other albums.</a></p>
+    </section>
+    <section class="gallery-collection" aria-label={`${album.title} photographs`}>
+      <nav class="gallery-album-tools" aria-label="Album controls">
+        <a href="/gallery/">← All albums</a>
+        <span data-gallery-count>{album.images.length} photos</span>
+        <button type="button" data-gallery-shuffle hidden>Mix up photos</button>
+      </nav>
+      <div class="gallery-grid" data-gallery-grid>
+        {album.images.map((image) => (
+          <figure class="gallery-image reveal" data-gallery-filename={image.filename}>
+            <button type="button" data-gallery-item aria-label={`Open photo: ${image.alt}`}>
+              <img src={imageUrl(image.filename)} data-full-src={imageUrl(image.filename)} alt={image.alt} loading="lazy" decoding="async" />
+            </button>
+          </figure>
+        ))}
+      </div>
+    </section>
+    <div class="gallery-lightbox" data-gallery-lightbox hidden role="dialog" aria-modal="true" aria-label={`${album.title}: expanded photo`}>
+      <div class="gallery-lightbox-backdrop" aria-hidden="true"></div>
+      <div class="gallery-lightbox-frame"><img data-gallery-expanded src="" alt="" /></div>
+      <button class="gallery-lightbox-close" type="button" data-gallery-close aria-label="Close expanded photo"><span></span><span></span></button>
+      <button class="gallery-lightbox-control gallery-lightbox-previous" type="button" data-gallery-previous aria-label="Previous photo"><span aria-hidden="true">←</span></button>
+      <button class="gallery-lightbox-control gallery-lightbox-next" type="button" data-gallery-next aria-label="Next photo"><span aria-hidden="true">→</span></button>
+    </div>
+  </main>
+</BaseLayout>

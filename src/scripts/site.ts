@@ -52,7 +52,24 @@ nav?.querySelectorAll('a').forEach((link) => {
 
 const galleryLightbox = document.querySelector<HTMLElement>('[data-gallery-lightbox]');
 const galleryExpandedImage = galleryLightbox?.querySelector<HTMLImageElement>('[data-gallery-expanded]');
-const galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
+let galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
+const shuffleGallery = () => {
+  document.querySelectorAll<HTMLElement>('[data-gallery-grid]').forEach((grid) => {
+    const photos = [...grid.children];
+    for (let index = photos.length - 1; index > 0; index -= 1) {
+      const next = Math.floor(Math.random() * (index + 1));
+      [photos[index], photos[next]] = [photos[next], photos[index]];
+    }
+    grid.append(...photos);
+  });
+  galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
+};
+shuffleGallery();
+const galleryShuffleButton = document.querySelector<HTMLButtonElement>('[data-gallery-shuffle]');
+if (galleryShuffleButton) {
+  galleryShuffleButton.hidden = false;
+  galleryShuffleButton.addEventListener('click', shuffleGallery);
+}
 const galleryCloseButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-close]')];
 const galleryPrevious = document.querySelector<HTMLButtonElement>('[data-gallery-previous]');
 const galleryNext = document.querySelector<HTMLButtonElement>('[data-gallery-next]');
@@ -94,7 +111,7 @@ const closeGalleryLightbox = () => {
   galleryItems[galleryIndex]?.focus({ preventScroll: true });
 };
 
-galleryItems.forEach((item, index) => item.addEventListener('click', () => openGalleryLightbox(index)));
+galleryItems.forEach((item) => item.addEventListener('click', () => openGalleryLightbox(galleryItems.indexOf(item))));
 galleryCloseButtons.forEach((button) => button.addEventListener('click', closeGalleryLightbox));
 galleryPrevious?.addEventListener('click', () => showGalleryImage(galleryIndex - 1));
 galleryNext?.addEventListener('click', () => showGalleryImage(galleryIndex + 1));
@@ -158,4 +175,42 @@ if (!reduceMotion && parallaxImages.length) {
     }
   }, { passive: true });
   updateParallax();
+}
+
+// Refresh public album membership so a removed photo disappears without a site rebuild.
+if (document.querySelector('[data-gallery-grid], [data-gallery-album-prefix]')) {
+  void (async () => {
+    const endpoint = new URL('https://www.n3xra.com/api/website-asset-manifest');
+    endpoint.searchParams.set('slug', 'roots-and-relics-be7315');
+    endpoint.searchParams.set('_sync', String(Date.now()));
+    const response = await fetch(endpoint, { cache: 'no-store', signal: AbortSignal.timeout(10000) });
+    if (!response.ok) return;
+    const manifest = await response.json();
+    if (!Array.isArray(manifest.images)) return;
+    const images = manifest.images.filter((image: { filename?: unknown; url?: unknown }) => typeof image.filename === 'string' && typeof image.url === 'string');
+    const published = new Set(images.map((image: { filename: string }) => image.filename));
+    document.querySelectorAll<HTMLElement>('[data-gallery-filename]').forEach((photo) => {
+      if (!published.has(photo.dataset.galleryFilename)) photo.remove();
+    });
+    if (galleryLightbox && !galleryLightbox.hidden) closeGalleryLightbox();
+    galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
+    document.querySelectorAll<HTMLElement>('[data-gallery-grid]').forEach((grid) => {
+      const count = grid.querySelectorAll('[data-gallery-item]').length;
+      const label = grid.parentElement?.querySelector('[data-gallery-count]');
+      if (label) label.textContent = `${count} photos`;
+      const empty = grid.parentElement?.querySelector<HTMLElement>('[data-gallery-empty]');
+      if (empty) empty.hidden = count > 0;
+      const cover = document.querySelector<HTMLImageElement>('.gallery-album-hero .gallery-hero-image img');
+      const first = grid.querySelector<HTMLImageElement>('img');
+      if (cover && first && !images.some((image: { url: string }) => image.url === cover.src)) cover.src = first.src;
+    });
+    document.querySelectorAll<HTMLAnchorElement>('[data-gallery-album-prefix]').forEach((card) => {
+      const albumImages = images.filter((image: { filename: string }) => image.filename.startsWith(card.dataset.galleryAlbumPrefix || ''));
+      card.hidden = albumImages.length === 0;
+      const label = card.querySelector('[data-gallery-count]');
+      if (label) label.textContent = `${albumImages.length} photos`;
+      const cover = card.querySelector('img');
+      if (cover && albumImages.length && !albumImages.some((image: { url: string }) => image.url === cover.src)) cover.src = albumImages[0].url;
+    });
+  })().catch(() => { /* Keep the last successfully built collection during an outage. */ });
 }
