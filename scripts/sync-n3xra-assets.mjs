@@ -53,7 +53,10 @@ async function cachedRegistry() {
 async function loadRegistry() {
   if (process.env.N3XRA_ASSET_SYNC_OFFLINE === '1') return cachedRegistry();
   try {
-    const response = await fetch(manifestEndpoint, {
+    // Each build needs the current publication state, even after a bulk upload.
+    const buildManifestUrl = new URL(manifestEndpoint);
+    buildManifestUrl.searchParams.set('_sync', String(Date.now()));
+    const response = await fetch(buildManifestUrl, {
       headers: { Accept: 'application/json' },
       signal: AbortSignal.timeout(10000),
     });

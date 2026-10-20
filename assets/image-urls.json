@@ -1651,6 +1651,546 @@
       "category": "journal",
       "altText": "",
       "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-1 · v1",
+      "filename": "r-r10-10-26-1.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/f9cf25ed-2554-40a3-a5fe-b364c46e45e5/v1-r-r10-10-26-1.jpg",
+      "category": "image",
+      "altText": "Vintage pickup decorated with pumpkins outside the greenhouse",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-2 · v1",
+      "filename": "r-r10-10-26-2.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/846fefbc-fde4-43b5-9907-64fa5cb33531/v1-r-r10-10-26-2.jpg",
+      "category": "image",
+      "altText": "Roots & Relics entrance decorated for autumn",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-3 · v1",
+      "filename": "r-r10-10-26-3.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9b5d5b71-6488-48e9-8681-f55c2ecd34f7/v1-r-r10-10-26-3.jpg",
+      "category": "image",
+      "altText": "Chalkboard gathering sign beside the outdoor displays",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-4 · v1",
+      "filename": "r-r10-10-26-4.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/31ef5b9f-5b03-4dd3-b996-bfe0b2d95361/v1-r-r10-10-26-4.jpg",
+      "category": "image",
+      "altText": "Welcome sign and pumpkins at the greenhouse doorway",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-5 · v1",
+      "filename": "r-r10-10-26-5.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/ab499627-ed0c-40f7-964a-b7ee0611e0fe/v1-r-r10-10-26-5.jpg",
+      "category": "image",
+      "altText": "Visitor browsing antiques beneath the greenhouse rafters",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-6 · v1",
+      "filename": "r-r10-10-26-6.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/243a8557-23bf-4483-ba7b-e84fde74fdd2/v1-r-r10-10-26-6.jpg",
+      "category": "image",
+      "altText": "Smiling host wearing a Roots & Relics apron",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-7 · v1",
+      "filename": "r-r10-10-26-7.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b2dc50e2-f8b0-49b7-956a-c1b9b4689fb0/v1-r-r10-10-26-7.jpg",
+      "category": "image",
+      "altText": "Young visitor standing outside the greenhouse",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-8 · v1",
+      "filename": "r-r10-10-26-8.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/4a7fb920-6790-4bcc-af1b-4b5003675f65/v1-r-r10-10-26-8.jpg",
+      "category": "image",
+      "altText": "Two people behind the gathering counter",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-9 · v1",
+      "filename": "r-r10-10-26-9.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8552ad97-bf79-4db9-9b6d-d7e2f2e3cb64/v1-r-r10-10-26-9.jpg",
+      "category": "image",
+      "altText": "Smiling people at the counter among autumn decorations",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-10 · v1",
+      "filename": "r-r10-10-26-10.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8636c9f2-5a7a-43de-8bb6-b8f0478b1aae/v1-r-r10-10-26-10.jpg",
+      "category": "image",
+      "altText": "Decorative black cat among vintage display pieces",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-11 · v1",
+      "filename": "r-r10-10-26-11.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e859cc5b-9f02-4533-842a-071d2f4648e3/v1-r-r10-10-26-11.jpg",
+      "category": "image",
+      "altText": "Dried flowers and antique furnishings in the greenhouse",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-12 · v1",
+      "filename": "r-r10-10-26-12.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/78d078c2-d780-4d77-aea2-1285d546e448/v1-r-r10-10-26-12.jpg",
+      "category": "image",
+      "altText": "Visitor beside a flower-wrapped greenhouse post",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-13 · v1",
+      "filename": "r-r10-10-26-13.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3a4749de-fdab-4729-a13f-5ae6e8af07c8/v1-r-r10-10-26-13.jpg",
+      "category": "image",
+      "altText": "Dress form and dried botanicals beneath the rafters",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-14 · v1",
+      "filename": "r-r10-10-26-14.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/cb3c1c7e-e8d3-428b-812b-29ebfbec695f/v1-r-r10-10-26-14.jpg",
+      "category": "image",
+      "altText": "Vintage suitcases and glassware around a dress form",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-15 · v1",
+      "filename": "r-r10-10-26-15.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5e64a6d6-8a41-4bce-ae7e-165fe88a3fba/v1-r-r10-10-26-15.jpg",
+      "category": "image",
+      "altText": "Apple cider station in a vintage green cabinet",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-16 · v1",
+      "filename": "r-r10-10-26-16.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/240c6213-ee14-4ca9-80c1-142d9cbd71b7/v1-r-r10-10-26-16.jpg",
+      "category": "image",
+      "altText": "Green painted table with a wooden firkin and flowers",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-17 · v1",
+      "filename": "r-r10-10-26-17.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2df09cf0-8a3a-448c-8b15-c86e4b9536e9/v1-r-r10-10-26-17.jpg",
+      "category": "image",
+      "altText": "Visitors with a stroller browsing the greenhouse",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-18 · v1",
+      "filename": "r-r10-10-26-18.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2a4bc0aa-5d5f-421b-b303-fefc348a5550/v1-r-r10-10-26-18.jpg",
+      "category": "image",
+      "altText": "Visitors gathered around a greenhouse display table",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-19 · v1",
+      "filename": "r-r10-10-26-19.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/7517ce6b-f11c-4c08-b23c-0a9522ff6ffc/v1-r-r10-10-26-19.jpg",
+      "category": "image",
+      "altText": "Dried botanicals, glassware, and stacked vintage suitcases",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-20 · v1",
+      "filename": "r-r10-10-26-20.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/557f72c2-f95c-44ba-bb1b-6f05bd04f0f7/v1-r-r10-10-26-20.jpg",
+      "category": "image",
+      "altText": "Visitors walking through an aisle of antiques",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-21 · v1",
+      "filename": "r-r10-10-26-21.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/21f00349-c5ba-4553-99cc-cc04a099d1b8/v1-r-r10-10-26-21.jpg",
+      "category": "image",
+      "altText": "Antique wooden dresser beneath vintage wall decorations",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-22 · v1",
+      "filename": "r-r10-10-26-22.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/9538d6d0-a4d7-434f-ae10-890359a86e9d/v1-r-r10-10-26-22.jpg",
+      "category": "image",
+      "altText": "Antique cabinets and shelves filled with colorful finds",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-23 · v1",
+      "filename": "r-r10-10-26-23.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b228e4de-fa83-4286-984f-d9eb9a7e7acf/v1-r-r10-10-26-23.jpg",
+      "category": "image",
+      "altText": "Wooden cupboards beneath the sunlit greenhouse roof",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-24 · v1",
+      "filename": "r-r10-10-26-24.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/cacde853-0d53-462a-9ea9-8ac7778333fd/v1-r-r10-10-26-24.jpg",
+      "category": "image",
+      "altText": "Framed landscape and autumn decorations on a sideboard",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-25 · v1",
+      "filename": "r-r10-10-26-25.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/911c785b-a86c-4811-a881-9c85802875c7/v1-r-r10-10-26-25.jpg",
+      "category": "image",
+      "altText": "Two children posing beside pumpkins and straw bales",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-26 · v1",
+      "filename": "r-r10-10-26-26.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/dfa29420-130b-4979-b761-cd43de75f6f5/v1-r-r10-10-26-26.jpg",
+      "category": "image",
+      "altText": "Children smiling in front of the outdoor autumn display",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-27 · v1",
+      "filename": "r-r10-10-26-27.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d20e0f62-602e-4ab2-995c-b96da551abf6/v1-r-r10-10-26-27.jpg",
+      "category": "image",
+      "altText": "Wooden desk and shelves filled with vintage kitchenware",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-28 · v1",
+      "filename": "r-r10-10-26-28.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3d089505-c526-478b-9121-b7fb42a6fbbc/v1-r-r10-10-26-28.jpg",
+      "category": "image",
+      "altText": "Green painted table and chairs inside the greenhouse",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-29 · v1",
+      "filename": "r-r10-10-26-29.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/cb585cc0-5711-4389-917f-a575cf140afa/v1-r-r10-10-26-29.jpg",
+      "category": "image",
+      "altText": "Vintage green stove with pots and enamelware",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-30 · v1",
+      "filename": "r-r10-10-26-30.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/08dd7e71-b3f5-48b0-ac18-db7984b6983f/v1-r-r10-10-26-30.jpg",
+      "category": "image",
+      "altText": "Open green cupboard filled with pottery and small antiques",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-31 · v1",
+      "filename": "r-r10-10-26-31.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b51a59b7-62b8-4a13-856f-d24a19f3f88b/v1-r-r10-10-26-31.jpg",
+      "category": "image",
+      "altText": "Antique stove and kitchen display beneath a window",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-32 · v1",
+      "filename": "r-r10-10-26-32.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/b5cf3135-cd46-4971-93a7-e99e9521032c/v1-r-r10-10-26-32.jpg",
+      "category": "image",
+      "altText": "Antique furniture lining the greenhouse aisle",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-33 · v1",
+      "filename": "r-r10-10-26-33.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/195d32a7-ee0f-41aa-b1f4-dd18c08b5317/v1-r-r10-10-26-33.jpg",
+      "category": "image",
+      "altText": "Wooden dresser displaying folded linens and a yellow chair",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-34 · v1",
+      "filename": "r-r10-10-26-34.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/14a1fe7d-85b3-4978-9cd7-8236c56639a2/v1-r-r10-10-26-34.jpg",
+      "category": "image",
+      "altText": "Dried flowers and baskets beneath the greenhouse roof",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-35 · v1",
+      "filename": "r-r10-10-26-35.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1804e63c-6c44-4504-8300-ca17817cc13e/v1-r-r10-10-26-35.jpg",
+      "category": "image",
+      "altText": "Autumn botanicals in a white crock on a wooden stand",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-36 · v1",
+      "filename": "r-r10-10-26-36.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/688e403f-4cc6-4423-a7be-4154f05d9dbf/v1-r-r10-10-26-36.jpg",
+      "category": "image",
+      "altText": "Visitors browsing furniture and vintage wall displays",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-37 · v1",
+      "filename": "r-r10-10-26-37.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/02e21205-4ca3-4b3d-b9ac-6bc1fb496bcf/v1-r-r10-10-26-37.jpg",
+      "category": "image",
+      "altText": "Floral decorations above a dress form under the rafters",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-38 · v1",
+      "filename": "r-r10-10-26-38.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0db7678a-584f-4155-b28a-14ad8b3dc5b6/v1-r-r10-10-26-38.jpg",
+      "category": "image",
+      "altText": "Vanity mirror and vintage bottles on a wooden table",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-39 · v1",
+      "filename": "r-r10-10-26-39.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/5e26d83d-1862-4314-aa31-78035b570492/v1-r-r10-10-26-39.jpg",
+      "category": "image",
+      "altText": "Antique mirrors and wooden furniture along the greenhouse wall",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-40 · v1",
+      "filename": "r-r10-10-26-40.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3ccef0c9-4719-497d-9c1b-52c1fdf5173b/v1-r-r10-10-26-40.jpg",
+      "category": "image",
+      "altText": "Wooden hutch displaying glassware and vintage kitchen pieces",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-41 · v1",
+      "filename": "r-r10-10-26-41.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/e66aff4e-f117-466d-baee-aab28d46d7df/v1-r-r10-10-26-41.jpg",
+      "category": "image",
+      "altText": "Framed painting, patterned plates, and autumn botanicals",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-42 · v1",
+      "filename": "r-r10-10-26-42.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/61ecaf42-12ef-48b1-a66d-a3adbc36a5cf/v1-r-r10-10-26-42.jpg",
+      "category": "image",
+      "altText": "Visitor browsing colorful vintage displays in the greenhouse",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-43 · v1",
+      "filename": "r-r10-10-26-43.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/eecf05ac-028e-44f4-b764-91ca20b0982f/v1-r-r10-10-26-43.jpg",
+      "category": "image",
+      "altText": "Wooden shelves filled with pottery, books, and antique finds",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-44 · v1",
+      "filename": "r-r10-10-26-44.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/942ef581-f1e2-4b0f-b4f5-b00485ec013d/v1-r-r10-10-26-44.jpg",
+      "category": "image",
+      "altText": "Open green cabinet displaying tins and vintage household pieces",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-45 · v1",
+      "filename": "r-r10-10-26-45.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/2349bd6d-3e2e-4631-a2c5-38d42cf386ca/v1-r-r10-10-26-45.jpg",
+      "category": "image",
+      "altText": "Visitor examining a display near the greenhouse doorway",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-46 · v1",
+      "filename": "r-r10-10-26-46.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/28455fe2-614c-421b-b1c0-601cbafec5fb/v1-r-r10-10-26-46.jpg",
+      "category": "image",
+      "altText": "Antique trunk and furniture along a greenhouse aisle",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-47 · v1",
+      "filename": "r-r10-10-26-47.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/0eb75636-8140-4373-b3a4-9fd809ce7a7d/v1-r-r10-10-26-47.jpg",
+      "category": "image",
+      "altText": "Dress form, vintage luggage, and glassware in an autumn display",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-48 · v1",
+      "filename": "r-r10-10-26-48.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/527ba034-8338-4f0f-86ec-7dd469d9fc3a/v1-r-r10-10-26-48.jpg",
+      "category": "image",
+      "altText": "Flower-wrapped post framing the greenhouse interior",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-49 · v1",
+      "filename": "r-r10-10-26-49.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/3ce920d1-c79c-4781-8198-74753d7b663c/v1-r-r10-10-26-49.jpg",
+      "category": "image",
+      "altText": "Framed portraits and vintage furnishings against red shutters",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-50 · v1",
+      "filename": "r-r10-10-26-50.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/60e1eecb-fd61-49f3-ba0a-c45fc4d005c8/v1-r-r10-10-26-50.jpg",
+      "category": "image",
+      "altText": "Dried flowers and red shutters in a greenhouse display",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-51 · v1",
+      "filename": "r-r10-10-26-51.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/1946c774-f5c4-45de-9f38-c1c701995d47/v1-r-r10-10-26-51.jpg",
+      "category": "image",
+      "altText": "Woven basket and framed artwork on an antique dresser",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-52 · v1",
+      "filename": "r-r10-10-26-52.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/8882b82c-abcc-4880-9fdb-6eebe4bed018/v1-r-r10-10-26-52.jpg",
+      "category": "image",
+      "altText": "Easel and vintage decor against red shutters",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-53 · v1",
+      "filename": "r-r10-10-26-53.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/850c2bed-03b2-433b-9cc2-7f2a2b1bd2c9/v1-r-r10-10-26-53.jpg",
+      "category": "image",
+      "altText": "Painted cabinets and shelves filled with vintage treasures",
+      "version": 1
+    },
+    {
+      "assetKey": "r-r10.10",
+      "label": "R&R10.10.26-54 · v1",
+      "filename": "r-r10-10-26-54.jpg",
+      "localReference": null,
+      "url": "https://vdbjlgmbpykjblprqnak.supabase.co/storage/v1/object/public/website-assets-public/65c78021-2652-4e64-b025-485262709d8a/d3795e44-9990-4b5a-a774-9fbd04af35e2/v1-r-r10-10-26-54.jpg",
+      "category": "image",
+      "altText": "Two people behind a table of cakes, flowers, and vintage serving pieces",
+      "version": 1
     }
   ]
 }
