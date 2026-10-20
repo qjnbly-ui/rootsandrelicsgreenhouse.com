@@ -136,8 +136,9 @@ function recognizeAdmin():void{
 async function initialize():Promise<void>{
  if(main){
   // The existing header login remains the single explicit sign-in entry point.
-  const login=document.querySelector<HTMLAnchorElement>('.header-portal-link, a[href*=".portal.n3xra.com"]');
-  if(login)login.addEventListener('click',event=>{event.preventDefault();location.assign(signinUrl());});
+  document.querySelectorAll<HTMLAnchorElement>('a[href*=".portal.n3xra.com"]').forEach(login=>{
+   login.addEventListener('click',event=>{event.preventDefault();location.assign(signinUrl());});
+  });
   const remembered=sessionStorage.getItem(grantKey)||'';if(/^[a-f0-9]{64}$/.test(remembered))grant=remembered;
   const fragment=new URLSearchParams(location.hash.slice(1)),token=fragment.get('gallery_grant'),nonce=fragment.get('nonce');
   if(token){history.replaceState(null,'',location.pathname+location.search);if(/^[a-f0-9]{64}$/.test(token)&&nonce===sessionStorage.getItem('gallery-signin:'+slug))grant=token;sessionStorage.removeItem('gallery-signin:'+slug);if(grant)sessionStorage.setItem(grantKey,grant);}
