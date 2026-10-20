@@ -64,7 +64,7 @@ const shuffleGallery = () => {
   });
   galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
 };
-shuffleGallery();
+if (!document.querySelector('main[data-gallery-album]')) shuffleGallery();
 const galleryShuffleButton = document.querySelector<HTMLButtonElement>('[data-gallery-shuffle]');
 if (galleryShuffleButton) {
   galleryShuffleButton.hidden = false;
@@ -92,6 +92,12 @@ const showGalleryImage = (index: number) => {
   if (!source) return;
   galleryExpandedImage.src = galleryFullSource(galleryIndex);
   galleryExpandedImage.alt = source.alt;
+  const download = galleryLightbox?.querySelector<HTMLAnchorElement>('[data-gallery-expanded-download]');
+  if (download) {
+    const url = new URL(galleryExpandedImage.src);
+    url.searchParams.set('download', decodeURIComponent(url.pathname.split('/').pop() || 'photo.jpg'));
+    download.href = url.href;
+  }
   preloadGalleryNeighbor(galleryIndex - 1);
   preloadGalleryNeighbor(galleryIndex + 1);
 };
@@ -111,7 +117,20 @@ const closeGalleryLightbox = () => {
   galleryItems[galleryIndex]?.focus({ preventScroll: true });
 };
 
-galleryItems.forEach((item) => item.addEventListener('click', () => openGalleryLightbox(galleryItems.indexOf(item))));
+const boundGalleryItems = new WeakSet<HTMLButtonElement>();
+const bindGalleryItems = () => {
+  const selected = galleryItems[galleryIndex];
+  if (selected && !selected.isConnected && galleryLightbox && !galleryLightbox.hidden) closeGalleryLightbox();
+  galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
+  if (selected?.isConnected) galleryIndex = galleryItems.indexOf(selected);
+  galleryItems.forEach((item) => {
+    if (boundGalleryItems.has(item)) return;
+    boundGalleryItems.add(item);
+    item.addEventListener('click', () => openGalleryLightbox(galleryItems.indexOf(item)));
+  });
+};
+bindGalleryItems();
+document.addEventListener('gallery:updated', bindGalleryItems);
 galleryCloseButtons.forEach((button) => button.addEventListener('click', closeGalleryLightbox));
 galleryPrevious?.addEventListener('click', () => showGalleryImage(galleryIndex - 1));
 galleryNext?.addEventListener('click', () => showGalleryImage(galleryIndex + 1));
@@ -175,44 +194,4 @@ if (!reduceMotion && parallaxImages.length) {
     }
   }, { passive: true });
   updateParallax();
-}
-
-// Refresh public album membership so a removed photo disappears without a site rebuild.
-if (document.querySelector('[data-gallery-grid], [data-gallery-album-prefix]')) {
-  void (async () => {
-    const endpoint = new URL('https://www.n3xra.com/api/website-asset-manifest');
-    endpoint.searchParams.set('slug', 'roots-and-relics-be7315');
-    endpoint.searchParams.set('_sync', String(Date.now()));
-    const response = await fetch(endpoint, { cache: 'no-store', signal: AbortSignal.timeout(10000) });
-    if (!response.ok) return;
-    const manifest = await response.json();
-    if (!Array.isArray(manifest.images)) return;
-    const images = manifest.images.filter((image: { filename?: unknown; url?: unknown }) => typeof image.filename === 'string' && typeof image.url === 'string');
-    const published = new Set(images.map((image: { filename: string }) => image.filename));
-    const expandedItem = galleryItems[galleryIndex];
-    document.querySelectorAll<HTMLElement>('[data-gallery-filename]').forEach((photo) => {
-      if (!published.has(photo.dataset.galleryFilename)) photo.remove();
-    });
-    if (galleryLightbox && !galleryLightbox.hidden && expandedItem && !expandedItem.isConnected) closeGalleryLightbox();
-    galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
-    if (expandedItem?.isConnected) galleryIndex = galleryItems.indexOf(expandedItem);
-    document.querySelectorAll<HTMLElement>('[data-gallery-grid]').forEach((grid) => {
-      const count = grid.querySelectorAll('[data-gallery-item]').length;
-      const label = grid.parentElement?.querySelector('[data-gallery-count]');
-      if (label) label.textContent = `${count} photos`;
-      const empty = grid.parentElement?.querySelector<HTMLElement>('[data-gallery-empty]');
-      if (empty) empty.hidden = count > 0;
-      const cover = document.querySelector<HTMLImageElement>('.gallery-album-hero .gallery-hero-image img');
-      const first = grid.querySelector<HTMLImageElement>('img');
-      if (cover && first && !images.some((image: { url: string }) => image.url === cover.src)) cover.src = first.src;
-    });
-    document.querySelectorAll<HTMLAnchorElement>('[data-gallery-album-prefix]').forEach((card) => {
-      const albumImages = images.filter((image: { filename: string }) => image.filename.startsWith(card.dataset.galleryAlbumPrefix || ''));
-      card.hidden = albumImages.length === 0;
-      const label = card.querySelector('[data-gallery-count]');
-      if (label) label.textContent = `${albumImages.length} photos`;
-      const cover = card.querySelector('img');
-      if (cover && albumImages.length && !albumImages.some((image: { url: string }) => image.url === cover.src)) cover.src = albumImages[0].url;
-    });
-  })().catch(() => { /* Keep the last successfully built collection during an outage. */ });
 }

@@ -30,7 +30,7 @@ import '../../styles/gallery.css';
       </header>
       <div class="gallery-album-list">
         {albums.map((album) => (
-          <a class="gallery-album-card reveal" data-gallery-album-prefix={album.slug === 'greenhouse' ? 'r-r-greenhousse-' : 'r-r10-10-26-'} href={`/gallery/${album.slug}/`}>
+          <a class="gallery-album-card reveal" data-gallery-album={album.slug} data-gallery-album-prefix={album.slug === 'greenhouse' ? 'r-r-greenhousse-' : 'r-r10-10-26-'} href={`/gallery/${album.slug}/`}>
             <img src={imageUrl(album.cover)} alt={album.coverAlt} loading="lazy" decoding="async" />
             <div class="gallery-album-copy">
               <p class="kicker">{album.subtitle} · <span data-gallery-count>{album.images.length} photos</span></p>
@@ -68,4 +68,8 @@ import '../../styles/gallery.css';
   };
   const album = legacyAlbums[window.location.hash];
   if (album) window.location.replace(album);
+</script>
+
+<script>
+  import '../../scripts/gallery-editor';
 </script>
