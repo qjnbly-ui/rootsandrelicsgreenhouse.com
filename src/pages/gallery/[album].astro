@@ -22,9 +22,7 @@ const { album } = Astro.props;
     </section>
     <section class="gallery-collection" aria-label={`${album.title} photographs`}>
       <nav class="gallery-album-tools" aria-label="Album controls">
-        <a href="/gallery/">← All albums</a>
-        <button type="button" data-gallery-edit>Sign in to edit album</button>
-        <button type="button" data-gallery-finish hidden>Finish editing</button>
+        <a class="gallery-back" href="/gallery/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h13" /></svg><span>All albums</span></a>
       </nav>
       <p data-gallery-status role="status" aria-live="polite"></p>
       <div class="gallery-grid" data-gallery-grid>
@@ -33,7 +31,6 @@ const { album } = Astro.props;
             <button type="button" data-gallery-item aria-label={`Open photo: ${image.alt}`}>
               <img src={imageUrl(image.filename)} data-full-src={imageUrl(image.filename)} alt={image.alt} loading="lazy" decoding="async" />
             </button>
-            <figcaption class="gallery-photo-actions"><a href={`${imageUrl(image.filename)}?download=${encodeURIComponent(image.filename)}`} data-gallery-download>Download image</a></figcaption>
           </figure>
         ))}
       </div>
@@ -42,10 +39,17 @@ const { album } = Astro.props;
     <div class="gallery-lightbox" data-gallery-lightbox hidden role="dialog" aria-modal="true" aria-label={`${album.title}: expanded photo`}>
       <div class="gallery-lightbox-backdrop" aria-hidden="true"></div>
       <div class="gallery-lightbox-frame"><img data-gallery-expanded src="" alt="" /></div>
-      <a class="gallery-lightbox-download" data-gallery-expanded-download href="#">Download image</a>
-      <button class="gallery-lightbox-close" type="button" data-gallery-close aria-label="Close expanded photo"><span></span><span></span></button>
-      <button class="gallery-lightbox-control gallery-lightbox-previous" type="button" data-gallery-previous aria-label="Previous photo"><span aria-hidden="true">←</span></button>
-      <button class="gallery-lightbox-control gallery-lightbox-next" type="button" data-gallery-next aria-label="Next photo"><span aria-hidden="true">→</span></button>
+      <div class="gallery-viewer-tools">
+        <a class="gallery-icon" data-gallery-expanded-download href="#" aria-label="Download photo" title="Download photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg></a>
+        <div class="gallery-menu-wrap" data-gallery-admin hidden>
+          <button class="gallery-icon" type="button" data-gallery-menu-toggle aria-label="Photo options" aria-expanded="false" aria-controls="gallery-photo-menu" title="Photo options"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01" stroke-width="3.5" /></svg></button>
+          <div class="gallery-photo-menu" id="gallery-photo-menu" data-gallery-menu hidden></div>
+        </div>
+        <button class="gallery-icon gallery-lightbox-close" type="button" data-gallery-close aria-label="Close photo" title="Close photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
+      </div>
+      <p class="gallery-viewer-status" data-gallery-viewer-status role="status" aria-live="polite"></p>
+      <button class="gallery-lightbox-control gallery-lightbox-previous" type="button" data-gallery-previous aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg></button>
+      <button class="gallery-lightbox-control gallery-lightbox-next" type="button" data-gallery-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
     </div>
   </main>
 </BaseLayout>

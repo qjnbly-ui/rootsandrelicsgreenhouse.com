@@ -98,6 +98,7 @@ const showGalleryImage = (index: number) => {
     url.searchParams.set('download', decodeURIComponent(url.pathname.split('/').pop() || 'photo.jpg'));
     download.href = url.href;
   }
+  document.dispatchEvent(new CustomEvent('gallery:selected', {detail: {asset: galleryItems[galleryIndex]?.closest<HTMLElement>('[data-asset]')?.dataset.asset}}));
   preloadGalleryNeighbor(galleryIndex - 1);
   preloadGalleryNeighbor(galleryIndex + 1);
 };
@@ -120,9 +121,14 @@ const closeGalleryLightbox = () => {
 const boundGalleryItems = new WeakSet<HTMLButtonElement>();
 const bindGalleryItems = () => {
   const selected = galleryItems[galleryIndex];
-  if (selected && !selected.isConnected && galleryLightbox && !galleryLightbox.hidden) closeGalleryLightbox();
+  const removed = selected && !selected.isConnected && galleryLightbox && !galleryLightbox.hidden;
+  if (removed) closeGalleryLightbox();
   galleryItems = [...document.querySelectorAll<HTMLButtonElement>('[data-gallery-item]')];
-  if (selected?.isConnected) galleryIndex = galleryItems.indexOf(selected);
+  if (removed) galleryItems[Math.min(galleryIndex,galleryItems.length-1)]?.focus({preventScroll:true});
+  if (selected?.isConnected) {
+    galleryIndex = galleryItems.indexOf(selected);
+    if (galleryLightbox && !galleryLightbox.hidden) showGalleryImage(galleryIndex);
+  }
   galleryItems.forEach((item) => {
     if (boundGalleryItems.has(item)) return;
     boundGalleryItems.add(item);
@@ -136,7 +142,14 @@ galleryPrevious?.addEventListener('click', () => showGalleryImage(galleryIndex -
 galleryNext?.addEventListener('click', () => showGalleryImage(galleryIndex + 1));
 
 document.addEventListener('keydown', (event) => {
-  if (galleryLightbox && !galleryLightbox.hidden) {
+  if (galleryLightbox && !galleryLightbox.hidden && !document.querySelector('dialog[open]')) {
+    if ((event.target as HTMLElement).closest('textarea,input,select')) return;
+    if(event.key==='Tab'){
+      const controls=[...galleryLightbox.querySelectorAll<HTMLElement>('button:not(:disabled),a[href]')].filter(item=>item.offsetParent!==null);
+      const first=controls[0],last=controls[controls.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}
+    }
     if (event.key === 'Escape') {
       closeGalleryLightbox();
       return;
@@ -195,3 +208,16 @@ if (!reduceMotion && parallaxImages.length) {
   }, { passive: true });
   updateParallax();
 }
+
+// Keep swipe navigation on the photo itself; menu controls retain ordinary touch behavior.
+let galleryTouch: {x:number;y:number}|null=null;
+galleryExpandedImage?.addEventListener('touchstart',event=>{
+  galleryTouch=event.touches.length===1?{x:event.touches[0].clientX,y:event.touches[0].clientY}:null;
+},{passive:true});
+galleryExpandedImage?.addEventListener('touchend',event=>{
+  if(!galleryTouch||!event.changedTouches.length)return;
+  const dx=event.changedTouches[0].clientX-galleryTouch.x,dy=event.changedTouches[0].clientY-galleryTouch.y;
+  galleryTouch=null;
+  if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5)showGalleryImage(galleryIndex+(dx<0?1:-1));
+},{passive:true});
+galleryExpandedImage?.addEventListener('touchcancel',()=>{galleryTouch=null;},{passive:true});
