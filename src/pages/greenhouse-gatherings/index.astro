@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HolidayGreenhouse from '../../components/HolidayGreenhouse.astro';
 import PublicCalendar from '../../components/PublicCalendar.astro';
 import { site } from '../../data/site';
 import { fallGathering } from '../../data/events';
@@ -177,6 +178,8 @@ const fallGatheringSchema = {
         </div>
       </div>
     </section>
+
+    <HolidayGreenhouse />
 
     <PublicCalendar compact />
 

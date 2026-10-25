@@ -42,12 +42,16 @@ DESCRIPTION:One final opportunity to shop\, with a few special Sunday discounts 
 END:VEVENT
 BEGIN:VEVENT
 UID:holiday-greenhouse-2026@rootsandrelicsgreenhouse.com
-DTSTAMP:20260822T000000Z
+DTSTAMP:20261025T000000Z
 DTSTART;VALUE=DATE:20261127
 DTEND;VALUE=DATE:20261130
 SUMMARY:Holiday Greenhouse — Roots & Relics Greenhouse
 LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:Save the date. Market hours and visit details will be shared closer to the gathering.
+DESCRIPTION:Holiday magic on our farm\, just 10 minutes from Klamath Falls.
+ \nShop primitive antiques\, European farmhouse finds\, vintage holiday dé
+ cor and one-of-a-kind gifts. Enjoy festive refreshments and a greenhouse d
+ ressed for the season.\nHours and location details coming soon. Sign up at
+  https://www.rootsandrelicsgreenhouse.com/join/
 END:VEVENT
 BEGIN:VEVENT
 UID:christmas-market-2026@rootsandrelicsgreenhouse.com

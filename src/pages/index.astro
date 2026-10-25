@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HolidayGreenhouse from '../components/HolidayGreenhouse.astro';
 import SignupForm from '../components/SignupForm.astro';
 import { fallGathering } from '../data/events';
 import { imageUrl } from '../lib/image-assets';
@@ -103,10 +104,7 @@ import '../styles/home-signup.css';
         <div class="home-fall-event-mark" aria-hidden="true">10</div>
       </section>
 
-      <aside class="home-arrival" data-after-event={fallGathering.end} aria-label="Upcoming gatherings">
-        <div class="home-arrival-copy"><p class="kicker">Plan your next greenhouse visit</p><p class="home-arrival-address">Greenhouse gatherings</p><p class="home-arrival-note">See the market calendar for upcoming dates, or join our list for the next opening’s details.</p></div>
-        <a class="home-arrival-directions" href="/greenhouse-gatherings/">See the calendar <span>→</span></a>
-      </aside>
+      <HolidayGreenhouse />
       <section class="home-signup" aria-labelledby="home-signup-title">
         <div class="home-signup-copy reveal">
           <p class="kicker">A note worth opening</p>

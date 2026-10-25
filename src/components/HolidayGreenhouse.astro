@@ -1,0 +1,36 @@
+---
+import { imageUrl } from '../lib/image-assets';
+---
+<section class="holiday-greenhouse" id="holiday-greenhouse-2026" data-event-end="2026-11-30T00:00:00-08:00" aria-labelledby="holiday-greenhouse-title">
+  <figure class="holiday-greenhouse-image reveal">
+    <img src={imageUrl('r-r-greenhousse-5.jpg')} alt="Collected antiques and hanging flowers inside the Roots & Relics greenhouse" loading="lazy" decoding="async" />
+    <figcaption>See you in the greenhouse.</figcaption>
+  </figure>
+  <div class="holiday-greenhouse-copy reveal">
+    <p class="kicker">Roots &amp; Relics · Save the dates</p>
+    <p class="holiday-greenhouse-date"><time datetime="2026-11-27">November 27–29, 2026</time></p>
+    <h2 id="holiday-greenhouse-title">Holiday<br /><em>Greenhouse.</em></h2>
+    <p>Join us for a little holiday magic in the greenhouse on our farm, just 10 minutes from Klamath Falls.</p>
+    <p>Shop thoughtfully curated primitive antiques, European farmhouse finds, vintage holiday décor, and one-of-a-kind pieces to give as gifts or bring home for yourself. Gather inspiration for your holiday home while enjoying festive refreshments and the warm glow of the greenhouse dressed for the season.</p>
+    <p>Bring a friend, take your time, and enjoy a beautiful start to the holidays with us.</p>
+    <div class="holiday-greenhouse-details"><strong>Hours &amp; location details coming soon</strong><p>Join our list for the latest updates as the event gets closer.</p></div>
+    <div class="holiday-greenhouse-actions">
+      <a class="solid-link" href="/join/">Get holiday updates <span aria-hidden="true">→</span></a>
+      <a class="action-link" href="/calendar/holiday-greenhouse-2026.ics" download>Save the dates <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="holiday-greenhouse-thanks">Thank you for supporting our greenhouse market.</p>
+  </div>
+</section>
+<style>
+.holiday-greenhouse{padding:90px 7vw;display:flex;gap:6vw;align-items:center;background:var(--forest);color:#fff;scroll-margin-top:100px}
+.holiday-greenhouse-image{flex:0 1 43%;margin:0;position:relative;align-self:stretch;min-height:540px}
+.holiday-greenhouse-image img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.holiday-greenhouse-image figcaption{position:absolute;left:22px;bottom:22px;padding:12px 18px;background:var(--cream);color:var(--forest);font:italic 24px var(--serif)}
+.holiday-greenhouse-copy{flex:1;min-width:0;max-width:720px}.holiday-greenhouse .kicker{color:var(--gold)}
+.holiday-greenhouse-date{font:italic 30px var(--serif);margin:24px 0}
+.holiday-greenhouse h2{font:300 clamp(60px,6.8vw,104px)/.9 var(--serif);letter-spacing:-.045em;margin:0 0 30px}.holiday-greenhouse h2 em{color:var(--gold);font-weight:300}
+.holiday-greenhouse-copy>p:not(.kicker,.holiday-greenhouse-date){font-size:16px;line-height:1.75;color:rgba(255,255,255,.86);margin:18px 0}
+.holiday-greenhouse-details{border-left:2px solid var(--gold);padding:4px 0 4px 20px;margin:28px 0}.holiday-greenhouse-details strong{font-weight:500}.holiday-greenhouse-details p{font-size:14px;line-height:1.6;margin:8px 0 0;color:rgba(255,255,255,.8)}
+.holiday-greenhouse-actions{display:flex;flex-wrap:wrap;gap:24px;align-items:center}.holiday-greenhouse-actions .action-link{color:#fff}.holiday-greenhouse-copy>p.holiday-greenhouse-thanks{font:italic 22px/1.5 var(--serif);margin-top:28px}
+@media(max-width:800px){.holiday-greenhouse{padding:55px 6vw;flex-direction:column;gap:36px;align-items:stretch}.holiday-greenhouse-image{flex:auto;min-height:0;height:360px}.holiday-greenhouse h2{font-size:clamp(55px,13vw,85px)}.holiday-greenhouse-actions{align-items:stretch;flex-direction:column}.holiday-greenhouse-actions a{justify-content:space-between}.holiday-greenhouse-date{font-size:27px}}
+</style>
