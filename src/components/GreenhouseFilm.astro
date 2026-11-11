@@ -13,15 +13,10 @@ import { imageUrl } from '../lib/image-assets';
 </section>
 <dialog tabindex="-1" class="film-dialog" aria-label="A look inside Roots and Relics">
   <button class="film-close" data-film-close aria-label="Close video"><span aria-hidden="true">×</span></button>
-  <video playsinline preload="none" width="1920" height="1080" aria-label="Roots and Relics Greenhouse film">
+  <video controls tabindex="0" playsinline preload="none" width="1920" height="1080" aria-label="Roots and Relics Greenhouse film">
     <source src="/media/roots-relics-greenhouse-film.mp4" type="video/mp4" />
     <track kind="captions" src="/media/roots-relics-greenhouse-film.vtt" srclang="en" label="English" />
   </video>
-  <div class="film-tools" aria-label="Video playback controls">
-    <button data-film-pause aria-label="Pause video">Pause</button>
-    <button data-film-mute aria-label="Mute video">Sound on</button>
-    <button data-film-captions aria-pressed="false" aria-label="Show captions">CC</button>
-  </div>
 </dialog>
 <script>
   const opener = document.querySelector<HTMLButtonElement>('[data-film-open]');
@@ -37,21 +32,22 @@ import { imageUrl } from '../lib/image-assets';
     if (!dialog || !video || closing) return;
     dialog.classList.remove('is-closing');
     if (video.ended || completed) video.currentTime = 0;
+    video.controls = false;
     dialog.showModal();
     dialog.focus({ preventScroll: true });
-    dialog.classList.remove("show-tools");
-    video.play().catch(() => {});
+    // Native controls have no portable "start hidden" API. Enable them on
+    // the first intentional interaction so playback opens unobstructed.
+    video.controls = false;
+    video.play().catch(() => { video.controls = true; });
   };
-  const pauseButton = dialog?.querySelector<HTMLButtonElement>('[data-film-pause]');
-  const muteButton = dialog?.querySelector<HTMLButtonElement>('[data-film-mute]');
-  pauseButton?.addEventListener('click', () => { if (video?.paused) video.play().catch(() => {}); else video?.pause(); });
-  const syncPause = () => { if (pauseButton && video) { pauseButton.textContent = video.paused ? 'Play' : 'Pause'; pauseButton.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video'); } };
-  video?.addEventListener('play', syncPause);
-  video?.addEventListener('pause', syncPause);
-  muteButton?.addEventListener('click', () => { if (!video) return; video.muted = !video.muted; muteButton.textContent = video.muted ? 'Sound off' : 'Sound on'; muteButton.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video'); });
-  dialog?.querySelector('[data-film-captions]')?.addEventListener('click', (event) => { const track = video?.textTracks[0]; if (!track) return; track.mode = track.mode === 'showing' ? 'hidden' : 'showing'; (event.currentTarget as HTMLButtonElement).setAttribute('aria-pressed', String(track.mode === 'showing')); });
-  video?.addEventListener('click', () => dialog?.classList.toggle('show-tools'));
-  dialog?.addEventListener('keydown', (event) => { if ((event.key === ' ' || event.key === 'k') && event.target === dialog) { event.preventDefault(); pauseButton?.click(); } });
+  const revealControls = () => { if (video && dialog?.open && !closing) video.controls = true; };
+  video?.addEventListener('pointermove', revealControls);
+  video?.addEventListener('pointerdown', revealControls);
+  video?.addEventListener('focus', revealControls);
+  dialog?.addEventListener('keydown', revealControls);
+  [opener, replay].forEach(button => {
+    button?.addEventListener('blur', () => button.classList.remove('film-return-focus'));
+  });
   opener?.addEventListener('click', openFilm);
   replay?.addEventListener('click', openFilm);
   dialog?.querySelector('[data-film-close]')?.addEventListener('click', () => dialog.close());
@@ -65,7 +61,9 @@ import { imageUrl } from '../lib/image-assets';
       if (opener) { opener.inert = true; opener.setAttribute('aria-hidden', 'true'); }
       section?.classList.add('is-finished');
     }
-    (completed ? replay : opener)?.focus({ preventScroll: true });
+    const returnTarget = completed ? replay : opener;
+    returnTarget?.classList.add('film-return-focus');
+    returnTarget?.focus({ preventScroll: true });
   });
   const finishFilm = () => {
     if (closing || !dialog?.open || !video) return;
@@ -120,11 +118,8 @@ import { imageUrl } from '../lib/image-assets';
   .film-dialog:focus{outline:none}
   .film-close{appearance:none;-webkit-appearance:none;box-shadow:none;border-radius:0;-webkit-tap-highlight-color:transparent}
   .film-close:focus:not(:focus-visible){outline:none}
-  .film-tools{display:flex;justify-content:center;gap:24px;height:40px;align-items:center;opacity:0;transition:opacity .2s}
-  .film-tools:focus-within,.show-tools .film-tools{opacity:1}
-  @media(hover:hover){.film-dialog:hover .film-tools{opacity:1}}
-  .film-tools button{background:none;border:0;padding:6px;color:var(--cream);font:12px var(--sans);cursor:pointer;-webkit-tap-highlight-color:transparent}
-  .film-tools button:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+  .film-return-focus:focus,.film-return-focus:focus-visible{outline:none!important;box-shadow:none!important}
+  .film-preview,.film-replay{-webkit-tap-highlight-color:transparent}
   .film-close:hover{color:var(--gold)}
   video{display:block;width:100%;height:auto;max-height:65vh;aspect-ratio:16/9;background:#000}
   @media(prefers-reduced-motion:reduce){.film-section,.film-preview,.film-dialog,.film-dialog::backdrop{transition:none}}
