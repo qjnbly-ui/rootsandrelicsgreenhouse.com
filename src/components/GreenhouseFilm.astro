@@ -70,6 +70,7 @@ import { imageUrl } from '../lib/image-assets';
       if (opener) { opener.inert = true; opener.setAttribute('aria-hidden', 'true'); }
       section?.classList.add('is-finished');
       dialog.close();
+      document.dispatchEvent(new CustomEvent("greenhouse-film-complete"));
     };
     fadeFrame = requestAnimationFrame(fade);
   };

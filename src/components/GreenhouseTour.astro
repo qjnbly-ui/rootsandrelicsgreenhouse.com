@@ -1,0 +1,102 @@
+<audio id="greenhouse-tour-audio" src="/media/roots-short-tour.mp3?v=original-restored" preload="auto"></audio>
+<div class="tour-bar" hidden aria-label="Short greenhouse tour">
+  <p data-tour-caption aria-live="polite"></p>
+  <button data-tour-resume hidden>Play tour</button>
+  <button data-tour-skip>Skip tour</button>
+</div>
+<script>
+  const audio = document.querySelector<HTMLAudioElement>('#greenhouse-tour-audio')!;
+  const bar = document.querySelector<HTMLElement>('.tour-bar')!;
+  const caption = document.querySelector<HTMLElement>('[data-tour-caption]')!;
+  const resume = document.querySelector<HTMLButtonElement>('[data-tour-resume]')!;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let active = false;
+  let step = -1;
+  let visited = false;
+  let highlighted: HTMLElement | null = null;
+  const cues = [
+    { at: 0, selector: '.holiday-greenhouse-date time', text: 'Before you go, check our next greenhouse opening.' },
+    { at: 3.5, selector: '#signup', text: 'Join our email list so you won’t miss a thing.' },
+    { at: 7, selector: '#top', text: 'Take a look around, and we’ll see you in the greenhouse.' }
+  ];
+  function clearHighlight() { highlighted?.classList.remove('tour-highlight'); highlighted = null; }
+  function showStep(index: number) {
+    if (step === index) return;
+    step = index;
+    clearHighlight();
+    const cue = cues[index];
+    caption.textContent = cue.text;
+    const target = document.querySelector<HTMLElement>(cue.selector);
+    if (!target) return;
+    if (index < 2) { highlighted = target; target.classList.add('tour-highlight'); }
+    const top = index === 2 ? 0 : window.scrollY + target.getBoundingClientRect().top - (index === 0 ? 200 : 125);
+    window.scrollTo({ top: Math.max(0, top), behavior: reduced ? 'instant' : 'smooth' });
+  }
+  function stop() {
+    if (!active) return;
+    active = false;
+    audio.pause();
+    bar.hidden = true;
+    resume.hidden = true;
+    clearHighlight();
+  }
+  async function start() {
+    stop();
+    active = true;
+    step = -1;
+    audio.currentTime = 0;
+    bar.hidden = false;
+    resume.hidden = true;
+    caption.textContent = 'A quick look around the greenhouse website.';
+    try { await audio.play(); if (active) showStep(0); }
+    catch { resume.hidden = false; caption.textContent = 'Play the short tour with sound.'; }
+  }
+  document.addEventListener('greenhouse-film-complete', () => {
+    if (visited) return;
+    visited = true;
+    void start();
+  });
+  audio.addEventListener('timeupdate', () => {
+    if (!active) return;
+    const index = audio.currentTime >= cues[2].at ? 2 : audio.currentTime >= cues[1].at ? 1 : 0;
+    showStep(index);
+  });
+  audio.addEventListener('ended', () => { showStep(2); stop(); });
+  audio.addEventListener('error', stop);
+  document.querySelector('[data-tour-skip]')?.addEventListener('click', stop);
+  resume.addEventListener('click', () => { void audio.play().then(() => { resume.hidden = true; showStep(0); }); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') stop(); });
+  document.addEventListener('focusin', event => {
+    if (event.target instanceof HTMLElement && event.target.matches('input,textarea,select')) stop();
+  });
+  window.addEventListener('pagehide', stop);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+  document.querySelectorAll('[data-film-open],[data-film-replay]').forEach(button => button.addEventListener('click', stop));
+  if (['localhost','127.0.0.1'].includes(location.hostname)) {
+    const root = document.querySelector<HTMLElement>('[data-signup-root]');
+    const form = root?.querySelector<HTMLFormElement>('form');
+    const loading = root?.querySelector<HTMLElement>('[data-signup-loading]');
+    if (root && form && loading) {
+      form.addEventListener('submit', event => { event.preventDefault(); event.stopImmediatePropagation(); }, true);
+      const observer = new MutationObserver(() => {
+        if (!loading.textContent?.includes('Failed to fetch')) return;
+        observer.disconnect();
+        loading.textContent = 'Local preview — signups are disabled here.';
+        form.hidden = false;
+        const submit = form.querySelector<HTMLButtonElement>('[type=submit]');
+        if (submit) { submit.disabled = true; submit.textContent = 'Preview only'; }
+      });
+      observer.observe(loading, {childList:true,subtree:true,characterData:true});
+    }
+  }
+
+</script>
+<style>
+  .tour-bar{position:fixed;z-index:80;left:50%;bottom:22px;transform:translateX(-50%);width:min(720px,calc(100% - 32px));display:flex;align-items:center;gap:22px;padding:18px 24px;background:var(--paper);color:var(--forest);border:1px solid var(--line);box-shadow:0 5px 25px rgb(0 0 0 / .12)}
+  .tour-bar[hidden],button[hidden]{display:none}
+  .tour-bar p{margin:0;flex:1;font:16px/1.45 var(--serif)}
+  .tour-bar button{border:0;background:none;color:var(--forest);font:11px var(--mono);text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap;padding:10px 0}
+  :global(.tour-highlight){outline:2px solid var(--gold);outline-offset:10px;transition:outline-color .3s}
+  @media(max-width:600px){.tour-bar{bottom:12px;padding:14px 16px;gap:14px}.tour-bar p{font-size:16px}}
+  @media(prefers-reduced-motion:reduce){:global(.tour-highlight){transition:none}}
+</style>
