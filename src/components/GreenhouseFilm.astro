@@ -1,33 +1,44 @@
 ---
 import { imageUrl } from '../lib/image-assets';
 ---
-<section class="greenhouse-film" aria-labelledby="greenhouse-film-title" id="greenhouse-film">
-  <div class="film-heading">
-    <div>
-      <p class="kicker">A look inside Roots &amp; Relics</p>
-      <h2 id="greenhouse-film-title">Visit the greenhouse.</h2>
-    </div>
-    <p>Meet Pat and Jennifer and take a look around.<br />45-second film · Sound available</p>
-  </div>
-  <video controls playsinline preload="none" width="1920" height="1080" poster={imageUrl('r-r10-10-26-1.jpg')} aria-label="Roots and Relics Greenhouse film">
+<section class="greenhouse-film" aria-label="Greenhouse film" id="greenhouse-film">
+  <button class="film-preview" data-film-open aria-haspopup="dialog">
+    <img src={imageUrl('r-r10-10-26-1.jpg')} alt="" width="192" height="108" loading="lazy" />
+    <span><span class="film-title">A look inside the greenhouse</span><span class="film-action">Watch the film · 45 seconds</span></span>
+  </button>
+</section>
+<dialog class="film-dialog" aria-label="A look inside Roots and Relics">
+  <button class="film-close" data-film-close>Close video</button>
+  <video controls playsinline preload="none" width="1920" height="1080" aria-label="Roots and Relics Greenhouse film">
     <source src="/media/roots-relics-greenhouse-film.mp4" type="video/mp4" />
     <track kind="captions" src="/media/roots-relics-greenhouse-film.vtt" srclang="en" label="English" />
-    <p><a href="/media/roots-relics-greenhouse-film.mp4">Watch the Roots &amp; Relics film</a>.</p>
   </video>
   <details class="film-transcript">
     <summary>Read the video transcript</summary>
     <p>Looking for something you won’t find everywhere else? Step inside Roots &amp; Relics Greenhouse. Browse antiques, collected pieces, and unexpected finds for your home. Take your time. There’s plenty to discover. Bring a friend, enjoy the greenhouse, and make a day of it. Come meet Pat and Jennifer, the people behind Roots &amp; Relics. See our next opening and join our email list at rootsandrelicsgreenhouse.com. We’d love to see you in the greenhouse.</p>
   </details>
-</section>
+</dialog>
+<script>
+  const opener = document.querySelector<HTMLButtonElement>('[data-film-open]');
+  const dialog = document.querySelector<HTMLDialogElement>('.film-dialog');
+  const video = dialog?.querySelector('video');
+  opener?.addEventListener('click', () => { dialog?.showModal(); video?.play().catch(() => {}); });
+  dialog?.querySelector('[data-film-close]')?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', (event) => { if(event.target === dialog) dialog.close(); });
+  dialog?.addEventListener('close', () => { video?.pause(); opener?.focus(); });
+</script>
 <style>
-  .greenhouse-film{padding:70px 7vw;background:var(--cream);color:var(--forest)}
-  .film-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px}
-  .film-heading h2{font:300 clamp(40px,4.3vw,68px)/1.06 var(--serif);letter-spacing:-.035em;margin:14px 0 0}
-  .film-heading>p{font-size:15px;line-height:1.65;margin:0;max-width:330px}
-  video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--forest)}
-  .film-transcript{margin-top:20px;max-width:850px;font-size:14px;line-height:1.8}
-  summary{cursor:pointer;width:fit-content;text-decoration:underline;text-underline-offset:4px}
-  summary:focus-visible{outline:2px solid var(--forest);outline-offset:5px}
-  .film-transcript p{margin:16px 0 0}
-  @media(max-width:700px){.greenhouse-film{padding:42px 6vw}.film-heading{display:block;margin-bottom:22px}.film-heading>p{margin-top:18px}.film-heading h2{font-size:42px}}
+  .greenhouse-film{padding:24px 7vw;background:var(--cream);color:var(--forest)}
+  .film-preview{display:flex;align-items:center;gap:22px;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;font:inherit}
+  .film-preview img{width:144px;height:81px;object-fit:cover;display:block}
+  .film-title{display:block;font:400 25px/1.2 var(--serif)}
+  .film-action{display:block;margin-top:9px;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+  .film-preview:focus-visible,.film-close:focus-visible{outline:2px solid var(--forest);outline-offset:6px}
+  .film-dialog{box-sizing:border-box;width:min(900px,94vw);max-height:90vh;padding:20px;border:0;background:var(--cream);color:var(--forest)}
+  .film-dialog::backdrop{background:rgb(0 0 0 / .75)}
+  .film-close{display:block;margin:0 0 14px auto;padding:8px 12px;background:none;border:1px solid currentColor;color:inherit;font:inherit;font-size:14px;cursor:pointer}
+  video{display:block;width:100%;height:auto;max-height:65vh;aspect-ratio:16/9;background:var(--forest)}
+  .film-transcript{margin-top:16px;font-size:14px;line-height:1.7}
+  summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+  @media(max-width:700px){.greenhouse-film{padding:20px 6vw}.film-preview{gap:16px}.film-preview img{width:104px;height:70px}.film-title{font-size:21px}.film-action{font-size:12px}.film-dialog{padding:12px}}
 </style>
