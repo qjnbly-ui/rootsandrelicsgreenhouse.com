@@ -1,44 +1,106 @@
 ---
 import { imageUrl } from '../lib/image-assets';
 ---
-<section class="greenhouse-film" aria-label="Greenhouse film" id="greenhouse-film">
-  <button class="film-preview" data-film-open aria-haspopup="dialog">
-    <img src={imageUrl('r-r10-10-26-1.jpg')} alt="" width="192" height="108" loading="lazy" />
-    <span><span class="film-title">A look inside the greenhouse</span><span class="film-action">Watch the film · 45 seconds</span></span>
-  </button>
+<section class="film-section" id="greenhouse-film" aria-label="Roots and Relics film">
+<button class="film-preview" data-film-open aria-haspopup="dialog" aria-label="Watch Inside Roots & Relics, a 45-second film">
+  <span class="film-still">
+    <img src={imageUrl('r-r10-10-26-1.jpg')} alt="Vintage pickup outside the greenhouse" width="560" height="315" loading="lazy" />
+    <span class="film-play"><svg viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1L13 8L1 15Z" /></svg></span>
+    <span class="film-duration">45 seconds</span>
+  </span>
+</button>
+<button class="film-replay" data-film-replay aria-haspopup="dialog" hidden>Watch video again</button>
 </section>
 <dialog class="film-dialog" aria-label="A look inside Roots and Relics">
-  <button class="film-close" data-film-close>Close video</button>
+  <button class="film-close" data-film-close aria-label="Close video"><span aria-hidden="true">×</span></button>
   <video controls playsinline preload="none" width="1920" height="1080" aria-label="Roots and Relics Greenhouse film">
     <source src="/media/roots-relics-greenhouse-film.mp4" type="video/mp4" />
     <track kind="captions" src="/media/roots-relics-greenhouse-film.vtt" srclang="en" label="English" />
   </video>
-  <details class="film-transcript">
-    <summary>Read the video transcript</summary>
-    <p>Looking for something you won’t find everywhere else? Step inside Roots &amp; Relics Greenhouse. Browse antiques, collected pieces, and unexpected finds for your home. Take your time. There’s plenty to discover. Bring a friend, enjoy the greenhouse, and make a day of it. Come meet Pat and Jennifer, the people behind Roots &amp; Relics. See our next opening and join our email list at rootsandrelicsgreenhouse.com. We’d love to see you in the greenhouse.</p>
-  </details>
 </dialog>
 <script>
   const opener = document.querySelector<HTMLButtonElement>('[data-film-open]');
+  const replay = document.querySelector<HTMLButtonElement>('[data-film-replay]');
+  const section = document.querySelector<HTMLElement>('.film-section');
   const dialog = document.querySelector<HTMLDialogElement>('.film-dialog');
   const video = dialog?.querySelector('video');
-  opener?.addEventListener('click', () => { dialog?.showModal(); video?.play().catch(() => {}); });
+  let completed = false;
+  let closing = false;
+  let fadeFrame = 0;
+  let originalVolume = 1;
+  const openFilm = () => {
+    if (!dialog || !video || closing) return;
+    dialog.classList.remove('is-closing');
+    if (video.ended || completed) video.currentTime = 0;
+    dialog.showModal();
+    video.play().catch(() => {});
+  };
+  opener?.addEventListener('click', openFilm);
+  replay?.addEventListener('click', openFilm);
   dialog?.querySelector('[data-film-close]')?.addEventListener('click', () => dialog.close());
   dialog?.addEventListener('click', (event) => { if(event.target === dialog) dialog.close(); });
-  dialog?.addEventListener('close', () => { video?.pause(); opener?.focus(); });
+  dialog?.addEventListener('close', () => {
+    cancelAnimationFrame(fadeFrame);
+    if (video) { video.pause(); if (closing) video.volume = originalVolume; }
+    closing = false;
+    if (completed) {
+      if (replay) replay.hidden = false;
+      if (opener) { opener.inert = true; opener.setAttribute('aria-hidden', 'true'); }
+      section?.classList.add('is-finished');
+    }
+    (completed ? replay : opener)?.focus({ preventScroll: true });
+  });
+  const finishFilm = () => {
+    if (closing || !dialog?.open || !video) return;
+    completed = true;
+    closing = true;
+    originalVolume = video.volume;
+    const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1000;
+    const started = performance.now();
+    // Collapse behind the player so the replay link is in place before the fade ends.
+    if (replay) replay.hidden = false;
+    if (opener) { opener.inert = true; opener.setAttribute('aria-hidden', 'true'); }
+    section?.classList.add('is-finished');
+    dialog.classList.add('is-closing');
+    const fade = (now: number) => {
+      const progress = duration ? Math.min((now - started) / duration, 1) : 1;
+      video.volume = originalVolume * (1 - progress);
+      if (progress < 1) { fadeFrame = requestAnimationFrame(fade); return; }
+      if (replay) replay.hidden = false;
+      if (opener) { opener.inert = true; opener.setAttribute('aria-hidden', 'true'); }
+      section?.classList.add('is-finished');
+      dialog.close();
+    };
+    fadeFrame = requestAnimationFrame(fade);
+  };
+  // The narrator's final sentence finishes just after 42 seconds.
+  video?.addEventListener('timeupdate', () => { if (video.currentTime >= 42.2) finishFilm(); });
+  video?.addEventListener('ended', finishFilm);
 </script>
 <style>
-  .greenhouse-film{padding:24px 7vw;background:var(--cream);color:var(--forest)}
-  .film-preview{display:flex;align-items:center;gap:22px;padding:0;border:0;background:none;color:inherit;text-align:left;cursor:pointer;font:inherit}
-  .film-preview img{width:144px;height:81px;object-fit:cover;display:block}
-  .film-title{display:block;font:400 25px/1.2 var(--serif)}
-  .film-action{display:block;margin-top:9px;font-size:13px;text-decoration:underline;text-underline-offset:4px}
-  .film-preview:focus-visible,.film-close:focus-visible{outline:2px solid var(--forest);outline-offset:6px}
-  .film-dialog{box-sizing:border-box;width:min(900px,94vw);max-height:90vh;padding:20px;border:0;background:var(--cream);color:var(--forest)}
-  .film-dialog::backdrop{background:rgb(0 0 0 / .75)}
-  .film-close{display:block;margin:0 0 14px auto;padding:8px 12px;background:none;border:1px solid currentColor;color:inherit;font:inherit;font-size:14px;cursor:pointer}
+  .film-section{padding:34px 6vw;background:var(--cream);transition:padding .55s ease}
+  .film-preview{display:block;width:min(420px,100%);margin:0 auto;padding:0;background:none;border:0;color:var(--forest);text-align:left;cursor:pointer;max-height:420px;overflow:hidden;opacity:1;transition:max-height .55s ease,opacity .35s ease}
+  .film-still{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden}
+  .film-still img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .film-still::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(15,22,12,.7))}
+  .film-play{position:absolute;left:18px;bottom:17px;z-index:1;display:flex;align-items:center;gap:10px;color:var(--cream);font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+  .film-play svg{width:14px;height:16px;fill:currentColor}
+  .film-duration{position:absolute;right:18px;bottom:17px;z-index:1;color:var(--cream);font:11px var(--mono)}
+  .film-preview:hover .film-still img{transform:scale(1.035)}
+  .film-preview:focus-visible,.film-close:focus-visible{outline:2px solid currentColor;outline-offset:6px}
+  @media(prefers-reduced-motion:reduce){.film-still img{transition:none}}
+  @media(max-width:600px){.film-section{padding:26px 6vw}.film-preview{display:block;max-width:380px}.film-still{width:100%;aspect-ratio:16/9}}
+  .film-replay{display:block;margin:0 auto;padding:8px 0;background:none;border:0;color:var(--fern);font:12px var(--sans);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+  .film-replay[hidden]{display:none}
+  .film-section.is-finished{padding:12px 6vw}
+  .is-finished .film-preview{max-height:0;opacity:0;pointer-events:none}
+  .film-dialog.is-closing{opacity:0}
+  .film-dialog.is-closing::backdrop{background:transparent}
+  .film-dialog{transition:opacity 1s cubic-bezier(.4,0,.2,1);box-sizing:border-box;width:min(900px,94vw);max-height:90vh;padding:44px 0 0;border:0;background:transparent;color:var(--cream)}
+  .film-dialog::backdrop{background:rgb(0 0 0 / .75);transition:background 1s cubic-bezier(.4,0,.2,1)}
+  .film-close{position:absolute;right:0;top:0;display:flex;align-items:center;justify-content:center;width:40px;height:36px;padding:0;background:none;border:0;color:var(--cream);font:300 32px/1 var(--sans);cursor:pointer}
+  .film-close:hover{color:var(--gold)}
   video{display:block;width:100%;height:auto;max-height:65vh;aspect-ratio:16/9;background:var(--forest)}
-  .film-transcript{margin-top:16px;font-size:14px;line-height:1.7}
-  summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}
-  @media(max-width:700px){.greenhouse-film{padding:20px 6vw}.film-preview{gap:16px}.film-preview img{width:104px;height:70px}.film-title{font-size:21px}.film-action{font-size:12px}.film-dialog{padding:12px}}
+  @media(prefers-reduced-motion:reduce){.film-section,.film-preview,.film-dialog,.film-dialog::backdrop{transition:none}}
+  @media(max-width:700px){.film-dialog{padding:44px 0 0}}
 </style>
