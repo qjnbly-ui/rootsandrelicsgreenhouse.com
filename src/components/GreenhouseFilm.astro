@@ -1,0 +1,33 @@
+---
+import { imageUrl } from '../lib/image-assets';
+---
+<section class="greenhouse-film" aria-labelledby="greenhouse-film-title" id="greenhouse-film">
+  <div class="film-heading">
+    <div>
+      <p class="kicker">A look inside Roots &amp; Relics</p>
+      <h2 id="greenhouse-film-title">Visit the greenhouse.</h2>
+    </div>
+    <p>Meet Pat and Jennifer and take a look around.<br />45-second film · Sound available</p>
+  </div>
+  <video controls playsinline preload="none" width="1920" height="1080" poster={imageUrl('r-r10-10-26-1.jpg')} aria-label="Roots and Relics Greenhouse film">
+    <source src="/media/roots-relics-greenhouse-film.mp4" type="video/mp4" />
+    <track kind="captions" src="/media/roots-relics-greenhouse-film.vtt" srclang="en" label="English" />
+    <p><a href="/media/roots-relics-greenhouse-film.mp4">Watch the Roots &amp; Relics film</a>.</p>
+  </video>
+  <details class="film-transcript">
+    <summary>Read the video transcript</summary>
+    <p>Looking for something you won’t find everywhere else? Step inside Roots &amp; Relics Greenhouse. Browse antiques, collected pieces, and unexpected finds for your home. Take your time. There’s plenty to discover. Bring a friend, enjoy the greenhouse, and make a day of it. Come meet Pat and Jennifer, the people behind Roots &amp; Relics. See our next opening and join our email list at rootsandrelicsgreenhouse.com. We’d love to see you in the greenhouse.</p>
+  </details>
+</section>
+<style>
+  .greenhouse-film{padding:70px 7vw;background:var(--cream);color:var(--forest)}
+  .film-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px}
+  .film-heading h2{font:300 clamp(40px,4.3vw,68px)/1.06 var(--serif);letter-spacing:-.035em;margin:14px 0 0}
+  .film-heading>p{font-size:15px;line-height:1.65;margin:0;max-width:330px}
+  video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--forest)}
+  .film-transcript{margin-top:20px;max-width:850px;font-size:14px;line-height:1.8}
+  summary{cursor:pointer;width:fit-content;text-decoration:underline;text-underline-offset:4px}
+  summary:focus-visible{outline:2px solid var(--forest);outline-offset:5px}
+  .film-transcript p{margin:16px 0 0}
+  @media(max-width:700px){.greenhouse-film{padding:42px 6vw}.film-heading{display:block;margin-bottom:22px}.film-heading>p{margin-top:18px}.film-heading h2{font-size:42px}}
+</style>
