@@ -10,6 +10,25 @@
   const caption = document.querySelector<HTMLElement>('[data-tour-caption]')!;
   const resume = document.querySelector<HTMLButtonElement>('[data-tour-resume]')!;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Unlock narration in the same user gesture that starts the film.
+  let context: AudioContext | null = null;
+  let buffer: Promise<AudioBuffer> | null = null;
+  let source: AudioBufferSourceNode | null = null;
+  let frame = 0;
+  let generation = 0;
+  function prepare() {
+    try {
+      context ??= new AudioContext();
+      void context.resume().catch(() => {});
+      if (!buffer) {
+        buffer = fetch(audio.src).then(response => {
+          if (!response.ok) throw new Error('Tour audio unavailable');
+          return response.arrayBuffer();
+        }).then(bytes => context!.decodeAudioData(bytes));
+        void buffer.catch(() => { buffer = null; });
+      }
+    } catch { /* The media element remains available as a fallback. */ }
+  }
   let active = false;
   let step = -1;
   let visited = false;
@@ -35,6 +54,9 @@
   function stop() {
     if (!active) return;
     active = false;
+    generation++;
+    cancelAnimationFrame(frame);
+    if (source) { source.onended = null; source.stop(); source.disconnect(); source = null; }
     audio.pause();
     bar.hidden = true;
     resume.hidden = true;
@@ -43,13 +65,40 @@
   async function start() {
     stop();
     active = true;
+    const run = ++generation;
     step = -1;
     audio.currentTime = 0;
     bar.hidden = false;
     resume.hidden = true;
     caption.textContent = 'A quick look around the greenhouse website.';
-    try { await audio.play(); if (active) showStep(0); }
-    catch { resume.hidden = false; caption.textContent = 'Play the short tour with sound.'; }
+    try {
+      const decoded = buffer ? await buffer.catch(() => null) : null;
+      if (!active || run !== generation) return;
+      if (decoded && context?.state === 'running') {
+        const player = context.createBufferSource();
+        source = player;
+        player.buffer = decoded;
+        player.connect(context.destination);
+        const began = context.currentTime;
+        player.onended = () => { if (active && run === generation) { showStep(2); stop(); } };
+        player.start();
+        const tick = () => {
+          if (!active || run !== generation) return;
+          const time = context!.currentTime - began;
+          showStep(time >= cues[2].at ? 2 : time >= cues[1].at ? 1 : 0);
+          frame = requestAnimationFrame(tick);
+        };
+        tick();
+      } else {
+        await audio.play();
+        if (active && run === generation) showStep(0);
+        else audio.pause();
+      }
+    } catch {
+      if (!active || run !== generation) return;
+      resume.hidden = false;
+      caption.textContent = 'Play the short tour with sound.';
+    }
   }
   document.addEventListener('greenhouse-film-complete', () => {
     if (visited) return;
@@ -64,14 +113,14 @@
   audio.addEventListener('ended', () => { showStep(2); stop(); });
   audio.addEventListener('error', stop);
   document.querySelector('[data-tour-skip]')?.addEventListener('click', stop);
-  resume.addEventListener('click', () => { void audio.play().then(() => { resume.hidden = true; showStep(0); }); });
+  resume.addEventListener('click', () => { prepare(); void start(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') stop(); });
   document.addEventListener('focusin', event => {
     if (event.target instanceof HTMLElement && event.target.matches('input,textarea,select')) stop();
   });
   window.addEventListener('pagehide', stop);
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
-  document.querySelectorAll('[data-film-open],[data-film-replay]').forEach(button => button.addEventListener('click', stop));
+  document.querySelectorAll('[data-film-open],[data-film-replay]').forEach(button => button.addEventListener('click', () => { stop(); prepare(); }));
   if (['localhost','127.0.0.1'].includes(location.hostname)) {
     const root = document.querySelector<HTMLElement>('[data-signup-root]');
     const form = root?.querySelector<HTMLFormElement>('form');
