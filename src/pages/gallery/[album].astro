@@ -23,7 +23,14 @@ const { album } = Astro.props;
     <section class="gallery-collection" aria-label={`${album.title} photographs`}>
       <nav class="gallery-album-tools" aria-label="Album controls">
         <a class="gallery-back" href="/gallery/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h13" /></svg><span>All albums</span></a>
+        {album.slug === 'october-gathering-2026' && (
+          <button type="button" class="gallery-back album-download" data-download-all disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg>
+            Download all
+          </button>
+        )}
       </nav>
+      {album.slug === 'october-gathering-2026' && <p class="download-status" data-download-status role="status"></p>}
       <p data-gallery-status role="status" aria-live="polite"></p>
       <div class="gallery-grid" data-gallery-grid>
         {album.images.map((image) => (
@@ -55,5 +62,12 @@ const { album } = Astro.props;
 </BaseLayout>
 
 <script>
+  import '../../scripts/album-download';
   import '../../scripts/gallery-editor';
 </script>
+
+<style>
+  .album-download { margin-left: auto; background: transparent; border: 0; cursor: pointer; }
+  .album-download:disabled { opacity: .6; cursor: default; }
+  .download-status:empty { display: none; }
+</style>
