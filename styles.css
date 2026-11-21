@@ -405,3 +405,5 @@ section[id]{scroll-margin-top:88px}
   .footer-contact > a:not(.social-contact) { grid-column: 1 / -1; }
   .footer-contact .social-contact { min-height: 44px; gap: 8px; }
 }
+
+@media(max-width:900px){body.rr-menu-open{overflow:hidden}}

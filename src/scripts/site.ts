@@ -25,29 +25,52 @@ if (annualDateBanners.length) {
   window.setInterval(updateAnnualDateBanners, 60_000);
 }
 
-const closeMenu = () => {
-  menuButton?.setAttribute('aria-expanded', 'false');
+const navHeader = document.querySelector<HTMLElement>('[data-header]');
+const explore = nav?.querySelector<HTMLElement>('[data-explore]');
+const exploreToggle = explore?.querySelector<HTMLButtonElement>('[data-explore-toggle]');
+const mobileNav = window.matchMedia('(max-width: 900px)');
+const isMenuOpen = () => menuButton?.getAttribute('aria-expanded') === 'true';
+const isExploreOpen = () => exploreToggle?.getAttribute('aria-expanded') === 'true';
+
+const setMenu = (open: boolean) => {
+  menuButton?.setAttribute('aria-expanded', String(open));
   const label = menuButton?.querySelector('span');
-  if (label) label.textContent = 'Menu';
-  nav?.classList.remove('is-open');
-  document.body.style.overflow = '';
+  if (label) label.textContent = open ? 'Close' : 'Menu';
+  nav?.classList.toggle('is-open', open);
+  document.body.classList.toggle('rr-menu-open', open);
 };
+const setExplore = (open: boolean) => exploreToggle?.setAttribute('aria-expanded', String(open));
 
 menuButton?.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') === 'true';
-  if (open) {
-    closeMenu();
-    return;
-  }
-  menuButton.setAttribute('aria-expanded', 'true');
-  const label = menuButton.querySelector('span');
-  if (label) label.textContent = 'Close';
-  nav?.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+  if (mobileNav.matches) setMenu(!isMenuOpen());
 });
-
+exploreToggle?.addEventListener('click', () => {
+  if (!mobileNav.matches) setExplore(!isExploreOpen());
+});
 nav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', closeMenu);
+  link.addEventListener('click', () => {
+    if (isMenuOpen()) setMenu(false);
+    if (isExploreOpen()) setExplore(false);
+  });
+});
+document.addEventListener('pointerdown', (event) => {
+  if (isExploreOpen() && !explore?.contains(event.target as Node)) setExplore(false);
+});
+document.addEventListener('focusin', (event) => {
+  if (isExploreOpen() && !explore?.contains(event.target as Node)) setExplore(false);
+});
+mobileNav.addEventListener('change', () => {
+  const focusWasInNav = nav?.contains(document.activeElement);
+  const moveToDesktop = !mobileNav.matches && isMenuOpen() && (focusWasInNav || document.activeElement === menuButton);
+  const moveToMobile = mobileNav.matches && (focusWasInNav || navHeader?.querySelector('.rr-login-desktop') === document.activeElement);
+  setMenu(false);
+  setExplore(false);
+  if (moveToDesktop) exploreToggle?.focus();
+  if (moveToMobile) menuButton?.focus();
+});
+window.addEventListener('pageshow', () => {
+  setMenu(false);
+  setExplore(false);
 });
 
 const galleryLightbox = document.querySelector<HTMLElement>('[data-gallery-lightbox]');
@@ -165,9 +188,27 @@ document.addEventListener('keydown', (event) => {
       return;
     }
   }
-  if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
-    closeMenu();
-    menuButton.focus();
+  if (event.key === 'Escape') {
+    if (isMenuOpen()) {
+      setMenu(false);
+      menuButton?.focus();
+    } else if (isExploreOpen()) {
+      setExplore(false);
+      exploreToggle?.focus();
+    }
+  }
+  if (event.key === 'Tab' && isMenuOpen()) {
+    const controls = [...(navHeader?.querySelectorAll<HTMLElement>('button, a[href]') ?? [])]
+      .filter((item) => item.getClientRects().length);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
   }
 });
 
