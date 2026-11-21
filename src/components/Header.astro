@@ -25,8 +25,22 @@ const isCurrent = (href: SitePath) => currentPath === href;
       <a class="nav-mobile-only" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
     ))}
     <a class="nav-mobile-only" href="/join/" aria-current={onSignupPage ? 'page' : undefined}>Sign up for updates</a>
-    <a class="account-button account-button-mobile" href="https://roots-and-relics-be7315.portal.n3xra.com">Login</a>
+    <a class="nav-mobile-only login-link" href="https://roots-and-relics-be7315.portal.n3xra.com">Login</a>
   </nav>
-  <a class="account-button account-button-desktop" href="https://roots-and-relics-be7315.portal.n3xra.com">Login</a>
+  <a class="login-link login-desktop" href="https://roots-and-relics-be7315.portal.n3xra.com">Login</a>
   <a class="header-cta" href="/join/" aria-current={onSignupPage ? 'page' : undefined}>Sign up for updates</a>
 </header>
+
+<style>
+  .login-link {
+    color: inherit;
+    text-decoration: none;
+    text-transform: none;
+  }
+  .login-desktop {
+    padding: 10px 5px;
+    font: 500 14px var(--sans);
+  }
+  .login-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 900px) { .login-desktop { display: none; } }
+</style>

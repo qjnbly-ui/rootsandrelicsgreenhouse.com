@@ -6,12 +6,16 @@ import '../../styles/shop.css';
   <main id="main" class="rr-shop page-main">
     <section class="shop-catalog" aria-labelledby="pieces" data-shop-catalog>
       <header class="shop-heading">
-        <h1 id="pieces">Shop</h1>
-        <a href="/checkout/" data-cart hidden>View cart</a>
+        <h1 id="pieces">Shop the <em>greenhouse.</em></h1>
+        <p>Antiques and one-of-a-kind finds from Southern Oregon.</p>
       </header>
+      <div class="shop-tools"><a href="/checkout/" data-cart hidden>View cart</a></div>
       <p data-status role="status">Loading pieces…</p>
       <div class="shop-grid" data-items></div>
-      <p data-empty hidden>New pieces coming soon.</p>
+      <div class="shop-empty" data-empty hidden>
+        <p>Our first pieces are coming soon.</p>
+        <a href="/join/">Get new arrival updates <span aria-hidden="true">↗</span></a>
+      </div>
       <button type="button" data-retry hidden>Try again</button>
       <noscript><p>Enable JavaScript to see available pieces, or <a href="/contact/">contact the greenhouse</a>.</p></noscript>
     </section>
