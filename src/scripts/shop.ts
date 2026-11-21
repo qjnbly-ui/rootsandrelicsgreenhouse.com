@@ -36,7 +36,7 @@ function itemCard(item: Item, paymentsReady: boolean) {
   const name = document.createElement('h3');
   name.textContent = item.name;
   const detail = document.createElement('p');
-  detail.textContent = money.format(item.priceCents / 100) + (item.available ? ' · Local pickup' : ' · Sold out');
+  detail.textContent = money.format(item.priceCents / 100) + (item.available ? ' · In stock' : ' · Sold out');
   card.append(name, detail);
   if (!item.available) return card;
   if (paymentsReady) {
@@ -53,11 +53,6 @@ function itemCard(item: Item, paymentsReady: boolean) {
       status.textContent = item.name + ' is in your cart.';
     });
     card.append(button);
-  } else {
-    const link = document.createElement('a');
-    link.href = 'mailto:' + root.dataset.email + '?subject=' + encodeURIComponent('Pickup inquiry: ' + item.name);
-    link.textContent = 'Ask about this piece';
-    card.append(link);
   }
   return card;
 }
@@ -67,14 +62,15 @@ async function load() {
   status.textContent = 'Loading pieces…';
   grid.replaceChildren();
   try {
-    const response = await fetch('https://www.n3xra.com/api/commerce-store-catalog?shop=' + shop, { credentials: 'omit', cache: 'no-store', signal: AbortSignal.timeout(15000) });
+    const response = await fetch('/api/shop-catalog', { credentials: 'omit', cache: 'no-store', signal: AbortSignal.timeout(15000) });
     if (!response.ok) throw Error();
     const catalog = await response.json();
-    if (catalog.organizationId !== '74b2226c-6d7d-4267-9f70-5fbe106a6816' || !Array.isArray(catalog.items)) throw Error();
-    const paymentsReady = catalog.checkout?.enabled === true && catalog.checkout?.pickup === true;
+    if (!Array.isArray(catalog.items)) throw Error();
+    if (catalog.items.length && catalog.organizationId !== '74b2226c-6d7d-4267-9f70-5fbe106a6816') throw Error();
+    const paymentsReady = catalog.checkout?.enabled === true;
     grid.replaceChildren(...catalog.items.map((item: Item) => itemCard(item, paymentsReady)));
     empty.hidden = catalog.items.length > 0;
-    cartLink.hidden = !paymentsReady;
+    cartLink.hidden = !paymentsReady || (!catalog.items.length && !cart.length);
     updateCartLink();
     status.textContent = returned ? 'You have returned from checkout. Look for your payment confirmation.' : '';
   } catch {

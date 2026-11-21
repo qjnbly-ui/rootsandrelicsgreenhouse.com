@@ -7,6 +7,10 @@
     {
       "source": "/email/unsubscribe",
       "destination": "https://www.n3xra.com/api/communications-unsubscribe"
+    },
+    {
+      "source": "/api/shop-catalog",
+      "destination": "https://www.n3xra.com/api/commerce-store-catalog?shop=roots-and-relics"
     }
   ]
 }
