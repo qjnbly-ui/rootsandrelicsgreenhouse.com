@@ -12,3 +12,27 @@
 .shop-grid p { margin: 0 0 16px; }
 .shop-catalog button, .shop-heading a { font: inherit; padding: 10px 16px; border: 1px solid var(--forest); color: var(--forest); background: transparent; text-decoration: none; }
 .shop-catalog button:hover, .shop-heading a:hover { background: var(--forest); color: white; }
+
+@media (min-width: 901px) {
+  .rr-shop {
+    min-height: 100vh;
+    min-height: 100svh;
+    background: #fff;
+  }
+  .shop-catalog {
+    width: min(100%, 82rem);
+    padding: clamp(4rem, 9vh, 8rem) 5vw 5rem;
+  }
+  .shop-heading { align-items: baseline; padding-bottom: 1.5rem; }
+  .shop-heading h1 { font-size: clamp(3.75rem, 6vw, 6rem); }
+  .shop-catalog [data-empty] {
+    margin: 2rem 0 0;
+    border: 1px solid var(--line);
+    border-radius: .35rem;
+    padding: clamp(2rem, 5vh, 4rem) 1.5rem;
+    background: #faf9f6;
+    color: var(--forest);
+    text-align: center;
+    font: italic 400 clamp(1.25rem, 2vw, 1.75rem)/1.35 var(--serif);
+  }
+}

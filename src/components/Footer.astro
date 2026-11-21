@@ -56,3 +56,31 @@ import SocialIcon from './SocialIcon.astro';
     <p>Designed &amp; Built by <a href="https://n3xra.com" target="_blank" rel="noopener">N3XRA</a></p>
   </div>
 </footer>
+
+<style>
+  @media (min-width: 901px) {
+    .footer { padding: 32px clamp(32px, 6vw, 104px) 20px; }
+    .footer-top { display: none; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .8fr .8fr 1.2fr;
+      gap: clamp(20px, 4vw, 72px);
+      padding: 0 0 22px;
+    }
+    .footer-brand-block, .footer-nav, .footer-list { text-align: left; align-items: flex-start; }
+    .footer-brand-block { display: block; grid-column: auto; }
+    .footer-brand-block img { width: 92px; margin: 0 0 10px; }
+    .footer-brand-block p { display: none; }
+    .footer-brand-block span { display: block; font-size: 10px; }
+    .footer-nav p, .footer-list-label { margin-bottom: 10px; }
+    .footer-nav a { margin: 0; padding: 2px 0; line-height: 1.45; }
+    .footer-list { grid-column: auto; }
+    .footer-list h3 { font-size: 26px; margin: 0 0 6px; }
+    .footer-list > p:not(.footer-list-label) { font-size: 14px; margin: 0 0 12px; }
+    .footer-list > a { min-height: 36px; padding: 0 12px; }
+    .footer-contact { padding: 11px 0; gap: 16px; background: transparent; border-block: 1px solid rgba(255,255,255,.2); }
+    .footer-contact a { margin: 0; }
+    .footer-legal { padding-top: 12px; }
+    .footer-legal p { margin: 0; }
+  }
+</style>
