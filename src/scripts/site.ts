@@ -1,4 +1,5 @@
-const menuButton = document.querySelector<HTMLButtonElement>('[data-menu]');
+const desktopNavToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle=desktop]');
+const mobileNavToggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle=mobile]');
 const nav = document.querySelector<HTMLElement>('#site-nav');
 
 const annualDateBanners = [...document.querySelectorAll<HTMLElement>('[data-annual-date][data-time-zone]')];
@@ -26,52 +27,39 @@ if (annualDateBanners.length) {
 }
 
 const navHeader = document.querySelector<HTMLElement>('[data-header]');
-const explore = nav?.querySelector<HTMLElement>('[data-explore]');
-const exploreToggle = explore?.querySelector<HTMLButtonElement>('[data-explore-toggle]');
 const mobileNav = window.matchMedia('(max-width: 900px)');
-const isMenuOpen = () => menuButton?.getAttribute('aria-expanded') === 'true';
-const isExploreOpen = () => exploreToggle?.getAttribute('aria-expanded') === 'true';
-
+const activeNavToggle = () => mobileNav.matches ? mobileNavToggle : desktopNavToggle;
+const isMenuOpen = () => navHeader?.classList.contains('is-open') === true;
 const setMenu = (open: boolean) => {
-  menuButton?.setAttribute('aria-expanded', String(open));
-  const label = menuButton?.querySelector('span');
-  if (label) label.textContent = open ? 'Close' : 'Menu';
-  nav?.classList.toggle('is-open', open);
+  navHeader?.classList.toggle('is-open', open);
   document.body.classList.toggle('rr-menu-open', open);
-};
-const setExplore = (open: boolean) => exploreToggle?.setAttribute('aria-expanded', String(open));
-
-menuButton?.addEventListener('click', () => {
-  if (mobileNav.matches) setMenu(!isMenuOpen());
-});
-exploreToggle?.addEventListener('click', () => {
-  if (!mobileNav.matches) setExplore(!isExploreOpen());
-});
-nav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    if (isMenuOpen()) setMenu(false);
-    if (isExploreOpen()) setExplore(false);
+  [desktopNavToggle, mobileNavToggle].forEach((toggle, index) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    const label = toggle?.querySelector('span');
+    if (label) label.textContent = open ? 'Close' : index === 0 ? 'Explore' : 'Menu';
   });
+};
+const dismissMenu = () => {
+  setMenu(false);
+  activeNavToggle()?.focus();
+};
+[desktopNavToggle, mobileNavToggle].forEach((toggle) => {
+  toggle?.addEventListener('click', () => setMenu(!isMenuOpen()));
 });
-document.addEventListener('pointerdown', (event) => {
-  if (isExploreOpen() && !explore?.contains(event.target as Node)) setExplore(false);
-});
-document.addEventListener('focusin', (event) => {
-  if (isExploreOpen() && !explore?.contains(event.target as Node)) setExplore(false);
+nav?.addEventListener('click', (event) => {
+  if (!(event.target instanceof HTMLElement)) return;
+  if (event.target.closest('a[href]')) setMenu(false);
+  else if (event.target === nav) dismissMenu();
 });
 mobileNav.addEventListener('change', () => {
-  const focusWasInNav = nav?.contains(document.activeElement);
-  const moveToDesktop = !mobileNav.matches && isMenuOpen() && (focusWasInNav || document.activeElement === menuButton);
-  const moveToMobile = mobileNav.matches && (focusWasInNav || navHeader?.querySelector('.rr-login-desktop') === document.activeElement);
+  const previous = mobileNav.matches ? desktopNavToggle : mobileNavToggle;
+  const activeElement = document.activeElement;
+  const needsFocus = isMenuOpen() || activeElement === previous || nav?.contains(activeElement)
+    || (mobileNav.matches && activeElement?.closest('.rr-desktop-nav, .rr-login-desktop'));
   setMenu(false);
-  setExplore(false);
-  if (moveToDesktop) exploreToggle?.focus();
-  if (moveToMobile) menuButton?.focus();
+  if (needsFocus) activeNavToggle()?.focus();
 });
-window.addEventListener('pageshow', () => {
-  setMenu(false);
-  setExplore(false);
-});
+window.addEventListener('pageshow', () => setMenu(false));
 
 const galleryLightbox = document.querySelector<HTMLElement>('[data-gallery-lightbox]');
 const galleryExpandedImage = galleryLightbox?.querySelector<HTMLImageElement>('[data-gallery-expanded]');
@@ -188,15 +176,7 @@ document.addEventListener('keydown', (event) => {
       return;
     }
   }
-  if (event.key === 'Escape') {
-    if (isMenuOpen()) {
-      setMenu(false);
-      menuButton?.focus();
-    } else if (isExploreOpen()) {
-      setExplore(false);
-      exploreToggle?.focus();
-    }
-  }
+  if (event.key === 'Escape' && isMenuOpen()) dismissMenu();
   if (event.key === 'Tab' && isMenuOpen()) {
     const controls = [...(navHeader?.querySelectorAll<HTMLElement>('button, a[href]') ?? [])]
       .filter((item) => item.getClientRects().length);
