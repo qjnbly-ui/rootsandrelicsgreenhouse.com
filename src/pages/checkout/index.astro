@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/shop.css';
+---
+<BaseLayout title="Pickup checkout | Roots & Relics Greenhouse" description="Review your greenhouse pieces for local pickup." currentPath="/shop/">
+  <main id="main" class="page-main">
+    <div class="shop-checkout">
+      <p><a href="/shop/">Back to the shop</a></p>
+      <h1>Pickup checkout</h1>
+      <div data-n3xra-checkout data-shop="roots-and-relics">Loading your cart…</div>
+      <p><a href="/contact/">Questions about pickup?</a></p>
+      <noscript>Enable JavaScript to review your cart.</noscript>
+    </div>
+  </main>
+</BaseLayout>
+<script type="module" is:inline src="https://www.n3xra.com/shop-manager/embed/shop.js"></script>
+<script>
+  window.setTimeout(() => {
+    const checkout = document.querySelector<HTMLElement>('[data-n3xra-checkout]');
+    if (checkout && !checkout.dataset.mounted) checkout.textContent = 'Checkout is temporarily unavailable. Please contact the greenhouse.';
+  }, 15000);
+</script>

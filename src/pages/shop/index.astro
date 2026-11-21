@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { imageUrl } from '../../lib/image-assets';
+import { site } from '../../data/site';
+import '../../styles/shop.css';
+---
+<BaseLayout title="Shop Online | Roots & Relics Greenhouse" description="Shop antiques and one-of-a-kind finds for local pickup at Roots & Relics Greenhouse near Klamath Falls, Oregon." currentPath="/shop/">
+  <main id="main" class="rr-shop page-main">
+    <header class="shop-hero">
+      <div>
+        <h1>Shop the <em>greenhouse.</em></h1>
+        <p>Antique furniture, ironstone, and little finds selected by Pat and Jenn. Pick up your piece at our greenhouse near Klamath Falls.</p>
+      </div>
+      <img src={imageUrl('93-vignette-ironstone-pitcher.jpg')} alt="An ironstone pitcher filled with flowers at the greenhouse" fetchpriority="high" />
+    </header>
+    <section class="shop-catalog" aria-labelledby="pieces" data-shop-catalog data-email={site.contact.email}>
+      <header class="shop-heading">
+        <h2 id="pieces">Current pieces</h2>
+        <a href="/checkout/" data-cart hidden>View cart</a>
+      </header>
+      <p data-status role="status">Loading pieces…</p>
+      <div class="shop-grid" data-items></div>
+      <div data-empty hidden>
+        <p>Our first online listings are on their way. In the meantime, take a look around the collection or plan a greenhouse visit.</p>
+        <a class="action-link action-link-dark" href="/the-collection/">Explore the collection</a>
+        <a class="shop-text-link" href="/before-you-visit/">Plan your visit</a>
+      </div>
+      <button type="button" data-retry hidden>Try again</button>
+      <noscript><p>Enable JavaScript to see available pieces, or <a href="/contact/">contact the greenhouse</a>.</p></noscript>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  import '../../scripts/shop';
+</script>

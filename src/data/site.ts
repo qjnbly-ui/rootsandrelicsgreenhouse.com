@@ -14,6 +14,7 @@ export const site = {
   primaryNavigation: [
     { label: 'Our story', href: '/our-story/' },
     { label: 'The collection', href: '/the-collection/' },
+    { label: 'Shop online', href: '/shop/' },
     { label: 'Gatherings', href: '/greenhouse-gatherings/' },
     { label: 'Calendar', href: '/calendar/' },
     { label: 'Private showings', href: '/private-showings/' },

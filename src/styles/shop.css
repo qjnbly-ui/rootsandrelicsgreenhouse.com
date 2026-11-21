@@ -1,0 +1,26 @@
+.rr-shop { background: var(--paper); }
+.shop-hero { display: grid; grid-template-columns: 1.05fr 1fr; background: var(--cream); color: var(--forest); }
+.shop-hero > div { align-self: center; padding: clamp(44px,7vw,100px); }
+.shop-hero h1, .shop-heading h2, .shop-checkout h1 { font: 300 clamp(3.5rem,6.5vw,7rem)/.94 var(--serif); letter-spacing: -.05em; margin: 0; }
+.shop-hero em { display: block; font-weight: inherit; color: var(--rust); }
+.shop-hero p, .shop-catalog p, .shop-checkout p { max-width: 58ch; line-height: 1.65; }
+.shop-hero > img { width: 100%; height: clamp(300px,32vw,490px); object-fit: cover; object-position: center 48%; }
+.shop-catalog, .shop-checkout { max-width: 1500px; margin: auto; padding: clamp(36px,5vw,80px) 7vw; }
+.shop-heading { border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; }
+.shop-heading h2 { font-size: clamp(2.25rem,4vw,4rem); }
+.shop-catalog [hidden] { display: none; }
+.shop-catalog a:not(.action-link), .shop-checkout a { color: var(--forest); text-underline-offset: .25em; }
+.shop-text-link { margin: 10px 18px; display: inline-block; }
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,240px),1fr)); gap: 32px; }
+.shop-grid article { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.shop-grid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.shop-grid h3 { font: 400 2rem/1.12 var(--serif); margin: 16px 0 8px; overflow-wrap: anywhere; }
+.shop-grid p { margin: 0 0 16px; }
+.shop-catalog button, .shop-heading a { font: inherit; padding: 10px 16px; border: 1px solid var(--forest); color: var(--forest); background: transparent; text-decoration: none; }
+.shop-catalog button:hover, .shop-heading a:hover { background: var(--forest); color: white; }
+@media(max-width: 650px) {
+  .shop-hero { grid-template-columns: 1fr; }
+  .shop-hero > div { padding: 38px 7vw 16px; }
+  .shop-hero em { display: inline; }
+  .shop-hero > img { height: 190px; }
+}
