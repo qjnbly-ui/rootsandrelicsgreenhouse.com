@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { currentPath = '/' } = Astro.props;
+const onSignupPage = Astro.url.pathname.replace(/\/$/, '') === '/join';
 const isCurrent = (href: SitePath) => currentPath === href;
 ---
 
@@ -23,8 +24,9 @@ const isCurrent = (href: SitePath) => currentPath === href;
     {site.secondaryNavigation.map((item) => (
       <a class="nav-mobile-only" href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
     ))}
-    <a class="account-button account-button-mobile" href="https://roots-and-relics-be7315.portal.n3xra.com">Admin login</a>
+    <a class="nav-mobile-only" href="/join/" aria-current={onSignupPage ? 'page' : undefined}>Sign up for updates</a>
+    <a class="account-button account-button-mobile" href="https://roots-and-relics-be7315.portal.n3xra.com">Login</a>
   </nav>
-  <a class="account-button account-button-desktop" href="https://roots-and-relics-be7315.portal.n3xra.com">Admin login</a>
-  <a class="header-cta" href="/before-you-visit/" aria-current={isCurrent('/before-you-visit/') ? 'page' : undefined}>Plan your visit <span>↗</span></a>
+  <a class="account-button account-button-desktop" href="https://roots-and-relics-be7315.portal.n3xra.com">Login</a>
+  <a class="header-cta" href="/join/" aria-current={onSignupPage ? 'page' : undefined}>Sign up for updates</a>
 </header>
