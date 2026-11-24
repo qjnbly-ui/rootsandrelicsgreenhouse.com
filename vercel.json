@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/from-the-greenhouse/holiday-greenhouse-2026",
+      "destination": "/from-the-greenhouse/?post=a745f7cd-abb3-4101-8288-2d7c354a2565",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/email/logo.png",
