@@ -1,4 +1,5 @@
 ---
+import { holidayGreenhouse } from '../data/events';
 interface Props { compact?: boolean }
 const { compact = false } = Astro.props;
 const Heading = compact ? 'h2' : 'h1';
@@ -11,6 +12,7 @@ const calendarUrl = 'https://n3xra.com/calendar/app/?public=769ae412-4e58-5178-b
     <p>Good things happen in the greenhouse. Find a day to stop by.</p>
     <svg class="autumn-sprig" viewBox="0 0 180 120" aria-hidden="true"><path d="M18 107Q89 79 158 13" fill="none" stroke="#796343" stroke-width="2"/><path d="M60 91C24 89 29 55 23 39C57 44 74 62 60 91Z" fill="#b5693b"/><path d="M91 68C67 44 94 24 100 9C117 34 115 53 91 68Z" fill="#ba963f"/><path d="M115 52C149 67 162 43 175 36C154 22 132 26 115 52Z" fill="#8d4930"/><path d="M39 52L60 90M100 26L91 68M161 38L116 52" fill="none" stroke="#f4e4bb" stroke-width="1"/></svg>
   </header>
+  <p data-event-end={holidayGreenhouse.end}><strong>Holiday Greenhouse:</strong> {holidayGreenhouse.shortHours} (Pacific). <a href={holidayGreenhouse.journal}>Market details and directions</a></p>
   <iframe src={`${calendarUrl}&embed=1`} title="Roots & Relics public events calendar" data-calendar-frame scrolling="no" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   <div class="gatherings-calendar-links">
     <a class="action-link action-link-dark" href="/calendar/roots-relics-upcoming-markets-2026.ics" download>Save upcoming dates <span aria-hidden="true">↓</span><svg class="button-leaf" viewBox="0 0 55 65" aria-hidden="true"><path d="M27 53L9 43L14 34L4 26L20 24L22 6L31 19L42 13L39 29L53 33L37 42L37 53Z" fill="#b5693b"/><path d="M28 26L31 62M16 35L30 43M42 34L30 43" fill="none" stroke="#765036" stroke-width="1.5"/></svg></a>
@@ -18,7 +20,7 @@ const calendarUrl = 'https://n3xra.com/calendar/app/?public=769ae412-4e58-5178-b
   <section class="gatherings-calendar-fallback" aria-labelledby="published-dates-title">
     <h3 id="published-dates-title">Upcoming gathering dates</h3>
     <ul>
-      <li><strong>Holiday Greenhouse · November 27–29</strong><span>Opening hours to be announced.</span></li>
+      <li data-event-end={holidayGreenhouse.end}><strong>Holiday Greenhouse · November 27–29</strong><span>{holidayGreenhouse.shortHours} · {holidayGreenhouse.address}. <a href={holidayGreenhouse.journal}>Visit details</a></span></li>
       <li><strong>Christmas Market · December 10–13</strong><span>Opening hours to be announced.</span></li>
       <li><strong>The Eleventh Hour Market · December 23</strong><span>Opening hours to be announced.</span></li>
     </ul>

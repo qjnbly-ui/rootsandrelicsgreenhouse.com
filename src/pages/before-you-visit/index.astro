@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../data/site';
+import { holidayGreenhouse } from '../../data/events';
 import { imageUrl } from '../../lib/image-assets';
 import '../../styles/before-you-visit.css';
 ---
@@ -31,6 +32,7 @@ import '../../styles/before-you-visit.css';
       <div class="visit-arrival-copy reveal">
         <p>Roots &amp; Relics is tucked onto a working farm just outside Klamath Falls in Southern Oregon.</p>
         <p>On gathering days, visit us at <strong>13221 Mann Road, Klamath Falls</strong>. GPS will take you to our home driveway. The Roots &amp; Relics entrance is on the <strong>left, about 100 yards before the driveway</strong>. Look for the clearly marked entrance. There is plenty of parking for larger vehicles and trailers. Gates open just a few minutes before opening time each day.</p>
+        <p data-event-end={holidayGreenhouse.end}><a class="visit-text-link" href={holidayGreenhouse.journal}>Holiday Greenhouse hours and details <span>→</span></a></p>
         <a class="visit-text-link" href={`sms:${site.contact.phoneHref}`}>Text for directions <span>→</span></a>
       </div>
       <figure class="visit-arrival-image reveal">

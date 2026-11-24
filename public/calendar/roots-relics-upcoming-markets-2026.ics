@@ -6,16 +6,47 @@ METHOD:PUBLISH
 X-WR-CALNAME:Roots & Relics 2026 Markets
 BEGIN:VEVENT
 UID:holiday-greenhouse-2026@rootsandrelicsgreenhouse.com
-DTSTAMP:20261025T000000Z
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261130
-SUMMARY:Holiday Greenhouse — Roots & Relics Greenhouse
-LOCATION:Roots & Relics Greenhouse\, Southern Oregon
-DESCRIPTION:Holiday magic on our farm\, just 10 minutes from Klamath Falls.
- \nShop primitive antiques\, European farmhouse finds\, vintage holiday dé
- cor and one-of-a-kind gifts. Enjoy festive refreshments and a greenhouse d
- ressed for the season.\nHours and location details coming soon. Sign up at
-  https://www.rootsandrelicsgreenhouse.com/join/
+DTSTAMP:20261124T223823Z
+SEQUENCE:1
+DTSTART:20261127T160000Z
+DTEND:20261128T000000Z
+SUMMARY:Holiday Greenhouse (Friday) | Roots & Relics
+LOCATION:13221 Mann Road\, Klamath Falls\, Oregon
+URL:https://www.rootsandrelicsgreenhouse.com/from-the-greenhouse/holiday-gr
+ eenhouse-2026/
+DESCRIPTION:Antiques and Christmas finds\, a hot apple cider bar\, and a sn
+ owy Mason jar candleholder craft. Look for the marked entrance on the left
+ \, about 100 yards before the home driveway.\nBarney Family Market food tr
+ uck 11 AM to 3 PM Pacific.
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-greenhouse-2026-28@rootsandrelicsgreenhouse.com
+DTSTAMP:20261124T223823Z
+SEQUENCE:0
+DTSTART:20261128T180000Z
+DTEND:20261129T000000Z
+SUMMARY:Holiday Greenhouse (Saturday) | Roots & Relics
+LOCATION:13221 Mann Road\, Klamath Falls\, Oregon
+URL:https://www.rootsandrelicsgreenhouse.com/from-the-greenhouse/holiday-gr
+ eenhouse-2026/
+DESCRIPTION:Antiques and Christmas finds\, a hot apple cider bar\, and a sn
+ owy Mason jar candleholder craft. Look for the marked entrance on the left
+ \, about 100 yards before the home driveway.\nBarney Family Market food tr
+ uck 11 AM to 3 PM Pacific.
+END:VEVENT
+BEGIN:VEVENT
+UID:holiday-greenhouse-2026-29@rootsandrelicsgreenhouse.com
+DTSTAMP:20261124T223823Z
+SEQUENCE:0
+DTSTART:20261129T180000Z
+DTEND:20261130T000000Z
+SUMMARY:Holiday Greenhouse (Sunday) | Roots & Relics
+LOCATION:13221 Mann Road\, Klamath Falls\, Oregon
+URL:https://www.rootsandrelicsgreenhouse.com/from-the-greenhouse/holiday-gr
+ eenhouse-2026/
+DESCRIPTION:Antiques and Christmas finds\, a hot apple cider bar\, and a sn
+ owy Mason jar candleholder craft. Look for the marked entrance on the left
+ \, about 100 yards before the home driveway.
 END:VEVENT
 BEGIN:VEVENT
 UID:christmas-market-2026@rootsandrelicsgreenhouse.com

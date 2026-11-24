@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { imageUrl } from '../../../lib/image-assets';
+import { holidayGreenhouse as event } from '../../../data/events';
+import '../../../styles/from-the-greenhouse.css';
+---
+<BaseLayout title="Holiday Greenhouse · November 27–29, 2026 | Roots & Relics" description="Thanksgiving weekend at Roots & Relics Greenhouse. Find market hours, food truck details, and directions to 13221 Mann Road in Klamath Falls." currentPath="/from-the-greenhouse/" bodyClass="greenhouse-journal-page inner-page">
+  <main id="main" class="greenhouse-journal">
+    <section class="greenhouse-journal-hero">
+      <img src={imageUrl(event.image)} alt={event.imageAlt} fetchpriority="high" />
+      <div class="greenhouse-journal-hero-shade" aria-hidden="true"></div>
+      <div class="greenhouse-journal-hero-copy">
+        <p class="kicker">{event.dateLabel} · Thanksgiving weekend</p>
+        <h1>Holiday <em>Greenhouse.</em></h1>
+        <p>Antiques, Christmas finds, and a warm cup of cider at the greenhouse.</p>
+      </div>
+    </section>
+    <section class="greenhouse-journal-feed" aria-labelledby="holiday-note">
+      <div class="greenhouse-journal-grid"><article class="greenhouse-journal-card is-text-only"><div class="greenhouse-journal-card-copy">
+        <p class="kicker">A note from the greenhouse · November 24, 2026</p>
+        <h2 id="holiday-note">Christmas in the <em>greenhouse.</em></h2>
+        <p>Come spend part of Thanksgiving weekend with us. We’ve been getting the greenhouse ready for Christmas, with vintage holiday décor, primitive antiques, European farmhouse finds, and one-of-a-kind pieces to give or keep. Bring a friend and give yourself time to wander.</p>
+        <h3>Market hours</h3>
+        <ul>{event.schedule.map(day => <li><strong><time datetime={day.date}>{day.day}</time></strong> · {day.hours}</li>)}</ul>
+        <p>All hours are Pacific time.</p>
+        <p data-after-event={event.end}>This gathering has ended. <a href="/greenhouse-gatherings/">Find our next market →</a></p>
+        <h3>Lunch, cider, and a little something to make</h3>
+        <p>{event.foodTruck}</p>
+        <p>{event.activities}</p>
+        <h3>Finding the greenhouse</h3>
+        <p><strong>{event.address}</strong></p>
+        <p>{event.directions} There’s room for larger vehicles and trailers. Gates open a few minutes before the market each day.</p>
+        <p>See you in the greenhouse!<br />Jenn &amp; Pat</p>
+        <p><a data-event-end={event.end} class="greenhouse-journal-card-link" href={event.calendar} download>Save the market hours ↓</a></p>
+        <p><a class="greenhouse-journal-card-link" href="/from-the-greenhouse/">← Back to the journal</a></p>
+      </div></article></div>
+    </section>
+  </main>
+</BaseLayout>

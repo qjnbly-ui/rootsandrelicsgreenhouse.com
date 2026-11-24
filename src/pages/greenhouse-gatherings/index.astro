@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import HolidayGreenhouse from '../../components/HolidayGreenhouse.astro';
 import PublicCalendar from '../../components/PublicCalendar.astro';
 import { site } from '../../data/site';
+import { holidayGreenhouse } from '../../data/events';
 import { imageUrl } from '../../lib/image-assets';
 import '../../styles/gatherings.css';
 
@@ -36,8 +37,10 @@ const upcomingGatherings = [
     month: 'November',
     days: '27–29',
     datetime: '2026-11-27',
-    end: '2026-11-30T00:00:00-08:00',
-    calendar: '/calendar/holiday-greenhouse-2026.ics',
+    end: holidayGreenhouse.end,
+    calendar: holidayGreenhouse.calendar,
+    detail: holidayGreenhouse.journal,
+    note: holidayGreenhouse.shortHours,
     image: '85-vignette-wooden-tools.jpg',
     alt: 'Antique wooden kitchen tools gathered in an old wooden firkin',
     position: '51% 58%',
@@ -118,6 +121,7 @@ const upcomingGatherings = [
               <h3>{gathering.title}</h3>
               <time datetime={gathering.datetime}><span>{gathering.month}</span> <em>{gathering.days}</em></time>
               {gathering.note && <p>{gathering.note}</p>}
+              {gathering.detail && <p><a href={gathering.detail}>Market details and directions →</a></p>}
             </div>
             <div class="gatherings-date-footer">
               <a href={gathering.calendar} download aria-label={`Save ${gathering.title} to your calendar`}>

@@ -1,22 +1,27 @@
 ---
 import { imageUrl } from '../lib/image-assets';
+import { holidayGreenhouse as event } from '../data/events';
 ---
-<section class="holiday-greenhouse" id="holiday-greenhouse-2026" data-event-end="2026-11-30T00:00:00-08:00" aria-labelledby="holiday-greenhouse-title">
+<section class="holiday-greenhouse" id={event.id} data-event-end={event.end} aria-labelledby="holiday-greenhouse-title">
   <figure class="holiday-greenhouse-image reveal">
-    <img src={imageUrl('r-r-greenhousse-5.jpg')} alt="Collected antiques and hanging flowers inside the Roots & Relics greenhouse" loading="lazy" decoding="async" />
+    <img src={imageUrl(event.image)} alt={event.imageAlt} loading="lazy" decoding="async" />
     <figcaption>See you in the greenhouse.</figcaption>
   </figure>
   <div class="holiday-greenhouse-copy reveal">
-    <p class="kicker">Roots &amp; Relics · Save the dates</p>
-    <p class="holiday-greenhouse-date"><time datetime="2026-11-27">November 27–29, 2026</time></p>
+    <p class="kicker">Roots &amp; Relics · Thanksgiving weekend</p>
+    <p class="holiday-greenhouse-date"><time datetime={event.schedule[0].date}>{event.dateLabel}</time></p>
     <h2 id="holiday-greenhouse-title">Holiday<br /><em>Greenhouse.</em></h2>
     <p>Join us for a little holiday magic in the greenhouse on our farm, just 10 minutes from Klamath Falls.</p>
     <p>Shop thoughtfully curated primitive antiques, European farmhouse finds, vintage holiday décor, and one-of-a-kind pieces to give as gifts or bring home for yourself. Gather inspiration for your holiday home while enjoying festive refreshments and the warm glow of the greenhouse dressed for the season.</p>
     <p>Bring a friend, take your time, and enjoy a beautiful start to the holidays with us.</p>
-    <div class="holiday-greenhouse-details"><strong>Hours &amp; location details coming soon</strong><p>Join our list for the latest updates as the event gets closer.</p></div>
+    <div class="holiday-greenhouse-details">
+      <strong>{event.address}</strong>
+      <p>{event.shortHours} (Pacific)</p>
+      <p>Food truck Friday and Saturday · Hot apple cider bar · Make a snowy Mason jar candleholder</p>
+    </div>
     <div class="holiday-greenhouse-actions">
-      <a class="solid-link" href="/join/">Get holiday updates <span aria-hidden="true">→</span></a>
-      <a class="action-link" href="/calendar/holiday-greenhouse-2026.ics" download>Save the dates <span aria-hidden="true">↓</span></a>
+      <a class="solid-link" href={event.journal}>Hours, food &amp; directions <span aria-hidden="true">→</span></a>
+      <a class="action-link" href={event.calendar} download>Save the dates <span aria-hidden="true">↓</span></a>
     </div>
     <p class="holiday-greenhouse-thanks">Thank you for supporting our greenhouse market.</p>
   </div>

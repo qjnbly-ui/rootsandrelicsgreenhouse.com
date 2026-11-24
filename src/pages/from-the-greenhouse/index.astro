@@ -1,5 +1,5 @@
 ---
-import { fallGathering } from '../../data/events';
+import { fallGathering, holidayGreenhouse } from '../../data/events';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { imageUrl } from '../../lib/image-assets';
 import '../../styles/from-the-greenhouse.css';
@@ -29,6 +29,17 @@ const fallbackHero = imageUrl('r-r-greenhousse-13.jpg');
         <p class="kicker">The latest from Roots &amp; Relics</p>
         <h2 id="journal-feed-title">Stories worth <em>keeping.</em></h2>
       </header>
+      <div class="greenhouse-journal-grid">
+        <article class="greenhouse-journal-card layout-intro">
+          <div class="greenhouse-journal-gallery"><div class="greenhouse-journal-photo-track"><figure><img src={imageUrl(holidayGreenhouse.image)} alt={holidayGreenhouse.imageAlt} loading="lazy" /></figure></div></div>
+          <div class="greenhouse-journal-card-copy">
+            <p class="kicker">Gathering · November 24, 2026</p>
+            <h3>Holiday Greenhouse · {holidayGreenhouse.dateLabel}</h3>
+            <p>Thanksgiving weekend at the greenhouse: antique and Christmas finds, a hot cider bar, and a little something to make and take home.</p>
+            <a class="greenhouse-journal-card-link" href={holidayGreenhouse.journal}>Read the market note →</a>
+          </div>
+        </article>
+      </div>
       <div class="greenhouse-journal-grid" data-event-end={fallGathering.end}>
         <article class="greenhouse-journal-card layout-intro">
           <div class="greenhouse-journal-gallery"><div class="greenhouse-journal-photo-track"><figure><img src={imageUrl('124-greenhouse-exterior.jpg')} alt="Roots &amp; Relics Greenhouse" loading="eager" /></figure></div></div>
